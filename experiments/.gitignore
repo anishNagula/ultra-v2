@@ -1,0 +1,2 @@
+# Experiment logs are evidence for the recorded results; keep them despite the root *.log rule.
+!*.log

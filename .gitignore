@@ -164,3 +164,10 @@ output/
 .DS_Store
 kg-datasets/
 *.csv
+# Large public raw downloads and regenerable derived data. They are not committed;
+# EXCLUDED_DATA.md records their paths, SHA-256 hashes and how to recover them.
+data/raw/capec/
+data/raw/cwe/
+data/raw/nvd/
+datasets/cybersecurity/mitre/
+data/processed/cyber_cti/triples.tsv
