@@ -1,0 +1,245 @@
+{
+  "protocol": "ULTRA pretrained checkpoint; local fine-tuning vs FedAvg",
+  "checkpoint": "/Users/anishnagula/code/ultra-v2/ckpts/ultra_4g.pth",
+  "source_code_commit": "427966ad8ed60420eef034063d44f3153addff90",
+  "client_weighting": "training triple count",
+  "message_passing": "training triples only",
+  "validation_filter": "train + validation facts",
+  "test_filter": "train + validation + test facts",
+  "results": [
+    {
+      "seed": 20261023,
+      "config": {
+        "rounds": 5,
+        "local_steps_per_round": 10,
+        "updates_per_client": 50,
+        "batch_size": 8,
+        "num_negative": 64,
+        "lr": 0.0005,
+        "weight_decay": 0.0,
+        "eval_limit": 0
+      },
+      "local": {
+        "selected_round": {
+          "enterprise": 3,
+          "ics": 5
+        },
+        "validation_mrr": {
+          "enterprise": 0.14315126836299896,
+          "ics": 0.48089340329170227
+        },
+        "test": {
+          "enterprise": {
+            "mrr": 0.15379466116428375,
+            "hits@1": 0.07846983522176743,
+            "hits@3": 0.16184404492378235,
+            "hits@10": 0.30161842703819275,
+            "triples_evaluated": 2039,
+            "ranking_queries": 4078
+          },
+          "ics": {
+            "mrr": 0.6563807129859924,
+            "hits@1": 0.5662251710891724,
+            "hits@3": 0.695364236831665,
+            "hits@10": 0.8377483487129211,
+            "triples_evaluated": 151,
+            "ranking_queries": 302
+          }
+        }
+      },
+      "fedavg": {
+        "selected_round": 3,
+        "validation_mean_mrr": 0.3105379045009613,
+        "test": {
+          "enterprise": {
+            "mrr": 0.15821899473667145,
+            "hits@1": 0.08263854682445526,
+            "hits@3": 0.16723884642124176,
+            "hits@10": 0.3072584569454193,
+            "triples_evaluated": 2039,
+            "ranking_queries": 4078
+          },
+          "ics": {
+            "mrr": 0.6537523865699768,
+            "hits@1": 0.5662251710891724,
+            "hits@3": 0.6887417435646057,
+            "hits@10": 0.8410596251487732,
+            "triples_evaluated": 151,
+            "ranking_queries": 302
+          }
+        }
+      },
+      "delta_mrr_fedavg_minus_local": {
+        "enterprise": 0.004424333572387695,
+        "ics": -0.002628326416015625
+      },
+      "mean_client_delta_mrr": 0.0008980035781860352,
+      "diagnostic_only": false
+    },
+    {
+      "seed": 20261024,
+      "config": {
+        "rounds": 5,
+        "local_steps_per_round": 10,
+        "updates_per_client": 50,
+        "batch_size": 8,
+        "num_negative": 64,
+        "lr": 0.0005,
+        "weight_decay": 0.0,
+        "eval_limit": 0
+      },
+      "local": {
+        "selected_round": {
+          "enterprise": 3,
+          "ics": 2
+        },
+        "validation_mrr": {
+          "enterprise": 0.14448344707489014,
+          "ics": 0.4814705550670624
+        },
+        "test": {
+          "enterprise": {
+            "mrr": 0.1575644314289093,
+            "hits@1": 0.08312898129224777,
+            "hits@3": 0.1665031909942627,
+            "hits@10": 0.3033349812030792,
+            "triples_evaluated": 2039,
+            "ranking_queries": 4078
+          },
+          "ics": {
+            "mrr": 0.6543043255805969,
+            "hits@1": 0.5629138946533203,
+            "hits@3": 0.6986755132675171,
+            "hits@10": 0.8410596251487732,
+            "triples_evaluated": 151,
+            "ranking_queries": 302
+          }
+        }
+      },
+      "fedavg": {
+        "selected_round": 4,
+        "validation_mean_mrr": 0.3059556931257248,
+        "test": {
+          "enterprise": {
+            "mrr": 0.1570870727300644,
+            "hits@1": 0.08214811235666275,
+            "hits@3": 0.16552232205867767,
+            "hits@10": 0.30382540822029114,
+            "triples_evaluated": 2039,
+            "ranking_queries": 4078
+          },
+          "ics": {
+            "mrr": 0.6585258841514587,
+            "hits@1": 0.5662251710891724,
+            "hits@3": 0.7019867300987244,
+            "hits@10": 0.8476821184158325,
+            "triples_evaluated": 151,
+            "ranking_queries": 302
+          }
+        }
+      },
+      "delta_mrr_fedavg_minus_local": {
+        "enterprise": -0.00047735869884490967,
+        "ics": 0.004221558570861816
+      },
+      "mean_client_delta_mrr": 0.0018720999360084534,
+      "diagnostic_only": false
+    },
+    {
+      "seed": 20261025,
+      "config": {
+        "rounds": 5,
+        "local_steps_per_round": 10,
+        "updates_per_client": 50,
+        "batch_size": 8,
+        "num_negative": 64,
+        "lr": 0.0005,
+        "weight_decay": 0.0,
+        "eval_limit": 0
+      },
+      "local": {
+        "selected_round": {
+          "enterprise": 5,
+          "ics": 2
+        },
+        "validation_mrr": {
+          "enterprise": 0.14347711205482483,
+          "ics": 0.48310160636901855
+        },
+        "test": {
+          "enterprise": {
+            "mrr": 0.15742453932762146,
+            "hits@1": 0.07871505618095398,
+            "hits@3": 0.17067189514636993,
+            "hits@10": 0.3077488839626312,
+            "triples_evaluated": 2039,
+            "ranking_queries": 4078
+          },
+          "ics": {
+            "mrr": 0.6538443565368652,
+            "hits@1": 0.559602677822113,
+            "hits@3": 0.7019867300987244,
+            "hits@10": 0.8476821184158325,
+            "triples_evaluated": 151,
+            "ranking_queries": 302
+          }
+        }
+      },
+      "fedavg": {
+        "selected_round": 3,
+        "validation_mean_mrr": 0.3057073801755905,
+        "test": {
+          "enterprise": {
+            "mrr": 0.1514197140932083,
+            "hits@1": 0.07699853181838989,
+            "hits@3": 0.15644924342632294,
+            "hits@10": 0.2996566891670227,
+            "triples_evaluated": 2039,
+            "ranking_queries": 4078
+          },
+          "ics": {
+            "mrr": 0.6442188024520874,
+            "hits@1": 0.5496688485145569,
+            "hits@3": 0.695364236831665,
+            "hits@10": 0.8344370722770691,
+            "triples_evaluated": 151,
+            "ranking_queries": 302
+          }
+        }
+      },
+      "delta_mrr_fedavg_minus_local": {
+        "enterprise": -0.006004825234413147,
+        "ics": -0.009625554084777832
+      },
+      "mean_client_delta_mrr": -0.00781518965959549,
+      "diagnostic_only": false
+    }
+  ],
+  "summary": {
+    "num_seeds": 3,
+    "seed_mean_client_delta_mrr": [
+      0.0008980035781860352,
+      0.0018720999360084534,
+      -0.00781518965959549
+    ],
+    "mean_mrr_delta": -0.0016816953818003337,
+    "paired_seed_level_95pct_t_ci": [
+      -0.014933265761620983,
+      0.011569874998020317
+    ],
+    "mean_delta_by_client": {
+      "enterprise": -0.0006859501202901205,
+      "ics": -0.002677440643310547
+    },
+    "acceptance_criteria": {
+      "minimum_mean_gain": 0.03,
+      "mean_gain_meets_threshold": false,
+      "ci_excludes_zero": false,
+      "positive_mean_gain": false,
+      "at_least_three_seeds": true,
+      "no_client_mean_regression_below_minus_0_02": true,
+      "substantial_regression_cutoff": -0.02
+    },
+    "diagnostic_only": false
+  }
+}

@@ -1,0 +1,102 @@
+{
+  "protocol": "ULTRA pretrained checkpoint; local fine-tuning vs FedAvg",
+  "checkpoint": "/Users/anishnagula/code/ultra-v2/ckpts/ultra_4g.pth",
+  "source_code_commit": "427966ad8ed60420eef034063d44f3153addff90",
+  "client_weighting": "training triple count",
+  "message_passing": "training triples only",
+  "validation_filter": "train + validation facts",
+  "test_filter": "train + validation + test facts",
+  "results": [
+    {
+      "seed": 20261023,
+      "config": {
+        "rounds": 1,
+        "local_steps_per_round": 1,
+        "updates_per_client": 1,
+        "batch_size": 8,
+        "num_negative": 8,
+        "lr": 0.0005,
+        "weight_decay": 0.0,
+        "eval_limit": 4
+      },
+      "local": {
+        "selected_round": {
+          "enterprise": 1,
+          "ics": 1
+        },
+        "validation_mrr": {
+          "enterprise": 0.2676432430744171,
+          "ics": 0.3631410300731659
+        },
+        "test": {
+          "enterprise": {
+            "mrr": 0.158198744058609,
+            "hits@1": 0.125,
+            "hits@3": 0.125,
+            "hits@10": 0.25,
+            "triples_evaluated": 4,
+            "ranking_queries": 8
+          },
+          "ics": {
+            "mrr": 0.6500000357627869,
+            "hits@1": 0.5,
+            "hits@3": 0.875,
+            "hits@10": 1.0,
+            "triples_evaluated": 4,
+            "ranking_queries": 8
+          }
+        }
+      },
+      "fedavg": {
+        "selected_round": 1,
+        "validation_mean_mrr": 0.30590933561325073,
+        "test": {
+          "enterprise": {
+            "mrr": 0.15858060121536255,
+            "hits@1": 0.125,
+            "hits@3": 0.125,
+            "hits@10": 0.25,
+            "triples_evaluated": 4,
+            "ranking_queries": 8
+          },
+          "ics": {
+            "mrr": 0.6499999761581421,
+            "hits@1": 0.5,
+            "hits@3": 0.625,
+            "hits@10": 1.0,
+            "triples_evaluated": 4,
+            "ranking_queries": 8
+          }
+        }
+      },
+      "delta_mrr_fedavg_minus_local": {
+        "enterprise": 0.00038185715675354004,
+        "ics": -5.960464477539063e-08
+      },
+      "mean_client_delta_mrr": 0.00019089877605438232,
+      "diagnostic_only": true
+    }
+  ],
+  "summary": {
+    "num_seeds": 1,
+    "seed_mean_client_delta_mrr": [
+      0.00019089877605438232
+    ],
+    "mean_mrr_delta": 0.00019089877605438232,
+    "paired_seed_level_95pct_t_ci": null,
+    "mean_delta_by_client": {
+      "enterprise": 0.00038185715675354004,
+      "ics": -5.960464477539063e-08
+    },
+    "acceptance_criteria": {
+      "minimum_mean_gain": 0.03,
+      "mean_gain_meets_threshold": false,
+      "ci_excludes_zero": false,
+      "positive_mean_gain": true,
+      "at_least_three_seeds": false,
+      "no_client_mean_regression_below_minus_0_02": true,
+      "substantial_regression_cutoff": -0.02
+    },
+    "diagnostic_only": true
+  }
+}

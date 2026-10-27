@@ -1,0 +1,424 @@
+{
+  "protocol": "pretrained ULTRA vs Enterprise-source-finetuned ULTRA on unbridged, entity-disjoint CAPEC/CWE/CVE target",
+  "checkpoint": "/Users/anishnagula/code/ultra-v2/ckpts/ultra_4g.pth",
+  "checkpoint_sha256": "48a046e708adf5632d87c30eacae01f5f51466b2301effdc2cb42358d22854e0",
+  "source_graph": "MITRE Enterprise ATT&CK v19.2, frozen source train/valid/test splits",
+  "target_graph_audit": {
+    "protocol": "pretrained ULTRA -> source-finetuned ULTRA on an unbridged, entity-disjoint CAPEC/CWE/CVE target KG",
+    "seed": 20261026,
+    "split_config": {
+      "method": "seeded greedy edge holdout preserving every entity in train",
+      "valid_fraction_requested": 0.1,
+      "test_fraction_requested": 0.1,
+      "prediction_relation": "has_weakness"
+    },
+    "cve_sampling": {
+      "method": "sort CVE IDs by SHA-256(f'{seed}\\0{CVE_ID}') and take first max_cves",
+      "seed": 20261026,
+      "max_cves": 20000,
+      "available_cves_in_base_graph": 179486,
+      "selected_cves": 20000,
+      "sampling_uses_model_or_test_metrics": false
+    },
+    "source": {
+      "split_dir": "/Users/anishnagula/code/ultra-v2/experiments/fedultra_fresh/data_processed/enterprise",
+      "entity_count_across_train_valid_test": 2495,
+      "split_sha256": {
+        "train.txt": "17e1886a693c052bc35ea8de5810fcced9a3d71355dc1fddfcb6dc1656750099",
+        "valid.txt": "4aae27c72cf89a48b8ee08798ac5c06690b208c95dcea754498b198943ce12d9",
+        "test.txt": "62d88c9921a12e37f3e2f7f5ec7010952c95ae8d293c77bd210123f472466720"
+      }
+    },
+    "inputs": {
+      "base_triples_path": "/Users/anishnagula/code/ultra-v2/data/processed/cyber_cti/triples.tsv",
+      "base_triples_sha256": "079cf94d67813ab20ed9054959048cc1ff9e5a0e486d931a295d903221bebbeb",
+      "base_triples_count": 624899
+    },
+    "cross_domain": {
+      "explicit_bridge_edges_added": 0,
+      "source_target_entity_overlap_count": 0,
+      "source_target_entity_overlap_examples": [],
+      "claim": "Unbridged cross-KG relational transfer; no identity or mapping links are asserted between source and target entities."
+    },
+    "graph": {
+      "target_triples": 73564,
+      "entity_count": 41378,
+      "entity_type_counts": {
+        "CAPEC": 558,
+        "CPE": 19861,
+        "CVE": 20000,
+        "CWE": 959
+      },
+      "relation_counts": {
+        "affects_product_configuration": 48263,
+        "capec_canalsobe": 3,
+        "capec_canfollow": 10,
+        "capec_canprecede": 162,
+        "capec_childof": 533,
+        "capec_peerof": 19,
+        "cwe_canalsobe": 27,
+        "cwe_canprecede": 143,
+        "cwe_childof": 1160,
+        "cwe_peerof": 98,
+        "cwe_requires": 13,
+        "cwe_startswith": 3,
+        "exploits_or_relates_to_weakness": 1212,
+        "has_weakness": 20706,
+        "related_attack_pattern": 1212
+      },
+      "has_weakness_edges_total": 20706,
+      "product_configuration_context_edges": 48263,
+      "train_entity_coverage_fraction": 1.0
+    },
+    "split": {
+      "target_relation_total": 20706,
+      "requested_valid_count": 2071,
+      "requested_test_count": 2071,
+      "actual_valid_count": 2071,
+      "actual_test_count": 2071,
+      "train_has_weakness_count": 16564,
+      "all_non_target_context_triples_kept_in_train": true,
+      "all_held_out_edges_are_has_weakness": true,
+      "all_valid_test_endpoints_present_in_train": true,
+      "all_target_entities_present_in_train": true,
+      "counts": {
+        "train": 69422,
+        "valid": 2071,
+        "test": 2071
+      },
+      "relation_counts": {
+        "train": {
+          "affects_product_configuration": 48263,
+          "capec_canalsobe": 3,
+          "capec_canfollow": 10,
+          "capec_canprecede": 162,
+          "capec_childof": 533,
+          "capec_peerof": 19,
+          "cwe_canalsobe": 27,
+          "cwe_canprecede": 143,
+          "cwe_childof": 1160,
+          "cwe_peerof": 98,
+          "cwe_requires": 13,
+          "cwe_startswith": 3,
+          "exploits_or_relates_to_weakness": 1212,
+          "has_weakness": 16564,
+          "related_attack_pattern": 1212
+        },
+        "valid": {
+          "has_weakness": 2071
+        },
+        "test": {
+          "has_weakness": 2071
+        }
+      },
+      "train_entities": 41378,
+      "target_entities": 41378
+    },
+    "metrics_and_scope": {
+      "primary_metric": "filtered target test MRR over head and tail corruption, all target entities as candidates",
+      "comparison": "pretrained zero-shot ULTRA vs Enterprise-source-finetuned ULTRA on identical target queries",
+      "acceptance_threshold_mean_delta_mrr": 0.03,
+      "required_95pct_ci": "entirely above zero",
+      "source_fine_tuning_uses_target_gradients": false,
+      "target_message_passing_uses_target_train_triples_only": true,
+      "target_validation_test_used_for_source_checkpoint_selection": false,
+      "only_has_weakness_edges_are_held_out": true,
+      "all_other_target_relations_are_training_context": true,
+      "target_graph_is_cve_sampled_for_computational_feasibility": true,
+      "interpretation_limit": "This tests transfer to a separate target KG without shared entity IDs or explicit semantic bridge edges; it does not directly test attack detection or prove broad transfer to all cybersecurity KGs."
+    },
+    "outputs": {
+      "target_graph_tsv": "/Users/anishnagula/code/ultra-v2/data/processed/cyber_transfer/target_graph.tsv",
+      "target_train": "/Users/anishnagula/code/ultra-v2/data/processed/cyber_transfer/target/train.txt",
+      "target_valid": "/Users/anishnagula/code/ultra-v2/data/processed/cyber_transfer/target/valid.txt",
+      "target_test": "/Users/anishnagula/code/ultra-v2/data/processed/cyber_transfer/target/test.txt",
+      "sha256": {
+        "target_graph_tsv": "b7564fc1c5d3790368ff60c6ada47b41e8e8a3d6ab92a262184c9a0486a9ec01",
+        "target_train": "25a2a74e460ce8730e64428c622d690bbac728497975ba48a9256b89b9fd357d",
+        "target_valid": "11213b7c6a1ce1fc28f401e80496746e77cf8c2e21415bcc49ff671890908e83",
+        "target_test": "105091510ed8ccd4ad1ed43afe67e387deab654cafbd5751d12f460e36b47c3e"
+      }
+    }
+  },
+  "message_passing": "source or target training triples only; all non-has_weakness target triples are context; no bridge edges",
+  "model_selection": "source Enterprise validation MRR only; target validation/test never select source checkpoint",
+  "primary_metric": "filtered target test MRR delta on held-out CVE has_weakness CWE triples, ranking heads and tails over all target entities",
+  "acceptance_threshold": 0.03,
+  "final_acceptance_requires": "mean delta-MRR >= 0.03 and both seed-level t CI and hierarchical paired-bootstrap 95% CI entirely above zero",
+  "results": [
+    {
+      "seed": 20261027,
+      "source": "enterprise",
+      "target": "target",
+      "config": {
+        "rounds": 1,
+        "local_steps_per_round": 1,
+        "updates_on_source": 1,
+        "batch_size": 8,
+        "num_negative": 64,
+        "lr": 0.0005,
+        "weight_decay": 0.0,
+        "eval_limit": 16
+      },
+      "selection": {
+        "best_source_validation_mrr": 0.19644463062286377,
+        "selected_source_round": 1,
+        "source_validation_history": [
+          {
+            "round": 0,
+            "source_validation_mrr": 0.17089512944221497
+          },
+          {
+            "round": 1,
+            "mean_training_loss": 0.6089840531349182,
+            "source_validation_mrr": 0.19644463062286377
+          }
+        ]
+      },
+      "zero_shot_target": {
+        "test": {
+          "mrr": 0.09730245918035507,
+          "hits@1": 0.0625,
+          "hits@3": 0.0625,
+          "hits@10": 0.1875,
+          "triples_evaluated": 16,
+          "ranking_queries": 32
+        }
+      },
+      "source_finetuned_transfer": {
+        "target_test": {
+          "mrr": 0.09292743355035782,
+          "hits@1": 0.0625,
+          "hits@3": 0.0625,
+          "hits@10": 0.15625,
+          "triples_evaluated": 16,
+          "ranking_queries": 32
+        }
+      },
+      "target_validation_scored": false,
+      "transfer_delta_mrr": -0.004375025629997253,
+      "zero_shot_target_test_by_relation": {
+        "has_weakness": {
+          "mrr": 0.09730245172977448,
+          "hits@1": 0.0625,
+          "hits@3": 0.0625,
+          "hits@10": 0.1875,
+          "triples_evaluated": 16,
+          "ranking_queries": 32
+        }
+      },
+      "transferred_target_test_by_relation": {
+        "has_weakness": {
+          "mrr": 0.09292743355035782,
+          "hits@1": 0.0625,
+          "hits@3": 0.0625,
+          "hits@10": 0.15625,
+          "triples_evaluated": 16,
+          "ranking_queries": 32
+        }
+      },
+      "per_relation_test_comparison": {
+        "has_weakness": {
+          "zero_shot": {
+            "mrr": 0.09730245172977448,
+            "hits@1": 0.0625,
+            "hits@3": 0.0625,
+            "hits@10": 0.1875,
+            "triples_evaluated": 16,
+            "ranking_queries": 32
+          },
+          "transferred": {
+            "mrr": 0.09292743355035782,
+            "hits@1": 0.0625,
+            "hits@3": 0.0625,
+            "hits@10": 0.15625,
+            "triples_evaluated": 16,
+            "ranking_queries": 32
+          },
+          "delta_mrr": -0.0043750181794166565
+        }
+      },
+      "per_query_test_comparison": [
+        {
+          "triple": [
+            "CVE:CVE-2020-0002",
+            "has_weakness",
+            "CWE:787"
+          ],
+          "zero_shot_mrr": 0.10059951990842819,
+          "transferred_mrr": 0.10059311985969543,
+          "delta_mrr": -6.400048732757568e-06
+        },
+        {
+          "triple": [
+            "CVE:CVE-2020-0048",
+            "has_weakness",
+            "CWE:908"
+          ],
+          "zero_shot_mrr": 0.005569524131715298,
+          "transferred_mrr": 0.005557766649872065,
+          "delta_mrr": -1.1757481843233109e-05
+        },
+        {
+          "triple": [
+            "CVE:CVE-2020-0058",
+            "has_weakness",
+            "CWE:125"
+          ],
+          "zero_shot_mrr": 0.0334552563726902,
+          "transferred_mrr": 0.029521558433771133,
+          "delta_mrr": -0.003933697938919067
+        },
+        {
+          "triple": [
+            "CVE:CVE-2020-0150",
+            "has_weakness",
+            "CWE:787"
+          ],
+          "zero_shot_mrr": 0.083433598279953,
+          "transferred_mrr": 0.07151886075735092,
+          "delta_mrr": -0.011914737522602081
+        },
+        {
+          "triple": [
+            "CVE:CVE-2020-0175",
+            "has_weakness",
+            "CWE:20"
+          ],
+          "zero_shot_mrr": 0.03869551420211792,
+          "transferred_mrr": 0.02967814728617668,
+          "delta_mrr": -0.009017366915941238
+        },
+        {
+          "triple": [
+            "CVE:CVE-2020-0190",
+            "has_weakness",
+            "CWE:787"
+          ],
+          "zero_shot_mrr": 0.083433598279953,
+          "transferred_mrr": 0.07151886075735092,
+          "delta_mrr": -0.011914737522602081
+        },
+        {
+          "triple": [
+            "CVE:CVE-2020-0300",
+            "has_weakness",
+            "CWE:908"
+          ],
+          "zero_shot_mrr": 0.0076148370280861855,
+          "transferred_mrr": 0.008375875651836395,
+          "delta_mrr": 0.0007610386237502098
+        },
+        {
+          "triple": [
+            "CVE:CVE-2020-0371",
+            "has_weakness",
+            "CWE:125"
+          ],
+          "zero_shot_mrr": 0.041986361145973206,
+          "transferred_mrr": 0.036006856709718704,
+          "delta_mrr": -0.005979504436254501
+        },
+        {
+          "triple": [
+            "CVE:CVE-2020-0404",
+            "has_weakness",
+            "CWE:269"
+          ],
+          "zero_shot_mrr": 0.0320577546954155,
+          "transferred_mrr": 0.028383104130625725,
+          "delta_mrr": -0.003674650564789772
+        },
+        {
+          "triple": [
+            "CVE:CVE-2020-0508",
+            "has_weakness",
+            "CWE:276"
+          ],
+          "zero_shot_mrr": 0.018548445776104927,
+          "transferred_mrr": 0.01854838989675045,
+          "delta_mrr": -5.587935447692871e-08
+        },
+        {
+          "triple": [
+            "CVE:CVE-2020-0529",
+            "has_weakness",
+            "CWE:665"
+          ],
+          "zero_shot_mrr": 0.0043357848189771175,
+          "transferred_mrr": 0.004300564993172884,
+          "delta_mrr": -3.521982580423355e-05
+        },
+        {
+          "triple": [
+            "CVE:CVE-2020-0569",
+            "has_weakness",
+            "CWE:787"
+          ],
+          "zero_shot_mrr": 0.0625271126627922,
+          "transferred_mrr": 0.03848924860358238,
+          "delta_mrr": -0.024037864059209824
+        },
+        {
+          "triple": [
+            "CVE:CVE-2020-0584",
+            "has_weakness",
+            "CWE:120"
+          ],
+          "zero_shot_mrr": 0.021766774356365204,
+          "transferred_mrr": 0.01925870217382908,
+          "delta_mrr": -0.002508072182536125
+        },
+        {
+          "triple": [
+            "CVE:CVE-2020-0700",
+            "has_weakness",
+            "CWE:79"
+          ],
+          "zero_shot_mrr": 0.5000324845314026,
+          "transferred_mrr": 0.5000324249267578,
+          "delta_mrr": -5.960464477539063e-08
+        },
+        {
+          "triple": [
+            "CVE:CVE-2020-0903",
+            "has_weakness",
+            "CWE:79"
+          ],
+          "zero_shot_mrr": 0.5000296831130981,
+          "transferred_mrr": 0.5000297427177429,
+          "delta_mrr": 5.960464477539063e-08
+        },
+        {
+          "triple": [
+            "CVE:CVE-2020-10056",
+            "has_weakness",
+            "CWE:269"
+          ],
+          "zero_shot_mrr": 0.022753091529011726,
+          "transferred_mrr": 0.02502569369971752,
+          "delta_mrr": 0.0022726021707057953
+        }
+      ],
+      "diagnostic_only": true
+    }
+  ],
+  "summary": {
+    "num_seeds": 1,
+    "per_seed_transfer_delta_mrr": [
+      -0.004375025629997253
+    ],
+    "mean_transfer_delta_mrr": -0.004375025629997253,
+    "paired_seed_level_95pct_t_ci": null,
+    "acceptance_criteria": {
+      "minimum_mean_transfer_gain": 0.03,
+      "mean_gain_meets_threshold": false,
+      "ci_supports_positive_gain": false,
+      "at_least_three_seeds": false,
+      "diagnostic_only": true,
+      "meets_full_success_criterion": false
+    },
+    "diagnostic_only": true
+  },
+  "diagnostic_only": true
+}

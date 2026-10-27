@@ -1,0 +1,187 @@
+{
+  "protocol": "pretrained ULTRA zero-shot vs source-finetuned cross-graph transfer",
+  "checkpoint": "/Users/anishnagula/code/ultra-v2/ckpts/ultra_4g.pth",
+  "source_code_commit": "427966ad8ed60420eef034063d44f3153addff90",
+  "message_passing": "target/source training triples only within each graph",
+  "model_selection": "source validation MRR only; target validation/test never select checkpoints",
+  "primary_metric": "target test MRR transfer delta = source-finetuned minus pretrained zero-shot",
+  "acceptance_threshold": 0.03,
+  "results": {
+    "enterprise_to_ics": [
+      {
+        "seed": 20261023,
+        "source": "enterprise",
+        "target": "ics",
+        "config": {
+          "rounds": 1,
+          "local_steps_per_round": 1,
+          "updates_on_source": 1,
+          "batch_size": 8,
+          "num_negative": 64,
+          "lr": 0.0005,
+          "weight_decay": 0.0,
+          "eval_limit": 8
+        },
+        "selection": {
+          "best_source_validation_mrr": 0.1936030089855194,
+          "selected_source_round": 1,
+          "source_validation_history": [
+            {
+              "round": 0,
+              "source_validation_mrr": 0.18879744410514832
+            },
+            {
+              "round": 1,
+              "mean_training_loss": 0.7464370727539062,
+              "source_validation_mrr": 0.1936030089855194
+            }
+          ]
+        },
+        "zero_shot_target": {
+          "validation": {
+            "mrr": 0.40327125787734985,
+            "hits@1": 0.1875,
+            "hits@3": 0.5,
+            "hits@10": 0.875,
+            "triples_evaluated": 8,
+            "ranking_queries": 16
+          },
+          "test": {
+            "mrr": 0.6579257249832153,
+            "hits@1": 0.5625,
+            "hits@3": 0.6875,
+            "hits@10": 0.9375,
+            "triples_evaluated": 8,
+            "ranking_queries": 16
+          }
+        },
+        "source_finetuned_transfer": {
+          "target_validation_diagnostic_only": {
+            "mrr": 0.4009157419204712,
+            "hits@1": 0.1875,
+            "hits@3": 0.5,
+            "hits@10": 0.875,
+            "triples_evaluated": 8,
+            "ranking_queries": 16
+          },
+          "target_test": {
+            "mrr": 0.6635416746139526,
+            "hits@1": 0.5625,
+            "hits@3": 0.625,
+            "hits@10": 0.9375,
+            "triples_evaluated": 8,
+            "ranking_queries": 16
+          }
+        },
+        "transfer_delta_mrr": 0.005615949630737305,
+        "diagnostic_only": true
+      }
+    ],
+    "ics_to_enterprise": [
+      {
+        "seed": 20261023,
+        "source": "ics",
+        "target": "enterprise",
+        "config": {
+          "rounds": 1,
+          "local_steps_per_round": 1,
+          "updates_on_source": 1,
+          "batch_size": 8,
+          "num_negative": 64,
+          "lr": 0.0005,
+          "weight_decay": 0.0,
+          "eval_limit": 8
+        },
+        "selection": {
+          "best_source_validation_mrr": 0.4109002947807312,
+          "selected_source_round": 1,
+          "source_validation_history": [
+            {
+              "round": 0,
+              "source_validation_mrr": 0.40327125787734985
+            },
+            {
+              "round": 1,
+              "mean_training_loss": 0.7489156126976013,
+              "source_validation_mrr": 0.4109002947807312
+            }
+          ]
+        },
+        "zero_shot_target": {
+          "validation": {
+            "mrr": 0.18879744410514832,
+            "hits@1": 0.0625,
+            "hits@3": 0.3125,
+            "hits@10": 0.375,
+            "triples_evaluated": 8,
+            "ranking_queries": 16
+          },
+          "test": {
+            "mrr": 0.1636124551296234,
+            "hits@1": 0.0625,
+            "hits@3": 0.1875,
+            "hits@10": 0.375,
+            "triples_evaluated": 8,
+            "ranking_queries": 16
+          }
+        },
+        "source_finetuned_transfer": {
+          "target_validation_diagnostic_only": {
+            "mrr": 0.18307319283485413,
+            "hits@1": 0.0625,
+            "hits@3": 0.3125,
+            "hits@10": 0.3125,
+            "triples_evaluated": 8,
+            "ranking_queries": 16
+          },
+          "target_test": {
+            "mrr": 0.16669096052646637,
+            "hits@1": 0.0625,
+            "hits@3": 0.25,
+            "hits@10": 0.375,
+            "triples_evaluated": 8,
+            "ranking_queries": 16
+          }
+        },
+        "transfer_delta_mrr": 0.0030785053968429565,
+        "diagnostic_only": true
+      }
+    ]
+  },
+  "summary": {
+    "enterprise_to_ics": {
+      "num_seeds": 1,
+      "per_seed_transfer_delta_mrr": [
+        0.005615949630737305
+      ],
+      "mean_transfer_delta_mrr": 0.005615949630737305,
+      "paired_seed_level_95pct_t_ci": null,
+      "acceptance_criteria": {
+        "minimum_mean_transfer_gain": 0.03,
+        "mean_gain_meets_threshold": false,
+        "ci_excludes_zero": false,
+        "ci_supports_positive_gain": false,
+        "positive_mean_gain": true,
+        "at_least_three_seeds": false
+      },
+      "diagnostic_only": true
+    },
+    "ics_to_enterprise": {
+      "num_seeds": 1,
+      "per_seed_transfer_delta_mrr": [
+        0.0030785053968429565
+      ],
+      "mean_transfer_delta_mrr": 0.0030785053968429565,
+      "paired_seed_level_95pct_t_ci": null,
+      "acceptance_criteria": {
+        "minimum_mean_transfer_gain": 0.03,
+        "mean_gain_meets_threshold": false,
+        "ci_excludes_zero": false,
+        "ci_supports_positive_gain": false,
+        "positive_mean_gain": true,
+        "at_least_three_seeds": false
+      },
+      "diagnostic_only": true
+    }
+  }
+}

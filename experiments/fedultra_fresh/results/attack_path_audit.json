@@ -1,0 +1,1469 @@
+{
+  "protocol": "alternate path audit for held-out attack-pattern-related triples",
+  "max_hops": 4,
+  "graphs": [
+    {
+      "graph": "enterprise",
+      "max_hops": 4,
+      "splits": {
+        "valid": {
+          "attack_pattern_queries": 1908,
+          "path_supported_queries": 1903,
+          "path_support_fraction": 0.9973794549266247,
+          "unsupported_queries": 5,
+          "exact_fact_overlap_with_train": 0,
+          "shortest_alternate_path_length_counts": {
+            "2": 614,
+            "3": 1285,
+            "4": 4
+          },
+          "query_relation_counts": {
+            "uses": 1716,
+            "mitigates": 145,
+            "subtechnique-of": 47
+          },
+          "query_endpoint_type_counts": {
+            "malware -> attack-pattern": 1037,
+            "intrusion-set -> attack-pattern": 452,
+            "course-of-action -> attack-pattern": 145,
+            "campaign -> attack-pattern": 131,
+            "tool -> attack-pattern": 96,
+            "attack-pattern -> attack-pattern": 47
+          },
+          "most_common_representative_shortest_path_signatures": [
+            {
+              "signature": "uses -> uses^-1 -> uses",
+              "count": 1026
+            },
+            {
+              "signature": "uses^-1 -> uses",
+              "count": 249
+            },
+            {
+              "signature": "uses -> uses",
+              "count": 162
+            },
+            {
+              "signature": "uses -> mitigates^-1 -> mitigates",
+              "count": 122
+            },
+            {
+              "signature": "mitigates -> subtechnique-of^-1",
+              "count": 59
+            },
+            {
+              "signature": "uses -> subtechnique-of -> subtechnique-of^-1",
+              "count": 56
+            },
+            {
+              "signature": "uses -> subtechnique-of^-1",
+              "count": 42
+            },
+            {
+              "signature": "mitigates -> mitigates^-1 -> mitigates",
+              "count": 33
+            },
+            {
+              "signature": "mitigates^-1 -> mitigates",
+              "count": 29
+            },
+            {
+              "signature": "uses -> subtechnique-of",
+              "count": 29
+            },
+            {
+              "signature": "mitigates -> uses^-1 -> uses",
+              "count": 23
+            },
+            {
+              "signature": "mitigates -> subtechnique-of",
+              "count": 21
+            },
+            {
+              "signature": "attributed-to^-1 -> uses",
+              "count": 12
+            },
+            {
+              "signature": "attributed-to -> uses",
+              "count": 11
+            },
+            {
+              "signature": "mitigates -> subtechnique-of -> subtechnique-of^-1",
+              "count": 9
+            },
+            {
+              "signature": "mitigates^-1 -> mitigates -> subtechnique-of",
+              "count": 5
+            },
+            {
+              "signature": "uses^-1 -> uses -> subtechnique-of",
+              "count": 5
+            },
+            {
+              "signature": "uses^-1 -> uses -> uses^-1 -> uses",
+              "count": 2
+            },
+            {
+              "signature": "uses -> uses -> subtechnique-of^-1",
+              "count": 2
+            },
+            {
+              "signature": "attributed-to -> uses -> subtechnique-of^-1",
+              "count": 1
+            },
+            {
+              "signature": "uses -> uses -> subtechnique-of",
+              "count": 1
+            },
+            {
+              "signature": "uses -> uses -> uses^-1 -> uses",
+              "count": 1
+            },
+            {
+              "signature": "uses -> uses^-1 -> uses -> subtechnique-of^-1",
+              "count": 1
+            },
+            {
+              "signature": "uses^-1 -> uses -> subtechnique-of^-1",
+              "count": 1
+            },
+            {
+              "signature": "uses^-1 -> uses -> uses",
+              "count": 1
+            }
+          ],
+          "example_supported_queries": [
+            {
+              "query": [
+                "attack-pattern--005cc321-08ce-4d17-b1ea-cb5275926520",
+                "subtechnique-of",
+                "attack-pattern--451a9977-d255-43c9-b431-66de80130c8c"
+              ],
+              "query_endpoint_types": [
+                "attack-pattern",
+                "attack-pattern"
+              ],
+              "path_length": 3,
+              "path_signature": "mitigates^-1 -> mitigates -> subtechnique-of",
+              "path_nodes": [
+                "attack-pattern--005cc321-08ce-4d17-b1ea-cb5275926520",
+                "course-of-action--20f6a9df-37c4-4e20-9e47-025983b1b39d",
+                "attack-pattern--8868cb5b-d575-4a60-acb2-07d37389a2fd",
+                "attack-pattern--451a9977-d255-43c9-b431-66de80130c8c"
+              ]
+            },
+            {
+              "query": [
+                "attack-pattern--00f90846-cbd1-4fc5-9233-df5c2bf2a662",
+                "subtechnique-of",
+                "attack-pattern--53ac20cd-aca3-406e-9aa0-9fc7fdc60a5a"
+              ],
+              "query_endpoint_types": [
+                "attack-pattern",
+                "attack-pattern"
+              ],
+              "path_length": 2,
+              "path_signature": "mitigates^-1 -> mitigates",
+              "path_nodes": [
+                "attack-pattern--00f90846-cbd1-4fc5-9233-df5c2bf2a662",
+                "course-of-action--cc2399fd-3cd3-4319-8d0a-fbd6420cdaf8",
+                "attack-pattern--53ac20cd-aca3-406e-9aa0-9fc7fdc60a5a"
+              ]
+            },
+            {
+              "query": [
+                "attack-pattern--0533ab23-3f7d-463f-9bd8-634d27e4dee1",
+                "subtechnique-of",
+                "attack-pattern--b3d682b6-98f2-4fb0-aa3b-b4df007ca70a"
+              ],
+              "query_endpoint_types": [
+                "attack-pattern",
+                "attack-pattern"
+              ],
+              "path_length": 2,
+              "path_signature": "uses^-1 -> uses",
+              "path_nodes": [
+                "attack-pattern--0533ab23-3f7d-463f-9bd8-634d27e4dee1",
+                "campaign--4fd53ccc-c6b1-4e3c-abe8-a456d46d789e",
+                "attack-pattern--b3d682b6-98f2-4fb0-aa3b-b4df007ca70a"
+              ]
+            },
+            {
+              "query": [
+                "attack-pattern--0cfe31a7-81fc-472c-bc45-e2808d1066a3",
+                "subtechnique-of",
+                "attack-pattern--5909f20f-3c39-4795-be06-ef1ea40d350b"
+              ],
+              "query_endpoint_types": [
+                "attack-pattern",
+                "attack-pattern"
+              ],
+              "path_length": 2,
+              "path_signature": "mitigates^-1 -> mitigates",
+              "path_nodes": [
+                "attack-pattern--0cfe31a7-81fc-472c-bc45-e2808d1066a3",
+                "course-of-action--3efe43d1-6f3f-4fcb-ab39-4a730971f70b",
+                "attack-pattern--5909f20f-3c39-4795-be06-ef1ea40d350b"
+              ]
+            },
+            {
+              "query": [
+                "attack-pattern--10ff21b9-5a01-4268-a1b5-3b55015f1847",
+                "subtechnique-of",
+                "attack-pattern--b6301b64-ef57-4cce-bb0b-77026f14a8db"
+              ],
+              "query_endpoint_types": [
+                "attack-pattern",
+                "attack-pattern"
+              ],
+              "path_length": 3,
+              "path_signature": "mitigates^-1 -> mitigates -> subtechnique-of",
+              "path_nodes": [
+                "attack-pattern--10ff21b9-5a01-4268-a1b5-3b55015f1847",
+                "course-of-action--47e0e9fe-96ce-4f65-8bb1-8be1feacb5db",
+                "attack-pattern--70e52b04-2a0c-4cea-9d18-7149f1df9dc5",
+                "attack-pattern--b6301b64-ef57-4cce-bb0b-77026f14a8db"
+              ]
+            },
+            {
+              "query": [
+                "attack-pattern--155207c0-7f53-4f13-a06b-0a9907ef5096",
+                "subtechnique-of",
+                "attack-pattern--0458aab9-ad42-4eac-9e22-706a95bafee2"
+              ],
+              "query_endpoint_types": [
+                "attack-pattern",
+                "attack-pattern"
+              ],
+              "path_length": 3,
+              "path_signature": "mitigates^-1 -> mitigates -> subtechnique-of",
+              "path_nodes": [
+                "attack-pattern--155207c0-7f53-4f13-a06b-0a9907ef5096",
+                "course-of-action--78bb71be-92b4-46de-acd6-5f998fedf1cc",
+                "attack-pattern--197ef1b9-e764-46c3-b96c-23f77985dc81",
+                "attack-pattern--0458aab9-ad42-4eac-9e22-706a95bafee2"
+              ]
+            },
+            {
+              "query": [
+                "attack-pattern--232b7f21-adf9-4b42-b936-b9d6f7df856e",
+                "subtechnique-of",
+                "attack-pattern--8c32eb4d-805f-4fc5-bf60-c4d476c131b5"
+              ],
+              "query_endpoint_types": [
+                "attack-pattern",
+                "attack-pattern"
+              ],
+              "path_length": 2,
+              "path_signature": "mitigates^-1 -> mitigates",
+              "path_nodes": [
+                "attack-pattern--232b7f21-adf9-4b42-b936-b9d6f7df856e",
+                "course-of-action--2a4f6c11-a4a7-4cb9-b0ef-6ae1bb3a718a",
+                "attack-pattern--8c32eb4d-805f-4fc5-bf60-c4d476c131b5"
+              ]
+            },
+            {
+              "query": [
+                "attack-pattern--24286c33-d4a4-4419-85c2-1d094a896c26",
+                "subtechnique-of",
+                "attack-pattern--09312b1a-c3c6-4b45-9844-3ccc78e5d82f"
+              ],
+              "query_endpoint_types": [
+                "attack-pattern",
+                "attack-pattern"
+              ],
+              "path_length": 3,
+              "path_signature": "mitigates^-1 -> mitigates -> subtechnique-of",
+              "path_nodes": [
+                "attack-pattern--24286c33-d4a4-4419-85c2-1d094a896c26",
+                "course-of-action--78bb71be-92b4-46de-acd6-5f998fedf1cc",
+                "attack-pattern--774ad5bb-2366-4c13-a8a9-65e50b292e7c",
+                "attack-pattern--09312b1a-c3c6-4b45-9844-3ccc78e5d82f"
+              ]
+            },
+            {
+              "query": [
+                "attack-pattern--248d3fe1-7fe1-4d71-91c7-8bb7ef35cad3",
+                "subtechnique-of",
+                "attack-pattern--d28ef391-8ed4-45dc-bc4a-2f43abf54416"
+              ],
+              "query_endpoint_types": [
+                "attack-pattern",
+                "attack-pattern"
+              ],
+              "path_length": 2,
+              "path_signature": "mitigates^-1 -> mitigates",
+              "path_nodes": [
+                "attack-pattern--248d3fe1-7fe1-4d71-91c7-8bb7ef35cad3",
+                "course-of-action--93e7968a-9074-4eac-8ae9-9f5200ec3317",
+                "attack-pattern--d28ef391-8ed4-45dc-bc4a-2f43abf54416"
+              ]
+            },
+            {
+              "query": [
+                "attack-pattern--291ede6c-1473-454c-b614-5ac5ea63c987",
+                "subtechnique-of",
+                "attack-pattern--eec096b8-c207-43df-b6c1-11523861e452"
+              ],
+              "query_endpoint_types": [
+                "attack-pattern",
+                "attack-pattern"
+              ],
+              "path_length": 2,
+              "path_signature": "mitigates^-1 -> mitigates",
+              "path_nodes": [
+                "attack-pattern--291ede6c-1473-454c-b614-5ac5ea63c987",
+                "course-of-action--987988f0-cf86-4680-a875-2f6456ab2448",
+                "attack-pattern--eec096b8-c207-43df-b6c1-11523861e452"
+              ]
+            },
+            {
+              "query": [
+                "attack-pattern--29ba5a15-3b7b-4732-b817-65ea8f6468e6",
+                "subtechnique-of",
+                "attack-pattern--7bd9c723-2f78-4309-82c5-47cad406572b"
+              ],
+              "query_endpoint_types": [
+                "attack-pattern",
+                "attack-pattern"
+              ],
+              "path_length": 2,
+              "path_signature": "uses^-1 -> uses",
+              "path_nodes": [
+                "attack-pattern--29ba5a15-3b7b-4732-b817-65ea8f6468e6",
+                "intrusion-set--2e290bfe-93b5-48ce-97d6-edcd6d32b7cf",
+                "attack-pattern--7bd9c723-2f78-4309-82c5-47cad406572b"
+              ]
+            },
+            {
+              "query": [
+                "attack-pattern--2bee5ffb-7a7a-4119-b1f2-158151b19ac0",
+                "subtechnique-of",
+                "attack-pattern--c675646d-e204-4aa8-978d-e3d6d65885c4"
+              ],
+              "query_endpoint_types": [
+                "attack-pattern",
+                "attack-pattern"
+              ],
+              "path_length": 2,
+              "path_signature": "mitigates^-1 -> mitigates",
+              "path_nodes": [
+                "attack-pattern--2bee5ffb-7a7a-4119-b1f2-158151b19ac0",
+                "course-of-action--20f6a9df-37c4-4e20-9e47-025983b1b39d",
+                "attack-pattern--c675646d-e204-4aa8-978d-e3d6d65885c4"
+              ]
+            }
+          ],
+          "example_unsupported_queries": [
+            {
+              "query": [
+                "attack-pattern--4a6cfdae-1417-40c7-a84e-f59d21c58266",
+                "subtechnique-of",
+                "attack-pattern--e3b6daca-e963-4a69-aee6-ed4fd653ad58"
+              ],
+              "query_endpoint_types": [
+                "attack-pattern",
+                "attack-pattern"
+              ]
+            },
+            {
+              "query": [
+                "attack-pattern--718cb208-6446-4572-a2f0-9c799c60091e",
+                "subtechnique-of",
+                "attack-pattern--cd25c1b4-935c-4f0e-ba8d-552f28bc4783"
+              ],
+              "query_endpoint_types": [
+                "attack-pattern",
+                "attack-pattern"
+              ]
+            },
+            {
+              "query": [
+                "intrusion-set--00f67a77-86a4-4adf-be26-1a54fc713340",
+                "uses",
+                "attack-pattern--e51137a5-1cdc-499e-911a-abaedaa5ac86"
+              ],
+              "query_endpoint_types": [
+                "intrusion-set",
+                "attack-pattern"
+              ]
+            },
+            {
+              "query": [
+                "intrusion-set--dd2d9ca6-505b-4860-a604-233685b802c7",
+                "uses",
+                "attack-pattern--4a6cfdae-1417-40c7-a84e-f59d21c58266"
+              ],
+              "query_endpoint_types": [
+                "intrusion-set",
+                "attack-pattern"
+              ]
+            },
+            {
+              "query": [
+                "malware--8d1f89fd-4dde-40ab-80e0-a7b80249162e",
+                "uses",
+                "attack-pattern--34a80bc4-80f2-46e6-94ff-f3265a4b657c"
+              ],
+              "query_endpoint_types": [
+                "malware",
+                "attack-pattern"
+              ]
+            }
+          ],
+          "note": "One deterministic representative shortest path per query; signatures are diagnostic, not exhaustive enumeration of all paths."
+        },
+        "test": {
+          "attack_pattern_queries": 1895,
+          "path_supported_queries": 1894,
+          "path_support_fraction": 0.9994722955145119,
+          "unsupported_queries": 1,
+          "exact_fact_overlap_with_train": 0,
+          "shortest_alternate_path_length_counts": {
+            "2": 621,
+            "3": 1267,
+            "4": 6
+          },
+          "query_relation_counts": {
+            "uses": 1702,
+            "mitigates": 145,
+            "subtechnique-of": 48
+          },
+          "query_endpoint_type_counts": {
+            "malware -> attack-pattern": 1030,
+            "intrusion-set -> attack-pattern": 490,
+            "course-of-action -> attack-pattern": 145,
+            "tool -> attack-pattern": 94,
+            "campaign -> attack-pattern": 88,
+            "attack-pattern -> attack-pattern": 48
+          },
+          "most_common_representative_shortest_path_signatures": [
+            {
+              "signature": "uses -> uses^-1 -> uses",
+              "count": 1017
+            },
+            {
+              "signature": "uses^-1 -> uses",
+              "count": 247
+            },
+            {
+              "signature": "uses -> uses",
+              "count": 171
+            },
+            {
+              "signature": "uses -> mitigates^-1 -> mitigates",
+              "count": 105
+            },
+            {
+              "signature": "uses -> subtechnique-of -> subtechnique-of^-1",
+              "count": 54
+            },
+            {
+              "signature": "mitigates -> subtechnique-of^-1",
+              "count": 47
+            },
+            {
+              "signature": "uses -> subtechnique-of^-1",
+              "count": 45
+            },
+            {
+              "signature": "mitigates -> mitigates^-1 -> mitigates",
+              "count": 35
+            },
+            {
+              "signature": "uses -> subtechnique-of",
+              "count": 34
+            },
+            {
+              "signature": "mitigates^-1 -> mitigates",
+              "count": 28
+            },
+            {
+              "signature": "mitigates -> subtechnique-of",
+              "count": 27
+            },
+            {
+              "signature": "mitigates -> uses^-1 -> uses",
+              "count": 26
+            },
+            {
+              "signature": "attributed-to^-1 -> uses",
+              "count": 12
+            },
+            {
+              "signature": "attributed-to -> uses",
+              "count": 10
+            },
+            {
+              "signature": "mitigates -> subtechnique-of -> subtechnique-of^-1",
+              "count": 9
+            },
+            {
+              "signature": "uses^-1 -> uses -> subtechnique-of",
+              "count": 7
+            },
+            {
+              "signature": "mitigates^-1 -> mitigates -> subtechnique-of",
+              "count": 5
+            },
+            {
+              "signature": "uses -> uses -> subtechnique-of^-1",
+              "count": 5
+            },
+            {
+              "signature": "uses^-1 -> uses -> uses^-1 -> uses",
+              "count": 2
+            },
+            {
+              "signature": "uses -> uses -> subtechnique-of",
+              "count": 2
+            },
+            {
+              "signature": "attributed-to^-1 -> uses -> subtechnique-of^-1",
+              "count": 1
+            },
+            {
+              "signature": "uses -> uses -> uses^-1 -> uses",
+              "count": 1
+            },
+            {
+              "signature": "uses -> uses^-1 -> uses -> subtechnique-of^-1",
+              "count": 1
+            },
+            {
+              "signature": "uses^-1 -> uses -> subtechnique-of^-1",
+              "count": 1
+            },
+            {
+              "signature": "uses^-1 -> uses -> subtechnique-of -> subtechnique-of^-1",
+              "count": 1
+            }
+          ],
+          "example_supported_queries": [
+            {
+              "query": [
+                "attack-pattern--04a5a8ab-3bc8-4c83-95c9-55274a89786d",
+                "subtechnique-of",
+                "attack-pattern--0458aab9-ad42-4eac-9e22-706a95bafee2"
+              ],
+              "query_endpoint_types": [
+                "attack-pattern",
+                "attack-pattern"
+              ],
+              "path_length": 3,
+              "path_signature": "mitigates^-1 -> mitigates -> subtechnique-of",
+              "path_nodes": [
+                "attack-pattern--04a5a8ab-3bc8-4c83-95c9-55274a89786d",
+                "course-of-action--78bb71be-92b4-46de-acd6-5f998fedf1cc",
+                "attack-pattern--197ef1b9-e764-46c3-b96c-23f77985dc81",
+                "attack-pattern--0458aab9-ad42-4eac-9e22-706a95bafee2"
+              ]
+            },
+            {
+              "query": [
+                "attack-pattern--09c4c11e-4fa1-4f8c-8dad-3cf8e69ad119",
+                "subtechnique-of",
+                "attack-pattern--a93494bb-4b80-4ea1-8695-3236a49916fd"
+              ],
+              "query_endpoint_types": [
+                "attack-pattern",
+                "attack-pattern"
+              ],
+              "path_length": 2,
+              "path_signature": "mitigates^-1 -> mitigates",
+              "path_nodes": [
+                "attack-pattern--09c4c11e-4fa1-4f8c-8dad-3cf8e69ad119",
+                "course-of-action--90c218c3-fbf8-4830-98a7-e8cfb7eaa485",
+                "attack-pattern--a93494bb-4b80-4ea1-8695-3236a49916fd"
+              ]
+            },
+            {
+              "query": [
+                "attack-pattern--0f2c410d-d740-4ed9-abb1-b8f4a7faf6c3",
+                "subtechnique-of",
+                "attack-pattern--b6301b64-ef57-4cce-bb0b-77026f14a8db"
+              ],
+              "query_endpoint_types": [
+                "attack-pattern",
+                "attack-pattern"
+              ],
+              "path_length": 3,
+              "path_signature": "mitigates^-1 -> mitigates -> subtechnique-of",
+              "path_nodes": [
+                "attack-pattern--0f2c410d-d740-4ed9-abb1-b8f4a7faf6c3",
+                "course-of-action--987988f0-cf86-4680-a875-2f6456ab2448",
+                "attack-pattern--b63a34e8-0a61-4c97-a23b-bf8a2ed812e2",
+                "attack-pattern--b6301b64-ef57-4cce-bb0b-77026f14a8db"
+              ]
+            },
+            {
+              "query": [
+                "attack-pattern--132d5b37-aac5-4378-a8dc-3127b18a73dc",
+                "subtechnique-of",
+                "attack-pattern--707399d6-ab3e-4963-9315-d9d3818cd6a0"
+              ],
+              "query_endpoint_types": [
+                "attack-pattern",
+                "attack-pattern"
+              ],
+              "path_length": 2,
+              "path_signature": "uses^-1 -> uses",
+              "path_nodes": [
+                "attack-pattern--132d5b37-aac5-4378-a8dc-3127b18a73dc",
+                "intrusion-set--2688b13e-8e71-405a-9c40-0dee94bddf87",
+                "attack-pattern--707399d6-ab3e-4963-9315-d9d3818cd6a0"
+              ]
+            },
+            {
+              "query": [
+                "attack-pattern--166de1c6-2814-4fe5-8438-4e80f76b169f",
+                "subtechnique-of",
+                "attack-pattern--55fc4df0-b42c-479a-b860-7a6761bcaad0"
+              ],
+              "query_endpoint_types": [
+                "attack-pattern",
+                "attack-pattern"
+              ],
+              "path_length": 2,
+              "path_signature": "mitigates^-1 -> mitigates",
+              "path_nodes": [
+                "attack-pattern--166de1c6-2814-4fe5-8438-4e80f76b169f",
+                "course-of-action--78bb71be-92b4-46de-acd6-5f998fedf1cc",
+                "attack-pattern--55fc4df0-b42c-479a-b860-7a6761bcaad0"
+              ]
+            },
+            {
+              "query": [
+                "attack-pattern--17cc750b-e95b-4d7d-9dde-49e0de24148c",
+                "subtechnique-of",
+                "attack-pattern--aedfca76-3b30-4866-b2aa-0f1d7fd1e4b6"
+              ],
+              "query_endpoint_types": [
+                "attack-pattern",
+                "attack-pattern"
+              ],
+              "path_length": 2,
+              "path_signature": "mitigates^-1 -> mitigates",
+              "path_nodes": [
+                "attack-pattern--17cc750b-e95b-4d7d-9dde-49e0de24148c",
+                "course-of-action--a2c36a5d-4058-475e-8e77-fff75e50d3b9",
+                "attack-pattern--aedfca76-3b30-4866-b2aa-0f1d7fd1e4b6"
+              ]
+            },
+            {
+              "query": [
+                "attack-pattern--1cec9319-743b-4840-bb65-431547bce82a",
+                "subtechnique-of",
+                "attack-pattern--edadea33-549c-4ed1-9783-8f5a5853cbdf"
+              ],
+              "query_endpoint_types": [
+                "attack-pattern",
+                "attack-pattern"
+              ],
+              "path_length": 3,
+              "path_signature": "uses^-1 -> uses -> subtechnique-of",
+              "path_nodes": [
+                "attack-pattern--1cec9319-743b-4840-bb65-431547bce82a",
+                "campaign--a543ef15-91ea-4aa9-9c10-267d56e1ee82",
+                "attack-pattern--212306d8-efa4-44c9-8c2d-ed3d2e224aa0",
+                "attack-pattern--edadea33-549c-4ed1-9783-8f5a5853cbdf"
+              ]
+            },
+            {
+              "query": [
+                "attack-pattern--29be378d-262d-4e99-b00d-852d573628e6",
+                "subtechnique-of",
+                "attack-pattern--82caa33e-d11a-433a-94ea-9b5a5fbef81d"
+              ],
+              "query_endpoint_types": [
+                "attack-pattern",
+                "attack-pattern"
+              ],
+              "path_length": 2,
+              "path_signature": "uses^-1 -> uses",
+              "path_nodes": [
+                "attack-pattern--29be378d-262d-4e99-b00d-852d573628e6",
+                "intrusion-set--9e729a7e-0dd6-4097-95bf-db8d64911383",
+                "attack-pattern--82caa33e-d11a-433a-94ea-9b5a5fbef81d"
+              ]
+            },
+            {
+              "query": [
+                "attack-pattern--2de47683-f398-448f-b947-9abcc3e32fad",
+                "subtechnique-of",
+                "attack-pattern--1ecb2399-e8ba-4f6b-8ba7-5c27d49405cf"
+              ],
+              "query_endpoint_types": [
+                "attack-pattern",
+                "attack-pattern"
+              ],
+              "path_length": 3,
+              "path_signature": "mitigates^-1 -> mitigates -> subtechnique-of",
+              "path_nodes": [
+                "attack-pattern--2de47683-f398-448f-b947-9abcc3e32fad",
+                "course-of-action--93e7968a-9074-4eac-8ae9-9f5200ec3317",
+                "attack-pattern--4ab929c6-ee2d-4fb5-aab4-b14be2ed7179",
+                "attack-pattern--1ecb2399-e8ba-4f6b-8ba7-5c27d49405cf"
+              ]
+            },
+            {
+              "query": [
+                "attack-pattern--34a80bc4-80f2-46e6-94ff-f3265a4b657c",
+                "subtechnique-of",
+                "attack-pattern--42e8de7b-37b2-4258-905a-6897815e58e0"
+              ],
+              "query_endpoint_types": [
+                "attack-pattern",
+                "attack-pattern"
+              ],
+              "path_length": 3,
+              "path_signature": "uses^-1 -> uses -> subtechnique-of",
+              "path_nodes": [
+                "attack-pattern--34a80bc4-80f2-46e6-94ff-f3265a4b657c",
+                "malware--de376fb9-1093-4f59-8d13-aed61042701d",
+                "attack-pattern--1c4e5d32-1fe9-4116-9d9d-59e3925bd6a2",
+                "attack-pattern--42e8de7b-37b2-4258-905a-6897815e58e0"
+              ]
+            },
+            {
+              "query": [
+                "attack-pattern--34ab90a3-05f6-4259-8f21-621081fdaba5",
+                "subtechnique-of",
+                "attack-pattern--9d48cab2-7929-4812-ad22-f536665f0109"
+              ],
+              "query_endpoint_types": [
+                "attack-pattern",
+                "attack-pattern"
+              ],
+              "path_length": 2,
+              "path_signature": "uses^-1 -> uses",
+              "path_nodes": [
+                "attack-pattern--34ab90a3-05f6-4259-8f21-621081fdaba5",
+                "intrusion-set--174279b4-399f-4ddb-966e-5efedd1dd5f2",
+                "attack-pattern--9d48cab2-7929-4812-ad22-f536665f0109"
+              ]
+            },
+            {
+              "query": [
+                "attack-pattern--34f1d81d-fe88-4f97-bd3b-a3164536255d",
+                "subtechnique-of",
+                "attack-pattern--2c4d4e92-0ccf-4a97-b54c-86d662988a53"
+              ],
+              "query_endpoint_types": [
+                "attack-pattern",
+                "attack-pattern"
+              ],
+              "path_length": 2,
+              "path_signature": "mitigates^-1 -> mitigates",
+              "path_nodes": [
+                "attack-pattern--34f1d81d-fe88-4f97-bd3b-a3164536255d",
+                "course-of-action--90f39ee1-d5a3-4aaa-9f28-3b42815b0d46",
+                "attack-pattern--2c4d4e92-0ccf-4a97-b54c-86d662988a53"
+              ]
+            }
+          ],
+          "example_unsupported_queries": [
+            {
+              "query": [
+                "course-of-action--a2c36a5d-4058-475e-8e77-fff75e50d3b9",
+                "mitigates",
+                "attack-pattern--eb125d40-0b2d-41ac-a71a-3229241c2cd3"
+              ],
+              "query_endpoint_types": [
+                "course-of-action",
+                "attack-pattern"
+              ]
+            }
+          ],
+          "note": "One deterministic representative shortest path per query; signatures are diagnostic, not exhaustive enumeration of all paths."
+        }
+      }
+    },
+    {
+      "graph": "ics",
+      "max_hops": 4,
+      "splits": {
+        "valid": {
+          "attack_pattern_queries": 150,
+          "path_supported_queries": 150,
+          "path_support_fraction": 1.0,
+          "unsupported_queries": 0,
+          "exact_fact_overlap_with_train": 0,
+          "shortest_alternate_path_length_counts": {
+            "2": 27,
+            "3": 123
+          },
+          "query_relation_counts": {
+            "targets": 84,
+            "mitigates": 37,
+            "uses": 27,
+            "subtechnique-of": 2
+          },
+          "query_endpoint_type_counts": {
+            "attack-pattern -> x-mitre-asset": 84,
+            "course-of-action -> attack-pattern": 37,
+            "malware -> attack-pattern": 16,
+            "campaign -> attack-pattern": 8,
+            "intrusion-set -> attack-pattern": 3,
+            "attack-pattern -> attack-pattern": 2
+          },
+          "most_common_representative_shortest_path_signatures": [
+            {
+              "signature": "uses^-1 -> uses -> targets",
+              "count": 33
+            },
+            {
+              "signature": "mitigates^-1 -> mitigates -> targets",
+              "count": 28
+            },
+            {
+              "signature": "mitigates -> mitigates^-1 -> mitigates",
+              "count": 17
+            },
+            {
+              "signature": "uses -> mitigates^-1 -> mitigates",
+              "count": 13
+            },
+            {
+              "signature": "subtechnique-of -> targets",
+              "count": 10
+            },
+            {
+              "signature": "uses -> uses^-1 -> uses",
+              "count": 9
+            },
+            {
+              "signature": "mitigates -> subtechnique-of^-1",
+              "count": 7
+            },
+            {
+              "signature": "subtechnique-of^-1 -> targets",
+              "count": 6
+            },
+            {
+              "signature": "mitigates -> targets -> targets^-1",
+              "count": 6
+            },
+            {
+              "signature": "uses -> targets -> targets^-1",
+              "count": 5
+            },
+            {
+              "signature": "mitigates -> uses^-1 -> uses",
+              "count": 5
+            },
+            {
+              "signature": "subtechnique-of -> subtechnique-of^-1 -> targets",
+              "count": 4
+            },
+            {
+              "signature": "targets -> targets^-1 -> targets",
+              "count": 3
+            },
+            {
+              "signature": "mitigates -> subtechnique-of",
+              "count": 2
+            },
+            {
+              "signature": "targets -> targets^-1",
+              "count": 1
+            },
+            {
+              "signature": "mitigates^-1 -> mitigates",
+              "count": 1
+            }
+          ],
+          "example_supported_queries": [
+            {
+              "query": [
+                "attack-pattern--063b5b92-5361-481a-9c3f-95492ed9a2d8",
+                "targets",
+                "x-mitre-asset--bb553fda-8355-40bc-87c6-5ae25124fa95"
+              ],
+              "query_endpoint_types": [
+                "attack-pattern",
+                "x-mitre-asset"
+              ],
+              "path_length": 3,
+              "path_signature": "mitigates^-1 -> mitigates -> targets",
+              "path_nodes": [
+                "attack-pattern--063b5b92-5361-481a-9c3f-95492ed9a2d8",
+                "course-of-action--1e7ccfc0-94c8-496e-8d27-032120892291",
+                "attack-pattern--25dfc8ad-bd73-4dfd-84a9-3c3d383f76e9",
+                "x-mitre-asset--bb553fda-8355-40bc-87c6-5ae25124fa95"
+              ]
+            },
+            {
+              "query": [
+                "attack-pattern--09a61657-46e1-439e-b3ed-3e4556a78243",
+                "targets",
+                "x-mitre-asset--69d1b1ef-e918-4cfd-9a98-29debd04cb32"
+              ],
+              "query_endpoint_types": [
+                "attack-pattern",
+                "x-mitre-asset"
+              ],
+              "path_length": 3,
+              "path_signature": "mitigates^-1 -> mitigates -> targets",
+              "path_nodes": [
+                "attack-pattern--09a61657-46e1-439e-b3ed-3e4556a78243",
+                "course-of-action--66cfe23e-34b6-4583-b178-ed6a412db2b0",
+                "attack-pattern--25852363-5968-4673-b81d-341d5ed90bd1",
+                "x-mitre-asset--69d1b1ef-e918-4cfd-9a98-29debd04cb32"
+              ]
+            },
+            {
+              "query": [
+                "attack-pattern--15ca2a99-2d3e-457f-b1d7-c52a1d5849c9",
+                "targets",
+                "x-mitre-asset--2b676abd-8263-49ea-81a4-78a7e1f776fe"
+              ],
+              "query_endpoint_types": [
+                "attack-pattern",
+                "x-mitre-asset"
+              ],
+              "path_length": 3,
+              "path_signature": "uses^-1 -> uses -> targets",
+              "path_nodes": [
+                "attack-pattern--15ca2a99-2d3e-457f-b1d7-c52a1d5849c9",
+                "campaign--46421788-b6e1-4256-b351-f8beffd1afba",
+                "attack-pattern--25dfc8ad-bd73-4dfd-84a9-3c3d383f76e9",
+                "x-mitre-asset--2b676abd-8263-49ea-81a4-78a7e1f776fe"
+              ]
+            },
+            {
+              "query": [
+                "attack-pattern--15ca2a99-2d3e-457f-b1d7-c52a1d5849c9",
+                "targets",
+                "x-mitre-asset--85f285f9-0a48-4998-921d-8a47d81c0e6d"
+              ],
+              "query_endpoint_types": [
+                "attack-pattern",
+                "x-mitre-asset"
+              ],
+              "path_length": 2,
+              "path_signature": "subtechnique-of -> targets",
+              "path_nodes": [
+                "attack-pattern--15ca2a99-2d3e-457f-b1d7-c52a1d5849c9",
+                "attack-pattern--338f4364-2269-4f70-9079-b20384b16628",
+                "x-mitre-asset--85f285f9-0a48-4998-921d-8a47d81c0e6d"
+              ]
+            },
+            {
+              "query": [
+                "attack-pattern--19a71d1e-6334-4233-8260-b749cae37953",
+                "targets",
+                "x-mitre-asset--68388d4f-8138-420b-be2b-5a7dfe9ff6b4"
+              ],
+              "query_endpoint_types": [
+                "attack-pattern",
+                "x-mitre-asset"
+              ],
+              "path_length": 3,
+              "path_signature": "mitigates^-1 -> mitigates -> targets",
+              "path_nodes": [
+                "attack-pattern--19a71d1e-6334-4233-8260-b749cae37953",
+                "course-of-action--11f242bc-3121-438c-84b2-5cbd46a4bb17",
+                "attack-pattern--25852363-5968-4673-b81d-341d5ed90bd1",
+                "x-mitre-asset--68388d4f-8138-420b-be2b-5a7dfe9ff6b4"
+              ]
+            },
+            {
+              "query": [
+                "attack-pattern--19a71d1e-6334-4233-8260-b749cae37953",
+                "targets",
+                "x-mitre-asset--69d1b1ef-e918-4cfd-9a98-29debd04cb32"
+              ],
+              "query_endpoint_types": [
+                "attack-pattern",
+                "x-mitre-asset"
+              ],
+              "path_length": 3,
+              "path_signature": "mitigates^-1 -> mitigates -> targets",
+              "path_nodes": [
+                "attack-pattern--19a71d1e-6334-4233-8260-b749cae37953",
+                "course-of-action--11f242bc-3121-438c-84b2-5cbd46a4bb17",
+                "attack-pattern--25852363-5968-4673-b81d-341d5ed90bd1",
+                "x-mitre-asset--69d1b1ef-e918-4cfd-9a98-29debd04cb32"
+              ]
+            },
+            {
+              "query": [
+                "attack-pattern--19a71d1e-6334-4233-8260-b749cae37953",
+                "targets",
+                "x-mitre-asset--986c455b-0f43-42b6-8360-33ac48bd9990"
+              ],
+              "query_endpoint_types": [
+                "attack-pattern",
+                "x-mitre-asset"
+              ],
+              "path_length": 3,
+              "path_signature": "mitigates^-1 -> mitigates -> targets",
+              "path_nodes": [
+                "attack-pattern--19a71d1e-6334-4233-8260-b749cae37953",
+                "course-of-action--11f242bc-3121-438c-84b2-5cbd46a4bb17",
+                "attack-pattern--25852363-5968-4673-b81d-341d5ed90bd1",
+                "x-mitre-asset--986c455b-0f43-42b6-8360-33ac48bd9990"
+              ]
+            },
+            {
+              "query": [
+                "attack-pattern--1b22b676-9347-4c55-9a35-ef0dc653db5b",
+                "targets",
+                "x-mitre-asset--14932ed5-1098-4cc1-9f57-159ab7366787"
+              ],
+              "query_endpoint_types": [
+                "attack-pattern",
+                "x-mitre-asset"
+              ],
+              "path_length": 3,
+              "path_signature": "uses^-1 -> uses -> targets",
+              "path_nodes": [
+                "attack-pattern--1b22b676-9347-4c55-9a35-ef0dc653db5b",
+                "campaign--46421788-b6e1-4256-b351-f8beffd1afba",
+                "attack-pattern--25dfc8ad-bd73-4dfd-84a9-3c3d383f76e9",
+                "x-mitre-asset--14932ed5-1098-4cc1-9f57-159ab7366787"
+              ]
+            },
+            {
+              "query": [
+                "attack-pattern--1b22b676-9347-4c55-9a35-ef0dc653db5b",
+                "targets",
+                "x-mitre-asset--69d1b1ef-e918-4cfd-9a98-29debd04cb32"
+              ],
+              "query_endpoint_types": [
+                "attack-pattern",
+                "x-mitre-asset"
+              ],
+              "path_length": 3,
+              "path_signature": "uses^-1 -> uses -> targets",
+              "path_nodes": [
+                "attack-pattern--1b22b676-9347-4c55-9a35-ef0dc653db5b",
+                "campaign--46421788-b6e1-4256-b351-f8beffd1afba",
+                "attack-pattern--15ca2a99-2d3e-457f-b1d7-c52a1d5849c9",
+                "x-mitre-asset--69d1b1ef-e918-4cfd-9a98-29debd04cb32"
+              ]
+            },
+            {
+              "query": [
+                "attack-pattern--1b22b676-9347-4c55-9a35-ef0dc653db5b",
+                "targets",
+                "x-mitre-asset--85f285f9-0a48-4998-921d-8a47d81c0e6d"
+              ],
+              "query_endpoint_types": [
+                "attack-pattern",
+                "x-mitre-asset"
+              ],
+              "path_length": 3,
+              "path_signature": "uses^-1 -> uses -> targets",
+              "path_nodes": [
+                "attack-pattern--1b22b676-9347-4c55-9a35-ef0dc653db5b",
+                "campaign--46421788-b6e1-4256-b351-f8beffd1afba",
+                "attack-pattern--25dfc8ad-bd73-4dfd-84a9-3c3d383f76e9",
+                "x-mitre-asset--85f285f9-0a48-4998-921d-8a47d81c0e6d"
+              ]
+            },
+            {
+              "query": [
+                "attack-pattern--25dfc8ad-bd73-4dfd-84a9-3c3d383f76e9",
+                "targets",
+                "x-mitre-asset--75f810ad-b678-4c57-b93b-fdc79bba0c04"
+              ],
+              "query_endpoint_types": [
+                "attack-pattern",
+                "x-mitre-asset"
+              ],
+              "path_length": 3,
+              "path_signature": "uses^-1 -> uses -> targets",
+              "path_nodes": [
+                "attack-pattern--25dfc8ad-bd73-4dfd-84a9-3c3d383f76e9",
+                "campaign--46421788-b6e1-4256-b351-f8beffd1afba",
+                "attack-pattern--15ca2a99-2d3e-457f-b1d7-c52a1d5849c9",
+                "x-mitre-asset--75f810ad-b678-4c57-b93b-fdc79bba0c04"
+              ]
+            },
+            {
+              "query": [
+                "attack-pattern--2900bbd8-308a-4274-b074-5b8bde8347bc",
+                "targets",
+                "x-mitre-asset--1769c499-55e5-462f-bab2-c39b8cd5ae32"
+              ],
+              "query_endpoint_types": [
+                "attack-pattern",
+                "x-mitre-asset"
+              ],
+              "path_length": 3,
+              "path_signature": "uses^-1 -> uses -> targets",
+              "path_nodes": [
+                "attack-pattern--2900bbd8-308a-4274-b074-5b8bde8347bc",
+                "campaign--70cab19e-1745-425e-b3db-c02cd5ff157a",
+                "attack-pattern--4344d1b8-968b-4697-9ab9-f9abe5f52265",
+                "x-mitre-asset--1769c499-55e5-462f-bab2-c39b8cd5ae32"
+              ]
+            }
+          ],
+          "example_unsupported_queries": [],
+          "note": "One deterministic representative shortest path per query; signatures are diagnostic, not exhaustive enumeration of all paths."
+        },
+        "test": {
+          "attack_pattern_queries": 151,
+          "path_supported_queries": 150,
+          "path_support_fraction": 0.9933774834437086,
+          "unsupported_queries": 1,
+          "exact_fact_overlap_with_train": 0,
+          "shortest_alternate_path_length_counts": {
+            "2": 33,
+            "3": 116,
+            "4": 1
+          },
+          "query_relation_counts": {
+            "targets": 84,
+            "mitigates": 38,
+            "uses": 27,
+            "subtechnique-of": 2
+          },
+          "query_endpoint_type_counts": {
+            "attack-pattern -> x-mitre-asset": 84,
+            "course-of-action -> attack-pattern": 38,
+            "malware -> attack-pattern": 16,
+            "campaign -> attack-pattern": 8,
+            "intrusion-set -> attack-pattern": 3,
+            "attack-pattern -> attack-pattern": 2
+          },
+          "most_common_representative_shortest_path_signatures": [
+            {
+              "signature": "mitigates^-1 -> mitigates -> targets",
+              "count": 39
+            },
+            {
+              "signature": "uses^-1 -> uses -> targets",
+              "count": 25
+            },
+            {
+              "signature": "uses -> uses^-1 -> uses",
+              "count": 12
+            },
+            {
+              "signature": "mitigates -> mitigates^-1 -> mitigates",
+              "count": 12
+            },
+            {
+              "signature": "subtechnique-of -> targets",
+              "count": 11
+            },
+            {
+              "signature": "uses -> mitigates^-1 -> mitigates",
+              "count": 8
+            },
+            {
+              "signature": "mitigates -> subtechnique-of^-1",
+              "count": 8
+            },
+            {
+              "signature": "mitigates -> targets -> targets^-1",
+              "count": 7
+            },
+            {
+              "signature": "subtechnique-of^-1 -> targets",
+              "count": 5
+            },
+            {
+              "signature": "mitigates -> uses^-1 -> uses",
+              "count": 5
+            },
+            {
+              "signature": "mitigates -> subtechnique-of",
+              "count": 5
+            },
+            {
+              "signature": "targets -> targets^-1 -> targets",
+              "count": 3
+            },
+            {
+              "signature": "uses -> targets -> targets^-1",
+              "count": 3
+            },
+            {
+              "signature": "subtechnique-of -> subtechnique-of^-1 -> targets",
+              "count": 1
+            },
+            {
+              "signature": "mitigates^-1 -> mitigates",
+              "count": 1
+            },
+            {
+              "signature": "uses^-1 -> uses -> targets -> targets^-1",
+              "count": 1
+            },
+            {
+              "signature": "uses -> uses",
+              "count": 1
+            },
+            {
+              "signature": "uses -> subtechnique-of",
+              "count": 1
+            },
+            {
+              "signature": "mitigates -> subtechnique-of -> subtechnique-of^-1",
+              "count": 1
+            },
+            {
+              "signature": "uses -> subtechnique-of^-1",
+              "count": 1
+            }
+          ],
+          "example_supported_queries": [
+            {
+              "query": [
+                "attack-pattern--063b5b92-5361-481a-9c3f-95492ed9a2d8",
+                "targets",
+                "x-mitre-asset--0804f037-a3b9-4715-98e1-9f73d19d6945"
+              ],
+              "query_endpoint_types": [
+                "attack-pattern",
+                "x-mitre-asset"
+              ],
+              "path_length": 3,
+              "path_signature": "mitigates^-1 -> mitigates -> targets",
+              "path_nodes": [
+                "attack-pattern--063b5b92-5361-481a-9c3f-95492ed9a2d8",
+                "course-of-action--1e7ccfc0-94c8-496e-8d27-032120892291",
+                "attack-pattern--25dfc8ad-bd73-4dfd-84a9-3c3d383f76e9",
+                "x-mitre-asset--0804f037-a3b9-4715-98e1-9f73d19d6945"
+              ]
+            },
+            {
+              "query": [
+                "attack-pattern--063b5b92-5361-481a-9c3f-95492ed9a2d8",
+                "targets",
+                "x-mitre-asset--75f810ad-b678-4c57-b93b-fdc79bba0c04"
+              ],
+              "query_endpoint_types": [
+                "attack-pattern",
+                "x-mitre-asset"
+              ],
+              "path_length": 3,
+              "path_signature": "mitigates^-1 -> mitigates -> targets",
+              "path_nodes": [
+                "attack-pattern--063b5b92-5361-481a-9c3f-95492ed9a2d8",
+                "course-of-action--1e7ccfc0-94c8-496e-8d27-032120892291",
+                "attack-pattern--25852363-5968-4673-b81d-341d5ed90bd1",
+                "x-mitre-asset--75f810ad-b678-4c57-b93b-fdc79bba0c04"
+              ]
+            },
+            {
+              "query": [
+                "attack-pattern--063b5b92-5361-481a-9c3f-95492ed9a2d8",
+                "targets",
+                "x-mitre-asset--bb141168-ae41-4974-8ece-dc9b63e59237"
+              ],
+              "query_endpoint_types": [
+                "attack-pattern",
+                "x-mitre-asset"
+              ],
+              "path_length": 3,
+              "path_signature": "mitigates^-1 -> mitigates -> targets",
+              "path_nodes": [
+                "attack-pattern--063b5b92-5361-481a-9c3f-95492ed9a2d8",
+                "course-of-action--1e7ccfc0-94c8-496e-8d27-032120892291",
+                "attack-pattern--25dfc8ad-bd73-4dfd-84a9-3c3d383f76e9",
+                "x-mitre-asset--bb141168-ae41-4974-8ece-dc9b63e59237"
+              ]
+            },
+            {
+              "query": [
+                "attack-pattern--15ca2a99-2d3e-457f-b1d7-c52a1d5849c9",
+                "targets",
+                "x-mitre-asset--459e4335-74e1-4136-b730-0f116f0d541d"
+              ],
+              "query_endpoint_types": [
+                "attack-pattern",
+                "x-mitre-asset"
+              ],
+              "path_length": 2,
+              "path_signature": "subtechnique-of -> targets",
+              "path_nodes": [
+                "attack-pattern--15ca2a99-2d3e-457f-b1d7-c52a1d5849c9",
+                "attack-pattern--338f4364-2269-4f70-9079-b20384b16628",
+                "x-mitre-asset--459e4335-74e1-4136-b730-0f116f0d541d"
+              ]
+            },
+            {
+              "query": [
+                "attack-pattern--1b22b676-9347-4c55-9a35-ef0dc653db5b",
+                "targets",
+                "x-mitre-asset--2b676abd-8263-49ea-81a4-78a7e1f776fe"
+              ],
+              "query_endpoint_types": [
+                "attack-pattern",
+                "x-mitre-asset"
+              ],
+              "path_length": 3,
+              "path_signature": "uses^-1 -> uses -> targets",
+              "path_nodes": [
+                "attack-pattern--1b22b676-9347-4c55-9a35-ef0dc653db5b",
+                "campaign--46421788-b6e1-4256-b351-f8beffd1afba",
+                "attack-pattern--25dfc8ad-bd73-4dfd-84a9-3c3d383f76e9",
+                "x-mitre-asset--2b676abd-8263-49ea-81a4-78a7e1f776fe"
+              ]
+            },
+            {
+              "query": [
+                "attack-pattern--1b22b676-9347-4c55-9a35-ef0dc653db5b",
+                "targets",
+                "x-mitre-asset--bb141168-ae41-4974-8ece-dc9b63e59237"
+              ],
+              "query_endpoint_types": [
+                "attack-pattern",
+                "x-mitre-asset"
+              ],
+              "path_length": 3,
+              "path_signature": "uses^-1 -> uses -> targets",
+              "path_nodes": [
+                "attack-pattern--1b22b676-9347-4c55-9a35-ef0dc653db5b",
+                "campaign--46421788-b6e1-4256-b351-f8beffd1afba",
+                "attack-pattern--25dfc8ad-bd73-4dfd-84a9-3c3d383f76e9",
+                "x-mitre-asset--bb141168-ae41-4974-8ece-dc9b63e59237"
+              ]
+            },
+            {
+              "query": [
+                "attack-pattern--1b22b676-9347-4c55-9a35-ef0dc653db5b",
+                "targets",
+                "x-mitre-asset--ecb81a8b-022e-4529-a404-55cffca7d3a3"
+              ],
+              "query_endpoint_types": [
+                "attack-pattern",
+                "x-mitre-asset"
+              ],
+              "path_length": 3,
+              "path_signature": "uses^-1 -> uses -> targets",
+              "path_nodes": [
+                "attack-pattern--1b22b676-9347-4c55-9a35-ef0dc653db5b",
+                "campaign--46421788-b6e1-4256-b351-f8beffd1afba",
+                "attack-pattern--15ca2a99-2d3e-457f-b1d7-c52a1d5849c9",
+                "x-mitre-asset--ecb81a8b-022e-4529-a404-55cffca7d3a3"
+              ]
+            },
+            {
+              "query": [
+                "attack-pattern--25852363-5968-4673-b81d-341d5ed90bd1",
+                "targets",
+                "x-mitre-asset--459e4335-74e1-4136-b730-0f116f0d541d"
+              ],
+              "query_endpoint_types": [
+                "attack-pattern",
+                "x-mitre-asset"
+              ],
+              "path_length": 3,
+              "path_signature": "mitigates^-1 -> mitigates -> targets",
+              "path_nodes": [
+                "attack-pattern--25852363-5968-4673-b81d-341d5ed90bd1",
+                "course-of-action--11f242bc-3121-438c-84b2-5cbd46a4bb17",
+                "attack-pattern--19a71d1e-6334-4233-8260-b749cae37953",
+                "x-mitre-asset--459e4335-74e1-4136-b730-0f116f0d541d"
+              ]
+            },
+            {
+              "query": [
+                "attack-pattern--25dfc8ad-bd73-4dfd-84a9-3c3d383f76e9",
+                "targets",
+                "x-mitre-asset--dcb1d1c1-b195-45bf-b4cf-5b98c5b859a5"
+              ],
+              "query_endpoint_types": [
+                "attack-pattern",
+                "x-mitre-asset"
+              ],
+              "path_length": 3,
+              "path_signature": "targets -> targets^-1 -> targets",
+              "path_nodes": [
+                "attack-pattern--25dfc8ad-bd73-4dfd-84a9-3c3d383f76e9",
+                "x-mitre-asset--0804f037-a3b9-4715-98e1-9f73d19d6945",
+                "attack-pattern--3e9b182e-e493-49e1-9a9b-bd0dfcd34a7c",
+                "x-mitre-asset--dcb1d1c1-b195-45bf-b4cf-5b98c5b859a5"
+              ]
+            },
+            {
+              "query": [
+                "attack-pattern--2736b752-4ec5-4421-a230-8977dea7649c",
+                "targets",
+                "x-mitre-asset--3a95f7e4-4877-4967-b2e8-e287976c3e64"
+              ],
+              "query_endpoint_types": [
+                "attack-pattern",
+                "x-mitre-asset"
+              ],
+              "path_length": 3,
+              "path_signature": "mitigates^-1 -> mitigates -> targets",
+              "path_nodes": [
+                "attack-pattern--2736b752-4ec5-4421-a230-8977dea7649c",
+                "course-of-action--3172222b-4983-43f7-8983-753ded4f13bc",
+                "attack-pattern--9a505987-ab05-4f46-a9a6-6441442eec3b",
+                "x-mitre-asset--3a95f7e4-4877-4967-b2e8-e287976c3e64"
+              ]
+            },
+            {
+              "query": [
+                "attack-pattern--2883c520-7957-46ca-89bd-dab1ad53b601",
+                "targets",
+                "x-mitre-asset--85f285f9-0a48-4998-921d-8a47d81c0e6d"
+              ],
+              "query_endpoint_types": [
+                "attack-pattern",
+                "x-mitre-asset"
+              ],
+              "path_length": 3,
+              "path_signature": "mitigates^-1 -> mitigates -> targets",
+              "path_nodes": [
+                "attack-pattern--2883c520-7957-46ca-89bd-dab1ad53b601",
+                "course-of-action--66cfe23e-34b6-4583-b178-ed6a412db2b0",
+                "attack-pattern--09a61657-46e1-439e-b3ed-3e4556a78243",
+                "x-mitre-asset--85f285f9-0a48-4998-921d-8a47d81c0e6d"
+              ]
+            },
+            {
+              "query": [
+                "attack-pattern--2900bbd8-308a-4274-b074-5b8bde8347bc",
+                "targets",
+                "x-mitre-asset--459e4335-74e1-4136-b730-0f116f0d541d"
+              ],
+              "query_endpoint_types": [
+                "attack-pattern",
+                "x-mitre-asset"
+              ],
+              "path_length": 3,
+              "path_signature": "uses^-1 -> uses -> targets",
+              "path_nodes": [
+                "attack-pattern--2900bbd8-308a-4274-b074-5b8bde8347bc",
+                "campaign--70cab19e-1745-425e-b3db-c02cd5ff157a",
+                "attack-pattern--527106b3-95a2-4ed2-bf89-db7f0e4d0da0",
+                "x-mitre-asset--459e4335-74e1-4136-b730-0f116f0d541d"
+              ]
+            }
+          ],
+          "example_unsupported_queries": [
+            {
+              "query": [
+                "malware--58eddbaf-7416-419a-ad7b-e65b9d4c3b55",
+                "uses",
+                "attack-pattern--c267bbee-bb59-47fe-85e0-3ed210337c21"
+              ],
+              "query_endpoint_types": [
+                "malware",
+                "attack-pattern"
+              ]
+            }
+          ],
+          "note": "One deterministic representative shortest path per query; signatures are diagnostic, not exhaustive enumeration of all paths."
+        }
+      }
+    }
+  ],
+  "interpretation": [
+    "Only target TRAIN triples form the path context for VALID and TEST queries.",
+    "The queried fact itself is excluded from the path search.",
+    "Paths are traversed as undirected for structural support, with relation direction recorded.",
+    "A high support fraction alone does not establish semantic attack-path reasoning; inspect path signatures and endpoint types.",
+    "Exact query fact overlap with train should be zero; any nonzero value needs investigation before training."
+  ]
+}

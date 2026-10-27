@@ -1,0 +1,268 @@
+{
+  "protocol": "ULTRA pretrained checkpoint; local fine-tuning vs FedAvg",
+  "checkpoint": "/Users/anishnagula/code/ultra-v2/ckpts/ultra_4g.pth",
+  "source_code_commit": "427966ad8ed60420eef034063d44f3153addff90",
+  "runner_revision": "audit-fixed: round-local AdamW reset, balanced validation selection, paired sampling RNG",
+  "client_weighting": "training triple count",
+  "fedavg_optimizer": "AdamW state reset each round after global model reload",
+  "fedavg_checkpoint_selection": "equal-weighted mean absolute validation MRR gain from pretrained checkpoint",
+  "sampling": "deterministic per seed/client/round for positive and negative sampling RNG",
+  "message_passing": "training triples only",
+  "validation_filter": "train + validation facts",
+  "test_filter": "train + validation + test facts",
+  "results": [
+    {
+      "seed": 20261023,
+      "config": {
+        "rounds": 5,
+        "local_steps_per_round": 10,
+        "updates_per_client": 50,
+        "batch_size": 8,
+        "num_negative": 64,
+        "lr": 0.0005,
+        "weight_decay": 0.0,
+        "eval_limit": 0
+      },
+      "local": {
+        "selected_round": {
+          "enterprise": 2,
+          "ics": 4
+        },
+        "validation_mrr": {
+          "enterprise": 0.14292927086353302,
+          "ics": 0.4709644019603729
+        },
+        "test": {
+          "enterprise": {
+            "mrr": 0.15820731222629547,
+            "hits@1": 0.08214811235666275,
+            "hits@3": 0.1669936180114746,
+            "hits@10": 0.30872976779937744,
+            "triples_evaluated": 2039,
+            "ranking_queries": 4078
+          },
+          "ics": {
+            "mrr": 0.6518406271934509,
+            "hits@1": 0.5629138946533203,
+            "hits@3": 0.6821191906929016,
+            "hits@10": 0.8543046116828918,
+            "triples_evaluated": 151,
+            "ranking_queries": 302
+          }
+        }
+      },
+      "fedavg": {
+        "selected_round": 2,
+        "selection_metric": "equal-weighted mean absolute validation MRR gain from pretrained checkpoint",
+        "initial_validation_mrr": {
+          "enterprise": 0.13351424038410187,
+          "ics": 0.4591694176197052
+        },
+        "validation_mean_mrr": 0.30733712762594223,
+        "validation_mean_gain_from_pretrained": 0.010995298624038696,
+        "test": {
+          "enterprise": {
+            "mrr": 0.15959502756595612,
+            "hits@1": 0.08435507863759995,
+            "hits@3": 0.16846492886543274,
+            "hits@10": 0.3106915056705475,
+            "triples_evaluated": 2039,
+            "ranking_queries": 4078
+          },
+          "ics": {
+            "mrr": 0.6470421552658081,
+            "hits@1": 0.5496688485145569,
+            "hits@3": 0.695364236831665,
+            "hits@10": 0.8443708419799805,
+            "triples_evaluated": 151,
+            "ranking_queries": 302
+          }
+        }
+      },
+      "delta_mrr_fedavg_minus_local": {
+        "enterprise": 0.0013877153396606445,
+        "ics": -0.004798471927642822
+      },
+      "mean_client_delta_mrr": -0.0017053782939910889,
+      "diagnostic_only": false
+    },
+    {
+      "seed": 20261024,
+      "config": {
+        "rounds": 5,
+        "local_steps_per_round": 10,
+        "updates_per_client": 50,
+        "batch_size": 8,
+        "num_negative": 64,
+        "lr": 0.0005,
+        "weight_decay": 0.0,
+        "eval_limit": 0
+      },
+      "local": {
+        "selected_round": {
+          "enterprise": 5,
+          "ics": 3
+        },
+        "validation_mrr": {
+          "enterprise": 0.14185720682144165,
+          "ics": 0.4819134473800659
+        },
+        "test": {
+          "enterprise": {
+            "mrr": 0.1581992357969284,
+            "hits@1": 0.08263854682445526,
+            "hits@3": 0.16772927343845367,
+            "hits@10": 0.3072584569454193,
+            "triples_evaluated": 2039,
+            "ranking_queries": 4078
+          },
+          "ics": {
+            "mrr": 0.6527077555656433,
+            "hits@1": 0.5529801249504089,
+            "hits@3": 0.7152317762374878,
+            "hits@10": 0.8344370722770691,
+            "triples_evaluated": 151,
+            "ranking_queries": 302
+          }
+        }
+      },
+      "fedavg": {
+        "selected_round": 4,
+        "selection_metric": "equal-weighted mean absolute validation MRR gain from pretrained checkpoint",
+        "initial_validation_mrr": {
+          "enterprise": 0.13351424038410187,
+          "ics": 0.4591694176197052
+        },
+        "validation_mean_mrr": 0.30649153888225555,
+        "validation_mean_gain_from_pretrained": 0.01014970988035202,
+        "test": {
+          "enterprise": {
+            "mrr": 0.1591693013906479,
+            "hits@1": 0.08214811235666275,
+            "hits@3": 0.171407550573349,
+            "hits@10": 0.3128984868526459,
+            "triples_evaluated": 2039,
+            "ranking_queries": 4078
+          },
+          "ics": {
+            "mrr": 0.6390941143035889,
+            "hits@1": 0.5397350788116455,
+            "hits@3": 0.6887417435646057,
+            "hits@10": 0.8311258554458618,
+            "triples_evaluated": 151,
+            "ranking_queries": 302
+          }
+        }
+      },
+      "delta_mrr_fedavg_minus_local": {
+        "enterprise": 0.0009700655937194824,
+        "ics": -0.013613641262054443
+      },
+      "mean_client_delta_mrr": -0.0063217878341674805,
+      "diagnostic_only": false
+    },
+    {
+      "seed": 20261025,
+      "config": {
+        "rounds": 5,
+        "local_steps_per_round": 10,
+        "updates_per_client": 50,
+        "batch_size": 8,
+        "num_negative": 64,
+        "lr": 0.0005,
+        "weight_decay": 0.0,
+        "eval_limit": 0
+      },
+      "local": {
+        "selected_round": {
+          "enterprise": 5,
+          "ics": 3
+        },
+        "validation_mrr": {
+          "enterprise": 0.13764239847660065,
+          "ics": 0.4678891897201538
+        },
+        "test": {
+          "enterprise": {
+            "mrr": 0.15518693625926971,
+            "hits@1": 0.08018636703491211,
+            "hits@3": 0.16331535577774048,
+            "hits@10": 0.3028445243835449,
+            "triples_evaluated": 2039,
+            "ranking_queries": 4078
+          },
+          "ics": {
+            "mrr": 0.6509064435958862,
+            "hits@1": 0.559602677822113,
+            "hits@3": 0.6854304671287537,
+            "hits@10": 0.8377483487129211,
+            "triples_evaluated": 151,
+            "ranking_queries": 302
+          }
+        }
+      },
+      "fedavg": {
+        "selected_round": 2,
+        "selection_metric": "equal-weighted mean absolute validation MRR gain from pretrained checkpoint",
+        "initial_validation_mrr": {
+          "enterprise": 0.13351424038410187,
+          "ics": 0.4591694176197052
+        },
+        "validation_mean_mrr": 0.30378399044275284,
+        "validation_mean_gain_from_pretrained": 0.007442161440849304,
+        "test": {
+          "enterprise": {
+            "mrr": 0.15328511595726013,
+            "hits@1": 0.07822462171316147,
+            "hits@3": 0.15963707864284515,
+            "hits@10": 0.3006375730037689,
+            "triples_evaluated": 2039,
+            "ranking_queries": 4078
+          },
+          "ics": {
+            "mrr": 0.6429169774055481,
+            "hits@1": 0.5463576316833496,
+            "hits@3": 0.6986755132675171,
+            "hits@10": 0.8410596251487732,
+            "triples_evaluated": 151,
+            "ranking_queries": 302
+          }
+        }
+      },
+      "delta_mrr_fedavg_minus_local": {
+        "enterprise": -0.0019018203020095825,
+        "ics": -0.007989466190338135
+      },
+      "mean_client_delta_mrr": -0.004945643246173859,
+      "diagnostic_only": false
+    }
+  ],
+  "summary": {
+    "num_seeds": 3,
+    "seed_mean_client_delta_mrr": [
+      -0.0017053782939910889,
+      -0.0063217878341674805,
+      -0.004945643246173859
+    ],
+    "mean_mrr_delta": -0.004324269791444142,
+    "paired_seed_level_95pct_t_ci": [
+      -0.010212407105032,
+      0.0015638675221437155
+    ],
+    "mean_delta_by_client": {
+      "enterprise": 0.0001519868771235148,
+      "ics": -0.0088005264600118
+    },
+    "acceptance_criteria": {
+      "minimum_mean_gain": 0.03,
+      "mean_gain_meets_threshold": false,
+      "ci_excludes_zero": false,
+      "ci_supports_positive_gain": false,
+      "positive_mean_gain": false,
+      "at_least_three_seeds": true,
+      "no_client_mean_regression_below_minus_0_02": true,
+      "substantial_regression_cutoff": -0.02
+    },
+    "diagnostic_only": false
+  }
+}

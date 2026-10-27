@@ -1,0 +1,345 @@
+#!/usr/bin/env python3
+"""Cross-graph transfer evaluation for pretrained ULTRA on MITRE Enterprise and ICS.
+
+For each direction, fine-tune the pretrained checkpoint on the source graph only,
+select the checkpoint using source validation MRR, then evaluate it on the target
+KG without any gradient updates on that target. Compare against pretrained zero-shot
+ULTRA on the same target graph. Target validation/test data are never used to select
+or tune the source-fine-tuned model.
+"""
+import argparse
+import json
+import math
+import random
+import sys
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parents[3]
+if str(ROOT) not in sys.path:
+    sys.path.insert(0, str(ROOT))
+
+# This script lives beside fedavg_runner.py, so the existing tested data/model helpers
+# are reused rather than copied or reimplemented.
+import fedavg_runner as base
+from evaluation_protocol import CLIENTS, load_client
+import torch
+
+T_CRITICAL_95 = {
+    1: 12.706, 2: 4.303, 3: 3.182, 4: 2.776, 5: 2.571,
+    6: 2.447, 7: 2.365, 8: 2.306, 9: 2.262, 10: 2.228,
+    11: 2.201, 12: 2.179, 13: 2.160, 14: 2.145, 15: 2.131,
+    16: 2.120, 17: 2.110, 18: 2.101, 19: 2.093, 20: 2.086,
+    21: 2.080, 22: 2.074, 23: 2.069, 24: 2.064, 25: 2.060,
+    26: 2.056, 27: 2.052, 28: 2.048, 29: 2.045,
+}
+
+
+def ci95(values):
+    n = len(values)
+    if n < 2:
+        return None
+    mean = sum(values) / n
+    variance = sum((x - mean) ** 2 for x in values) / (n - 1)
+    se = math.sqrt(variance / n)
+    tcrit = T_CRITICAL_95.get(n - 1, 1.96)
+    return [mean - tcrit * se, mean + tcrit * se]
+
+
+def relation_names_by_id(client):
+    """Match evaluation_protocol.load_client's sorted relation vocabulary exactly.
+
+    load_client assigns IDs with:
+        relation_to_id = {value: index for index, value in enumerate(sorted(train_relations))}
+    Reconstructing IDs by first appearance in the files is incorrect because triples
+    are sorted by entity/relation, not globally by relation. This mismatch previously
+    caused valid numeric per-relation metrics to be printed under the wrong labels.
+    """
+    data_root = ROOT / "experiments" / "fedultra_fresh" / "data_processed" / client
+    relations_by_split = {}
+    for split in ("train", "valid", "test"):
+        path = data_root / f"{split}.txt"
+        if not path.is_file():
+            raise FileNotFoundError(f"Missing processed split: {path}")
+        split_relations = set()
+        with path.open("r", encoding="utf-8") as handle:
+            for line_number, line in enumerate(handle, start=1):
+                fields = line.split()
+                if len(fields) != 3:
+                    raise ValueError(f"Expected 3 fields in {path}:{line_number}: {line!r}")
+                split_relations.add(fields[1])
+        relations_by_split[split] = split_relations
+
+    train_relations = relations_by_split["train"]
+    for split in ("valid", "test"):
+        if not relations_by_split[split] <= train_relations:
+            missing = sorted(relations_by_split[split] - train_relations)
+            raise ValueError(f"{client}/{split} has relations absent from train: {missing}")
+    return {idx: relation for idx, relation in enumerate(sorted(train_relations))}
+
+
+@torch.no_grad()
+def evaluate_by_relation(model, bundle, client, split, eval_batch_size=4, eval_limit=0):
+    """Filtered ranking metrics grouped by the original (non-inverse) relation."""
+    if split == "valid":
+        target_data, filter_graph = bundle["valid_data"], bundle["valid_filter"]
+    elif split == "test":
+        target_data, filter_graph = bundle["test_data"], bundle["test_filter"]
+    else:
+        raise ValueError(split)
+
+    positives = base.triples_tensor(target_data)
+    if eval_limit > 0:
+        positives = positives[:eval_limit]
+    names = relation_names_by_id(client)
+    ranks_by_relation = {}
+    model.eval()
+    train_graph = bundle["train_data"]
+    for start in range(0, len(positives), eval_batch_size):
+        batch = positives[start:start + eval_batch_size]
+        tail_batch, head_batch = base.tasks.all_negative(train_graph, batch)
+        tail_scores = model(train_graph, tail_batch)
+        head_scores = model(train_graph, head_batch)
+        tail_mask, head_mask = base.tasks.strict_negative_mask(filter_graph, batch)
+        tail_rank = base.tasks.compute_ranking(tail_scores, batch[:, 1], tail_mask).float()
+        head_rank = base.tasks.compute_ranking(head_scores, batch[:, 0], head_mask).float()
+        for i, triple in enumerate(batch):
+            relation_id = int(triple[2])
+            if relation_id not in names:
+                raise ValueError(
+                    f"Relation ID {relation_id} missing from {client} relation vocabulary"
+                )
+            relation = names[relation_id]
+            group = ranks_by_relation.setdefault(relation, [])
+            group.append(tail_rank[i].reshape(1))
+            group.append(head_rank[i].reshape(1))
+
+    result = {}
+    for relation, rank_parts in sorted(ranks_by_relation.items()):
+        ranks = torch.cat(rank_parts)
+        result[relation] = {
+            "mrr": float((1.0 / ranks).mean()),
+            "hits@1": float((ranks <= 1).float().mean()),
+            "hits@3": float((ranks <= 3).float().mean()),
+            "hits@10": float((ranks <= 10).float().mean()),
+            "triples_evaluated": int(len(rank_parts) // 2),
+            "ranking_queries": int(len(ranks)),
+        }
+    return result
+
+
+def relation_metric_deltas(zero_shot, transferred):
+    output = {}
+    for relation in sorted(set(zero_shot) | set(transferred)):
+        before = zero_shot.get(relation)
+        after = transferred.get(relation)
+        output[relation] = {
+            "zero_shot": before,
+            "transferred": after,
+            "delta_mrr": (after["mrr"] - before["mrr"])
+            if before is not None and after is not None else None,
+        }
+    return output
+
+
+def train_source_model(source, target, seed, bundles, args, checkpoint_state):
+    # Reproducible source-only fine-tuning. No target validation/test value is used
+    # for model selection or optimization.
+    torch.manual_seed(seed)
+    random.seed(seed)
+    model = base.new_model(checkpoint_state).cpu()
+    optimizer = base.make_optimizer(model, args.lr, args.weight_decay)
+    source_bundle = bundles[source]
+    initial = base.evaluate(
+        model, source_bundle, "valid", args.eval_batch_size, args.eval_limit
+    )
+    best_val = initial["mrr"]
+    best_state = base.clone_state(model)
+    best_round = 0
+    history = [{"round": 0, "source_validation_mrr": best_val}]
+
+    for round_idx in range(1, args.rounds + 1):
+        loss = base.train_updates(
+            model,
+            optimizer,
+            source_bundle["train_data"],
+            args.local_steps,
+            args.batch_size,
+            args.num_negative,
+            seed,
+            source,
+            round_idx,
+        )
+        val = base.evaluate(
+            model, source_bundle, "valid", args.eval_batch_size, args.eval_limit
+        )["mrr"]
+        history.append({"round": round_idx, "mean_training_loss": loss,
+                        "source_validation_mrr": val})
+        if val > best_val:
+            best_val = val
+            best_state = base.clone_state(model)
+            best_round = round_idx
+        print(f"{source}->{target} seed={seed} round={round_idx} "
+              f"loss={loss:.6f} source_valid_mrr={val:.6f} best_round={best_round}")
+
+    model.load_state_dict(best_state, strict=True)
+    return model, {"best_source_validation_mrr": best_val,
+                   "selected_source_round": best_round,
+                   "source_validation_history": history}
+
+
+def run_direction(source, target, seed, bundles, args, checkpoint_state):
+    print(f"\n--- Transfer {source} -> {target}, seed {seed} ---")
+    transferred_model, selection = train_source_model(
+        source, target, seed, bundles, args, checkpoint_state
+    )
+    target_bundle = bundles[target]
+
+    # Evaluate both models on exactly the same target graph and target test split.
+    # The pretrained baseline has no gradient updates; the transfer model was tuned
+    # using source data only. Both use target train triples as graph context.
+    zero_shot_model = base.new_model(checkpoint_state).cpu()
+    zero_valid = base.evaluate(
+        zero_shot_model, target_bundle, "valid", args.eval_batch_size, args.eval_limit
+    )
+    zero_test = base.evaluate(
+        zero_shot_model, target_bundle, "test", args.eval_batch_size, args.eval_limit
+    )
+    transfer_valid = base.evaluate(
+        transferred_model, target_bundle, "valid", args.eval_batch_size, args.eval_limit
+    )
+    transfer_test = base.evaluate(
+        transferred_model, target_bundle, "test", args.eval_batch_size, args.eval_limit
+    )
+    zero_test_by_relation = evaluate_by_relation(
+        zero_shot_model, target_bundle, target, "test", args.eval_batch_size, args.eval_limit
+    )
+    transfer_test_by_relation = evaluate_by_relation(
+        transferred_model, target_bundle, target, "test", args.eval_batch_size, args.eval_limit
+    )
+    per_relation = relation_metric_deltas(zero_test_by_relation, transfer_test_by_relation)
+    delta = transfer_test["mrr"] - zero_test["mrr"]
+    print(f"ZERO-SHOT {target}: {json.dumps(zero_test, sort_keys=True)}")
+    print(f"TRANSFER {source}->{target}: {json.dumps(transfer_test, sort_keys=True)}")
+    print(f"TRANSFER DELTA {source}->{target}: {delta:+.6f} MRR")
+    print(f"PER-RELATION TEST {source}->{target}: {json.dumps(per_relation, sort_keys=True)}")
+    return {
+        "seed": seed,
+        "source": source,
+        "target": target,
+        "config": {
+            "rounds": args.rounds,
+            "local_steps_per_round": args.local_steps,
+            "updates_on_source": args.rounds * args.local_steps,
+            "batch_size": args.batch_size,
+            "num_negative": args.num_negative,
+            "lr": args.lr,
+            "weight_decay": args.weight_decay,
+            "eval_limit": args.eval_limit,
+        },
+        "selection": selection,
+        "zero_shot_target": {"validation": zero_valid, "test": zero_test},
+        "source_finetuned_transfer": {"target_validation_diagnostic_only": transfer_valid,
+                                       "target_test": transfer_test},
+        "transfer_delta_mrr": delta,
+        "zero_shot_target_test_by_relation": zero_test_by_relation,
+        "transferred_target_test_by_relation": transfer_test_by_relation,
+        "per_relation_test_comparison": per_relation,
+        "diagnostic_only": args.eval_limit > 0,
+    }
+
+
+def summarize_direction(results):
+    deltas = [r["transfer_delta_mrr"] for r in results]
+    n = len(deltas)
+    mean = sum(deltas) / n
+    ci = ci95(deltas)
+    return {
+        "num_seeds": n,
+        "per_seed_transfer_delta_mrr": deltas,
+        "mean_transfer_delta_mrr": mean,
+        "paired_seed_level_95pct_t_ci": ci,
+        "acceptance_criteria": {
+            "minimum_mean_transfer_gain": 0.03,
+            "mean_gain_meets_threshold": mean >= 0.03,
+            "ci_excludes_zero": bool(ci and (ci[0] > 0 or ci[1] < 0)),
+            "ci_supports_positive_gain": bool(ci and ci[0] > 0),
+            "positive_mean_gain": mean > 0,
+            "at_least_three_seeds": n >= 3,
+        },
+        "diagnostic_only": any(r["diagnostic_only"] for r in results),
+    }
+
+
+def main():
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--seeds", default="20261023,20261024,20261025")
+    parser.add_argument("--rounds", type=int, default=5)
+    parser.add_argument("--local-steps", type=int, default=10)
+    parser.add_argument("--batch-size", type=int, default=8)
+    parser.add_argument("--num-negative", type=int, default=64)
+    parser.add_argument("--eval-batch-size", type=int, default=4)
+    parser.add_argument("--eval-limit", type=int, default=0,
+                        help="Positive value is diagnostic only; 0 evaluates full splits")
+    parser.add_argument("--lr", type=float, default=5e-4)
+    parser.add_argument("--weight-decay", type=float, default=0.0)
+    parser.add_argument("--output", default="experiments/fedultra_fresh/results/transfer_comparison.json")
+    parser.add_argument("--overwrite", action="store_true")
+    args = parser.parse_args()
+
+    if args.rounds < 1 or args.local_steps < 1 or args.batch_size < 2:
+        raise ValueError("rounds/local_steps must be positive and batch-size >= 2")
+    if args.batch_size % 2:
+        raise ValueError("--batch-size must be even")
+    if args.eval_batch_size < 1 or args.num_negative < 1 or args.eval_limit < 0:
+        raise ValueError("invalid evaluation batch, negative count, or eval limit")
+    seeds = [int(x.strip()) for x in args.seeds.split(",") if x.strip()]
+    if not seeds or len(set(seeds)) != len(seeds):
+        raise ValueError("--seeds must contain unique comma-separated integers")
+    if not base.CHECKPOINT.is_file():
+        raise FileNotFoundError(base.CHECKPOINT)
+
+    output = (ROOT / args.output).resolve() if not Path(args.output).is_absolute() else Path(args.output)
+    output.parent.mkdir(parents=True, exist_ok=True)
+    if output.exists() and not args.overwrite:
+        raise FileExistsError(f"{output} exists; choose another --output or pass --overwrite")
+
+    torch.set_num_threads(min(2, torch.get_num_threads()))
+    checkpoint = torch.load(base.CHECKPOINT, map_location="cpu")
+    if not isinstance(checkpoint, dict) or "model" not in checkpoint:
+        raise ValueError(f"Unexpected checkpoint format: {base.CHECKPOINT}")
+    checkpoint_state = checkpoint["model"]
+    bundles = {client: load_client(client) for client in CLIENTS}
+
+    # Both directions help distinguish general transfer from a one-way dataset-size effect.
+    directions = [("enterprise", "ics"), ("ics", "enterprise")]
+    all_results = {f"{src}_to_{tgt}": [] for src, tgt in directions}
+    for seed in seeds:
+        for source, target in directions:
+            result = run_direction(source, target, seed, bundles, args, checkpoint_state)
+            all_results[f"{source}_to_{target}"].append(result)
+            payload = {
+                "protocol": "pretrained ULTRA zero-shot vs source-finetuned cross-graph transfer",
+                "checkpoint": str(base.CHECKPOINT),
+                "source_code_commit": "427966ad8ed60420eef034063d44f3153addff90",
+                "message_passing": "target/source training triples only within each graph",
+                "model_selection": "source validation MRR only; target validation/test never select checkpoints",
+                "primary_metric": "target test MRR transfer delta = source-finetuned minus pretrained zero-shot",
+                "per_relation_metrics": "filtered test MRR and Hits@K, grouped by target relation label",
+                "acceptance_threshold": 0.03,
+                "results": all_results,
+                "summary": {key: summarize_direction(value) for key, value in all_results.items() if value},
+            }
+            output.write_text(json.dumps(payload, indent=2) + "\n", encoding="utf-8")
+            print(f"Saved progress: {output}")
+
+    print("\n===== TRANSFER SUMMARY =====")
+    print(json.dumps({key: summarize_direction(value) for key, value in all_results.items() if value}, indent=2))
+    if args.eval_limit:
+        print("DIAGNOSTIC RUN: do not use for acceptance claims.")
+    else:
+        print("FULL TRANSFER EVALUATION COMPLETE.")
+
+
+if __name__ == "__main__":
+    main()
+

@@ -1,0 +1,37 @@
+{
+  "source_results": "/Users/anishnagula/code/ultra-v2/experiments/fedultra_fresh/results/cyber_transfer_confirmatory.json",
+  "bootstrap_samples": 20000,
+  "random_seed": 20261026,
+  "num_training_seeds": 10,
+  "target_test_triples": 2071,
+  "per_seed_mean_delta_mrr": [
+    -0.0011557561130049756,
+    0.009372097404256827,
+    0.002561776183951666,
+    -0.0044637223339595985,
+    0.016513130362925826,
+    8.407990622546889e-05,
+    0.003248760293681716,
+    0.007696280319011851,
+    0.0023061650483248435,
+    -0.0004362048155885371
+  ],
+  "mean_delta_mrr": 0.003572660625582509,
+  "seed_level_95pct_t_ci": [
+    -0.0007979758135830059,
+    0.007943321024612059
+  ],
+  "hierarchical_paired_bootstrap_95pct_ci": [
+    -0.00041903747966105104,
+    0.007896074430035588
+  ],
+  "acceptance_criteria": {
+    "minimum_mean_delta_mrr": 0.03,
+    "mean_gain_meets_threshold": false,
+    "seed_level_ci_entirely_above_zero": false,
+    "hierarchical_bootstrap_ci_entirely_above_zero": false,
+    "not_diagnostic_only": true,
+    "meets_full_success_criterion": false
+  },
+  "interpretation_limit": "The interval resamples training seeds and paired triples from the fixed target test sample; it does not quantify uncertainty across alternate graph snapshots, sampling rules, or domains."
+}

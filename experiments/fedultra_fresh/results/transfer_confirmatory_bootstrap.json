@@ -1,0 +1,55 @@
+{
+  "source_results": "experiments/fedultra_fresh/results/transfer_confirmatory_10seeds.json",
+  "bootstrap_samples": 20000,
+  "random_seed": 20261024,
+  "summaries": {
+    "enterprise_to_ics": {
+      "num_seeds": 10,
+      "test_triples": 151,
+      "per_seed_mean_delta_mrr": [
+        0.030033682639531743,
+        0.02977589594311272,
+        0.01261610992943609,
+        0.02691838496814895,
+        0.038612035824763066,
+        0.01178849669827136,
+        0.007551245206337891,
+        0.015626875918037846,
+        0.00907421073820812,
+        0.014737012876284044
+      ],
+      "mean_delta_mrr": 0.019673395074213187,
+      "hierarchical_paired_bootstrap_95pct_ci": [
+        0.004393244706655526,
+        0.035894709239306724
+      ],
+      "ci_supports_positive_gain": true,
+      "ci_supports_negative_gain": false,
+      "interpretation": "The interval resamples training seeds and paired target test triples; it does not capture uncertainty across alternative dataset constructions or domains."
+    },
+    "ics_to_enterprise": {
+      "num_seeds": 10,
+      "test_triples": 2039,
+      "per_seed_mean_delta_mrr": [
+        -0.0008849030860839937,
+        -9.241395037531736e-06,
+        -0.002263249362322861,
+        -0.004934771415330341,
+        -0.00518904877590201,
+        -0.0029158280228774825,
+        -0.0046932627188883145,
+        0.0015639395904023879,
+        -0.004701658164747306,
+        0.0010854109056974985
+      ],
+      "mean_delta_mrr": -0.0022942612445089956,
+      "hierarchical_paired_bootstrap_95pct_ci": [
+        -0.005369418798298823,
+        0.0008093215521518325
+      ],
+      "ci_supports_positive_gain": false,
+      "ci_supports_negative_gain": false,
+      "interpretation": "The interval resamples training seeds and paired target test triples; it does not capture uncertainty across alternative dataset constructions or domains."
+    }
+  }
+}

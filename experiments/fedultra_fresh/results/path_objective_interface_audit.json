@@ -1,0 +1,217 @@
+{
+  "purpose": "Read-only source interface audit; no training or checkpoint changes.",
+  "cwd": "/Users/anishnagula/code/ultra-v2",
+  "python": "3.9.6 (default, Aug 25 2026, 21:26:21) \n[Clang 21.0.0 (clang-2100.3.34.2)]",
+  "files": [
+    {
+      "path": "/Users/anishnagula/code/ultra-v2/ultra/models.py",
+      "sha256": "65b0015bf31b036ca7c5e9a2e0aa0c1f5a95f4c844d7219d73c0d8b8af3aa7bd",
+      "definitions": [
+        {
+          "kind": "class",
+          "name": "Ultra",
+          "line": 7,
+          "bases": [
+            "nn.Module"
+          ],
+          "methods": [
+            {
+              "name": "__init__",
+              "line": 9,
+              "signature": "self, rel_model_cfg, entity_model_cfg"
+            },
+            {
+              "name": "forward",
+              "line": 18,
+              "signature": "self, data, batch"
+            }
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "forward",
+          "line": 18,
+          "signature": "self, data, batch"
+        },
+        {
+          "kind": "class",
+          "name": "RelNBFNet",
+          "line": 32,
+          "bases": [
+            "BaseNBFNet"
+          ],
+          "methods": [
+            {
+              "name": "__init__",
+              "line": 34,
+              "signature": "self, input_dim, hidden_dims, num_relation=4, **kwargs"
+            },
+            {
+              "name": "bellmanford",
+              "line": 55,
+              "signature": "self, data, h_index, separate_grad=False"
+            },
+            {
+              "name": "forward",
+              "line": 97,
+              "signature": "self, rel_graph, query"
+            }
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "forward",
+          "line": 97,
+          "signature": "self, rel_graph, query"
+        },
+        {
+          "kind": "class",
+          "name": "EntityNBFNet",
+          "line": 105,
+          "bases": [
+            "BaseNBFNet"
+          ],
+          "methods": [
+            {
+              "name": "__init__",
+              "line": 107,
+              "signature": "self, input_dim, hidden_dims, num_relation=1, **kwargs"
+            },
+            {
+              "name": "bellmanford",
+              "line": 131,
+              "signature": "self, data, h_index, r_index, separate_grad=False"
+            },
+            {
+              "name": "forward",
+              "line": 177,
+              "signature": "self, data, relation_representations, batch"
+            }
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "forward",
+          "line": 177,
+          "signature": "self, data, relation_representations, batch"
+        },
+        {
+          "kind": "class",
+          "name": "QueryNBFNet",
+          "line": 212,
+          "bases": [
+            "EntityNBFNet"
+          ],
+          "methods": [
+            {
+              "name": "bellmanford",
+              "line": 222,
+              "signature": "self, data, node_features, query, separate_grad=False"
+            },
+            {
+              "name": "forward",
+              "line": 258,
+              "signature": "self, data, node_features, relation_representations, query"
+            }
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "forward",
+          "line": 258,
+          "signature": "self, data, node_features, relation_representations, query"
+        }
+      ]
+    },
+    {
+      "path": "/Users/anishnagula/code/ultra-v2/ultra/tasks.py",
+      "sha256": "d3697fd038c9f9fc5072444416a870ba6eb3717e65766eae39dbc0773525a07c",
+      "definitions": [
+        {
+          "kind": "function",
+          "name": "negative_sampling",
+          "line": 42,
+          "signature": "data, batch, num_negative, strict=True"
+        },
+        {
+          "kind": "function",
+          "name": "all_negative",
+          "line": 79,
+          "signature": "data, batch"
+        },
+        {
+          "kind": "function",
+          "name": "strict_negative_mask",
+          "line": 94,
+          "signature": "data, batch"
+        },
+        {
+          "kind": "function",
+          "name": "build_relation_graph",
+          "line": 144,
+          "signature": "graph"
+        }
+      ]
+    },
+    {
+      "path": "/Users/anishnagula/code/ultra-v2/script/run.py",
+      "sha256": "4570d6416d29684e263dba28dd74e244985bb396db9b75799f9d624c6d43ba8d",
+      "definitions": [
+        {
+          "kind": "function",
+          "name": "train_and_validate",
+          "line": 25,
+          "signature": "cfg, model, train_data, valid_data, device, logger, filtered_data=None, batch_per_epoch=None"
+        }
+      ]
+    },
+    {
+      "path": "/Users/anishnagula/code/ultra-v2/experiments/fedultra_fresh/src/attack_pattern_transfer_runner.py",
+      "sha256": "75c7e89fcdf18f057851ae0eb1012ec3f63ecee62c569b3473a31ae0989c3620",
+      "definitions": [
+        {
+          "kind": "function",
+          "name": "evaluate_queries",
+          "line": 94,
+          "signature": "model, bundle, split, triples, eval_batch_size=4"
+        },
+        {
+          "kind": "function",
+          "name": "_loss_step",
+          "line": 124,
+          "signature": "model, optimizer, train_data, positives, args, generator"
+        },
+        {
+          "kind": "function",
+          "name": "train_path_aware",
+          "line": 148,
+          "signature": "source, seed, bundles, type_maps, args, checkpoint_state"
+        }
+      ]
+    }
+  ],
+  "missing_candidates": [
+    "ultra/model.py",
+    "ultra/training.py",
+    "ultra/evaluation.py",
+    "ultra/model_state.py"
+  ],
+  "runtime_api": {
+    "torch_version": "2.8.0",
+    "ultra.models": {
+      "import_error": "ModuleNotFoundError(\"No module named 'ultra'\")"
+    },
+    "ultra.model": {
+      "import_error": "ModuleNotFoundError(\"No module named 'ultra'\")"
+    },
+    "ultra.tasks": {
+      "import_error": "ModuleNotFoundError(\"No module named 'ultra'\")"
+    },
+    "ultra.training": {
+      "import_error": "ModuleNotFoundError(\"No module named 'ultra'\")"
+    },
+    "ultra.evaluation": {
+      "import_error": "ModuleNotFoundError(\"No module named 'ultra'\")"
+    }
+  }
+}

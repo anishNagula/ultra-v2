@@ -1,0 +1,423 @@
+{
+  "source_files": {
+    "enterprise": {
+      "path": "/Users/anishnagula/code/ultra-v2/datasets/cybersecurity/mitre/enterprise/v19.2/enterprise-attack-19.2.json",
+      "sha256": "dc1639caa5501d720e280cf1cbd8fbe009884a0c9b3e6e9ed9d0c25166c3d8f4"
+    },
+    "mobile": {
+      "path": "/Users/anishnagula/code/ultra-v2/datasets/cybersecurity/mitre/mobile/v19.2/mobile-attack-19.2.json",
+      "sha256": "acfa5ca2d93484476f79bf38590e2b55bb675fc0ce85e76bffa0af2c82dada64",
+      "official_url": "https://raw.githubusercontent.com/mitre-attack/attack-stix-data/master/mobile-attack/mobile-attack-19.2.json"
+    }
+  },
+  "extraction_rules": {
+    "node_types": [
+      "attack-pattern",
+      "campaign",
+      "course-of-action",
+      "intrusion-set",
+      "malware",
+      "tool",
+      "x-mitre-analytic",
+      "x-mitre-asset",
+      "x-mitre-data-component",
+      "x-mitre-data-source",
+      "x-mitre-detection-strategy",
+      "x-mitre-tactic"
+    ],
+    "relation_types": [
+      "attributed-to",
+      "detects",
+      "mitigates",
+      "subtechnique-of",
+      "targets",
+      "uses"
+    ],
+    "active_rule": "not revoked and not x_mitre_deprecated",
+    "split_rule": "relation-aware 80/10/10 target with all entities/relations kept in train"
+  },
+  "enterprise": {
+    "name": "Enterprise v19.2",
+    "active_selected_node_inventory": 4374,
+    "triples": 21103,
+    "entities_in_triples": 2495,
+    "relations": {
+      "attributed-to": 26,
+      "detects": 697,
+      "mitigates": 1448,
+      "subtechnique-of": 475,
+      "uses": 18457
+    },
+    "entity_types_in_triples": {
+      "attack-pattern": 697,
+      "campaign": 56,
+      "course-of-action": 44,
+      "intrusion-set": 176,
+      "malware": 730,
+      "tool": 95,
+      "x-mitre-detection-strategy": 697
+    },
+    "split_counts_estimate": {
+      "train": 17025,
+      "valid": 2039,
+      "test": 2039
+    },
+    "degree": {
+      "mean": 16.91623246492986,
+      "median": 8,
+      "degree_1_entity_count": 713,
+      "degree_1_entity_fraction": 0.28577154308617236
+    },
+    "topology": {
+      "connected_components": 4,
+      "largest_component_nodes": 2485,
+      "largest_component_fraction": 0.9959919839679359,
+      "entities_with_degree_1": 713,
+      "entities_with_degree_0_in_extracted_graph": 0
+    },
+    "rejected": {
+      "unsupported_relation": 157,
+      "excluded_endpoint": 2
+    }
+  },
+  "mobile": {
+    "name": "Mobile v19.2 (raw extracted)",
+    "active_selected_node_inventory": 662,
+    "triples": 1835,
+    "entities_in_triples": 409,
+    "relations": {
+      "attributed-to": 1,
+      "detects": 124,
+      "mitigates": 167,
+      "subtechnique-of": 47,
+      "uses": 1496
+    },
+    "entity_types_in_triples": {
+      "attack-pattern": 124,
+      "campaign": 3,
+      "course-of-action": 13,
+      "intrusion-set": 19,
+      "malware": 124,
+      "tool": 2,
+      "x-mitre-detection-strategy": 124
+    },
+    "split_counts_estimate": {
+      "train": 1495,
+      "valid": 169,
+      "test": 171
+    },
+    "degree": {
+      "mean": 8.973105134474327,
+      "median": 5,
+      "degree_1_entity_count": 146,
+      "degree_1_entity_fraction": 0.3569682151589242
+    },
+    "topology": {
+      "connected_components": 1,
+      "largest_component_nodes": 409,
+      "largest_component_fraction": 1.0,
+      "entities_with_degree_1": 146,
+      "entities_with_degree_0_in_extracted_graph": 0
+    },
+    "rejected": {
+      "unsupported_relation": 54
+    }
+  },
+  "mobile_after_overlap_removal": {
+    "name": "Mobile v19.2 after removing exact Enterprise triple overlap",
+    "active_selected_node_inventory": 662,
+    "triples": 1831,
+    "entities_in_triples": 406,
+    "relations": {
+      "detects": 124,
+      "mitigates": 167,
+      "subtechnique-of": 47,
+      "uses": 1493
+    },
+    "entity_types_in_triples": {
+      "attack-pattern": 124,
+      "campaign": 3,
+      "course-of-action": 13,
+      "intrusion-set": 16,
+      "malware": 124,
+      "tool": 2,
+      "x-mitre-detection-strategy": 124
+    },
+    "split_counts_estimate": {
+      "train": 1495,
+      "valid": 170,
+      "test": 166
+    },
+    "degree": {
+      "mean": 9.019704433497537,
+      "median": 5,
+      "degree_1_entity_count": 143,
+      "degree_1_entity_fraction": 0.3522167487684729
+    },
+    "topology": {
+      "connected_components": 1,
+      "largest_component_nodes": 406,
+      "largest_component_fraction": 1.0,
+      "entities_with_degree_1": 143,
+      "entities_with_degree_0_in_extracted_graph": 0
+    },
+    "rejected": {
+      "unsupported_relation": 54
+    }
+  },
+  "cross_domain_overlap": {
+    "shared_entity_ids": 24,
+    "shared_exact_triples": 4,
+    "shared_entity_fraction_enterprise": 0.009619238476953907,
+    "shared_entity_fraction_mobile": 0.05867970660146699
+  },
+  "enterprise_platform_candidates": [
+    {
+      "platform": "Windows",
+      "tagged_techniques": 474,
+      "selected_entities_before_induction": 2130,
+      "triples": 19730,
+      "entities_in_triples": 2130,
+      "relation_counts": {
+        "attributed-to": 23,
+        "detects": 474,
+        "mitigates": 1241,
+        "subtechnique-of": 388,
+        "uses": 17604
+      },
+      "split_counts_estimate": {
+        "train": 15881,
+        "valid": 1925,
+        "test": 1924
+      },
+      "overlap_entity_ids_with_enterprise_other_platforms": null,
+      "entities_shared_with_any_other_platform_candidate": 1955,
+      "shared_entity_fraction": 0.9178403755868545
+    },
+    {
+      "platform": "Linux",
+      "tagged_techniques": 355,
+      "selected_entities_before_induction": 1954,
+      "triples": 18766,
+      "entities_in_triples": 1954,
+      "relation_counts": {
+        "attributed-to": 23,
+        "detects": 355,
+        "mitigates": 1170,
+        "subtechnique-of": 370,
+        "uses": 16848
+      },
+      "split_counts_estimate": {
+        "train": 15088,
+        "valid": 1839,
+        "test": 1839
+      },
+      "overlap_entity_ids_with_enterprise_other_platforms": null,
+      "entities_shared_with_any_other_platform_candidate": 1940,
+      "shared_entity_fraction": 0.9928352098259979
+    },
+    {
+      "platform": "macOS",
+      "tagged_techniques": 356,
+      "selected_entities_before_induction": 1947,
+      "triples": 18687,
+      "entities_in_triples": 1947,
+      "relation_counts": {
+        "attributed-to": 23,
+        "detects": 356,
+        "mitigates": 1145,
+        "subtechnique-of": 366,
+        "uses": 16797
+      },
+      "split_counts_estimate": {
+        "train": 15027,
+        "valid": 1832,
+        "test": 1828
+      },
+      "overlap_entity_ids_with_enterprise_other_platforms": null,
+      "entities_shared_with_any_other_platform_candidate": 1928,
+      "shared_entity_fraction": 0.9902413970210581
+    },
+    {
+      "platform": "ESXi",
+      "tagged_techniques": 117,
+      "selected_entities_before_induction": 1371,
+      "triples": 12021,
+      "entities_in_triples": 1371,
+      "relation_counts": {
+        "attributed-to": 21,
+        "detects": 117,
+        "mitigates": 458,
+        "subtechnique-of": 162,
+        "uses": 11263
+      },
+      "split_counts_estimate": {
+        "train": 9646,
+        "valid": 1187,
+        "test": 1188
+      },
+      "overlap_entity_ids_with_enterprise_other_platforms": null,
+      "entities_shared_with_any_other_platform_candidate": 1367,
+      "shared_entity_fraction": 0.9970824215900802
+    },
+    {
+      "platform": "Network Devices",
+      "tagged_techniques": 100,
+      "selected_entities_before_induction": 1307,
+      "triples": 10001,
+      "entities_in_triples": 1307,
+      "relation_counts": {
+        "attributed-to": 20,
+        "detects": 100,
+        "mitigates": 514,
+        "subtechnique-of": 154,
+        "uses": 9213
+      },
+      "split_counts_estimate": {
+        "train": 8028,
+        "valid": 987,
+        "test": 986
+      },
+      "overlap_entity_ids_with_enterprise_other_platforms": null,
+      "entities_shared_with_any_other_platform_candidate": 1279,
+      "shared_entity_fraction": 0.9785768936495792
+    },
+    {
+      "platform": "IaaS",
+      "tagged_techniques": 104,
+      "selected_entities_before_induction": 1057,
+      "triples": 5793,
+      "entities_in_triples": 1057,
+      "relation_counts": {
+        "attributed-to": 19,
+        "detects": 104,
+        "mitigates": 522,
+        "subtechnique-of": 145,
+        "uses": 5003
+      },
+      "split_counts_estimate": {
+        "train": 4661,
+        "valid": 566,
+        "test": 566
+      },
+      "overlap_entity_ids_with_enterprise_other_platforms": null,
+      "entities_shared_with_any_other_platform_candidate": 1030,
+      "shared_entity_fraction": 0.9744560075685903
+    },
+    {
+      "platform": "Containers",
+      "tagged_techniques": 48,
+      "selected_entities_before_induction": 740,
+      "triples": 3985,
+      "entities_in_triples": 740,
+      "relation_counts": {
+        "attributed-to": 15,
+        "detects": 48,
+        "mitigates": 363,
+        "subtechnique-of": 98,
+        "uses": 3461
+      },
+      "split_counts_estimate": {
+        "train": 3202,
+        "valid": 392,
+        "test": 391
+      },
+      "overlap_entity_ids_with_enterprise_other_platforms": null,
+      "entities_shared_with_any_other_platform_candidate": 727,
+      "shared_entity_fraction": 0.9824324324324324
+    },
+    {
+      "platform": "Office Suite",
+      "tagged_techniques": 78,
+      "selected_entities_before_induction": 655,
+      "triples": 3350,
+      "entities_in_triples": 655,
+      "relation_counts": {
+        "attributed-to": 16,
+        "detects": 78,
+        "mitigates": 475,
+        "subtechnique-of": 138,
+        "uses": 2643
+      },
+      "split_counts_estimate": {
+        "train": 2697,
+        "valid": 326,
+        "test": 327
+      },
+      "overlap_entity_ids_with_enterprise_other_platforms": null,
+      "entities_shared_with_any_other_platform_candidate": 655,
+      "shared_entity_fraction": 1.0
+    },
+    {
+      "platform": "SaaS",
+      "tagged_techniques": 70,
+      "selected_entities_before_induction": 585,
+      "triples": 2740,
+      "entities_in_triples": 585,
+      "relation_counts": {
+        "attributed-to": 16,
+        "detects": 70,
+        "mitigates": 423,
+        "subtechnique-of": 108,
+        "uses": 2123
+      },
+      "split_counts_estimate": {
+        "train": 2214,
+        "valid": 262,
+        "test": 264
+      },
+      "overlap_entity_ids_with_enterprise_other_platforms": null,
+      "entities_shared_with_any_other_platform_candidate": 578,
+      "shared_entity_fraction": 0.9880341880341881
+    },
+    {
+      "platform": "Identity Provider",
+      "tagged_techniques": 48,
+      "selected_entities_before_induction": 437,
+      "triples": 2087,
+      "entities_in_triples": 437,
+      "relation_counts": {
+        "attributed-to": 13,
+        "detects": 48,
+        "mitigates": 328,
+        "subtechnique-of": 76,
+        "uses": 1622
+      },
+      "split_counts_estimate": {
+        "train": 1681,
+        "valid": 204,
+        "test": 202
+      },
+      "overlap_entity_ids_with_enterprise_other_platforms": null,
+      "entities_shared_with_any_other_platform_candidate": 437,
+      "shared_entity_fraction": 1.0
+    },
+    {
+      "platform": "PRE",
+      "tagged_techniques": 96,
+      "selected_entities_before_induction": 379,
+      "triples": 1050,
+      "entities_in_triples": 379,
+      "relation_counts": {
+        "attributed-to": 19,
+        "detects": 96,
+        "mitigates": 102,
+        "subtechnique-of": 75,
+        "uses": 758
+      },
+      "split_counts_estimate": {
+        "train": 872,
+        "valid": 87,
+        "test": 91
+      },
+      "overlap_entity_ids_with_enterprise_other_platforms": null,
+      "entities_shared_with_any_other_platform_candidate": 184,
+      "shared_entity_fraction": 0.48548812664907653
+    }
+  ],
+  "decision_guidance": [
+    "Prefer Mobile if it is sufficiently large after the exact same extraction and has a useful relation vocabulary; it is a distinct ATT&CK domain.",
+    "Treat platform ego-subgraphs as a controlled same-domain experiment, not independent domains; quantify their overlap before use.",
+    "Do not select a candidate based on ULTRA MRR. Select based on predeclared structural/data criteria, then run the model."
+  ]
+}

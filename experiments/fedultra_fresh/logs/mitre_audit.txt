@@ -1,0 +1,113 @@
+
+========================================================================
+ENTERPRISE: /Users/anishnagula/code/ULTRA/datasets/cybersecurity/mitre/enterprise/v19.2/enterprise-attack-19.2.json
+========================================================================
+Bundle type: bundle
+Objects: 26086
+Unique object IDs: 26086
+Duplicate IDs: 0
+
+Object types:
+  relationship: 21262
+  x-mitre-analytic: 1758
+  attack-pattern: 858
+  malware: 733
+  x-mitre-detection-strategy: 699
+  course-of-action: 268
+  intrusion-set: 191
+  x-mitre-data-component: 109
+  tool: 95
+  campaign: 56
+  x-mitre-data-source: 38
+  x-mitre-tactic: 15
+  x-mitre-collection: 1
+  x-mitre-matrix: 1
+  identity: 1
+  marking-definition: 1
+
+Relationship types:
+  uses: 18457
+  mitigates: 1448
+  detects: 697
+  subtechnique-of: 477
+  revoked-by: 157
+  attributed-to: 26
+
+Relationship integrity:
+  Total relationship objects: 21262
+  Missing source_ref: 0
+  Missing target_ref: 0
+  Source references not in bundle: 0
+  Target references not in bundle: 0
+
+Selected object metadata:
+{'type': 'attack-pattern', 'id': 'attack-pattern--0042a9f5-f053-4769-b3ef-9ad018dfa298', 'name': 'Extra Window Memory Injection', 'relationship_type': None, 'source_ref': None, 'target_ref': None, 'revoked': False, 'deprecated': False}
+{'type': 'attack-pattern', 'id': 'attack-pattern--005a06c6-14bf-4118-afa0-ebcd8aebb0c9', 'name': 'Scheduled Task', 'relationship_type': None, 'source_ref': None, 'target_ref': None, 'revoked': False, 'deprecated': False}
+{'type': 'malware', 'id': 'malware--007b44b6-e4c5-480b-b5b9-56f2081b1b7b', 'name': 'HDoor', 'relationship_type': None, 'source_ref': None, 'target_ref': None, 'revoked': False, 'deprecated': False}
+{'type': 'malware', 'id': 'malware--00806466-754d-44ea-ad6f-0caf59cb8556', 'name': 'TrickBot', 'relationship_type': None, 'source_ref': None, 'target_ref': None, 'revoked': False, 'deprecated': False}
+{'type': 'tool', 'id': 'tool--03342581-f790-4f03-ba41-e82e67392e23', 'name': 'Net', 'relationship_type': None, 'source_ref': None, 'target_ref': None, 'revoked': False, 'deprecated': False}
+{'type': 'tool', 'id': 'tool--03c6e0ea-96d3-4b23-9afb-05055663cf4b', 'name': 'RemoteUtilities', 'relationship_type': None, 'source_ref': None, 'target_ref': None, 'revoked': False, 'deprecated': False}
+{'type': 'intrusion-set', 'id': 'intrusion-set--00f67a77-86a4-4adf-be26-1a54fc713340', 'name': 'APT38', 'relationship_type': None, 'source_ref': None, 'target_ref': None, 'revoked': False, 'deprecated': False}
+{'type': 'intrusion-set', 'id': 'intrusion-set--01e28736-2ffc-455b-9880-ed4d1407ae07', 'name': 'Indrik Spider', 'relationship_type': None, 'source_ref': None, 'target_ref': None, 'revoked': False, 'deprecated': False}
+{'type': 'campaign', 'id': 'campaign--0257b35b-93ef-4a70-80dd-ad5258e6045b', 'name': 'Operation Dream Job', 'relationship_type': None, 'source_ref': None, 'target_ref': None, 'revoked': False, 'deprecated': False}
+{'type': 'campaign', 'id': 'campaign--0c259854-4044-4f6c-ac49-118d484b3e3b', 'name': 'KV Botnet Activity', 'relationship_type': None, 'source_ref': None, 'target_ref': None, 'revoked': False, 'deprecated': False}
+{'type': 'course-of-action', 'id': 'course-of-action--00d7d21b-69d6-4797-88a2-c86f3fc97651', 'name': 'Password Filter DLL Mitigation', 'relationship_type': None, 'source_ref': None, 'target_ref': None, 'revoked': False, 'deprecated': True}
+{'type': 'course-of-action', 'id': 'course-of-action--02f0f92a-0a51-4c94-9bda-6437b9a93f22', 'name': 'Space after Filename Mitigation', 'relationship_type': None, 'source_ref': None, 'target_ref': None, 'revoked': False, 'deprecated': True}
+{'type': 'relationship', 'id': 'relationship--04791b5e-1795-4a1c-a10d-71f919fc420e', 'name': None, 'relationship_type': 'uses', 'source_ref': 'campaign--0257b35b-93ef-4a70-80dd-ad5258e6045b', 'target_ref': 'attack-pattern--c1b68a96-3c48-49ea-a6c0-9b27359f9c19', 'revoked': False, 'deprecated': False}
+{'type': 'relationship', 'id': 'relationship--061c7b3d-775a-403f-9fd6-af0962a2e25e', 'name': None, 'relationship_type': 'uses', 'source_ref': 'campaign--0257b35b-93ef-4a70-80dd-ad5258e6045b', 'target_ref': 'attack-pattern--3ee16395-03f0-4690-a32e-69ce9ada0f9e', 'revoked': False, 'deprecated': False}
+
+========================================================================
+ICS: /Users/anishnagula/code/ULTRA/datasets/cybersecurity/mitre/ics/v19.2/ics-attack-19.2.json
+========================================================================
+Bundle type: bundle
+Objects: 2173
+Unique object IDs: 2173
+Duplicate IDs: 0
+
+Object types:
+  relationship: 1667
+  attack-pattern: 118
+  x-mitre-analytic: 97
+  x-mitre-detection-strategy: 97
+  course-of-action: 52
+  x-mitre-data-component: 36
+  malware: 30
+  x-mitre-asset: 18
+  x-mitre-data-source: 17
+  intrusion-set: 16
+  x-mitre-tactic: 12
+  campaign: 9
+  x-mitre-collection: 1
+  x-mitre-matrix: 1
+  identity: 1
+  marking-definition: 1
+
+Relationship types:
+  targets: 842
+  mitigates: 402
+  uses: 292
+  detects: 97
+  subtechnique-of: 18
+  revoked-by: 11
+  attributed-to: 5
+
+Relationship integrity:
+  Total relationship objects: 1667
+  Missing source_ref: 0
+  Missing target_ref: 0
+  Source references not in bundle: 0
+  Target references not in bundle: 0
+
+Selected object metadata:
+{'type': 'attack-pattern', 'id': 'attack-pattern--008b8f56-6107-48be-aa9f-746f927dbb61', 'name': 'Block Command Message', 'relationship_type': None, 'source_ref': None, 'target_ref': None, 'revoked': True, 'deprecated': False}
+{'type': 'attack-pattern', 'id': 'attack-pattern--063b5b92-5361-481a-9c3f-95492ed9a2d8', 'name': 'Service Stop', 'relationship_type': None, 'source_ref': None, 'target_ref': None, 'revoked': False, 'deprecated': False}
+{'type': 'malware', 'id': 'malware--00e7d565-9883-4ee5-b642-8fd17fd6a3f5', 'name': 'EKANS', 'relationship_type': None, 'source_ref': None, 'target_ref': None, 'revoked': False, 'deprecated': False}
+{'type': 'malware', 'id': 'malware--083bb47b-02c8-4423-81a2-f9ef58572974', 'name': 'Backdoor.Oldrea', 'relationship_type': None, 'source_ref': None, 'target_ref': None, 'revoked': False, 'deprecated': False}
+{'type': 'intrusion-set', 'id': 'intrusion-set--00f67a77-86a4-4adf-be26-1a54fc713340', 'name': 'APT38', 'relationship_type': None, 'source_ref': None, 'target_ref': None, 'revoked': False, 'deprecated': False}
+{'type': 'intrusion-set', 'id': 'intrusion-set--190242d7-73fc-4738-af68-20162f7a5aae', 'name': 'ALLANITE', 'relationship_type': None, 'source_ref': None, 'target_ref': None, 'revoked': False, 'deprecated': False}
+{'type': 'campaign', 'id': 'campaign--1169ff24-b35f-4d8d-8cf3-643a2834227f', 'name': 'FrostyGoop Incident', 'relationship_type': None, 'source_ref': None, 'target_ref': None, 'revoked': False, 'deprecated': False}
+{'type': 'campaign', 'id': 'campaign--45a98f02-852f-49b2-94c0-c63207bebbbf', 'name': 'Triton Safety Instrumented System Attack', 'relationship_type': None, 'source_ref': None, 'target_ref': None, 'revoked': False, 'deprecated': False}
+{'type': 'course-of-action', 'id': 'course-of-action--059ba11e-e3dc-49aa-84ca-88197f40d4ea', 'name': 'Application Isolation and Sandboxing', 'relationship_type': None, 'source_ref': None, 'target_ref': None, 'revoked': False, 'deprecated': False}
+{'type': 'course-of-action', 'id': 'course-of-action--11f242bc-3121-438c-84b2-5cbd46a4bb17', 'name': 'Filter Network Traffic', 'relationship_type': None, 'source_ref': None, 'target_ref': None, 'revoked': False, 'deprecated': False}
+{'type': 'relationship', 'id': 'relationship--12e84466-fb05-4d55-9220-5933ee0fcb43', 'name': None, 'relationship_type': 'uses', 'source_ref': 'campaign--1169ff24-b35f-4d8d-8cf3-643a2834227f', 'target_ref': 'malware--b34df04a-9d30-4d84-a03f-0d536ee19a05', 'revoked': False, 'deprecated': False}
+{'type': 'relationship', 'id': 'relationship--3f261739-b6ec-4a86-94a3-146929f9facf', 'name': None, 'relationship_type': 'uses', 'source_ref': 'campaign--1169ff24-b35f-4d8d-8cf3-643a2834227f', 'target_ref': 'attack-pattern--097924ce-a9a9-4039-8591-e0deedfb8722', 'revoked': False, 'deprecated': False}

@@ -1,0 +1,54 @@
+
+=== ENTERPRISE ===
+Active selected entities: 4374
+Candidate relationship objects: 21103
+Unique candidate triples: 21103
+Duplicate triples removed: 0
+Entity types: {'campaign': 56, 'course-of-action': 44, 'intrusion-set': 176, 'malware': 730, 'tool': 95, 'attack-pattern': 697, 'x-mitre-tactic': 15, 'x-mitre-analytic': 1758, 'x-mitre-data-component': 106, 'x-mitre-detection-strategy': 697}
+Relation counts: {'attributed-to': 26, 'detects': 697, 'mitigates': 1448, 'subtechnique-of': 475, 'uses': 18457}
+Rejected by relationship type: {'revoked-by': 157}
+Rejected inactive relationships: {}
+Rejected because endpoint is excluded/inactive: {'subtechnique-of': 2}
+Most frequent (head type, relation, tail type) patterns:
+  ('malware', 'uses', 'attack-pattern'): 10493
+  ('intrusion-set', 'uses', 'attack-pattern'): 4628
+  ('course-of-action', 'mitigates', 'attack-pattern'): 1448
+  ('campaign', 'uses', 'attack-pattern'): 1146
+  ('tool', 'uses', 'attack-pattern'): 869
+  ('x-mitre-detection-strategy', 'detects', 'attack-pattern'): 697
+  ('intrusion-set', 'uses', 'malware'): 676
+  ('attack-pattern', 'subtechnique-of', 'attack-pattern'): 475
+  ('intrusion-set', 'uses', 'tool'): 473
+  ('campaign', 'uses', 'malware'): 91
+  ('campaign', 'uses', 'tool'): 81
+  ('campaign', 'attributed-to', 'intrusion-set'): 26
+
+=== ICS ===
+Active selected entities: 454
+Candidate relationship objects: 1656
+Unique candidate triples: 1656
+Duplicate triples removed: 0
+Entity types: {'campaign': 8, 'course-of-action': 52, 'intrusion-set': 14, 'malware': 23, 'attack-pattern': 97, 'x-mitre-asset': 18, 'x-mitre-tactic': 12, 'x-mitre-analytic': 97, 'x-mitre-data-component': 36, 'x-mitre-detection-strategy': 97}
+Relation counts: {'attributed-to': 5, 'detects': 97, 'mitigates': 402, 'subtechnique-of': 18, 'targets': 842, 'uses': 292}
+Rejected by relationship type: {'revoked-by': 11}
+Rejected inactive relationships: {}
+Rejected because endpoint is excluded/inactive: {}
+Most frequent (head type, relation, tail type) patterns:
+  ('attack-pattern', 'targets', 'x-mitre-asset'): 842
+  ('course-of-action', 'mitigates', 'attack-pattern'): 402
+  ('malware', 'uses', 'attack-pattern'): 169
+  ('x-mitre-detection-strategy', 'detects', 'attack-pattern'): 97
+  ('campaign', 'uses', 'attack-pattern'): 82
+  ('intrusion-set', 'uses', 'attack-pattern'): 20
+  ('attack-pattern', 'subtechnique-of', 'attack-pattern'): 18
+  ('intrusion-set', 'uses', 'malware'): 16
+  ('campaign', 'attributed-to', 'intrusion-set'): 5
+  ('campaign', 'uses', 'malware'): 5
+
+=== CROSS-DOMAIN CHECK ===
+Shared entity IDs: 66
+Shared unique triples: 22
+Enterprise-only triples: 21081
+ICS-only triples: 1634
+Shared relation labels: ['attributed-to', 'detects', 'mitigates', 'subtechnique-of', 'uses']
+Global relation vocabulary: ['attributed-to', 'detects', 'mitigates', 'subtechnique-of', 'targets', 'uses']

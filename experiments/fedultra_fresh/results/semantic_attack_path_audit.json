@@ -1,0 +1,2513 @@
+{
+  "protocol": "strict relation-specific direction-aware ATT&CK meta-path audit",
+  "purpose": "Validate path query eligibility before any path-aware training; no model training is performed.",
+  "context": "Only the target graph TRAIN triples are used as path context for VALID and TEST queries.",
+  "path_direction": "Every template follows the directed source STIX relation sequence; inverse traversal is only allowed if a template explicitly includes ^-1.",
+  "important_limit": "These templates are hand-specified structural hypotheses, not proof of causal attack progression. They must be reviewed against ATT&CK/STIX semantics before confirmatory claims.",
+  "graphs": [
+    {
+      "graph": "enterprise",
+      "split_counts": {
+        "train": 17025,
+        "valid": 2039,
+        "test": 2039
+      },
+      "semantic_path_templates": {
+        "uses": [
+          {
+            "name": "actor_attributed_to_group_uses_technique",
+            "signature": "attributed-to -> uses",
+            "expected_types": [
+              "malware",
+              "intrusion-set",
+              "attack-pattern"
+            ],
+            "rationale": "A malware object is attributed to a group that uses the candidate technique."
+          },
+          {
+            "name": "actor_uses_subtechnique_parent",
+            "signature": "uses -> subtechnique-of",
+            "expected_types": [
+              "ACTOR",
+              "attack-pattern",
+              "attack-pattern"
+            ],
+            "rationale": "The actor uses a known sub-technique whose parent is the candidate technique."
+          }
+        ],
+        "mitigates": [
+          {
+            "name": "mitigates_child_parent_technique",
+            "signature": "mitigates -> subtechnique-of",
+            "expected_types": [
+              "course-of-action",
+              "attack-pattern",
+              "attack-pattern"
+            ],
+            "rationale": "The mitigation is linked to a child technique of the candidate parent technique."
+          }
+        ],
+        "targets": [
+          {
+            "name": "child_technique_parent_targets_asset",
+            "signature": "subtechnique-of -> targets",
+            "expected_types": [
+              "attack-pattern",
+              "attack-pattern",
+              "x-mitre-asset"
+            ],
+            "rationale": "The parent technique of a sub-technique targets the candidate asset type."
+          }
+        ],
+        "subtechnique-of": [
+          {
+            "name": "transitive_subtechnique_hierarchy",
+            "signature": "subtechnique-of -> subtechnique-of",
+            "expected_types": [
+              "attack-pattern",
+              "attack-pattern",
+              "attack-pattern"
+            ],
+            "rationale": "A two-edge sub-technique hierarchy implies a transitive ancestor candidate."
+          }
+        ]
+      },
+      "splits": {
+        "valid": {
+          "attack_pattern_queries": 1908,
+          "strict_semantic_path_supported_queries": 50,
+          "strict_semantic_path_support_fraction": 0.02620545073375262,
+          "unsupported_queries": 1858,
+          "exact_fact_overlap_with_train": 0,
+          "query_relation_counts": {
+            "uses": 1716,
+            "mitigates": 145,
+            "subtechnique-of": 47
+          },
+          "strict_supported_by_relation": {
+            "uses": 29,
+            "mitigates": 21
+          },
+          "query_endpoint_type_counts": {
+            "malware -> attack-pattern": 1037,
+            "intrusion-set -> attack-pattern": 452,
+            "course-of-action -> attack-pattern": 145,
+            "campaign -> attack-pattern": 131,
+            "tool -> attack-pattern": 96,
+            "attack-pattern -> attack-pattern": 47
+          },
+          "matched_template_counts": {
+            "actor_uses_subtechnique_parent": 29,
+            "mitigates_child_parent_technique": 21
+          },
+          "examples_by_template": {
+            "actor_uses_subtechnique_parent": [
+              {
+                "query": [
+                  "campaign--519ee082-8ab6-439b-988f-a8a3f02c8d30",
+                  "uses",
+                  "attack-pattern--42e8de7b-37b2-4258-905a-6897815e58e0"
+                ],
+                "endpoint_types": [
+                  "campaign",
+                  "attack-pattern"
+                ],
+                "template": "actor_uses_subtechnique_parent",
+                "signature": "uses -> subtechnique-of",
+                "path_length": 2,
+                "steps": [
+                  {
+                    "relation": "uses",
+                    "direction": "forward",
+                    "from": "campaign--519ee082-8ab6-439b-988f-a8a3f02c8d30",
+                    "to": "attack-pattern--1c4e5d32-1fe9-4116-9d9d-59e3925bd6a2"
+                  },
+                  {
+                    "relation": "subtechnique-of",
+                    "direction": "forward",
+                    "from": "attack-pattern--1c4e5d32-1fe9-4116-9d9d-59e3925bd6a2",
+                    "to": "attack-pattern--42e8de7b-37b2-4258-905a-6897815e58e0"
+                  }
+                ],
+                "path_nodes": [
+                  "campaign--519ee082-8ab6-439b-988f-a8a3f02c8d30",
+                  "attack-pattern--1c4e5d32-1fe9-4116-9d9d-59e3925bd6a2",
+                  "attack-pattern--42e8de7b-37b2-4258-905a-6897815e58e0"
+                ]
+              },
+              {
+                "query": [
+                  "intrusion-set--01e28736-2ffc-455b-9880-ed4d1407ae07",
+                  "uses",
+                  "attack-pattern--bbde9781-60aa-4b8a-a911-895b0c1b3872"
+                ],
+                "endpoint_types": [
+                  "intrusion-set",
+                  "attack-pattern"
+                ],
+                "template": "actor_uses_subtechnique_parent",
+                "signature": "uses -> subtechnique-of",
+                "path_length": 2,
+                "steps": [
+                  {
+                    "relation": "uses",
+                    "direction": "forward",
+                    "from": "intrusion-set--01e28736-2ffc-455b-9880-ed4d1407ae07",
+                    "to": "attack-pattern--75b9a4d2-d4e2-4ca1-9aab-1badd9e05fd0"
+                  },
+                  {
+                    "relation": "subtechnique-of",
+                    "direction": "forward",
+                    "from": "attack-pattern--75b9a4d2-d4e2-4ca1-9aab-1badd9e05fd0",
+                    "to": "attack-pattern--bbde9781-60aa-4b8a-a911-895b0c1b3872"
+                  }
+                ],
+                "path_nodes": [
+                  "intrusion-set--01e28736-2ffc-455b-9880-ed4d1407ae07",
+                  "attack-pattern--75b9a4d2-d4e2-4ca1-9aab-1badd9e05fd0",
+                  "attack-pattern--bbde9781-60aa-4b8a-a911-895b0c1b3872"
+                ]
+              },
+              {
+                "query": [
+                  "intrusion-set--0ec2f388-bf0f-4b5c-97b1-fc736d26c25f",
+                  "uses",
+                  "attack-pattern--43e7dc91-05b2-474c-b9ac-2ed4fe101f4d"
+                ],
+                "endpoint_types": [
+                  "intrusion-set",
+                  "attack-pattern"
+                ],
+                "template": "actor_uses_subtechnique_parent",
+                "signature": "uses -> subtechnique-of",
+                "path_length": 2,
+                "steps": [
+                  {
+                    "relation": "uses",
+                    "direction": "forward",
+                    "from": "intrusion-set--0ec2f388-bf0f-4b5c-97b1-fc736d26c25f",
+                    "to": "attack-pattern--b200542e-e877-4395-875b-cf1a44537ca4"
+                  },
+                  {
+                    "relation": "subtechnique-of",
+                    "direction": "forward",
+                    "from": "attack-pattern--b200542e-e877-4395-875b-cf1a44537ca4",
+                    "to": "attack-pattern--43e7dc91-05b2-474c-b9ac-2ed4fe101f4d"
+                  }
+                ],
+                "path_nodes": [
+                  "intrusion-set--0ec2f388-bf0f-4b5c-97b1-fc736d26c25f",
+                  "attack-pattern--b200542e-e877-4395-875b-cf1a44537ca4",
+                  "attack-pattern--43e7dc91-05b2-474c-b9ac-2ed4fe101f4d"
+                ]
+              },
+              {
+                "query": [
+                  "intrusion-set--1c63d4ec-0a75-4daa-b1df-0d11af3d3cc1",
+                  "uses",
+                  "attack-pattern--7385dfaf-6886-4229-9ecd-6fd678040830"
+                ],
+                "endpoint_types": [
+                  "intrusion-set",
+                  "attack-pattern"
+                ],
+                "template": "actor_uses_subtechnique_parent",
+                "signature": "uses -> subtechnique-of",
+                "path_length": 2,
+                "steps": [
+                  {
+                    "relation": "uses",
+                    "direction": "forward",
+                    "from": "intrusion-set--1c63d4ec-0a75-4daa-b1df-0d11af3d3cc1",
+                    "to": "attack-pattern--970a3432-3237-47ad-bcca-7d8cbb217736"
+                  },
+                  {
+                    "relation": "subtechnique-of",
+                    "direction": "forward",
+                    "from": "attack-pattern--970a3432-3237-47ad-bcca-7d8cbb217736",
+                    "to": "attack-pattern--7385dfaf-6886-4229-9ecd-6fd678040830"
+                  }
+                ],
+                "path_nodes": [
+                  "intrusion-set--1c63d4ec-0a75-4daa-b1df-0d11af3d3cc1",
+                  "attack-pattern--970a3432-3237-47ad-bcca-7d8cbb217736",
+                  "attack-pattern--7385dfaf-6886-4229-9ecd-6fd678040830"
+                ]
+              },
+              {
+                "query": [
+                  "intrusion-set--222fbd21-fc4f-4b7e-9f85-0e6e3a76c33f",
+                  "uses",
+                  "attack-pattern--42e8de7b-37b2-4258-905a-6897815e58e0"
+                ],
+                "endpoint_types": [
+                  "intrusion-set",
+                  "attack-pattern"
+                ],
+                "template": "actor_uses_subtechnique_parent",
+                "signature": "uses -> subtechnique-of",
+                "path_length": 2,
+                "steps": [
+                  {
+                    "relation": "uses",
+                    "direction": "forward",
+                    "from": "intrusion-set--222fbd21-fc4f-4b7e-9f85-0e6e3a76c33f",
+                    "to": "attack-pattern--1c4e5d32-1fe9-4116-9d9d-59e3925bd6a2"
+                  },
+                  {
+                    "relation": "subtechnique-of",
+                    "direction": "forward",
+                    "from": "attack-pattern--1c4e5d32-1fe9-4116-9d9d-59e3925bd6a2",
+                    "to": "attack-pattern--42e8de7b-37b2-4258-905a-6897815e58e0"
+                  }
+                ],
+                "path_nodes": [
+                  "intrusion-set--222fbd21-fc4f-4b7e-9f85-0e6e3a76c33f",
+                  "attack-pattern--1c4e5d32-1fe9-4116-9d9d-59e3925bd6a2",
+                  "attack-pattern--42e8de7b-37b2-4258-905a-6897815e58e0"
+                ]
+              }
+            ],
+            "mitigates_child_parent_technique": [
+              {
+                "query": [
+                  "course-of-action--12241367-a8b7-49b4-b86e-2236901ba50c",
+                  "mitigates",
+                  "attack-pattern--035bb001-ab69-4a0b-9f6c-2de8b09e1b9d"
+                ],
+                "endpoint_types": [
+                  "course-of-action",
+                  "attack-pattern"
+                ],
+                "template": "mitigates_child_parent_technique",
+                "signature": "mitigates -> subtechnique-of",
+                "path_length": 2,
+                "steps": [
+                  {
+                    "relation": "mitigates",
+                    "direction": "forward",
+                    "from": "course-of-action--12241367-a8b7-49b4-b86e-2236901ba50c",
+                    "to": "attack-pattern--48b836c6-e4ca-435a-82a3-29c03e5b492e"
+                  },
+                  {
+                    "relation": "subtechnique-of",
+                    "direction": "forward",
+                    "from": "attack-pattern--48b836c6-e4ca-435a-82a3-29c03e5b492e",
+                    "to": "attack-pattern--035bb001-ab69-4a0b-9f6c-2de8b09e1b9d"
+                  }
+                ],
+                "path_nodes": [
+                  "course-of-action--12241367-a8b7-49b4-b86e-2236901ba50c",
+                  "attack-pattern--48b836c6-e4ca-435a-82a3-29c03e5b492e",
+                  "attack-pattern--035bb001-ab69-4a0b-9f6c-2de8b09e1b9d"
+                ]
+              },
+              {
+                "query": [
+                  "course-of-action--15437c6d-b998-4a36-be41-4ace3d54d266",
+                  "mitigates",
+                  "attack-pattern--3f18edba-28f4-4bb9-82c3-8aa60dcac5f7"
+                ],
+                "endpoint_types": [
+                  "course-of-action",
+                  "attack-pattern"
+                ],
+                "template": "mitigates_child_parent_technique",
+                "signature": "mitigates -> subtechnique-of",
+                "path_length": 2,
+                "steps": [
+                  {
+                    "relation": "mitigates",
+                    "direction": "forward",
+                    "from": "course-of-action--15437c6d-b998-4a36-be41-4ace3d54d266",
+                    "to": "attack-pattern--191cc6af-1bb2-4344-ab5f-28e496638720"
+                  },
+                  {
+                    "relation": "subtechnique-of",
+                    "direction": "forward",
+                    "from": "attack-pattern--191cc6af-1bb2-4344-ab5f-28e496638720",
+                    "to": "attack-pattern--3f18edba-28f4-4bb9-82c3-8aa60dcac5f7"
+                  }
+                ],
+                "path_nodes": [
+                  "course-of-action--15437c6d-b998-4a36-be41-4ace3d54d266",
+                  "attack-pattern--191cc6af-1bb2-4344-ab5f-28e496638720",
+                  "attack-pattern--3f18edba-28f4-4bb9-82c3-8aa60dcac5f7"
+                ]
+              },
+              {
+                "query": [
+                  "course-of-action--20f6a9df-37c4-4e20-9e47-025983b1b39d",
+                  "mitigates",
+                  "attack-pattern--451a9977-d255-43c9-b431-66de80130c8c"
+                ],
+                "endpoint_types": [
+                  "course-of-action",
+                  "attack-pattern"
+                ],
+                "template": "mitigates_child_parent_technique",
+                "signature": "mitigates -> subtechnique-of",
+                "path_length": 2,
+                "steps": [
+                  {
+                    "relation": "mitigates",
+                    "direction": "forward",
+                    "from": "course-of-action--20f6a9df-37c4-4e20-9e47-025983b1b39d",
+                    "to": "attack-pattern--8868cb5b-d575-4a60-acb2-07d37389a2fd"
+                  },
+                  {
+                    "relation": "subtechnique-of",
+                    "direction": "forward",
+                    "from": "attack-pattern--8868cb5b-d575-4a60-acb2-07d37389a2fd",
+                    "to": "attack-pattern--451a9977-d255-43c9-b431-66de80130c8c"
+                  }
+                ],
+                "path_nodes": [
+                  "course-of-action--20f6a9df-37c4-4e20-9e47-025983b1b39d",
+                  "attack-pattern--8868cb5b-d575-4a60-acb2-07d37389a2fd",
+                  "attack-pattern--451a9977-d255-43c9-b431-66de80130c8c"
+                ]
+              },
+              {
+                "query": [
+                  "course-of-action--23843cff-f7b9-4659-a7b7-713ef347f547",
+                  "mitigates",
+                  "attack-pattern--389735f1-f21c-4208-b8f0-f8031e7169b8"
+                ],
+                "endpoint_types": [
+                  "course-of-action",
+                  "attack-pattern"
+                ],
+                "template": "mitigates_child_parent_technique",
+                "signature": "mitigates -> subtechnique-of",
+                "path_length": 2,
+                "steps": [
+                  {
+                    "relation": "mitigates",
+                    "direction": "forward",
+                    "from": "course-of-action--23843cff-f7b9-4659-a7b7-713ef347f547",
+                    "to": "attack-pattern--278716b1-61ce-4a74-8d17-891d0c494101"
+                  },
+                  {
+                    "relation": "subtechnique-of",
+                    "direction": "forward",
+                    "from": "attack-pattern--278716b1-61ce-4a74-8d17-891d0c494101",
+                    "to": "attack-pattern--389735f1-f21c-4208-b8f0-f8031e7169b8"
+                  }
+                ],
+                "path_nodes": [
+                  "course-of-action--23843cff-f7b9-4659-a7b7-713ef347f547",
+                  "attack-pattern--278716b1-61ce-4a74-8d17-891d0c494101",
+                  "attack-pattern--389735f1-f21c-4208-b8f0-f8031e7169b8"
+                ]
+              },
+              {
+                "query": [
+                  "course-of-action--23843cff-f7b9-4659-a7b7-713ef347f547",
+                  "mitigates",
+                  "attack-pattern--3f18edba-28f4-4bb9-82c3-8aa60dcac5f7"
+                ],
+                "endpoint_types": [
+                  "course-of-action",
+                  "attack-pattern"
+                ],
+                "template": "mitigates_child_parent_technique",
+                "signature": "mitigates -> subtechnique-of",
+                "path_length": 2,
+                "steps": [
+                  {
+                    "relation": "mitigates",
+                    "direction": "forward",
+                    "from": "course-of-action--23843cff-f7b9-4659-a7b7-713ef347f547",
+                    "to": "attack-pattern--191cc6af-1bb2-4344-ab5f-28e496638720"
+                  },
+                  {
+                    "relation": "subtechnique-of",
+                    "direction": "forward",
+                    "from": "attack-pattern--191cc6af-1bb2-4344-ab5f-28e496638720",
+                    "to": "attack-pattern--3f18edba-28f4-4bb9-82c3-8aa60dcac5f7"
+                  }
+                ],
+                "path_nodes": [
+                  "course-of-action--23843cff-f7b9-4659-a7b7-713ef347f547",
+                  "attack-pattern--191cc6af-1bb2-4344-ab5f-28e496638720",
+                  "attack-pattern--3f18edba-28f4-4bb9-82c3-8aa60dcac5f7"
+                ]
+              }
+            ]
+          },
+          "example_unsupported_queries": [
+            {
+              "query": [
+                "attack-pattern--005cc321-08ce-4d17-b1ea-cb5275926520",
+                "subtechnique-of",
+                "attack-pattern--451a9977-d255-43c9-b431-66de80130c8c"
+              ],
+              "endpoint_types": [
+                "attack-pattern",
+                "attack-pattern"
+              ],
+              "reason": "No matching directed semantic template for this relation/endpoints in TRAIN context."
+            },
+            {
+              "query": [
+                "attack-pattern--00f90846-cbd1-4fc5-9233-df5c2bf2a662",
+                "subtechnique-of",
+                "attack-pattern--53ac20cd-aca3-406e-9aa0-9fc7fdc60a5a"
+              ],
+              "endpoint_types": [
+                "attack-pattern",
+                "attack-pattern"
+              ],
+              "reason": "No matching directed semantic template for this relation/endpoints in TRAIN context."
+            },
+            {
+              "query": [
+                "attack-pattern--0533ab23-3f7d-463f-9bd8-634d27e4dee1",
+                "subtechnique-of",
+                "attack-pattern--b3d682b6-98f2-4fb0-aa3b-b4df007ca70a"
+              ],
+              "endpoint_types": [
+                "attack-pattern",
+                "attack-pattern"
+              ],
+              "reason": "No matching directed semantic template for this relation/endpoints in TRAIN context."
+            },
+            {
+              "query": [
+                "attack-pattern--0cfe31a7-81fc-472c-bc45-e2808d1066a3",
+                "subtechnique-of",
+                "attack-pattern--5909f20f-3c39-4795-be06-ef1ea40d350b"
+              ],
+              "endpoint_types": [
+                "attack-pattern",
+                "attack-pattern"
+              ],
+              "reason": "No matching directed semantic template for this relation/endpoints in TRAIN context."
+            },
+            {
+              "query": [
+                "attack-pattern--10ff21b9-5a01-4268-a1b5-3b55015f1847",
+                "subtechnique-of",
+                "attack-pattern--b6301b64-ef57-4cce-bb0b-77026f14a8db"
+              ],
+              "endpoint_types": [
+                "attack-pattern",
+                "attack-pattern"
+              ],
+              "reason": "No matching directed semantic template for this relation/endpoints in TRAIN context."
+            },
+            {
+              "query": [
+                "attack-pattern--155207c0-7f53-4f13-a06b-0a9907ef5096",
+                "subtechnique-of",
+                "attack-pattern--0458aab9-ad42-4eac-9e22-706a95bafee2"
+              ],
+              "endpoint_types": [
+                "attack-pattern",
+                "attack-pattern"
+              ],
+              "reason": "No matching directed semantic template for this relation/endpoints in TRAIN context."
+            },
+            {
+              "query": [
+                "attack-pattern--232b7f21-adf9-4b42-b936-b9d6f7df856e",
+                "subtechnique-of",
+                "attack-pattern--8c32eb4d-805f-4fc5-bf60-c4d476c131b5"
+              ],
+              "endpoint_types": [
+                "attack-pattern",
+                "attack-pattern"
+              ],
+              "reason": "No matching directed semantic template for this relation/endpoints in TRAIN context."
+            },
+            {
+              "query": [
+                "attack-pattern--24286c33-d4a4-4419-85c2-1d094a896c26",
+                "subtechnique-of",
+                "attack-pattern--09312b1a-c3c6-4b45-9844-3ccc78e5d82f"
+              ],
+              "endpoint_types": [
+                "attack-pattern",
+                "attack-pattern"
+              ],
+              "reason": "No matching directed semantic template for this relation/endpoints in TRAIN context."
+            },
+            {
+              "query": [
+                "attack-pattern--248d3fe1-7fe1-4d71-91c7-8bb7ef35cad3",
+                "subtechnique-of",
+                "attack-pattern--d28ef391-8ed4-45dc-bc4a-2f43abf54416"
+              ],
+              "endpoint_types": [
+                "attack-pattern",
+                "attack-pattern"
+              ],
+              "reason": "No matching directed semantic template for this relation/endpoints in TRAIN context."
+            },
+            {
+              "query": [
+                "attack-pattern--291ede6c-1473-454c-b614-5ac5ea63c987",
+                "subtechnique-of",
+                "attack-pattern--eec096b8-c207-43df-b6c1-11523861e452"
+              ],
+              "endpoint_types": [
+                "attack-pattern",
+                "attack-pattern"
+              ],
+              "reason": "No matching directed semantic template for this relation/endpoints in TRAIN context."
+            },
+            {
+              "query": [
+                "attack-pattern--29ba5a15-3b7b-4732-b817-65ea8f6468e6",
+                "subtechnique-of",
+                "attack-pattern--7bd9c723-2f78-4309-82c5-47cad406572b"
+              ],
+              "endpoint_types": [
+                "attack-pattern",
+                "attack-pattern"
+              ],
+              "reason": "No matching directed semantic template for this relation/endpoints in TRAIN context."
+            },
+            {
+              "query": [
+                "attack-pattern--2bee5ffb-7a7a-4119-b1f2-158151b19ac0",
+                "subtechnique-of",
+                "attack-pattern--c675646d-e204-4aa8-978d-e3d6d65885c4"
+              ],
+              "endpoint_types": [
+                "attack-pattern",
+                "attack-pattern"
+              ],
+              "reason": "No matching directed semantic template for this relation/endpoints in TRAIN context."
+            },
+            {
+              "query": [
+                "attack-pattern--2db31dcd-54da-405d-acef-b9129b816ed6",
+                "subtechnique-of",
+                "attack-pattern--54a649ff-439a-41a4-9856-8d144a2551ba"
+              ],
+              "endpoint_types": [
+                "attack-pattern",
+                "attack-pattern"
+              ],
+              "reason": "No matching directed semantic template for this relation/endpoints in TRAIN context."
+            },
+            {
+              "query": [
+                "attack-pattern--3120b9fa-23b8-4500-ae73-09494f607b7d",
+                "subtechnique-of",
+                "attack-pattern--0a3ead4e-6d47-4ccb-854c-a6a4f9d96b22"
+              ],
+              "endpoint_types": [
+                "attack-pattern",
+                "attack-pattern"
+              ],
+              "reason": "No matching directed semantic template for this relation/endpoints in TRAIN context."
+            },
+            {
+              "query": [
+                "attack-pattern--31225cd3-cd46-4575-b287-c2c14011c074",
+                "subtechnique-of",
+                "attack-pattern--0458aab9-ad42-4eac-9e22-706a95bafee2"
+              ],
+              "endpoint_types": [
+                "attack-pattern",
+                "attack-pattern"
+              ],
+              "reason": "No matching directed semantic template for this relation/endpoints in TRAIN context."
+            },
+            {
+              "query": [
+                "attack-pattern--31fe0ba2-62fd-4fd9-9293-4043d84f7fe9",
+                "subtechnique-of",
+                "attack-pattern--84771bc3-f6a0-403e-b144-01af70e5fda0"
+              ],
+              "endpoint_types": [
+                "attack-pattern",
+                "attack-pattern"
+              ],
+              "reason": "No matching directed semantic template for this relation/endpoints in TRAIN context."
+            },
+            {
+              "query": [
+                "attack-pattern--32901740-b42c-4fdd-bc02-345b5dc57082",
+                "subtechnique-of",
+                "attack-pattern--b83e166d-13d7-4b52-8677-dff90c548fd7"
+              ],
+              "endpoint_types": [
+                "attack-pattern",
+                "attack-pattern"
+              ],
+              "reason": "No matching directed semantic template for this relation/endpoints in TRAIN context."
+            },
+            {
+              "query": [
+                "attack-pattern--3731fbcd-0e43-47ae-ae6c-d15e510f0d42",
+                "subtechnique-of",
+                "attack-pattern--f4c1826f-a322-41cd-9557-562100848c84"
+              ],
+              "endpoint_types": [
+                "attack-pattern",
+                "attack-pattern"
+              ],
+              "reason": "No matching directed semantic template for this relation/endpoints in TRAIN context."
+            },
+            {
+              "query": [
+                "attack-pattern--37b11151-1776-4f8f-b328-30939fbf2ceb",
+                "subtechnique-of",
+                "attack-pattern--7385dfaf-6886-4229-9ecd-6fd678040830"
+              ],
+              "endpoint_types": [
+                "attack-pattern",
+                "attack-pattern"
+              ],
+              "reason": "No matching directed semantic template for this relation/endpoints in TRAIN context."
+            },
+            {
+              "query": [
+                "attack-pattern--3aef9463-9a7a-43ba-8957-a867e07c1e6a",
+                "subtechnique-of",
+                "attack-pattern--799ace7f-e227-4411-baa0-8868704f2a69"
+              ],
+              "endpoint_types": [
+                "attack-pattern",
+                "attack-pattern"
+              ],
+              "reason": "No matching directed semantic template for this relation/endpoints in TRAIN context."
+            }
+          ]
+        },
+        "test": {
+          "attack_pattern_queries": 1895,
+          "strict_semantic_path_supported_queries": 61,
+          "strict_semantic_path_support_fraction": 0.03218997361477573,
+          "unsupported_queries": 1834,
+          "exact_fact_overlap_with_train": 0,
+          "query_relation_counts": {
+            "uses": 1702,
+            "mitigates": 145,
+            "subtechnique-of": 48
+          },
+          "strict_supported_by_relation": {
+            "uses": 34,
+            "mitigates": 27
+          },
+          "query_endpoint_type_counts": {
+            "malware -> attack-pattern": 1030,
+            "intrusion-set -> attack-pattern": 490,
+            "course-of-action -> attack-pattern": 145,
+            "tool -> attack-pattern": 94,
+            "campaign -> attack-pattern": 88,
+            "attack-pattern -> attack-pattern": 48
+          },
+          "matched_template_counts": {
+            "actor_uses_subtechnique_parent": 34,
+            "mitigates_child_parent_technique": 27
+          },
+          "examples_by_template": {
+            "actor_uses_subtechnique_parent": [
+              {
+                "query": [
+                  "campaign--7e21077d-2589-43a7-a5f9-490061289526",
+                  "uses",
+                  "attack-pattern--b17a1a56-e99c-403c-8948-561df0cffe81"
+                ],
+                "endpoint_types": [
+                  "campaign",
+                  "attack-pattern"
+                ],
+                "template": "actor_uses_subtechnique_parent",
+                "signature": "uses -> subtechnique-of",
+                "path_length": 2,
+                "steps": [
+                  {
+                    "relation": "uses",
+                    "direction": "forward",
+                    "from": "campaign--7e21077d-2589-43a7-a5f9-490061289526",
+                    "to": "attack-pattern--6151cbea-819b-455a-9fa6-99a1cc58797d"
+                  },
+                  {
+                    "relation": "subtechnique-of",
+                    "direction": "forward",
+                    "from": "attack-pattern--6151cbea-819b-455a-9fa6-99a1cc58797d",
+                    "to": "attack-pattern--b17a1a56-e99c-403c-8948-561df0cffe81"
+                  }
+                ],
+                "path_nodes": [
+                  "campaign--7e21077d-2589-43a7-a5f9-490061289526",
+                  "attack-pattern--6151cbea-819b-455a-9fa6-99a1cc58797d",
+                  "attack-pattern--b17a1a56-e99c-403c-8948-561df0cffe81"
+                ]
+              },
+              {
+                "query": [
+                  "campaign--808d6b30-df4e-4341-8248-724da4bac650",
+                  "uses",
+                  "attack-pattern--72b74d71-8169-42aa-92e0-e7b04b9f5a08"
+                ],
+                "endpoint_types": [
+                  "campaign",
+                  "attack-pattern"
+                ],
+                "template": "actor_uses_subtechnique_parent",
+                "signature": "uses -> subtechnique-of",
+                "path_length": 2,
+                "steps": [
+                  {
+                    "relation": "uses",
+                    "direction": "forward",
+                    "from": "campaign--808d6b30-df4e-4341-8248-724da4bac650",
+                    "to": "attack-pattern--21875073-b0ee-49e3-9077-1e2a885359af"
+                  },
+                  {
+                    "relation": "subtechnique-of",
+                    "direction": "forward",
+                    "from": "attack-pattern--21875073-b0ee-49e3-9077-1e2a885359af",
+                    "to": "attack-pattern--72b74d71-8169-42aa-92e0-e7b04b9f5a08"
+                  }
+                ],
+                "path_nodes": [
+                  "campaign--808d6b30-df4e-4341-8248-724da4bac650",
+                  "attack-pattern--21875073-b0ee-49e3-9077-1e2a885359af",
+                  "attack-pattern--72b74d71-8169-42aa-92e0-e7b04b9f5a08"
+                ]
+              },
+              {
+                "query": [
+                  "intrusion-set--174279b4-399f-4ddb-966e-5efedd1dd5f2",
+                  "uses",
+                  "attack-pattern--435dfb86-2697-4867-85b5-2fef496c0517"
+                ],
+                "endpoint_types": [
+                  "intrusion-set",
+                  "attack-pattern"
+                ],
+                "template": "actor_uses_subtechnique_parent",
+                "signature": "uses -> subtechnique-of",
+                "path_length": 2,
+                "steps": [
+                  {
+                    "relation": "uses",
+                    "direction": "forward",
+                    "from": "intrusion-set--174279b4-399f-4ddb-966e-5efedd1dd5f2",
+                    "to": "attack-pattern--60b508a1-6a5e-46b1-821a-9f7b78752abf"
+                  },
+                  {
+                    "relation": "subtechnique-of",
+                    "direction": "forward",
+                    "from": "attack-pattern--60b508a1-6a5e-46b1-821a-9f7b78752abf",
+                    "to": "attack-pattern--435dfb86-2697-4867-85b5-2fef496c0517"
+                  }
+                ],
+                "path_nodes": [
+                  "intrusion-set--174279b4-399f-4ddb-966e-5efedd1dd5f2",
+                  "attack-pattern--60b508a1-6a5e-46b1-821a-9f7b78752abf",
+                  "attack-pattern--435dfb86-2697-4867-85b5-2fef496c0517"
+                ]
+              },
+              {
+                "query": [
+                  "intrusion-set--247cb30b-955f-42eb-97a5-a89fef69341e",
+                  "uses",
+                  "attack-pattern--42e8de7b-37b2-4258-905a-6897815e58e0"
+                ],
+                "endpoint_types": [
+                  "intrusion-set",
+                  "attack-pattern"
+                ],
+                "template": "actor_uses_subtechnique_parent",
+                "signature": "uses -> subtechnique-of",
+                "path_length": 2,
+                "steps": [
+                  {
+                    "relation": "uses",
+                    "direction": "forward",
+                    "from": "intrusion-set--247cb30b-955f-42eb-97a5-a89fef69341e",
+                    "to": "attack-pattern--1c4e5d32-1fe9-4116-9d9d-59e3925bd6a2"
+                  },
+                  {
+                    "relation": "subtechnique-of",
+                    "direction": "forward",
+                    "from": "attack-pattern--1c4e5d32-1fe9-4116-9d9d-59e3925bd6a2",
+                    "to": "attack-pattern--42e8de7b-37b2-4258-905a-6897815e58e0"
+                  }
+                ],
+                "path_nodes": [
+                  "intrusion-set--247cb30b-955f-42eb-97a5-a89fef69341e",
+                  "attack-pattern--1c4e5d32-1fe9-4116-9d9d-59e3925bd6a2",
+                  "attack-pattern--42e8de7b-37b2-4258-905a-6897815e58e0"
+                ]
+              },
+              {
+                "query": [
+                  "intrusion-set--269e8108-68c6-4f99-b911-14b2e765dec2",
+                  "uses",
+                  "attack-pattern--a62a8db3-f23a-4d8f-afd6-9dbc77e7813b"
+                ],
+                "endpoint_types": [
+                  "intrusion-set",
+                  "attack-pattern"
+                ],
+                "template": "actor_uses_subtechnique_parent",
+                "signature": "uses -> subtechnique-of",
+                "path_length": 2,
+                "steps": [
+                  {
+                    "relation": "uses",
+                    "direction": "forward",
+                    "from": "intrusion-set--269e8108-68c6-4f99-b911-14b2e765dec2",
+                    "to": "attack-pattern--2b742742-28c3-4e1b-bab7-8350d6300fa7"
+                  },
+                  {
+                    "relation": "subtechnique-of",
+                    "direction": "forward",
+                    "from": "attack-pattern--2b742742-28c3-4e1b-bab7-8350d6300fa7",
+                    "to": "attack-pattern--a62a8db3-f23a-4d8f-afd6-9dbc77e7813b"
+                  }
+                ],
+                "path_nodes": [
+                  "intrusion-set--269e8108-68c6-4f99-b911-14b2e765dec2",
+                  "attack-pattern--2b742742-28c3-4e1b-bab7-8350d6300fa7",
+                  "attack-pattern--a62a8db3-f23a-4d8f-afd6-9dbc77e7813b"
+                ]
+              }
+            ],
+            "mitigates_child_parent_technique": [
+              {
+                "query": [
+                  "course-of-action--12241367-a8b7-49b4-b86e-2236901ba50c",
+                  "mitigates",
+                  "attack-pattern--b8902400-e6c5-4ba2-95aa-2d35b442b118"
+                ],
+                "endpoint_types": [
+                  "course-of-action",
+                  "attack-pattern"
+                ],
+                "template": "mitigates_child_parent_technique",
+                "signature": "mitigates -> subtechnique-of",
+                "path_length": 2,
+                "steps": [
+                  {
+                    "relation": "mitigates",
+                    "direction": "forward",
+                    "from": "course-of-action--12241367-a8b7-49b4-b86e-2236901ba50c",
+                    "to": "attack-pattern--24bfaeba-cb0d-4525-b3dc-507c77ecec41"
+                  },
+                  {
+                    "relation": "subtechnique-of",
+                    "direction": "forward",
+                    "from": "attack-pattern--24bfaeba-cb0d-4525-b3dc-507c77ecec41",
+                    "to": "attack-pattern--b8902400-e6c5-4ba2-95aa-2d35b442b118"
+                  }
+                ],
+                "path_nodes": [
+                  "course-of-action--12241367-a8b7-49b4-b86e-2236901ba50c",
+                  "attack-pattern--24bfaeba-cb0d-4525-b3dc-507c77ecec41",
+                  "attack-pattern--b8902400-e6c5-4ba2-95aa-2d35b442b118"
+                ]
+              },
+              {
+                "query": [
+                  "course-of-action--1dcaeb21-9348-42ea-950a-f842aaf1ae1f",
+                  "mitigates",
+                  "attack-pattern--435dfb86-2697-4867-85b5-2fef496c0517"
+                ],
+                "endpoint_types": [
+                  "course-of-action",
+                  "attack-pattern"
+                ],
+                "template": "mitigates_child_parent_technique",
+                "signature": "mitigates -> subtechnique-of",
+                "path_length": 2,
+                "steps": [
+                  {
+                    "relation": "mitigates",
+                    "direction": "forward",
+                    "from": "course-of-action--1dcaeb21-9348-42ea-950a-f842aaf1ae1f",
+                    "to": "attack-pattern--f8ef3a62-3f44-40a4-abca-761ab235c436"
+                  },
+                  {
+                    "relation": "subtechnique-of",
+                    "direction": "forward",
+                    "from": "attack-pattern--f8ef3a62-3f44-40a4-abca-761ab235c436",
+                    "to": "attack-pattern--435dfb86-2697-4867-85b5-2fef496c0517"
+                  }
+                ],
+                "path_nodes": [
+                  "course-of-action--1dcaeb21-9348-42ea-950a-f842aaf1ae1f",
+                  "attack-pattern--f8ef3a62-3f44-40a4-abca-761ab235c436",
+                  "attack-pattern--435dfb86-2697-4867-85b5-2fef496c0517"
+                ]
+              },
+              {
+                "query": [
+                  "course-of-action--25dc1ce8-eb55-4333-ae30-a7cb4f5894a1",
+                  "mitigates",
+                  "attack-pattern--acd0ba37-7ba9-4cc5-ac61-796586cd856d"
+                ],
+                "endpoint_types": [
+                  "course-of-action",
+                  "attack-pattern"
+                ],
+                "template": "mitigates_child_parent_technique",
+                "signature": "mitigates -> subtechnique-of",
+                "path_length": 2,
+                "steps": [
+                  {
+                    "relation": "mitigates",
+                    "direction": "forward",
+                    "from": "course-of-action--25dc1ce8-eb55-4333-ae30-a7cb4f5894a1",
+                    "to": "attack-pattern--8252f135-ed26-4ce1-ae61-f26e94429a19"
+                  },
+                  {
+                    "relation": "subtechnique-of",
+                    "direction": "forward",
+                    "from": "attack-pattern--8252f135-ed26-4ce1-ae61-f26e94429a19",
+                    "to": "attack-pattern--acd0ba37-7ba9-4cc5-ac61-796586cd856d"
+                  }
+                ],
+                "path_nodes": [
+                  "course-of-action--25dc1ce8-eb55-4333-ae30-a7cb4f5894a1",
+                  "attack-pattern--8252f135-ed26-4ce1-ae61-f26e94429a19",
+                  "attack-pattern--acd0ba37-7ba9-4cc5-ac61-796586cd856d"
+                ]
+              },
+              {
+                "query": [
+                  "course-of-action--2a4f6c11-a4a7-4cb9-b0ef-6ae1bb3a718a",
+                  "mitigates",
+                  "attack-pattern--389735f1-f21c-4208-b8f0-f8031e7169b8"
+                ],
+                "endpoint_types": [
+                  "course-of-action",
+                  "attack-pattern"
+                ],
+                "template": "mitigates_child_parent_technique",
+                "signature": "mitigates -> subtechnique-of",
+                "path_length": 2,
+                "steps": [
+                  {
+                    "relation": "mitigates",
+                    "direction": "forward",
+                    "from": "course-of-action--2a4f6c11-a4a7-4cb9-b0ef-6ae1bb3a718a",
+                    "to": "attack-pattern--66b34be7-6915-4b83-8d5a-b0f0592b5e41"
+                  },
+                  {
+                    "relation": "subtechnique-of",
+                    "direction": "forward",
+                    "from": "attack-pattern--66b34be7-6915-4b83-8d5a-b0f0592b5e41",
+                    "to": "attack-pattern--389735f1-f21c-4208-b8f0-f8031e7169b8"
+                  }
+                ],
+                "path_nodes": [
+                  "course-of-action--2a4f6c11-a4a7-4cb9-b0ef-6ae1bb3a718a",
+                  "attack-pattern--66b34be7-6915-4b83-8d5a-b0f0592b5e41",
+                  "attack-pattern--389735f1-f21c-4208-b8f0-f8031e7169b8"
+                ]
+              },
+              {
+                "query": [
+                  "course-of-action--2a4f6c11-a4a7-4cb9-b0ef-6ae1bb3a718a",
+                  "mitigates",
+                  "attack-pattern--b17a1a56-e99c-403c-8948-561df0cffe81"
+                ],
+                "endpoint_types": [
+                  "course-of-action",
+                  "attack-pattern"
+                ],
+                "template": "mitigates_child_parent_technique",
+                "signature": "mitigates -> subtechnique-of",
+                "path_length": 2,
+                "steps": [
+                  {
+                    "relation": "mitigates",
+                    "direction": "forward",
+                    "from": "course-of-action--2a4f6c11-a4a7-4cb9-b0ef-6ae1bb3a718a",
+                    "to": "attack-pattern--c3d4bdd9-2cfe-4a80-9d0c-07a29ecdce8f"
+                  },
+                  {
+                    "relation": "subtechnique-of",
+                    "direction": "forward",
+                    "from": "attack-pattern--c3d4bdd9-2cfe-4a80-9d0c-07a29ecdce8f",
+                    "to": "attack-pattern--b17a1a56-e99c-403c-8948-561df0cffe81"
+                  }
+                ],
+                "path_nodes": [
+                  "course-of-action--2a4f6c11-a4a7-4cb9-b0ef-6ae1bb3a718a",
+                  "attack-pattern--c3d4bdd9-2cfe-4a80-9d0c-07a29ecdce8f",
+                  "attack-pattern--b17a1a56-e99c-403c-8948-561df0cffe81"
+                ]
+              }
+            ]
+          },
+          "example_unsupported_queries": [
+            {
+              "query": [
+                "attack-pattern--04a5a8ab-3bc8-4c83-95c9-55274a89786d",
+                "subtechnique-of",
+                "attack-pattern--0458aab9-ad42-4eac-9e22-706a95bafee2"
+              ],
+              "endpoint_types": [
+                "attack-pattern",
+                "attack-pattern"
+              ],
+              "reason": "No matching directed semantic template for this relation/endpoints in TRAIN context."
+            },
+            {
+              "query": [
+                "attack-pattern--09c4c11e-4fa1-4f8c-8dad-3cf8e69ad119",
+                "subtechnique-of",
+                "attack-pattern--a93494bb-4b80-4ea1-8695-3236a49916fd"
+              ],
+              "endpoint_types": [
+                "attack-pattern",
+                "attack-pattern"
+              ],
+              "reason": "No matching directed semantic template for this relation/endpoints in TRAIN context."
+            },
+            {
+              "query": [
+                "attack-pattern--0f2c410d-d740-4ed9-abb1-b8f4a7faf6c3",
+                "subtechnique-of",
+                "attack-pattern--b6301b64-ef57-4cce-bb0b-77026f14a8db"
+              ],
+              "endpoint_types": [
+                "attack-pattern",
+                "attack-pattern"
+              ],
+              "reason": "No matching directed semantic template for this relation/endpoints in TRAIN context."
+            },
+            {
+              "query": [
+                "attack-pattern--132d5b37-aac5-4378-a8dc-3127b18a73dc",
+                "subtechnique-of",
+                "attack-pattern--707399d6-ab3e-4963-9315-d9d3818cd6a0"
+              ],
+              "endpoint_types": [
+                "attack-pattern",
+                "attack-pattern"
+              ],
+              "reason": "No matching directed semantic template for this relation/endpoints in TRAIN context."
+            },
+            {
+              "query": [
+                "attack-pattern--166de1c6-2814-4fe5-8438-4e80f76b169f",
+                "subtechnique-of",
+                "attack-pattern--55fc4df0-b42c-479a-b860-7a6761bcaad0"
+              ],
+              "endpoint_types": [
+                "attack-pattern",
+                "attack-pattern"
+              ],
+              "reason": "No matching directed semantic template for this relation/endpoints in TRAIN context."
+            },
+            {
+              "query": [
+                "attack-pattern--17cc750b-e95b-4d7d-9dde-49e0de24148c",
+                "subtechnique-of",
+                "attack-pattern--aedfca76-3b30-4866-b2aa-0f1d7fd1e4b6"
+              ],
+              "endpoint_types": [
+                "attack-pattern",
+                "attack-pattern"
+              ],
+              "reason": "No matching directed semantic template for this relation/endpoints in TRAIN context."
+            },
+            {
+              "query": [
+                "attack-pattern--1cec9319-743b-4840-bb65-431547bce82a",
+                "subtechnique-of",
+                "attack-pattern--edadea33-549c-4ed1-9783-8f5a5853cbdf"
+              ],
+              "endpoint_types": [
+                "attack-pattern",
+                "attack-pattern"
+              ],
+              "reason": "No matching directed semantic template for this relation/endpoints in TRAIN context."
+            },
+            {
+              "query": [
+                "attack-pattern--29be378d-262d-4e99-b00d-852d573628e6",
+                "subtechnique-of",
+                "attack-pattern--82caa33e-d11a-433a-94ea-9b5a5fbef81d"
+              ],
+              "endpoint_types": [
+                "attack-pattern",
+                "attack-pattern"
+              ],
+              "reason": "No matching directed semantic template for this relation/endpoints in TRAIN context."
+            },
+            {
+              "query": [
+                "attack-pattern--2de47683-f398-448f-b947-9abcc3e32fad",
+                "subtechnique-of",
+                "attack-pattern--1ecb2399-e8ba-4f6b-8ba7-5c27d49405cf"
+              ],
+              "endpoint_types": [
+                "attack-pattern",
+                "attack-pattern"
+              ],
+              "reason": "No matching directed semantic template for this relation/endpoints in TRAIN context."
+            },
+            {
+              "query": [
+                "attack-pattern--34a80bc4-80f2-46e6-94ff-f3265a4b657c",
+                "subtechnique-of",
+                "attack-pattern--42e8de7b-37b2-4258-905a-6897815e58e0"
+              ],
+              "endpoint_types": [
+                "attack-pattern",
+                "attack-pattern"
+              ],
+              "reason": "No matching directed semantic template for this relation/endpoints in TRAIN context."
+            },
+            {
+              "query": [
+                "attack-pattern--34ab90a3-05f6-4259-8f21-621081fdaba5",
+                "subtechnique-of",
+                "attack-pattern--9d48cab2-7929-4812-ad22-f536665f0109"
+              ],
+              "endpoint_types": [
+                "attack-pattern",
+                "attack-pattern"
+              ],
+              "reason": "No matching directed semantic template for this relation/endpoints in TRAIN context."
+            },
+            {
+              "query": [
+                "attack-pattern--34f1d81d-fe88-4f97-bd3b-a3164536255d",
+                "subtechnique-of",
+                "attack-pattern--2c4d4e92-0ccf-4a97-b54c-86d662988a53"
+              ],
+              "endpoint_types": [
+                "attack-pattern",
+                "attack-pattern"
+              ],
+              "reason": "No matching directed semantic template for this relation/endpoints in TRAIN context."
+            },
+            {
+              "query": [
+                "attack-pattern--38eb0c22-6caf-46ce-8869-5964bd735858",
+                "subtechnique-of",
+                "attack-pattern--c675646d-e204-4aa8-978d-e3d6d65885c4"
+              ],
+              "endpoint_types": [
+                "attack-pattern",
+                "attack-pattern"
+              ],
+              "reason": "No matching directed semantic template for this relation/endpoints in TRAIN context."
+            },
+            {
+              "query": [
+                "attack-pattern--3e6831b2-bf4c-4ae6-b328-2e7c6633b291",
+                "subtechnique-of",
+                "attack-pattern--a10641f4-87b4-45a3-a906-92a149cb2c27"
+              ],
+              "endpoint_types": [
+                "attack-pattern",
+                "attack-pattern"
+              ],
+              "reason": "No matching directed semantic template for this relation/endpoints in TRAIN context."
+            },
+            {
+              "query": [
+                "attack-pattern--494ab9f0-36e0-4b06-b10d-57285b040a06",
+                "subtechnique-of",
+                "attack-pattern--707399d6-ab3e-4963-9315-d9d3818cd6a0"
+              ],
+              "endpoint_types": [
+                "attack-pattern",
+                "attack-pattern"
+              ],
+              "reason": "No matching directed semantic template for this relation/endpoints in TRAIN context."
+            },
+            {
+              "query": [
+                "attack-pattern--4ffc1794-ec3b-45be-9e52-42dbcb2af2de",
+                "subtechnique-of",
+                "attack-pattern--b8017880-4b1e-42de-ad10-ae7ac6705166"
+              ],
+              "endpoint_types": [
+                "attack-pattern",
+                "attack-pattern"
+              ],
+              "reason": "No matching directed semantic template for this relation/endpoints in TRAIN context."
+            },
+            {
+              "query": [
+                "attack-pattern--573ad264-1371-4ae0-8482-d2673b719dba",
+                "subtechnique-of",
+                "attack-pattern--106c0cf6-bf73-4601-9aa8-0945c2715ec5"
+              ],
+              "endpoint_types": [
+                "attack-pattern",
+                "attack-pattern"
+              ],
+              "reason": "No matching directed semantic template for this relation/endpoints in TRAIN context."
+            },
+            {
+              "query": [
+                "attack-pattern--61afc315-860c-4364-825d-0d62b2e91edc",
+                "subtechnique-of",
+                "attack-pattern--1ecb2399-e8ba-4f6b-8ba7-5c27d49405cf"
+              ],
+              "endpoint_types": [
+                "attack-pattern",
+                "attack-pattern"
+              ],
+              "reason": "No matching directed semantic template for this relation/endpoints in TRAIN context."
+            },
+            {
+              "query": [
+                "attack-pattern--635cbe30-392d-4e27-978e-66774357c762",
+                "subtechnique-of",
+                "attack-pattern--e01be9c5-e763-4caf-aeb7-000b416aef67"
+              ],
+              "endpoint_types": [
+                "attack-pattern",
+                "attack-pattern"
+              ],
+              "reason": "No matching directed semantic template for this relation/endpoints in TRAIN context."
+            },
+            {
+              "query": [
+                "attack-pattern--692074ae-bb62-4a5e-a735-02cb6bde458c",
+                "subtechnique-of",
+                "attack-pattern--a93494bb-4b80-4ea1-8695-3236a49916fd"
+              ],
+              "endpoint_types": [
+                "attack-pattern",
+                "attack-pattern"
+              ],
+              "reason": "No matching directed semantic template for this relation/endpoints in TRAIN context."
+            }
+          ]
+        }
+      }
+    },
+    {
+      "graph": "ics",
+      "split_counts": {
+        "train": 1333,
+        "valid": 150,
+        "test": 151
+      },
+      "semantic_path_templates": {
+        "uses": [
+          {
+            "name": "actor_attributed_to_group_uses_technique",
+            "signature": "attributed-to -> uses",
+            "expected_types": [
+              "malware",
+              "intrusion-set",
+              "attack-pattern"
+            ],
+            "rationale": "A malware object is attributed to a group that uses the candidate technique."
+          },
+          {
+            "name": "actor_uses_subtechnique_parent",
+            "signature": "uses -> subtechnique-of",
+            "expected_types": [
+              "ACTOR",
+              "attack-pattern",
+              "attack-pattern"
+            ],
+            "rationale": "The actor uses a known sub-technique whose parent is the candidate technique."
+          }
+        ],
+        "mitigates": [
+          {
+            "name": "mitigates_child_parent_technique",
+            "signature": "mitigates -> subtechnique-of",
+            "expected_types": [
+              "course-of-action",
+              "attack-pattern",
+              "attack-pattern"
+            ],
+            "rationale": "The mitigation is linked to a child technique of the candidate parent technique."
+          }
+        ],
+        "targets": [
+          {
+            "name": "child_technique_parent_targets_asset",
+            "signature": "subtechnique-of -> targets",
+            "expected_types": [
+              "attack-pattern",
+              "attack-pattern",
+              "x-mitre-asset"
+            ],
+            "rationale": "The parent technique of a sub-technique targets the candidate asset type."
+          }
+        ],
+        "subtechnique-of": [
+          {
+            "name": "transitive_subtechnique_hierarchy",
+            "signature": "subtechnique-of -> subtechnique-of",
+            "expected_types": [
+              "attack-pattern",
+              "attack-pattern",
+              "attack-pattern"
+            ],
+            "rationale": "A two-edge sub-technique hierarchy implies a transitive ancestor candidate."
+          }
+        ]
+      },
+      "splits": {
+        "valid": {
+          "attack_pattern_queries": 150,
+          "strict_semantic_path_supported_queries": 12,
+          "strict_semantic_path_support_fraction": 0.08,
+          "unsupported_queries": 138,
+          "exact_fact_overlap_with_train": 0,
+          "query_relation_counts": {
+            "targets": 84,
+            "mitigates": 37,
+            "uses": 27,
+            "subtechnique-of": 2
+          },
+          "strict_supported_by_relation": {
+            "targets": 10,
+            "mitigates": 2
+          },
+          "query_endpoint_type_counts": {
+            "attack-pattern -> x-mitre-asset": 84,
+            "course-of-action -> attack-pattern": 37,
+            "malware -> attack-pattern": 16,
+            "campaign -> attack-pattern": 8,
+            "intrusion-set -> attack-pattern": 3,
+            "attack-pattern -> attack-pattern": 2
+          },
+          "matched_template_counts": {
+            "child_technique_parent_targets_asset": 10,
+            "mitigates_child_parent_technique": 2
+          },
+          "examples_by_template": {
+            "child_technique_parent_targets_asset": [
+              {
+                "query": [
+                  "attack-pattern--15ca2a99-2d3e-457f-b1d7-c52a1d5849c9",
+                  "targets",
+                  "x-mitre-asset--85f285f9-0a48-4998-921d-8a47d81c0e6d"
+                ],
+                "endpoint_types": [
+                  "attack-pattern",
+                  "x-mitre-asset"
+                ],
+                "template": "child_technique_parent_targets_asset",
+                "signature": "subtechnique-of -> targets",
+                "path_length": 2,
+                "steps": [
+                  {
+                    "relation": "subtechnique-of",
+                    "direction": "forward",
+                    "from": "attack-pattern--15ca2a99-2d3e-457f-b1d7-c52a1d5849c9",
+                    "to": "attack-pattern--338f4364-2269-4f70-9079-b20384b16628"
+                  },
+                  {
+                    "relation": "targets",
+                    "direction": "forward",
+                    "from": "attack-pattern--338f4364-2269-4f70-9079-b20384b16628",
+                    "to": "x-mitre-asset--85f285f9-0a48-4998-921d-8a47d81c0e6d"
+                  }
+                ],
+                "path_nodes": [
+                  "attack-pattern--15ca2a99-2d3e-457f-b1d7-c52a1d5849c9",
+                  "attack-pattern--338f4364-2269-4f70-9079-b20384b16628",
+                  "x-mitre-asset--85f285f9-0a48-4998-921d-8a47d81c0e6d"
+                ]
+              },
+              {
+                "query": [
+                  "attack-pattern--4344d1b8-968b-4697-9ab9-f9abe5f52265",
+                  "targets",
+                  "x-mitre-asset--459e4335-74e1-4136-b730-0f116f0d541d"
+                ],
+                "endpoint_types": [
+                  "attack-pattern",
+                  "x-mitre-asset"
+                ],
+                "template": "child_technique_parent_targets_asset",
+                "signature": "subtechnique-of -> targets",
+                "path_length": 2,
+                "steps": [
+                  {
+                    "relation": "subtechnique-of",
+                    "direction": "forward",
+                    "from": "attack-pattern--4344d1b8-968b-4697-9ab9-f9abe5f52265",
+                    "to": "attack-pattern--e17cdc00-8b58-4e5f-9d50-4cad1592c4c3"
+                  },
+                  {
+                    "relation": "targets",
+                    "direction": "forward",
+                    "from": "attack-pattern--e17cdc00-8b58-4e5f-9d50-4cad1592c4c3",
+                    "to": "x-mitre-asset--459e4335-74e1-4136-b730-0f116f0d541d"
+                  }
+                ],
+                "path_nodes": [
+                  "attack-pattern--4344d1b8-968b-4697-9ab9-f9abe5f52265",
+                  "attack-pattern--e17cdc00-8b58-4e5f-9d50-4cad1592c4c3",
+                  "x-mitre-asset--459e4335-74e1-4136-b730-0f116f0d541d"
+                ]
+              },
+              {
+                "query": [
+                  "attack-pattern--4344d1b8-968b-4697-9ab9-f9abe5f52265",
+                  "targets",
+                  "x-mitre-asset--986c455b-0f43-42b6-8360-33ac48bd9990"
+                ],
+                "endpoint_types": [
+                  "attack-pattern",
+                  "x-mitre-asset"
+                ],
+                "template": "child_technique_parent_targets_asset",
+                "signature": "subtechnique-of -> targets",
+                "path_length": 2,
+                "steps": [
+                  {
+                    "relation": "subtechnique-of",
+                    "direction": "forward",
+                    "from": "attack-pattern--4344d1b8-968b-4697-9ab9-f9abe5f52265",
+                    "to": "attack-pattern--e17cdc00-8b58-4e5f-9d50-4cad1592c4c3"
+                  },
+                  {
+                    "relation": "targets",
+                    "direction": "forward",
+                    "from": "attack-pattern--e17cdc00-8b58-4e5f-9d50-4cad1592c4c3",
+                    "to": "x-mitre-asset--986c455b-0f43-42b6-8360-33ac48bd9990"
+                  }
+                ],
+                "path_nodes": [
+                  "attack-pattern--4344d1b8-968b-4697-9ab9-f9abe5f52265",
+                  "attack-pattern--e17cdc00-8b58-4e5f-9d50-4cad1592c4c3",
+                  "x-mitre-asset--986c455b-0f43-42b6-8360-33ac48bd9990"
+                ]
+              },
+              {
+                "query": [
+                  "attack-pattern--574d5bfb-9a7a-4b28-ab5c-743ac704c135",
+                  "targets",
+                  "x-mitre-asset--69d1b1ef-e918-4cfd-9a98-29debd04cb32"
+                ],
+                "endpoint_types": [
+                  "attack-pattern",
+                  "x-mitre-asset"
+                ],
+                "template": "child_technique_parent_targets_asset",
+                "signature": "subtechnique-of -> targets",
+                "path_length": 2,
+                "steps": [
+                  {
+                    "relation": "subtechnique-of",
+                    "direction": "forward",
+                    "from": "attack-pattern--574d5bfb-9a7a-4b28-ab5c-743ac704c135",
+                    "to": "attack-pattern--be69c571-d746-4b1f-bdd0-c0c9817e9068"
+                  },
+                  {
+                    "relation": "targets",
+                    "direction": "forward",
+                    "from": "attack-pattern--be69c571-d746-4b1f-bdd0-c0c9817e9068",
+                    "to": "x-mitre-asset--69d1b1ef-e918-4cfd-9a98-29debd04cb32"
+                  }
+                ],
+                "path_nodes": [
+                  "attack-pattern--574d5bfb-9a7a-4b28-ab5c-743ac704c135",
+                  "attack-pattern--be69c571-d746-4b1f-bdd0-c0c9817e9068",
+                  "x-mitre-asset--69d1b1ef-e918-4cfd-9a98-29debd04cb32"
+                ]
+              },
+              {
+                "query": [
+                  "attack-pattern--6008c1f0-1b68-4614-8f5b-a547436b8855",
+                  "targets",
+                  "x-mitre-asset--3a95f7e4-4877-4967-b2e8-e287976c3e64"
+                ],
+                "endpoint_types": [
+                  "attack-pattern",
+                  "x-mitre-asset"
+                ],
+                "template": "child_technique_parent_targets_asset",
+                "signature": "subtechnique-of -> targets",
+                "path_length": 2,
+                "steps": [
+                  {
+                    "relation": "subtechnique-of",
+                    "direction": "forward",
+                    "from": "attack-pattern--6008c1f0-1b68-4614-8f5b-a547436b8855",
+                    "to": "attack-pattern--fbb67c2d-37c3-49ee-86e3-bf234cc48ca9"
+                  },
+                  {
+                    "relation": "targets",
+                    "direction": "forward",
+                    "from": "attack-pattern--fbb67c2d-37c3-49ee-86e3-bf234cc48ca9",
+                    "to": "x-mitre-asset--3a95f7e4-4877-4967-b2e8-e287976c3e64"
+                  }
+                ],
+                "path_nodes": [
+                  "attack-pattern--6008c1f0-1b68-4614-8f5b-a547436b8855",
+                  "attack-pattern--fbb67c2d-37c3-49ee-86e3-bf234cc48ca9",
+                  "x-mitre-asset--3a95f7e4-4877-4967-b2e8-e287976c3e64"
+                ]
+              }
+            ],
+            "mitigates_child_parent_technique": [
+              {
+                "query": [
+                  "course-of-action--11f242bc-3121-438c-84b2-5cbd46a4bb17",
+                  "mitigates",
+                  "attack-pattern--be69c571-d746-4b1f-bdd0-c0c9817e9068"
+                ],
+                "endpoint_types": [
+                  "course-of-action",
+                  "attack-pattern"
+                ],
+                "template": "mitigates_child_parent_technique",
+                "signature": "mitigates -> subtechnique-of",
+                "path_length": 2,
+                "steps": [
+                  {
+                    "relation": "mitigates",
+                    "direction": "forward",
+                    "from": "course-of-action--11f242bc-3121-438c-84b2-5cbd46a4bb17",
+                    "to": "attack-pattern--574d5bfb-9a7a-4b28-ab5c-743ac704c135"
+                  },
+                  {
+                    "relation": "subtechnique-of",
+                    "direction": "forward",
+                    "from": "attack-pattern--574d5bfb-9a7a-4b28-ab5c-743ac704c135",
+                    "to": "attack-pattern--be69c571-d746-4b1f-bdd0-c0c9817e9068"
+                  }
+                ],
+                "path_nodes": [
+                  "course-of-action--11f242bc-3121-438c-84b2-5cbd46a4bb17",
+                  "attack-pattern--574d5bfb-9a7a-4b28-ab5c-743ac704c135",
+                  "attack-pattern--be69c571-d746-4b1f-bdd0-c0c9817e9068"
+                ]
+              },
+              {
+                "query": [
+                  "course-of-action--7f153c28-e5f1-4764-88fb-eea1d9b0ad4a",
+                  "mitigates",
+                  "attack-pattern--7b4c0e19-a9b0-4a74-a196-b38c07b79f20"
+                ],
+                "endpoint_types": [
+                  "course-of-action",
+                  "attack-pattern"
+                ],
+                "template": "mitigates_child_parent_technique",
+                "signature": "mitigates -> subtechnique-of",
+                "path_length": 2,
+                "steps": [
+                  {
+                    "relation": "mitigates",
+                    "direction": "forward",
+                    "from": "course-of-action--7f153c28-e5f1-4764-88fb-eea1d9b0ad4a",
+                    "to": "attack-pattern--68a9324d-a524-4766-a899-a026f68a33df"
+                  },
+                  {
+                    "relation": "subtechnique-of",
+                    "direction": "forward",
+                    "from": "attack-pattern--68a9324d-a524-4766-a899-a026f68a33df",
+                    "to": "attack-pattern--7b4c0e19-a9b0-4a74-a196-b38c07b79f20"
+                  }
+                ],
+                "path_nodes": [
+                  "course-of-action--7f153c28-e5f1-4764-88fb-eea1d9b0ad4a",
+                  "attack-pattern--68a9324d-a524-4766-a899-a026f68a33df",
+                  "attack-pattern--7b4c0e19-a9b0-4a74-a196-b38c07b79f20"
+                ]
+              }
+            ]
+          },
+          "example_unsupported_queries": [
+            {
+              "query": [
+                "attack-pattern--063b5b92-5361-481a-9c3f-95492ed9a2d8",
+                "targets",
+                "x-mitre-asset--bb553fda-8355-40bc-87c6-5ae25124fa95"
+              ],
+              "endpoint_types": [
+                "attack-pattern",
+                "x-mitre-asset"
+              ],
+              "reason": "No matching directed semantic template for this relation/endpoints in TRAIN context."
+            },
+            {
+              "query": [
+                "attack-pattern--09a61657-46e1-439e-b3ed-3e4556a78243",
+                "targets",
+                "x-mitre-asset--69d1b1ef-e918-4cfd-9a98-29debd04cb32"
+              ],
+              "endpoint_types": [
+                "attack-pattern",
+                "x-mitre-asset"
+              ],
+              "reason": "No matching directed semantic template for this relation/endpoints in TRAIN context."
+            },
+            {
+              "query": [
+                "attack-pattern--15ca2a99-2d3e-457f-b1d7-c52a1d5849c9",
+                "targets",
+                "x-mitre-asset--2b676abd-8263-49ea-81a4-78a7e1f776fe"
+              ],
+              "endpoint_types": [
+                "attack-pattern",
+                "x-mitre-asset"
+              ],
+              "reason": "No matching directed semantic template for this relation/endpoints in TRAIN context."
+            },
+            {
+              "query": [
+                "attack-pattern--19a71d1e-6334-4233-8260-b749cae37953",
+                "targets",
+                "x-mitre-asset--68388d4f-8138-420b-be2b-5a7dfe9ff6b4"
+              ],
+              "endpoint_types": [
+                "attack-pattern",
+                "x-mitre-asset"
+              ],
+              "reason": "No matching directed semantic template for this relation/endpoints in TRAIN context."
+            },
+            {
+              "query": [
+                "attack-pattern--19a71d1e-6334-4233-8260-b749cae37953",
+                "targets",
+                "x-mitre-asset--69d1b1ef-e918-4cfd-9a98-29debd04cb32"
+              ],
+              "endpoint_types": [
+                "attack-pattern",
+                "x-mitre-asset"
+              ],
+              "reason": "No matching directed semantic template for this relation/endpoints in TRAIN context."
+            },
+            {
+              "query": [
+                "attack-pattern--19a71d1e-6334-4233-8260-b749cae37953",
+                "targets",
+                "x-mitre-asset--986c455b-0f43-42b6-8360-33ac48bd9990"
+              ],
+              "endpoint_types": [
+                "attack-pattern",
+                "x-mitre-asset"
+              ],
+              "reason": "No matching directed semantic template for this relation/endpoints in TRAIN context."
+            },
+            {
+              "query": [
+                "attack-pattern--1b22b676-9347-4c55-9a35-ef0dc653db5b",
+                "targets",
+                "x-mitre-asset--14932ed5-1098-4cc1-9f57-159ab7366787"
+              ],
+              "endpoint_types": [
+                "attack-pattern",
+                "x-mitre-asset"
+              ],
+              "reason": "No matching directed semantic template for this relation/endpoints in TRAIN context."
+            },
+            {
+              "query": [
+                "attack-pattern--1b22b676-9347-4c55-9a35-ef0dc653db5b",
+                "targets",
+                "x-mitre-asset--69d1b1ef-e918-4cfd-9a98-29debd04cb32"
+              ],
+              "endpoint_types": [
+                "attack-pattern",
+                "x-mitre-asset"
+              ],
+              "reason": "No matching directed semantic template for this relation/endpoints in TRAIN context."
+            },
+            {
+              "query": [
+                "attack-pattern--1b22b676-9347-4c55-9a35-ef0dc653db5b",
+                "targets",
+                "x-mitre-asset--85f285f9-0a48-4998-921d-8a47d81c0e6d"
+              ],
+              "endpoint_types": [
+                "attack-pattern",
+                "x-mitre-asset"
+              ],
+              "reason": "No matching directed semantic template for this relation/endpoints in TRAIN context."
+            },
+            {
+              "query": [
+                "attack-pattern--25dfc8ad-bd73-4dfd-84a9-3c3d383f76e9",
+                "targets",
+                "x-mitre-asset--75f810ad-b678-4c57-b93b-fdc79bba0c04"
+              ],
+              "endpoint_types": [
+                "attack-pattern",
+                "x-mitre-asset"
+              ],
+              "reason": "No matching directed semantic template for this relation/endpoints in TRAIN context."
+            },
+            {
+              "query": [
+                "attack-pattern--2900bbd8-308a-4274-b074-5b8bde8347bc",
+                "targets",
+                "x-mitre-asset--1769c499-55e5-462f-bab2-c39b8cd5ae32"
+              ],
+              "endpoint_types": [
+                "attack-pattern",
+                "x-mitre-asset"
+              ],
+              "reason": "No matching directed semantic template for this relation/endpoints in TRAIN context."
+            },
+            {
+              "query": [
+                "attack-pattern--2900bbd8-308a-4274-b074-5b8bde8347bc",
+                "targets",
+                "x-mitre-asset--85f285f9-0a48-4998-921d-8a47d81c0e6d"
+              ],
+              "endpoint_types": [
+                "attack-pattern",
+                "x-mitre-asset"
+              ],
+              "reason": "No matching directed semantic template for this relation/endpoints in TRAIN context."
+            },
+            {
+              "query": [
+                "attack-pattern--2900bbd8-308a-4274-b074-5b8bde8347bc",
+                "targets",
+                "x-mitre-asset--e2c3336a-dd93-44d6-8246-f93cf132c499"
+              ],
+              "endpoint_types": [
+                "attack-pattern",
+                "x-mitre-asset"
+              ],
+              "reason": "No matching directed semantic template for this relation/endpoints in TRAIN context."
+            },
+            {
+              "query": [
+                "attack-pattern--38213338-1aab-479d-949b-c81b66ccca5c",
+                "targets",
+                "x-mitre-asset--3a95f7e4-4877-4967-b2e8-e287976c3e64"
+              ],
+              "endpoint_types": [
+                "attack-pattern",
+                "x-mitre-asset"
+              ],
+              "reason": "No matching directed semantic template for this relation/endpoints in TRAIN context."
+            },
+            {
+              "query": [
+                "attack-pattern--38213338-1aab-479d-949b-c81b66ccca5c",
+                "targets",
+                "x-mitre-asset--69d1b1ef-e918-4cfd-9a98-29debd04cb32"
+              ],
+              "endpoint_types": [
+                "attack-pattern",
+                "x-mitre-asset"
+              ],
+              "reason": "No matching directed semantic template for this relation/endpoints in TRAIN context."
+            },
+            {
+              "query": [
+                "attack-pattern--3e9b182e-e493-49e1-9a9b-bd0dfcd34a7c",
+                "targets",
+                "x-mitre-asset--459e4335-74e1-4136-b730-0f116f0d541d"
+              ],
+              "endpoint_types": [
+                "attack-pattern",
+                "x-mitre-asset"
+              ],
+              "reason": "No matching directed semantic template for this relation/endpoints in TRAIN context."
+            },
+            {
+              "query": [
+                "attack-pattern--493832d9-cea6-4b63-abe7-9a65a6473675",
+                "targets",
+                "x-mitre-asset--0804f037-a3b9-4715-98e1-9f73d19d6945"
+              ],
+              "endpoint_types": [
+                "attack-pattern",
+                "x-mitre-asset"
+              ],
+              "reason": "No matching directed semantic template for this relation/endpoints in TRAIN context."
+            },
+            {
+              "query": [
+                "attack-pattern--493832d9-cea6-4b63-abe7-9a65a6473675",
+                "targets",
+                "x-mitre-asset--bb141168-ae41-4974-8ece-dc9b63e59237"
+              ],
+              "endpoint_types": [
+                "attack-pattern",
+                "x-mitre-asset"
+              ],
+              "reason": "No matching directed semantic template for this relation/endpoints in TRAIN context."
+            },
+            {
+              "query": [
+                "attack-pattern--493832d9-cea6-4b63-abe7-9a65a6473675",
+                "targets",
+                "x-mitre-asset--ecb81a8b-022e-4529-a404-55cffca7d3a3"
+              ],
+              "endpoint_types": [
+                "attack-pattern",
+                "x-mitre-asset"
+              ],
+              "reason": "No matching directed semantic template for this relation/endpoints in TRAIN context."
+            },
+            {
+              "query": [
+                "attack-pattern--53a26eee-1080-4d17-9762-2027d5a1b805",
+                "targets",
+                "x-mitre-asset--f1315d02-9118-4e3b-8cdf-4c2d3f77ce41"
+              ],
+              "endpoint_types": [
+                "attack-pattern",
+                "x-mitre-asset"
+              ],
+              "reason": "No matching directed semantic template for this relation/endpoints in TRAIN context."
+            }
+          ]
+        },
+        "test": {
+          "attack_pattern_queries": 151,
+          "strict_semantic_path_supported_queries": 17,
+          "strict_semantic_path_support_fraction": 0.11258278145695365,
+          "unsupported_queries": 134,
+          "exact_fact_overlap_with_train": 0,
+          "query_relation_counts": {
+            "targets": 84,
+            "mitigates": 38,
+            "uses": 27,
+            "subtechnique-of": 2
+          },
+          "strict_supported_by_relation": {
+            "targets": 11,
+            "mitigates": 5,
+            "uses": 1
+          },
+          "query_endpoint_type_counts": {
+            "attack-pattern -> x-mitre-asset": 84,
+            "course-of-action -> attack-pattern": 38,
+            "malware -> attack-pattern": 16,
+            "campaign -> attack-pattern": 8,
+            "intrusion-set -> attack-pattern": 3,
+            "attack-pattern -> attack-pattern": 2
+          },
+          "matched_template_counts": {
+            "child_technique_parent_targets_asset": 11,
+            "mitigates_child_parent_technique": 5,
+            "actor_uses_subtechnique_parent": 1
+          },
+          "examples_by_template": {
+            "child_technique_parent_targets_asset": [
+              {
+                "query": [
+                  "attack-pattern--15ca2a99-2d3e-457f-b1d7-c52a1d5849c9",
+                  "targets",
+                  "x-mitre-asset--459e4335-74e1-4136-b730-0f116f0d541d"
+                ],
+                "endpoint_types": [
+                  "attack-pattern",
+                  "x-mitre-asset"
+                ],
+                "template": "child_technique_parent_targets_asset",
+                "signature": "subtechnique-of -> targets",
+                "path_length": 2,
+                "steps": [
+                  {
+                    "relation": "subtechnique-of",
+                    "direction": "forward",
+                    "from": "attack-pattern--15ca2a99-2d3e-457f-b1d7-c52a1d5849c9",
+                    "to": "attack-pattern--338f4364-2269-4f70-9079-b20384b16628"
+                  },
+                  {
+                    "relation": "targets",
+                    "direction": "forward",
+                    "from": "attack-pattern--338f4364-2269-4f70-9079-b20384b16628",
+                    "to": "x-mitre-asset--459e4335-74e1-4136-b730-0f116f0d541d"
+                  }
+                ],
+                "path_nodes": [
+                  "attack-pattern--15ca2a99-2d3e-457f-b1d7-c52a1d5849c9",
+                  "attack-pattern--338f4364-2269-4f70-9079-b20384b16628",
+                  "x-mitre-asset--459e4335-74e1-4136-b730-0f116f0d541d"
+                ]
+              },
+              {
+                "query": [
+                  "attack-pattern--354ca909-b54d-4c41-b597-9c296b344a43",
+                  "targets",
+                  "x-mitre-asset--f1315d02-9118-4e3b-8cdf-4c2d3f77ce41"
+                ],
+                "endpoint_types": [
+                  "attack-pattern",
+                  "x-mitre-asset"
+                ],
+                "template": "child_technique_parent_targets_asset",
+                "signature": "subtechnique-of -> targets",
+                "path_length": 2,
+                "steps": [
+                  {
+                    "relation": "subtechnique-of",
+                    "direction": "forward",
+                    "from": "attack-pattern--354ca909-b54d-4c41-b597-9c296b344a43",
+                    "to": "attack-pattern--e72425f8-9ae6-41d3-bfdb-e1b865e60722"
+                  },
+                  {
+                    "relation": "targets",
+                    "direction": "forward",
+                    "from": "attack-pattern--e72425f8-9ae6-41d3-bfdb-e1b865e60722",
+                    "to": "x-mitre-asset--f1315d02-9118-4e3b-8cdf-4c2d3f77ce41"
+                  }
+                ],
+                "path_nodes": [
+                  "attack-pattern--354ca909-b54d-4c41-b597-9c296b344a43",
+                  "attack-pattern--e72425f8-9ae6-41d3-bfdb-e1b865e60722",
+                  "x-mitre-asset--f1315d02-9118-4e3b-8cdf-4c2d3f77ce41"
+                ]
+              },
+              {
+                "query": [
+                  "attack-pattern--4344d1b8-968b-4697-9ab9-f9abe5f52265",
+                  "targets",
+                  "x-mitre-asset--3a95f7e4-4877-4967-b2e8-e287976c3e64"
+                ],
+                "endpoint_types": [
+                  "attack-pattern",
+                  "x-mitre-asset"
+                ],
+                "template": "child_technique_parent_targets_asset",
+                "signature": "subtechnique-of -> targets",
+                "path_length": 2,
+                "steps": [
+                  {
+                    "relation": "subtechnique-of",
+                    "direction": "forward",
+                    "from": "attack-pattern--4344d1b8-968b-4697-9ab9-f9abe5f52265",
+                    "to": "attack-pattern--e17cdc00-8b58-4e5f-9d50-4cad1592c4c3"
+                  },
+                  {
+                    "relation": "targets",
+                    "direction": "forward",
+                    "from": "attack-pattern--e17cdc00-8b58-4e5f-9d50-4cad1592c4c3",
+                    "to": "x-mitre-asset--3a95f7e4-4877-4967-b2e8-e287976c3e64"
+                  }
+                ],
+                "path_nodes": [
+                  "attack-pattern--4344d1b8-968b-4697-9ab9-f9abe5f52265",
+                  "attack-pattern--e17cdc00-8b58-4e5f-9d50-4cad1592c4c3",
+                  "x-mitre-asset--3a95f7e4-4877-4967-b2e8-e287976c3e64"
+                ]
+              },
+              {
+                "query": [
+                  "attack-pattern--4344d1b8-968b-4697-9ab9-f9abe5f52265",
+                  "targets",
+                  "x-mitre-asset--69d1b1ef-e918-4cfd-9a98-29debd04cb32"
+                ],
+                "endpoint_types": [
+                  "attack-pattern",
+                  "x-mitre-asset"
+                ],
+                "template": "child_technique_parent_targets_asset",
+                "signature": "subtechnique-of -> targets",
+                "path_length": 2,
+                "steps": [
+                  {
+                    "relation": "subtechnique-of",
+                    "direction": "forward",
+                    "from": "attack-pattern--4344d1b8-968b-4697-9ab9-f9abe5f52265",
+                    "to": "attack-pattern--e17cdc00-8b58-4e5f-9d50-4cad1592c4c3"
+                  },
+                  {
+                    "relation": "targets",
+                    "direction": "forward",
+                    "from": "attack-pattern--e17cdc00-8b58-4e5f-9d50-4cad1592c4c3",
+                    "to": "x-mitre-asset--69d1b1ef-e918-4cfd-9a98-29debd04cb32"
+                  }
+                ],
+                "path_nodes": [
+                  "attack-pattern--4344d1b8-968b-4697-9ab9-f9abe5f52265",
+                  "attack-pattern--e17cdc00-8b58-4e5f-9d50-4cad1592c4c3",
+                  "x-mitre-asset--69d1b1ef-e918-4cfd-9a98-29debd04cb32"
+                ]
+              },
+              {
+                "query": [
+                  "attack-pattern--5d24bb1d-4487-4923-ae3a-8e679092ac7a",
+                  "targets",
+                  "x-mitre-asset--68388d4f-8138-420b-be2b-5a7dfe9ff6b4"
+                ],
+                "endpoint_types": [
+                  "attack-pattern",
+                  "x-mitre-asset"
+                ],
+                "template": "child_technique_parent_targets_asset",
+                "signature": "subtechnique-of -> targets",
+                "path_length": 2,
+                "steps": [
+                  {
+                    "relation": "subtechnique-of",
+                    "direction": "forward",
+                    "from": "attack-pattern--5d24bb1d-4487-4923-ae3a-8e679092ac7a",
+                    "to": "attack-pattern--d5a69cfb-fc2a-46cb-99eb-74b236db5061"
+                  },
+                  {
+                    "relation": "targets",
+                    "direction": "forward",
+                    "from": "attack-pattern--d5a69cfb-fc2a-46cb-99eb-74b236db5061",
+                    "to": "x-mitre-asset--68388d4f-8138-420b-be2b-5a7dfe9ff6b4"
+                  }
+                ],
+                "path_nodes": [
+                  "attack-pattern--5d24bb1d-4487-4923-ae3a-8e679092ac7a",
+                  "attack-pattern--d5a69cfb-fc2a-46cb-99eb-74b236db5061",
+                  "x-mitre-asset--68388d4f-8138-420b-be2b-5a7dfe9ff6b4"
+                ]
+              }
+            ],
+            "actor_uses_subtechnique_parent": [
+              {
+                "query": [
+                  "campaign--a6aba167-5ada-4812-9da1-912c0e73335d",
+                  "uses",
+                  "attack-pattern--d5a69cfb-fc2a-46cb-99eb-74b236db5061"
+                ],
+                "endpoint_types": [
+                  "campaign",
+                  "attack-pattern"
+                ],
+                "template": "actor_uses_subtechnique_parent",
+                "signature": "uses -> subtechnique-of",
+                "path_length": 2,
+                "steps": [
+                  {
+                    "relation": "uses",
+                    "direction": "forward",
+                    "from": "campaign--a6aba167-5ada-4812-9da1-912c0e73335d",
+                    "to": "attack-pattern--5d24bb1d-4487-4923-ae3a-8e679092ac7a"
+                  },
+                  {
+                    "relation": "subtechnique-of",
+                    "direction": "forward",
+                    "from": "attack-pattern--5d24bb1d-4487-4923-ae3a-8e679092ac7a",
+                    "to": "attack-pattern--d5a69cfb-fc2a-46cb-99eb-74b236db5061"
+                  }
+                ],
+                "path_nodes": [
+                  "campaign--a6aba167-5ada-4812-9da1-912c0e73335d",
+                  "attack-pattern--5d24bb1d-4487-4923-ae3a-8e679092ac7a",
+                  "attack-pattern--d5a69cfb-fc2a-46cb-99eb-74b236db5061"
+                ]
+              }
+            ],
+            "mitigates_child_parent_technique": [
+              {
+                "query": [
+                  "course-of-action--71eb7dad-07eb-4bbc-9df0-ac57bf2fba4a",
+                  "mitigates",
+                  "attack-pattern--be69c571-d746-4b1f-bdd0-c0c9817e9068"
+                ],
+                "endpoint_types": [
+                  "course-of-action",
+                  "attack-pattern"
+                ],
+                "template": "mitigates_child_parent_technique",
+                "signature": "mitigates -> subtechnique-of",
+                "path_length": 2,
+                "steps": [
+                  {
+                    "relation": "mitigates",
+                    "direction": "forward",
+                    "from": "course-of-action--71eb7dad-07eb-4bbc-9df0-ac57bf2fba4a",
+                    "to": "attack-pattern--574d5bfb-9a7a-4b28-ab5c-743ac704c135"
+                  },
+                  {
+                    "relation": "subtechnique-of",
+                    "direction": "forward",
+                    "from": "attack-pattern--574d5bfb-9a7a-4b28-ab5c-743ac704c135",
+                    "to": "attack-pattern--be69c571-d746-4b1f-bdd0-c0c9817e9068"
+                  }
+                ],
+                "path_nodes": [
+                  "course-of-action--71eb7dad-07eb-4bbc-9df0-ac57bf2fba4a",
+                  "attack-pattern--574d5bfb-9a7a-4b28-ab5c-743ac704c135",
+                  "attack-pattern--be69c571-d746-4b1f-bdd0-c0c9817e9068"
+                ]
+              },
+              {
+                "query": [
+                  "course-of-action--8ac1d6e1-b07f-476a-9732-84984ebc2405",
+                  "mitigates",
+                  "attack-pattern--7b4c0e19-a9b0-4a74-a196-b38c07b79f20"
+                ],
+                "endpoint_types": [
+                  "course-of-action",
+                  "attack-pattern"
+                ],
+                "template": "mitigates_child_parent_technique",
+                "signature": "mitigates -> subtechnique-of",
+                "path_length": 2,
+                "steps": [
+                  {
+                    "relation": "mitigates",
+                    "direction": "forward",
+                    "from": "course-of-action--8ac1d6e1-b07f-476a-9732-84984ebc2405",
+                    "to": "attack-pattern--68a9324d-a524-4766-a899-a026f68a33df"
+                  },
+                  {
+                    "relation": "subtechnique-of",
+                    "direction": "forward",
+                    "from": "attack-pattern--68a9324d-a524-4766-a899-a026f68a33df",
+                    "to": "attack-pattern--7b4c0e19-a9b0-4a74-a196-b38c07b79f20"
+                  }
+                ],
+                "path_nodes": [
+                  "course-of-action--8ac1d6e1-b07f-476a-9732-84984ebc2405",
+                  "attack-pattern--68a9324d-a524-4766-a899-a026f68a33df",
+                  "attack-pattern--7b4c0e19-a9b0-4a74-a196-b38c07b79f20"
+                ]
+              },
+              {
+                "query": [
+                  "course-of-action--aadac250-bcdc-44e3-a4ae-f52bd0a7a16a",
+                  "mitigates",
+                  "attack-pattern--7b4c0e19-a9b0-4a74-a196-b38c07b79f20"
+                ],
+                "endpoint_types": [
+                  "course-of-action",
+                  "attack-pattern"
+                ],
+                "template": "mitigates_child_parent_technique",
+                "signature": "mitigates -> subtechnique-of",
+                "path_length": 2,
+                "steps": [
+                  {
+                    "relation": "mitigates",
+                    "direction": "forward",
+                    "from": "course-of-action--aadac250-bcdc-44e3-a4ae-f52bd0a7a16a",
+                    "to": "attack-pattern--68a9324d-a524-4766-a899-a026f68a33df"
+                  },
+                  {
+                    "relation": "subtechnique-of",
+                    "direction": "forward",
+                    "from": "attack-pattern--68a9324d-a524-4766-a899-a026f68a33df",
+                    "to": "attack-pattern--7b4c0e19-a9b0-4a74-a196-b38c07b79f20"
+                  }
+                ],
+                "path_nodes": [
+                  "course-of-action--aadac250-bcdc-44e3-a4ae-f52bd0a7a16a",
+                  "attack-pattern--68a9324d-a524-4766-a899-a026f68a33df",
+                  "attack-pattern--7b4c0e19-a9b0-4a74-a196-b38c07b79f20"
+                ]
+              },
+              {
+                "query": [
+                  "course-of-action--aadac250-bcdc-44e3-a4ae-f52bd0a7a16a",
+                  "mitigates",
+                  "attack-pattern--fbb67c2d-37c3-49ee-86e3-bf234cc48ca9"
+                ],
+                "endpoint_types": [
+                  "course-of-action",
+                  "attack-pattern"
+                ],
+                "template": "mitigates_child_parent_technique",
+                "signature": "mitigates -> subtechnique-of",
+                "path_length": 2,
+                "steps": [
+                  {
+                    "relation": "mitigates",
+                    "direction": "forward",
+                    "from": "course-of-action--aadac250-bcdc-44e3-a4ae-f52bd0a7a16a",
+                    "to": "attack-pattern--6008c1f0-1b68-4614-8f5b-a547436b8855"
+                  },
+                  {
+                    "relation": "subtechnique-of",
+                    "direction": "forward",
+                    "from": "attack-pattern--6008c1f0-1b68-4614-8f5b-a547436b8855",
+                    "to": "attack-pattern--fbb67c2d-37c3-49ee-86e3-bf234cc48ca9"
+                  }
+                ],
+                "path_nodes": [
+                  "course-of-action--aadac250-bcdc-44e3-a4ae-f52bd0a7a16a",
+                  "attack-pattern--6008c1f0-1b68-4614-8f5b-a547436b8855",
+                  "attack-pattern--fbb67c2d-37c3-49ee-86e3-bf234cc48ca9"
+                ]
+              },
+              {
+                "query": [
+                  "course-of-action--bcf91ebc-f316-4e19-b2f6-444e9940c697",
+                  "mitigates",
+                  "attack-pattern--be69c571-d746-4b1f-bdd0-c0c9817e9068"
+                ],
+                "endpoint_types": [
+                  "course-of-action",
+                  "attack-pattern"
+                ],
+                "template": "mitigates_child_parent_technique",
+                "signature": "mitigates -> subtechnique-of",
+                "path_length": 2,
+                "steps": [
+                  {
+                    "relation": "mitigates",
+                    "direction": "forward",
+                    "from": "course-of-action--bcf91ebc-f316-4e19-b2f6-444e9940c697",
+                    "to": "attack-pattern--574d5bfb-9a7a-4b28-ab5c-743ac704c135"
+                  },
+                  {
+                    "relation": "subtechnique-of",
+                    "direction": "forward",
+                    "from": "attack-pattern--574d5bfb-9a7a-4b28-ab5c-743ac704c135",
+                    "to": "attack-pattern--be69c571-d746-4b1f-bdd0-c0c9817e9068"
+                  }
+                ],
+                "path_nodes": [
+                  "course-of-action--bcf91ebc-f316-4e19-b2f6-444e9940c697",
+                  "attack-pattern--574d5bfb-9a7a-4b28-ab5c-743ac704c135",
+                  "attack-pattern--be69c571-d746-4b1f-bdd0-c0c9817e9068"
+                ]
+              }
+            ]
+          },
+          "example_unsupported_queries": [
+            {
+              "query": [
+                "attack-pattern--063b5b92-5361-481a-9c3f-95492ed9a2d8",
+                "targets",
+                "x-mitre-asset--0804f037-a3b9-4715-98e1-9f73d19d6945"
+              ],
+              "endpoint_types": [
+                "attack-pattern",
+                "x-mitre-asset"
+              ],
+              "reason": "No matching directed semantic template for this relation/endpoints in TRAIN context."
+            },
+            {
+              "query": [
+                "attack-pattern--063b5b92-5361-481a-9c3f-95492ed9a2d8",
+                "targets",
+                "x-mitre-asset--75f810ad-b678-4c57-b93b-fdc79bba0c04"
+              ],
+              "endpoint_types": [
+                "attack-pattern",
+                "x-mitre-asset"
+              ],
+              "reason": "No matching directed semantic template for this relation/endpoints in TRAIN context."
+            },
+            {
+              "query": [
+                "attack-pattern--063b5b92-5361-481a-9c3f-95492ed9a2d8",
+                "targets",
+                "x-mitre-asset--bb141168-ae41-4974-8ece-dc9b63e59237"
+              ],
+              "endpoint_types": [
+                "attack-pattern",
+                "x-mitre-asset"
+              ],
+              "reason": "No matching directed semantic template for this relation/endpoints in TRAIN context."
+            },
+            {
+              "query": [
+                "attack-pattern--1b22b676-9347-4c55-9a35-ef0dc653db5b",
+                "targets",
+                "x-mitre-asset--2b676abd-8263-49ea-81a4-78a7e1f776fe"
+              ],
+              "endpoint_types": [
+                "attack-pattern",
+                "x-mitre-asset"
+              ],
+              "reason": "No matching directed semantic template for this relation/endpoints in TRAIN context."
+            },
+            {
+              "query": [
+                "attack-pattern--1b22b676-9347-4c55-9a35-ef0dc653db5b",
+                "targets",
+                "x-mitre-asset--bb141168-ae41-4974-8ece-dc9b63e59237"
+              ],
+              "endpoint_types": [
+                "attack-pattern",
+                "x-mitre-asset"
+              ],
+              "reason": "No matching directed semantic template for this relation/endpoints in TRAIN context."
+            },
+            {
+              "query": [
+                "attack-pattern--1b22b676-9347-4c55-9a35-ef0dc653db5b",
+                "targets",
+                "x-mitre-asset--ecb81a8b-022e-4529-a404-55cffca7d3a3"
+              ],
+              "endpoint_types": [
+                "attack-pattern",
+                "x-mitre-asset"
+              ],
+              "reason": "No matching directed semantic template for this relation/endpoints in TRAIN context."
+            },
+            {
+              "query": [
+                "attack-pattern--25852363-5968-4673-b81d-341d5ed90bd1",
+                "targets",
+                "x-mitre-asset--459e4335-74e1-4136-b730-0f116f0d541d"
+              ],
+              "endpoint_types": [
+                "attack-pattern",
+                "x-mitre-asset"
+              ],
+              "reason": "No matching directed semantic template for this relation/endpoints in TRAIN context."
+            },
+            {
+              "query": [
+                "attack-pattern--25dfc8ad-bd73-4dfd-84a9-3c3d383f76e9",
+                "targets",
+                "x-mitre-asset--dcb1d1c1-b195-45bf-b4cf-5b98c5b859a5"
+              ],
+              "endpoint_types": [
+                "attack-pattern",
+                "x-mitre-asset"
+              ],
+              "reason": "No matching directed semantic template for this relation/endpoints in TRAIN context."
+            },
+            {
+              "query": [
+                "attack-pattern--2736b752-4ec5-4421-a230-8977dea7649c",
+                "targets",
+                "x-mitre-asset--3a95f7e4-4877-4967-b2e8-e287976c3e64"
+              ],
+              "endpoint_types": [
+                "attack-pattern",
+                "x-mitre-asset"
+              ],
+              "reason": "No matching directed semantic template for this relation/endpoints in TRAIN context."
+            },
+            {
+              "query": [
+                "attack-pattern--2883c520-7957-46ca-89bd-dab1ad53b601",
+                "targets",
+                "x-mitre-asset--85f285f9-0a48-4998-921d-8a47d81c0e6d"
+              ],
+              "endpoint_types": [
+                "attack-pattern",
+                "x-mitre-asset"
+              ],
+              "reason": "No matching directed semantic template for this relation/endpoints in TRAIN context."
+            },
+            {
+              "query": [
+                "attack-pattern--2900bbd8-308a-4274-b074-5b8bde8347bc",
+                "targets",
+                "x-mitre-asset--459e4335-74e1-4136-b730-0f116f0d541d"
+              ],
+              "endpoint_types": [
+                "attack-pattern",
+                "x-mitre-asset"
+              ],
+              "reason": "No matching directed semantic template for this relation/endpoints in TRAIN context."
+            },
+            {
+              "query": [
+                "attack-pattern--2900bbd8-308a-4274-b074-5b8bde8347bc",
+                "targets",
+                "x-mitre-asset--75f810ad-b678-4c57-b93b-fdc79bba0c04"
+              ],
+              "endpoint_types": [
+                "attack-pattern",
+                "x-mitre-asset"
+              ],
+              "reason": "No matching directed semantic template for this relation/endpoints in TRAIN context."
+            },
+            {
+              "query": [
+                "attack-pattern--2aa406ed-81c3-4c1d-ba83-cfbee5a2847a",
+                "targets",
+                "x-mitre-asset--459e4335-74e1-4136-b730-0f116f0d541d"
+              ],
+              "endpoint_types": [
+                "attack-pattern",
+                "x-mitre-asset"
+              ],
+              "reason": "No matching directed semantic template for this relation/endpoints in TRAIN context."
+            },
+            {
+              "query": [
+                "attack-pattern--2d0d40ad-22fa-4cc8-b264-072557e1364b",
+                "targets",
+                "x-mitre-asset--68388d4f-8138-420b-be2b-5a7dfe9ff6b4"
+              ],
+              "endpoint_types": [
+                "attack-pattern",
+                "x-mitre-asset"
+              ],
+              "reason": "No matching directed semantic template for this relation/endpoints in TRAIN context."
+            },
+            {
+              "query": [
+                "attack-pattern--2dc2b567-8821-49f9-9045-8740f3d0b958",
+                "targets",
+                "x-mitre-asset--14932ed5-1098-4cc1-9f57-159ab7366787"
+              ],
+              "endpoint_types": [
+                "attack-pattern",
+                "x-mitre-asset"
+              ],
+              "reason": "No matching directed semantic template for this relation/endpoints in TRAIN context."
+            },
+            {
+              "query": [
+                "attack-pattern--2fedbe69-581f-447d-8a78-32ee7db939a9",
+                "targets",
+                "x-mitre-asset--85f285f9-0a48-4998-921d-8a47d81c0e6d"
+              ],
+              "endpoint_types": [
+                "attack-pattern",
+                "x-mitre-asset"
+              ],
+              "reason": "No matching directed semantic template for this relation/endpoints in TRAIN context."
+            },
+            {
+              "query": [
+                "attack-pattern--2fedbe69-581f-447d-8a78-32ee7db939a9",
+                "targets",
+                "x-mitre-asset--986c455b-0f43-42b6-8360-33ac48bd9990"
+              ],
+              "endpoint_types": [
+                "attack-pattern",
+                "x-mitre-asset"
+              ],
+              "reason": "No matching directed semantic template for this relation/endpoints in TRAIN context."
+            },
+            {
+              "query": [
+                "attack-pattern--3067b85e-271e-4bc5-81ad-ab1a81d411e3",
+                "targets",
+                "x-mitre-asset--69d1b1ef-e918-4cfd-9a98-29debd04cb32"
+              ],
+              "endpoint_types": [
+                "attack-pattern",
+                "x-mitre-asset"
+              ],
+              "reason": "No matching directed semantic template for this relation/endpoints in TRAIN context."
+            },
+            {
+              "query": [
+                "attack-pattern--32632a95-6856-47b9-9ab7-fea5cd7dce00",
+                "targets",
+                "x-mitre-asset--973bc51e-c41e-4cec-ac03-9389c71f3d0d"
+              ],
+              "endpoint_types": [
+                "attack-pattern",
+                "x-mitre-asset"
+              ],
+              "reason": "No matching directed semantic template for this relation/endpoints in TRAIN context."
+            },
+            {
+              "query": [
+                "attack-pattern--32632a95-6856-47b9-9ab7-fea5cd7dce00",
+                "targets",
+                "x-mitre-asset--f1315d02-9118-4e3b-8cdf-4c2d3f77ce41"
+              ],
+              "endpoint_types": [
+                "attack-pattern",
+                "x-mitre-asset"
+              ],
+              "reason": "No matching directed semantic template for this relation/endpoints in TRAIN context."
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

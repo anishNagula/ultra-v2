@@ -1,0 +1,17 @@
+Split seed: 20261023
+Exact shared triples removed from ICS: 22
+
+ENTERPRISE
+Entities: 2495
+Relations: ['attributed-to', 'detects', 'mitigates', 'subtechnique-of', 'uses']
+Triples: 21103
+Splits: {'train': 17025, 'valid': 2039, 'test': 2039}
+
+ICS
+Entities: 302
+Relations: ['attributed-to', 'detects', 'mitigates', 'subtechnique-of', 'targets', 'uses']
+Triples: 1634
+Splits: {'train': 1333, 'valid': 150, 'test': 151}
+
+Manifest: /Users/anishnagula/code/ultra-v2/experiments/fedultra_fresh/data_manifest.json
+Dataset output: /Users/anishnagula/code/ultra-v2/experiments/fedultra_fresh/data_processed
