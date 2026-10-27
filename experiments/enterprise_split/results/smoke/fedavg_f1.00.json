@@ -1,0 +1,59 @@
+{
+ "protocol": "enterprise-split v1 (PREREGISTRATION.md)",
+ "arm": "fedavg",
+ "target": "/Users/anishnagula/code/ultra-v2/experiments/enterprise_split/data/v1/C-time/target_f1.00",
+ "source": "/Users/anishnagula/code/ultra-v2/experiments/enterprise_split/data/v1/C-time/source",
+ "config": {
+  "rounds": 20,
+  "local_steps": 10,
+  "batch_size": 8,
+  "num_negative": 64,
+  "eval_limit": 0,
+  "lr": 0.0005,
+  "weight_decay": 0.0,
+  "skip_test": true
+ },
+ "client_weights": [
+  1.0,
+  1.0
+ ],
+ "checkpoint": "/Users/anishnagula/code/ultra-v2/ckpts/ultra_4g.pth",
+ "target_sha256": {
+  "test.txt": "448487a431e4db53902bc47729a2f5b7e2d980d81506e7115ed31d812f51d01a",
+  "train.txt": "730c9bcebaef0137cd951f88724c4a709bfeea4239374aa39e3c9510aba80074",
+  "valid.txt": "1147c4a54cf07b975c0168ae165df062f6fb255012e880b1859db2a32fc71be6"
+ },
+ "selection": "best round (0 = pretrained) by target validation MRR",
+ "diagnostic_only": false,
+ "results": [
+  {
+   "seed": 20261209,
+   "selected_round": 7,
+   "validation_mrr_history": [
+    0.145731121301651,
+    0.15257421135902405,
+    0.15117062628269196,
+    0.1452794373035431,
+    0.14051571488380432,
+    0.14216096699237823,
+    0.14427655935287476,
+    0.1562006175518036,
+    0.14463526010513306,
+    0.14525139331817627,
+    0.14764928817749023,
+    0.14111386239528656,
+    0.14806869626045227,
+    0.1461404412984848,
+    0.14716963469982147,
+    0.15195007622241974,
+    0.15361085534095764,
+    0.1460399329662323,
+    0.1507447361946106,
+    0.1509793996810913,
+    0.1512645184993744
+   ],
+   "selected_validation_mrr": 0.1562006175518036,
+   "seconds": 397.3
+  }
+ ]
+}

@@ -1,0 +1,6 @@
+Load rspmm extension. This may take a while...
+[target_f0.10] relations=10 relation-graph edges=136 indistinguishable groups for query=uses: [['attributed-to', 'attributed-to^-1'], ['detects', 'mitigates'], ['subtechnique-of', 'subtechnique-of^-1'], ['detects^-1', 'mitigates^-1']]
+[source] relations=10 relation-graph edges=136 indistinguishable groups for query=uses: [['attributed-to', 'attributed-to^-1'], ['detects', 'mitigates'], ['subtechnique-of', 'subtechnique-of^-1'], ['detects^-1', 'mitigates^-1']]
+[target_f1.00] relations=10 relation-graph edges=136 indistinguishable groups for query=uses: [['attributed-to', 'attributed-to^-1'], ['detects', 'mitigates'], ['subtechnique-of', 'subtechnique-of^-1'], ['detects^-1', 'mitigates^-1']]
+pretrained cosine target_f0.10 vs source: same relation median=1.000 min=1.000; different relations median=0.618
+pretrained cosine target_f0.10 vs target_f1.00: same relation median=1.000 min=1.000; different relations median=0.618

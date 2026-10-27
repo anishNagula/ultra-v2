@@ -1,0 +1,438 @@
+{
+ "design": "DESIGN.md (hash in results/design_hash.txt)",
+ "candidates": {
+  "C-rand": {
+   "source": {
+    "triples": 10612,
+    "entities": 1619,
+    "relations": {
+     "attributed-to": 14,
+     "detects": 394,
+     "mitigates": 839,
+     "subtechnique-of": 262,
+     "uses": 9103
+    },
+    "relation_paths_with_instances": {
+     "length_1": 10,
+     "length_2": 31,
+     "length_3": 86
+    },
+    "uses_rules_support_ge_2": {
+     "length_1": 0,
+     "length_2": 7,
+     "length_3": 23
+    },
+    "uses_rule_support_entropy_nats": 2.1011121828406,
+    "uses_rule_effective_number": 8.175257239065417
+   },
+   "fractions": {
+    "0.10": {
+     "triples": {
+      "train": 1566,
+      "valid": 308,
+      "test": 303,
+      "hidden": 8314
+     },
+     "train_relations": {
+      "attributed-to": 1,
+      "detects": 303,
+      "mitigates": 71,
+      "subtechnique-of": 213,
+      "uses": 978
+     },
+     "leakage": {
+      "L1_exact": 0,
+      "L1_inverse_equivalent": 0,
+      "L2_exact": 0,
+      "L2_inverse_equivalent": 0,
+      "L3_entity_pair": 0,
+      "L4_target_actors_in_source": 0,
+      "L4_source_actors_in_target": 0,
+      "shared_entities_by_type": {
+       "attack-pattern": 534,
+       "tool": 50,
+       "malware": 31,
+       "course-of-action": 42
+      },
+      "source_entities": 1619,
+      "target_entities": 1533
+     },
+     "evaluation_coverage": {
+      "valid": 0.8733766233766234,
+      "test": 0.8316831683168316
+     },
+     "relation_paths_with_instances": {
+      "length_1": 10,
+      "length_2": 29,
+      "length_3": 68
+     },
+     "uses_rules_support_ge_2": {
+      "length_1": 0,
+      "length_2": 3,
+      "length_3": 3
+     },
+     "uses_rule_support_entropy_nats": 0.5231468325161139,
+     "uses_rule_effective_number": 1.6873290459281993,
+     "validation_connected_by_target_path": 0.1428571492433548,
+     "validation_connected_by_source_supported_rule": 0.1428571492433548,
+     "validation_rule_mrr": {
+      "own": 0.02638818143968188,
+      "source": 0.021815494769219727,
+      "pooled": 0.021815494769219727
+     },
+     "proxy_pooled_minus_own": -0.004572686670462154
+    },
+    "0.25": {
+     "triples": {
+      "train": 2889,
+      "valid": 308,
+      "test": 303,
+      "hidden": 6991
+     },
+     "train_relations": {
+      "attributed-to": 3,
+      "detects": 303,
+      "mitigates": 156,
+      "subtechnique-of": 213,
+      "uses": 2214
+     },
+     "leakage": {
+      "L1_exact": 0,
+      "L1_inverse_equivalent": 0,
+      "L2_exact": 0,
+      "L2_inverse_equivalent": 0,
+      "L3_entity_pair": 0,
+      "L4_target_actors_in_source": 0,
+      "L4_source_actors_in_target": 0,
+      "shared_entities_by_type": {
+       "attack-pattern": 534,
+       "tool": 50,
+       "malware": 31,
+       "course-of-action": 42
+      },
+      "source_entities": 1619,
+      "target_entities": 1533
+     },
+     "evaluation_coverage": {
+      "valid": 0.961038961038961,
+      "test": 0.9570957095709571
+     },
+     "relation_paths_with_instances": {
+      "length_1": 10,
+      "length_2": 29,
+      "length_3": 74
+     },
+     "uses_rules_support_ge_2": {
+      "length_1": 0,
+      "length_2": 5,
+      "length_3": 8
+     },
+     "uses_rule_support_entropy_nats": 0.5284746968611927,
+     "uses_rule_effective_number": 1.6963428971563421,
+     "validation_connected_by_target_path": 0.7175324559211731,
+     "validation_connected_by_source_supported_rule": 0.7175324559211731,
+     "validation_rule_mrr": {
+      "own": 0.03342725527521236,
+      "source": 0.031957414864689365,
+      "pooled": 0.031957414864689365
+     },
+     "proxy_pooled_minus_own": -0.0014698404105229976
+    },
+    "1.00": {
+     "triples": {
+      "train": 9880,
+      "valid": 308,
+      "test": 303,
+      "hidden": 0
+     },
+     "train_relations": {
+      "attributed-to": 12,
+      "detects": 303,
+      "mitigates": 609,
+      "subtechnique-of": 213,
+      "uses": 8743
+     },
+     "leakage": {
+      "L1_exact": 0,
+      "L1_inverse_equivalent": 0,
+      "L2_exact": 0,
+      "L2_inverse_equivalent": 0,
+      "L3_entity_pair": 0,
+      "L4_target_actors_in_source": 0,
+      "L4_source_actors_in_target": 0,
+      "shared_entities_by_type": {
+       "attack-pattern": 534,
+       "tool": 50,
+       "malware": 31,
+       "course-of-action": 42
+      },
+      "source_entities": 1619,
+      "target_entities": 1533
+     },
+     "evaluation_coverage": {
+      "valid": 1.0,
+      "test": 1.0
+     },
+     "relation_paths_with_instances": {
+      "length_1": 10,
+      "length_2": 30,
+      "length_3": 84
+     },
+     "uses_rules_support_ge_2": {
+      "length_1": 0,
+      "length_2": 7,
+      "length_3": 22
+     },
+     "uses_rule_support_entropy_nats": 1.85591422746704,
+     "uses_rule_effective_number": 6.397544388665447,
+     "validation_connected_by_target_path": 1.0,
+     "validation_connected_by_source_supported_rule": 1.0,
+     "validation_rule_mrr": {
+      "own": 0.08180568280973743,
+      "source": 0.08548854639824426,
+      "pooled": 0.08705698273668787
+     },
+     "proxy_pooled_minus_own": 0.005251299926950434,
+     "semantic_overlap": {
+      "software_used_by_both_clients_actors": 81,
+      "techniques_used_by_both_clients_actors": 360,
+      "plain_text_actor_mentions_across_clients": [
+       "target describes source: Salesforce Data Exfiltration mentions ShinyHunters",
+       "target describes source: WIRTE mentions Molerats"
+      ]
+     }
+    }
+   },
+   "hard_constraints": {
+    "V1_no_leakage": true,
+    "V2_relation_coverage": true,
+    "V3_evaluation_size": true,
+    "V4_evaluation_coverage": true
+   },
+   "passes_hard_constraints": true,
+   "mean_scarce_proxy": -0.0030212635404925758,
+   "availability_source_over_own_at_f1.00": 1.0450196546500612
+  },
+  "C-time": {
+   "source": {
+    "triples": 11149,
+    "entities": 1643,
+    "relations": {
+     "attributed-to": 18,
+     "detects": 373,
+     "mitigates": 759,
+     "subtechnique-of": 262,
+     "uses": 9737
+    },
+    "relation_paths_with_instances": {
+     "length_1": 10,
+     "length_2": 31,
+     "length_3": 86
+    },
+    "uses_rules_support_ge_2": {
+     "length_1": 0,
+     "length_2": 7,
+     "length_3": 23
+    },
+    "uses_rule_support_entropy_nats": 2.2361359819808153,
+    "uses_rule_effective_number": 9.357105320056352
+   },
+   "fractions": {
+    "0.10": {
+     "triples": {
+      "train": 1492,
+      "valid": 314,
+      "test": 314,
+      "hidden": 7834
+     },
+     "train_relations": {
+      "attributed-to": 1,
+      "detects": 324,
+      "mitigates": 80,
+      "subtechnique-of": 213,
+      "uses": 874
+     },
+     "leakage": {
+      "L1_exact": 0,
+      "L1_inverse_equivalent": 0,
+      "L2_exact": 0,
+      "L2_inverse_equivalent": 0,
+      "L3_entity_pair": 0,
+      "L4_target_actors_in_source": 0,
+      "L4_source_actors_in_target": 0,
+      "shared_entities_by_type": {
+       "attack-pattern": 506,
+       "tool": 50,
+       "malware": 29,
+       "course-of-action": 43
+      },
+      "source_entities": 1643,
+      "target_entities": 1480
+     },
+     "evaluation_coverage": {
+      "valid": 0.8821656050955414,
+      "test": 0.8980891719745223
+     },
+     "relation_paths_with_instances": {
+      "length_1": 10,
+      "length_2": 29,
+      "length_3": 72
+     },
+     "uses_rules_support_ge_2": {
+      "length_1": 0,
+      "length_2": 0,
+      "length_3": 2
+     },
+     "uses_rule_support_entropy_nats": 0.15200531083620292,
+     "uses_rule_effective_number": 1.1641664191128596,
+     "validation_connected_by_target_path": 0.12738853693008423,
+     "validation_connected_by_source_supported_rule": 0.12738853693008423,
+     "validation_rule_mrr": {
+      "own": 0.023218848500343617,
+      "source": 0.024694389120020675,
+      "pooled": 0.024694389120020675
+     },
+     "proxy_pooled_minus_own": 0.001475540619677057
+    },
+    "0.25": {
+     "triples": {
+      "train": 2760,
+      "valid": 314,
+      "test": 314,
+      "hidden": 6566
+     },
+     "train_relations": {
+      "attributed-to": 3,
+      "detects": 324,
+      "mitigates": 177,
+      "subtechnique-of": 213,
+      "uses": 2043
+     },
+     "leakage": {
+      "L1_exact": 0,
+      "L1_inverse_equivalent": 0,
+      "L2_exact": 0,
+      "L2_inverse_equivalent": 0,
+      "L3_entity_pair": 0,
+      "L4_target_actors_in_source": 0,
+      "L4_source_actors_in_target": 0,
+      "shared_entities_by_type": {
+       "attack-pattern": 506,
+       "tool": 50,
+       "malware": 29,
+       "course-of-action": 43
+      },
+      "source_entities": 1643,
+      "target_entities": 1480
+     },
+     "evaluation_coverage": {
+      "valid": 0.9426751592356688,
+      "test": 0.9554140127388535
+     },
+     "relation_paths_with_instances": {
+      "length_1": 10,
+      "length_2": 29,
+      "length_3": 82
+     },
+     "uses_rules_support_ge_2": {
+      "length_1": 0,
+      "length_2": 5,
+      "length_3": 5
+     },
+     "uses_rule_support_entropy_nats": 0.49196340696827145,
+     "uses_rule_effective_number": 1.6355242693187222,
+     "validation_connected_by_target_path": 0.6528662443161011,
+     "validation_connected_by_source_supported_rule": 0.6528662443161011,
+     "validation_rule_mrr": {
+      "own": 0.032328819781700345,
+      "source": 0.029471301571259354,
+      "pooled": 0.02932494525803343
+     },
+     "proxy_pooled_minus_own": -0.0030038745236669155
+    },
+    "1.00": {
+     "triples": {
+      "train": 9326,
+      "valid": 314,
+      "test": 314,
+      "hidden": 0
+     },
+     "train_relations": {
+      "attributed-to": 8,
+      "detects": 324,
+      "mitigates": 689,
+      "subtechnique-of": 213,
+      "uses": 8092
+     },
+     "leakage": {
+      "L1_exact": 0,
+      "L1_inverse_equivalent": 0,
+      "L2_exact": 0,
+      "L2_inverse_equivalent": 0,
+      "L3_entity_pair": 0,
+      "L4_target_actors_in_source": 0,
+      "L4_source_actors_in_target": 0,
+      "shared_entities_by_type": {
+       "attack-pattern": 506,
+       "tool": 50,
+       "malware": 29,
+       "course-of-action": 43
+      },
+      "source_entities": 1643,
+      "target_entities": 1480
+     },
+     "evaluation_coverage": {
+      "valid": 1.0,
+      "test": 1.0
+     },
+     "relation_paths_with_instances": {
+      "length_1": 10,
+      "length_2": 30,
+      "length_3": 84
+     },
+     "uses_rules_support_ge_2": {
+      "length_1": 0,
+      "length_2": 7,
+      "length_3": 22
+     },
+     "uses_rule_support_entropy_nats": 1.6465541658239105,
+     "uses_rule_effective_number": 5.189068315909083,
+     "validation_connected_by_target_path": 0.993630588054657,
+     "validation_connected_by_source_supported_rule": 0.993630588054657,
+     "validation_rule_mrr": {
+      "own": 0.06512188654846768,
+      "source": 0.06809632774040486,
+      "pooled": 0.06812904725407243
+     },
+     "proxy_pooled_minus_own": 0.00300716070560475,
+     "semantic_overlap": {
+      "software_used_by_both_clients_actors": 79,
+      "techniques_used_by_both_clients_actors": 344,
+      "plain_text_actor_mentions_across_clients": [
+       "target describes source: WIRTE mentions Molerats"
+      ]
+     }
+    }
+   },
+   "hard_constraints": {
+    "V1_no_leakage": true,
+    "V2_relation_coverage": true,
+    "V3_evaluation_size": true,
+    "V4_evaluation_coverage": true
+   },
+   "passes_hard_constraints": true,
+   "mean_scarce_proxy": -0.0007641669519949292,
+   "availability_source_over_own_at_f1.00": 1.0456749850101996
+  }
+ },
+ "decision": {
+  "rule": "DESIGN.md Amendment 1",
+  "primary_fraction": "0.10",
+  "selected_candidate": "C-time",
+  "availability": 1.0456749850101996,
+  "go_i_hard_constraints": true,
+  "go_ii_availability_ge_0_9": true,
+  "go_iii_ultra_need": "validation-only smoke test: local best valid MRR at f=0.10 <= f=1.00 - 0.03",
+  "go_iv_automated_tests": "test_pipeline.py on the written files"
+ }
+}

@@ -1,0 +1,37 @@
+{
+  "source_results": "/Users/anishnagula/code/ultra-v2/experiments/enterprise_split/results/confirmatory/f0.10_comparison.json",
+  "bootstrap_samples": 20000,
+  "random_seed": 20261026,
+  "num_training_seeds": 10,
+  "target_test_triples": 314,
+  "per_seed_mean_delta_mrr": [
+    -0.002349956145370676,
+    -0.006626789476633499,
+    -0.00957534380092517,
+    -0.007385225330737485,
+    -0.006262744467699556,
+    -0.00170737619594831,
+    -0.0012884362683050145,
+    -0.006944840909634379,
+    0.0002829320295002003,
+    -0.0056204142925406625
+  ],
+  "mean_delta_mrr": -0.004747819485829455,
+  "seed_level_95pct_t_ci": [
+    -0.007058857531348953,
+    -0.002436777799328081
+  ],
+  "hierarchical_paired_bootstrap_95pct_ci": [
+    -0.008956496489789838,
+    -0.000880697107655862
+  ],
+  "acceptance_criteria": {
+    "minimum_mean_delta_mrr": 0.03,
+    "mean_gain_meets_threshold": false,
+    "seed_level_ci_entirely_above_zero": false,
+    "hierarchical_bootstrap_ci_entirely_above_zero": false,
+    "not_diagnostic_only": true,
+    "meets_full_success_criterion": false
+  },
+  "interpretation_limit": "The interval resamples training seeds and paired triples from the fixed target test sample; it does not quantify uncertainty across alternate graph snapshots, sampling rules, or domains."
+}

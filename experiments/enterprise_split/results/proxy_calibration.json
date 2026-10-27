@@ -1,0 +1,132 @@
+{
+ "note": "Calibrate the transfer-opportunity proxy against earlier FedAvg - local results (descriptive).\n\nProxy = target validation rule MRR with pooled (target + source) path-rule statistics minus\ntarget-only statistics: the k <= 3 rule test of transfer_conditions/src/explore_enrichment.py.\nIt is computed for every earlier cell whose FedAvg - local result is known (Study S and Mobile:\ntest delta; ICS: validation delta). Reads train, valid and hidden facts only; no test triple.",
+ "cells": [
+  {
+   "cell": "Study S shared, target_n13",
+   "own": 0.4009610852189683,
+   "source": 0.37770738077393384,
+   "pooled": 0.3819746964649288,
+   "proxy": -0.018986388754039463,
+   "fedavg_minus_local": 0.09957728050717646,
+   "delta_split": "test"
+  },
+  {
+   "cell": "Study S disjoint, target_n13",
+   "own": 0.4009610852189683,
+   "source": 0.08078813825184436,
+   "pooled": 0.1180773344591056,
+   "proxy": -0.28288375075986266,
+   "fedavg_minus_local": -0.004272966647712405,
+   "delta_split": "test"
+  },
+  {
+   "cell": "Study S shared, target_n41",
+   "own": 0.40181462321135586,
+   "source": 0.4000650949926985,
+   "pooled": 0.40222588013715377,
+   "proxy": 0.0004112569257979093,
+   "fedavg_minus_local": 0.11838468285893802,
+   "delta_split": "test"
+  },
+  {
+   "cell": "Study S disjoint, target_n41",
+   "own": 0.40181462321135586,
+   "source": 0.07839747380694422,
+   "pooled": 0.12893115555230159,
+   "proxy": -0.27288346765905425,
+   "fedavg_minus_local": 0.0033419130390564744,
+   "delta_split": "test"
+  },
+  {
+   "cell": "Study S shared, target_n136",
+   "own": 0.3820982504905416,
+   "source": 0.3760470356558814,
+   "pooled": 0.3820806768469909,
+   "proxy": -1.7573643550705675e-05,
+   "fedavg_minus_local": 0.024115147455321517,
+   "delta_split": "test"
+  },
+  {
+   "cell": "Study S disjoint, target_n136",
+   "own": 0.3820982504905416,
+   "source": 0.07408826101105778,
+   "pooled": 0.1598840911539196,
+   "proxy": -0.22221415933662197,
+   "fedavg_minus_local": -0.08209702493622899,
+   "delta_split": "test"
+  },
+  {
+   "cell": "Study S shared, target_n408",
+   "own": 0.3762492737272596,
+   "source": 0.3787986131361602,
+   "pooled": 0.3783504648893864,
+   "proxy": 0.0021011911621268142,
+   "fedavg_minus_local": 0.008181605111424097,
+   "delta_split": "test"
+  },
+  {
+   "cell": "Study S disjoint, target_n408",
+   "own": 0.3762492737272596,
+   "source": 0.0763598005171026,
+   "pooled": 0.16356921555400045,
+   "proxy": -0.21268005817325913,
+   "fedavg_minus_local": -0.09361033461686663,
+   "delta_split": "test"
+  },
+  {
+   "cell": "Mobile, mobile_f0.10",
+   "own": 0.05670007429590953,
+   "source": 0.05567708269684748,
+   "pooled": 0.05567708269684748,
+   "proxy": -0.0010229915990620508,
+   "fedavg_minus_local": 0.001347482656633639,
+   "delta_split": "test"
+  },
+  {
+   "cell": "ICS, ics_f0.10",
+   "own": 0.10377935766046964,
+   "source": 0.0388669339397077,
+   "pooled": 0.10932901480580748,
+   "proxy": 0.0055496571453378385,
+   "fedavg_minus_local": -0.00432849923769633,
+   "delta_split": "validation"
+  },
+  {
+   "cell": "Mobile, mobile_f0.25",
+   "own": 0.084829958607055,
+   "source": 0.08587672398211431,
+   "pooled": 0.08587672398211431,
+   "proxy": 0.0010467653750593081,
+   "fedavg_minus_local": 0.005412916340781039,
+   "delta_split": "test"
+  },
+  {
+   "cell": "ICS, ics_f0.25",
+   "own": 0.24877617993363974,
+   "source": 0.0841836897373594,
+   "pooled": 0.2611688470529915,
+   "proxy": 0.012392667119351747,
+   "fedavg_minus_local": 0.01292357842127482,
+   "delta_split": "validation"
+  },
+  {
+   "cell": "Mobile, mobile_f1.00",
+   "own": 0.14082794090430453,
+   "source": 0.10237258032161436,
+   "pooled": 0.10237258032161436,
+   "proxy": -0.03845536058269017,
+   "fedavg_minus_local": 0.0008927273715520843,
+   "delta_split": "test"
+  },
+  {
+   "cell": "ICS, ics_f1.00",
+   "own": 0.3158719974536418,
+   "source": 0.10142350920109756,
+   "pooled": 0.31400401171188463,
+   "proxy": -0.0018679857417571721,
+   "fedavg_minus_local": -0.011267075935999552,
+   "delta_split": "validation"
+  }
+ ],
+ "spearman_rho": 0.4461538461538462
+}

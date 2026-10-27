@@ -1,0 +1,27 @@
+{
+ "seconds_per_seed": {
+  "local_f0.10": 86.8,
+  "local_f1.00": 238.7,
+  "fedavg_f0.10": 286.2,
+  "fedavg_f1.00": 397.3
+ },
+ "best_validation_mrr": {
+  "local_f0.10": 0.07810644060373306,
+  "local_f1.00": 0.15076792240142822,
+  "fedavg_f0.10": 0.07353110611438751,
+  "fedavg_f1.00": 0.1562006175518036
+ },
+ "selected_round": {
+  "local_f0.10": 4,
+  "local_f1.00": 16,
+  "fedavg_f0.10": 2,
+  "fedavg_f1.00": 7
+ },
+ "gate_b_round0_parity": {
+  "0.10": true,
+  "1.00": true
+ },
+ "gate_c_local_gap_f1.00_minus_f0.10": 0.07266148179769516,
+ "gate_c_passes": true,
+ "note": "validation only; FedAvg numbers are descriptive and enter no decision"
+}

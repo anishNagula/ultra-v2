@@ -1,0 +1,5 @@
+== target test MRR, FedAvg - local ==
+  f0.10 (H1): local 0.0852 | FedAvg 0.0805 | Δ -0.0047 | t-CI [-0.0071, -0.0024] | boot [-0.0090, -0.0009] | fail
+  f0.25 (secondary): local 0.0915 | FedAvg 0.0872 | Δ -0.0043 | t-CI [-0.0067, -0.0019] | boot [-0.0105, +0.0015] | fail
+  f1.00 (secondary): local 0.1745 | FedAvg 0.1730 | Δ -0.0015 | t-CI [-0.0086, +0.0056] | boot [-0.0092, +0.0057] | fail
+H1 supported: False

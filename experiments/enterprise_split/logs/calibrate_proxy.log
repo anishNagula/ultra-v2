@@ -1,0 +1,16 @@
+source rule statistics in 29s
+  Study S shared, target_n13         own 0.4010 source 0.3777 pooled 0.3820 proxy -0.0190 | FedAvg-local (test) +0.0996  [32s]
+  Study S disjoint, target_n13       own 0.4010 source 0.0808 pooled 0.1181 proxy -0.2829 | FedAvg-local (test) -0.0043  [32s]
+  Study S shared, target_n41         own 0.4018 source 0.4001 pooled 0.4022 proxy +0.0004 | FedAvg-local (test) +0.1184  [36s]
+  Study S disjoint, target_n41       own 0.4018 source 0.0784 pooled 0.1289 proxy -0.2729 | FedAvg-local (test) +0.0033  [36s]
+  Study S shared, target_n136        own 0.3821 source 0.3760 pooled 0.3821 proxy -0.0000 | FedAvg-local (test) +0.0241  [39s]
+  Study S disjoint, target_n136      own 0.3821 source 0.0741 pooled 0.1599 proxy -0.2222 | FedAvg-local (test) -0.0821  [39s]
+  Study S shared, target_n408        own 0.3762 source 0.3788 pooled 0.3784 proxy +0.0021 | FedAvg-local (test) +0.0082  [43s]
+  Study S disjoint, target_n408      own 0.3762 source 0.0764 pooled 0.1636 proxy -0.2127 | FedAvg-local (test) -0.0936  [43s]
+  Mobile, mobile_f0.10               own 0.0567 source 0.0557 pooled 0.0557 proxy -0.0010 | FedAvg-local (test) +0.0013  [43s]
+  ICS, ics_f0.10                     own 0.1038 source 0.0389 pooled 0.1093 proxy +0.0055 | FedAvg-local (validation) -0.0043  [43s]
+  Mobile, mobile_f0.25               own 0.0848 source 0.0859 pooled 0.0859 proxy +0.0010 | FedAvg-local (test) +0.0054  [44s]
+  ICS, ics_f0.25                     own 0.2488 source 0.0842 pooled 0.2612 proxy +0.0124 | FedAvg-local (validation) +0.0129  [44s]
+  Mobile, mobile_f1.00               own 0.1408 source 0.1024 pooled 0.1024 proxy -0.0385 | FedAvg-local (test) +0.0009  [44s]
+  ICS, ics_f1.00                     own 0.3159 source 0.1014 pooled 0.3140 proxy -0.0019 | FedAvg-local (validation) -0.0113  [45s]
+Spearman rho(proxy, FedAvg - local) = 0.446 over 14 cells

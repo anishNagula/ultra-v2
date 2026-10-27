@@ -1,0 +1,36 @@
+C-rand f=0.10: train 1566 | own 0.0264 source 0.0218 pooled 0.0218 proxy -0.0046 | coverage valid 0.873 test 0.832 [11s]
+C-rand f=0.25: train 2889 | own 0.0334 source 0.0320 pooled 0.0320 proxy -0.0015 | coverage valid 0.961 test 0.957 [18s]
+C-rand f=1.00: train 9880 | own 0.0818 source 0.0855 pooled 0.0871 proxy +0.0053 | coverage valid 1.000 test 1.000 [26s]
+C-time f=0.10: train 1492 | own 0.0232 source 0.0247 pooled 0.0247 proxy +0.0015 | coverage valid 0.882 test 0.898 [10s]
+C-time f=0.25: train 2760 | own 0.0323 source 0.0295 pooled 0.0293 proxy -0.0030 | coverage valid 0.943 test 0.955 [17s]
+C-time f=1.00: train 9326 | own 0.0651 source 0.0681 pooled 0.0681 proxy +0.0030 | coverage valid 1.000 test 1.000 [24s]
+{
+ "C-rand": {
+  "hard_constraints": {
+   "V1_no_leakage": true,
+   "V2_relation_coverage": true,
+   "V3_evaluation_size": true,
+   "V4_evaluation_coverage": true
+  },
+  "mean_scarce_proxy": -0.0030212635404925758
+ },
+ "C-time": {
+  "hard_constraints": {
+   "V1_no_leakage": true,
+   "V2_relation_coverage": true,
+   "V3_evaluation_size": true,
+   "V4_evaluation_coverage": true
+  },
+  "mean_scarce_proxy": -0.0007641669519949292
+ }
+}
+{
+ "rule": "DESIGN.md Amendment 1",
+ "primary_fraction": "0.10",
+ "selected_candidate": "C-time",
+ "availability": 1.0456749850101996,
+ "go_i_hard_constraints": true,
+ "go_ii_availability_ge_0_9": true,
+ "go_iii_ultra_need": "validation-only smoke test: local best valid MRR at f=0.10 <= f=1.00 - 0.03",
+ "go_iv_automated_tests": "test_pipeline.py on the written files"
+}
