@@ -1,0 +1,21 @@
+FedULTRA experiment recovery patch
+
+IMPORTANT:
+- Extract/merge this archive into the ROOT of ~/code/ultra-v2.
+- Do NOT delete or replace the whole experiments folder.
+- Existing evaluation_protocol.py and validate_evaluation_protocol.py are included.
+- This archive restores the original fresh experiment scripts, manifest, logs, and processed splits from the repo ZIP previously provided in this conversation.
+
+Recommended macOS command (adjust the ZIP path if needed):
+  cd ~/code/ultra-v2
+  unzip -o ~/Downloads/fedultra_recovery_patch.zip -d .
+
+Then run:
+  source .venv/bin/activate
+  python experiments/fedultra_fresh/src/validate_evaluation_protocol.py
+
+The dataset builder expects the original MITRE sources at:
+  ~/code/ULTRA/datasets/cybersecurity/mitre/enterprise/v19.2/enterprise-attack-19.2.json
+  ~/code/ULTRA/datasets/cybersecurity/mitre/ics/v19.2/ics-attack-19.2.json
+
+Processed splits are restored by this patch, so do not run the builder unless needed.

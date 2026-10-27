@@ -1,0 +1,36 @@
+ULTRA CYBER TRANSFER PROTOCOL v2 (UNBRIDGED TARGET)
+
+This package replaces the failed ATT&CK-CAPEC bridge experiment. Do not add synthetic bridge edges.
+
+1) From your ULTRA repository root, extract this archive:
+   tar -xzf ~/Downloads/cyber-transfer-protocol-v2.tar.gz
+
+2) Prepare and audit the target graph (no training):
+   python scripts/cybersecurity/prepare_attack_to_cve_transfer.py
+
+3) Review data/processed/cyber_transfer/audit.json. Confirm:
+   - cross_domain.explicit_bridge_edges_added == 0
+   - cross_domain.source_target_entity_overlap_count == 0
+   - graph.train_entity_coverage_fraction == 1.0
+   - split.actual_valid_count and split.actual_test_count are > 0
+   - only has_weakness triples are held out
+   - target CVE sample size is 20,000 or fewer
+
+4) Run a diagnostic only:
+   python experiments/fedultra_fresh/src/cyber_transfer_runner.py \
+     --seeds 20261027 --rounds 1 --local-steps 1 --eval-limit 16 \
+     --output experiments/fedultra_fresh/results/cyber_transfer_smoke.json
+
+5) Only after the diagnostic completes successfully, run the fixed ten-seed experiment:
+   python experiments/fedultra_fresh/src/cyber_transfer_runner.py \
+     --output experiments/fedultra_fresh/results/cyber_transfer_confirmatory.json
+
+Frozen acceptance rule: mean delta-MRR >= +0.03 and the paired seed-level 95% CI entirely above zero.
+Positive --eval-limit is diagnostic only. Never use smoke metrics as research results.
+
+6) After all ten full seed runs finish, compute the final uncertainty interval:
+   python experiments/fedultra_fresh/src/bootstrap_cyber_transfer.py \
+     --input experiments/fedultra_fresh/results/cyber_transfer_confirmatory.json \
+     --output experiments/fedultra_fresh/results/cyber_transfer_bootstrap.json
+
+Final success requires mean delta-MRR >= +0.03 and BOTH the seed-level t interval and hierarchical paired-bootstrap 95% interval entirely above zero.
