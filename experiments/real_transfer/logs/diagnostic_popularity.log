@@ -1,0 +1,3 @@
+f0.10: target 0.0722  source 0.0780  pooled 0.0808  validation_answers_seen_in_target_train 0.6821  validation_answers_seen_in_source 0.9306
+f0.25: target 0.0791  source 0.0813  pooled 0.0861  validation_answers_seen_in_target_train 0.8497  validation_answers_seen_in_source 0.9306
+f1.00: target 0.0849  source 0.0836  pooled 0.0873  validation_answers_seen_in_target_train 1.0000  validation_answers_seen_in_source 0.9306

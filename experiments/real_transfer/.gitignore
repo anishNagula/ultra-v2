@@ -1,0 +1,4 @@
+# Cached source-stage weights (~0.7 MB each). They are deterministic and regenerable
+# (run_method.py --source-only), and every run file records their SHA-256 under
+# starting_weights.state_sha256. See EXCLUDED_DATA.md at the repository root.
+results/*/source_cache/

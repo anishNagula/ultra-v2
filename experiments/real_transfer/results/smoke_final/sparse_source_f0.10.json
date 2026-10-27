@@ -1,0 +1,83 @@
+{
+ "protocol": "real-transfer v1",
+ "arm": "sparse_source",
+ "target": "/Users/anishnagula/code/ultra-v2/experiments/enterprise_split/data/v1/C-time/target_f0.10",
+ "config": {
+  "rounds": 2,
+  "local_steps": 10,
+  "batch_size": 8,
+  "num_negative": 64,
+  "eval_limit": 0,
+  "lr": 0.0005,
+  "weight_decay": 0.0,
+  "skip_test": true,
+  "threads": 2,
+  "source_rounds": 3,
+  "source_task": "held-out actor `uses` facts",
+  "source_fraction": 0.1,
+  "source_checkpoint": "final"
+ },
+ "checkpoint": "ckpts/ultra_4g.pth",
+ "checkpoint_sha256": "48a046e708adf5632d87c30eacae01f5f51466b2301effdc2cb42358d22854e0",
+ "target_sha256": {
+  "hidden.txt": "84e5c55a023125922853176c2fee3e77cd6d2baa9eb1258f88d6f9cd97f149fc",
+  "test.txt": "448487a431e4db53902bc47729a2f5b7e2d980d81506e7115ed31d812f51d01a",
+  "train.txt": "266cebf6f0aee1da84deacfeb8ec16296e5a7cfc70afcd98baadd2671d7b6f57",
+  "valid.txt": "1147c4a54cf07b975c0168ae165df062f6fb255012e880b1859db2a32fc71be6"
+ },
+ "source_sha256": "b40dc8eefa11b7d48b91b00514323ae7d060d79ae821b4d85f3ebe2f417d2f1c",
+ "shared_between_clients": "model weights only, once, source to target",
+ "selection": "best target round (0 = starting weights) by target validation MRR",
+ "source_selection": "final source round; source validation MRR recorded every round",
+ "diagnostic_only": false,
+ "results": [
+  {
+   "seed": 20261309,
+   "starting_weights": {
+    "stage": "source-only training (sparse_source), final round",
+    "source_key": {
+     "protocol": "real-transfer v1",
+     "seed": 20261309,
+     "source_fraction": 0.1,
+     "source_rounds": 3,
+     "source_checkpoint": "final",
+     "local_steps": 10,
+     "batch_size": 8,
+     "num_negative": 64,
+     "lr": 0.0005,
+     "weight_decay": 0.0,
+     "source_task": "held-out actor `uses` facts",
+     "threads": 2,
+     "source_sha256": "b40dc8eefa11b7d48b91b00514323ae7d060d79ae821b4d85f3ebe2f417d2f1c",
+     "checkpoint_sha256": "48a046e708adf5632d87c30eacae01f5f51466b2301effdc2cb42358d22854e0"
+    },
+    "losses": [
+     0.6524962663650513,
+     0.6313916563987731,
+     0.5931185185909271
+    ],
+    "source_valid_mrr": [
+     0.07322131097316742,
+     0.12086604535579681,
+     0.12085463106632233,
+     0.11844778060913086
+    ],
+    "selected_round": 3,
+    "source_valid_facts": 360,
+    "source_valid_best_round": 1,
+    "checkpoint_rule": "final",
+    "source_seconds": 15.4,
+    "state_sha256": "da18fb039a8b5141fd0eac5e0d39dc0cbae6099f74aba9633e34ea86c21cd328"
+   },
+   "selected_round": 2,
+   "validation_mrr_history": [
+    0.07486050575971603,
+    0.0719398707151413,
+    0.07944618165493011
+   ],
+   "selected_validation_mrr": 0.07944618165493011,
+   "zero_shot_validation_mrr": 0.07486050575971603,
+   "seconds": 23.9
+  }
+ ]
+}

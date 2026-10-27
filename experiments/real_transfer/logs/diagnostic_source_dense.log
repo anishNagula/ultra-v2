@@ -1,0 +1,65 @@
+/Users/anishnagula/code/ultra-v2/ultra/tasks.py:181: UserWarning: Sparse CSR tensor support is in beta state. If you miss a functionality in the sparse tensor support, please submit a feature request to https://github.com/pytorch/pytorch/issues. (Triggered internally at /Users/runner/work/pytorch/pytorch/pytorch/aten/src/ATen/SparseCsrTensorImpl.cpp:55.)
+  Ahh = torch.sparse.mm(EhT, Eh).coalesce()
+Load rspmm extension. This may take a while...
+  source_dense seed=20261401 round=1 loss=0.6365 target f0.10 valid (zero-shot)=0.0335
+  source_dense seed=20261401 round=2 loss=0.5625 target f0.10 valid (zero-shot)=0.0257
+  source_dense seed=20261401 round=3 loss=0.5355 target f0.10 valid (zero-shot)=0.0345
+  source_dense seed=20261401 round=4 loss=0.6207 target f0.10 valid (zero-shot)=0.0332
+  source_dense seed=20261401 round=5 loss=0.5824 target f0.10 valid (zero-shot)=0.0258
+  source_dense seed=20261401 round=6 loss=0.5616 target f0.10 valid (zero-shot)=0.0265
+  source_dense seed=20261401 round=7 loss=0.6447 target f0.10 valid (zero-shot)=0.0307
+  source_dense seed=20261401 round=8 loss=0.5583 target f0.10 valid (zero-shot)=0.0346
+  source_dense seed=20261401 round=9 loss=0.5630 target f0.10 valid (zero-shot)=0.0259
+  source_dense seed=20261401 round=10 loss=0.6094 target f0.10 valid (zero-shot)=0.0217
+  source_dense seed=20261401 round=11 loss=0.5641 target f0.10 valid (zero-shot)=0.0223
+  source_dense seed=20261401 round=12 loss=0.5582 target f0.10 valid (zero-shot)=0.0193
+  source_dense seed=20261401 round=13 loss=0.5250 target f0.10 valid (zero-shot)=0.0246
+  source_dense seed=20261401 round=14 loss=0.5740 target f0.10 valid (zero-shot)=0.0197
+  source_dense seed=20261401 round=15 loss=0.6344 target f0.10 valid (zero-shot)=0.0218
+  source_dense seed=20261401 round=16 loss=0.5536 target f0.10 valid (zero-shot)=0.0259
+  source_dense seed=20261401 round=17 loss=0.5710 target f0.10 valid (zero-shot)=0.0292
+  source_dense seed=20261401 round=18 loss=0.5842 target f0.10 valid (zero-shot)=0.0285
+  source_dense seed=20261401 round=19 loss=0.5842 target f0.10 valid (zero-shot)=0.0262
+  source_dense seed=20261401 round=20 loss=0.5953 target f0.10 valid (zero-shot)=0.0256
+  source_dense seed=20261401 round=21 loss=0.5661 target f0.10 valid (zero-shot)=0.0257
+  source_dense seed=20261401 round=22 loss=0.5811 target f0.10 valid (zero-shot)=0.0263
+  source_dense seed=20261401 round=23 loss=0.5743 target f0.10 valid (zero-shot)=0.0295
+  source_dense seed=20261401 round=24 loss=0.5620 target f0.10 valid (zero-shot)=0.0298
+  source_dense seed=20261401 round=25 loss=0.5406 target f0.10 valid (zero-shot)=0.0270
+  source_dense seed=20261401 round=26 loss=0.5546 target f0.10 valid (zero-shot)=0.0247
+  source_dense seed=20261401 round=27 loss=0.5607 target f0.10 valid (zero-shot)=0.0252
+  source_dense seed=20261401 round=28 loss=0.5927 target f0.10 valid (zero-shot)=0.0268
+  source_dense seed=20261401 round=29 loss=0.5868 target f0.10 valid (zero-shot)=0.0283
+  source_dense seed=20261401 round=30 loss=0.5959 target f0.10 valid (zero-shot)=0.0281
+source_dense seed=20261401 best={'target_f0.10_valid': 0.040742021054029465} at {'target_f0.10_valid': 0} (491.6s)
+  source_dense seed=20261402 round=1 loss=0.6315 target f0.10 valid (zero-shot)=0.0328
+  source_dense seed=20261402 round=2 loss=0.5677 target f0.10 valid (zero-shot)=0.0212
+  source_dense seed=20261402 round=3 loss=0.5962 target f0.10 valid (zero-shot)=0.0180
+  source_dense seed=20261402 round=4 loss=0.5703 target f0.10 valid (zero-shot)=0.0135
+  source_dense seed=20261402 round=5 loss=0.6033 target f0.10 valid (zero-shot)=0.0204
+  source_dense seed=20261402 round=6 loss=0.5583 target f0.10 valid (zero-shot)=0.0315
+  source_dense seed=20261402 round=7 loss=0.5478 target f0.10 valid (zero-shot)=0.0365
+  source_dense seed=20261402 round=8 loss=0.5576 target f0.10 valid (zero-shot)=0.0351
+  source_dense seed=20261402 round=9 loss=0.6057 target f0.10 valid (zero-shot)=0.0298
+  source_dense seed=20261402 round=10 loss=0.5285 target f0.10 valid (zero-shot)=0.0273
+  source_dense seed=20261402 round=11 loss=0.5868 target f0.10 valid (zero-shot)=0.0315
+  source_dense seed=20261402 round=12 loss=0.5741 target f0.10 valid (zero-shot)=0.0313
+  source_dense seed=20261402 round=13 loss=0.5206 target f0.10 valid (zero-shot)=0.0200
+  source_dense seed=20261402 round=14 loss=0.5545 target f0.10 valid (zero-shot)=0.0211
+  source_dense seed=20261402 round=15 loss=0.5455 target f0.10 valid (zero-shot)=0.0264
+  source_dense seed=20261402 round=16 loss=0.6028 target f0.10 valid (zero-shot)=0.0138
+  source_dense seed=20261402 round=17 loss=0.5624 target f0.10 valid (zero-shot)=0.0122
+  source_dense seed=20261402 round=18 loss=0.6228 target f0.10 valid (zero-shot)=0.0113
+  source_dense seed=20261402 round=19 loss=0.5800 target f0.10 valid (zero-shot)=0.0194
+  source_dense seed=20261402 round=20 loss=0.5444 target f0.10 valid (zero-shot)=0.0127
+  source_dense seed=20261402 round=21 loss=0.5842 target f0.10 valid (zero-shot)=0.0126
+  source_dense seed=20261402 round=22 loss=0.5774 target f0.10 valid (zero-shot)=0.0191
+  source_dense seed=20261402 round=23 loss=0.5618 target f0.10 valid (zero-shot)=0.0194
+  source_dense seed=20261402 round=24 loss=0.5853 target f0.10 valid (zero-shot)=0.0218
+  source_dense seed=20261402 round=25 loss=0.5581 target f0.10 valid (zero-shot)=0.0267
+  source_dense seed=20261402 round=26 loss=0.5772 target f0.10 valid (zero-shot)=0.0290
+  source_dense seed=20261402 round=27 loss=0.5785 target f0.10 valid (zero-shot)=0.0264
+  source_dense seed=20261402 round=28 loss=0.5952 target f0.10 valid (zero-shot)=0.0288
+  source_dense seed=20261402 round=29 loss=0.6234 target f0.10 valid (zero-shot)=0.0271
+  source_dense seed=20261402 round=30 loss=0.5396 target f0.10 valid (zero-shot)=0.0283
+source_dense seed=20261402 best={'target_f0.10_valid': 0.040742021054029465} at {'target_f0.10_valid': 0} (298.3s)

@@ -1,0 +1,98 @@
+{
+ "note": "validation only; pretrained checkpoint (round 0 of every registered run)",
+ "fractions": {
+  "f0.10": {
+   "validation_facts": 314,
+   "bands": {
+    "1-2 hops": {
+     "share": 0.006369426751592357,
+     "pretrained_mrr": 0.6607142984867096,
+     "popularity_mrr": 0.33533053959883224
+    },
+    "3-3 hops": {
+     "share": 0.12101910828025478,
+     "pretrained_mrr": 0.13638817813051374,
+     "popularity_mrr": 0.1530678500985225
+    },
+    "4-6 hops": {
+     "share": 0.4299363057324841,
+     "pretrained_mrr": 0.020503133452600904,
+     "popularity_mrr": 0.0883414141580242
+    },
+    ">6 hops or disconnected": {
+     "share": 0.4426751592356688,
+     "pretrained_mrr": 0.025330156200103086,
+     "popularity_mrr": 0.030646569962442877
+    }
+   },
+   "pretrained_mrr": 0.04074201940716048,
+   "popularity_mrr": 0.07220765451928134,
+   "mrr_share_from_beyond_6_hops": {
+    "pretrained": 0.2752203030803693,
+    "popularity": 0.18788140022646574
+   }
+  },
+  "f0.25": {
+   "validation_facts": 314,
+   "bands": {
+    "1-2 hops": {
+     "share": 0.03503184713375796,
+     "pretrained_mrr": 0.4449190504171632,
+     "popularity_mrr": 0.11003464303298184
+    },
+    "3-3 hops": {
+     "share": 0.6178343949044586,
+     "pretrained_mrr": 0.09044247656009285,
+     "popularity_mrr": 0.10734831338163714
+    },
+    "4-6 hops": {
+     "share": 0.28343949044585987,
+     "pretrained_mrr": 0.007422934884069424,
+     "popularity_mrr": 0.0231135994540482
+    },
+    ">6 hops or disconnected": {
+     "share": 0.06369426751592357,
+     "pretrained_mrr": 0.07934076964156703,
+     "popularity_mrr": 0.03695962744903706
+    }
+   },
+   "pretrained_mrr": 0.07862231402789913,
+   "popularity_mrr": 0.07908362028596004,
+   "mrr_share_from_beyond_6_hops": {
+    "pretrained": 0.06427630970866596,
+    "popularity": 0.029767433376412734
+   }
+  },
+  "f1.00": {
+   "validation_facts": 314,
+   "bands": {
+    "1-2 hops": {
+     "share": 0.2961783439490446,
+     "pretrained_mrr": 0.22304155535730583,
+     "popularity_mrr": 0.15838673013176474
+    },
+    "3-3 hops": {
+     "share": 0.697452229299363,
+     "pretrained_mrr": 0.11418414608039575,
+     "popularity_mrr": 0.05433192611515781
+    },
+    "4-6 hops": {
+     "share": 0.006369426751592357,
+     "pretrained_mrr": 0.005190272117033601,
+     "popularity_mrr": 0.008666616696757275
+    },
+    ">6 hops or disconnected": {
+     "share": 0.0,
+     "pretrained_mrr": 0.0,
+     "popularity_mrr": 0.0
+    }
+   },
+   "pretrained_mrr": 0.14573112479003242,
+   "popularity_mrr": 0.08485984380530955,
+   "mrr_share_from_beyond_6_hops": {
+    "pretrained": 0.0,
+    "popularity": 0.0
+   }
+  }
+ }
+}

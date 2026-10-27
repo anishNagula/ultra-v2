@@ -1,0 +1,45 @@
+/Users/anishnagula/code/ultra-v2/ultra/tasks.py:181: UserWarning: Sparse CSR tensor support is in beta state. If you miss a functionality in the sparse tensor support, please submit a feature request to https://github.com/pytorch/pytorch/issues. (Triggered internally at /Users/runner/work/pytorch/pytorch/pytorch/aten/src/ATen/SparseCsrTensorImpl.cpp:55.)
+  Ahh = torch.sparse.mm(EhT, Eh).coalesce()
+Load rspmm extension. This may take a while...
+  dense_weights seed=20261401 round=1 loss=0.6432 valid f1.00=0.1514 f0.10=0.0406
+  dense_weights seed=20261401 round=2 loss=0.6126 valid f1.00=0.1463 f0.10=0.0398
+  dense_weights seed=20261401 round=3 loss=0.7222 valid f1.00=0.1486 f0.10=0.0436
+  dense_weights seed=20261401 round=4 loss=0.5835 valid f1.00=0.1462 f0.10=0.0437
+  dense_weights seed=20261401 round=5 loss=0.5683 valid f1.00=0.1416 f0.10=0.0314
+  dense_weights seed=20261401 round=6 loss=0.5761 valid f1.00=0.1428 f0.10=0.0299
+  dense_weights seed=20261401 round=7 loss=0.6126 valid f1.00=0.1452 f0.10=0.0288
+  dense_weights seed=20261401 round=8 loss=0.5718 valid f1.00=0.1438 f0.10=0.0241
+  dense_weights seed=20261401 round=9 loss=0.5574 valid f1.00=0.1481 f0.10=0.0227
+  dense_weights seed=20261401 round=10 loss=0.6130 valid f1.00=0.1510 f0.10=0.0284
+  dense_weights seed=20261401 round=11 loss=0.5761 valid f1.00=0.1533 f0.10=0.0286
+  dense_weights seed=20261401 round=12 loss=0.5993 valid f1.00=0.1532 f0.10=0.0255
+  dense_weights seed=20261401 round=13 loss=0.5777 valid f1.00=0.1519 f0.10=0.0205
+  dense_weights seed=20261401 round=14 loss=0.5807 valid f1.00=0.1466 f0.10=0.0196
+  dense_weights seed=20261401 round=15 loss=0.5909 valid f1.00=0.1474 f0.10=0.0126
+  dense_weights seed=20261401 round=16 loss=0.5519 valid f1.00=0.1416 f0.10=0.0164
+  dense_weights seed=20261401 round=17 loss=0.5872 valid f1.00=0.1418 f0.10=0.0265
+  dense_weights seed=20261401 round=18 loss=0.6185 valid f1.00=0.1466 f0.10=0.0207
+  dense_weights seed=20261401 round=19 loss=0.6335 valid f1.00=0.1419 f0.10=0.0078
+  dense_weights seed=20261401 round=20 loss=0.5878 valid f1.00=0.1446 f0.10=0.0072
+dense_weights seed=20261401 best={'target_f0.10_valid': 0.04367430508136749, 'target_f1.00_valid': 0.15332691371440887} at {'target_f0.10_valid': 4, 'target_f1.00_valid': 11} (364.9s)
+  dense_weights seed=20261402 round=1 loss=0.6094 valid f1.00=0.1388 f0.10=0.0404
+  dense_weights seed=20261402 round=2 loss=0.6126 valid f1.00=0.1408 f0.10=0.0386
+  dense_weights seed=20261402 round=3 loss=0.6151 valid f1.00=0.1372 f0.10=0.0347
+  dense_weights seed=20261402 round=4 loss=0.5969 valid f1.00=0.1376 f0.10=0.0232
+  dense_weights seed=20261402 round=5 loss=0.5663 valid f1.00=0.1362 f0.10=0.0269
+  dense_weights seed=20261402 round=6 loss=0.5992 valid f1.00=0.1346 f0.10=0.0282
+  dense_weights seed=20261402 round=7 loss=0.5636 valid f1.00=0.1321 f0.10=0.0283
+  dense_weights seed=20261402 round=8 loss=0.6163 valid f1.00=0.1424 f0.10=0.0252
+  dense_weights seed=20261402 round=9 loss=0.5770 valid f1.00=0.1447 f0.10=0.0220
+  dense_weights seed=20261402 round=10 loss=0.6132 valid f1.00=0.1425 f0.10=0.0213
+  dense_weights seed=20261402 round=11 loss=0.5592 valid f1.00=0.1483 f0.10=0.0329
+  dense_weights seed=20261402 round=12 loss=0.5859 valid f1.00=0.1555 f0.10=0.0375
+  dense_weights seed=20261402 round=13 loss=0.6186 valid f1.00=0.1542 f0.10=0.0387
+  dense_weights seed=20261402 round=14 loss=0.5821 valid f1.00=0.1518 f0.10=0.0300
+  dense_weights seed=20261402 round=15 loss=0.5315 valid f1.00=0.1536 f0.10=0.0208
+  dense_weights seed=20261402 round=16 loss=0.5527 valid f1.00=0.1498 f0.10=0.0177
+  dense_weights seed=20261402 round=17 loss=0.5872 valid f1.00=0.1456 f0.10=0.0150
+  dense_weights seed=20261402 round=18 loss=0.5816 valid f1.00=0.1482 f0.10=0.0138
+  dense_weights seed=20261402 round=19 loss=0.5886 valid f1.00=0.1475 f0.10=0.0120
+  dense_weights seed=20261402 round=20 loss=0.5694 valid f1.00=0.1478 f0.10=0.0250
+dense_weights seed=20261402 best={'target_f0.10_valid': 0.040742021054029465, 'target_f1.00_valid': 0.15551213920116425} at {'target_f0.10_valid': 0, 'target_f1.00_valid': 12} (276.4s)

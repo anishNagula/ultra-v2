@@ -1,0 +1,27 @@
+{
+ "note": "validation only; per-entity popularity rankers, not methods",
+ "source_actor_uses": 3604,
+ "fractions": {
+  "f0.10": {
+   "target": 0.07220765451928134,
+   "source": 0.07799158212632798,
+   "pooled": 0.08080185551530242,
+   "validation_answers_seen_in_target_train": 0.6820809248554913,
+   "validation_answers_seen_in_source": 0.930635838150289
+  },
+  "f0.25": {
+   "target": 0.07908362028596004,
+   "source": 0.08129675355912058,
+   "pooled": 0.08606978628672815,
+   "validation_answers_seen_in_target_train": 0.8497109826589595,
+   "validation_answers_seen_in_source": 0.930635838150289
+  },
+  "f1.00": {
+   "target": 0.08485984380530955,
+   "source": 0.08363476337249089,
+   "pooled": 0.08730499942348091,
+   "validation_answers_seen_in_target_train": 1.0,
+   "validation_answers_seen_in_source": 0.930635838150289
+  }
+ }
+}

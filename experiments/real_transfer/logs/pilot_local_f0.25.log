@@ -1,0 +1,66 @@
+/Users/anishnagula/code/ultra-v2/ultra/tasks.py:181: UserWarning: Sparse CSR tensor support is in beta state. If you miss a functionality in the sparse tensor support, please submit a feature request to https://github.com/pytorch/pytorch/issues. (Triggered internally at /Users/runner/work/pytorch/pytorch/pytorch/aten/src/ATen/SparseCsrTensorImpl.cpp:55.)
+  Ahh = torch.sparse.mm(EhT, Eh).coalesce()
+Load rspmm extension. This may take a while...
+  local seed=20261401 round=1 valid_mrr=0.0848 best_round=1
+  local seed=20261401 round=2 valid_mrr=0.0953 best_round=2
+  local seed=20261401 round=3 valid_mrr=0.0899 best_round=2
+  local seed=20261401 round=4 valid_mrr=0.0910 best_round=2
+  local seed=20261401 round=5 valid_mrr=0.0799 best_round=2
+  local seed=20261401 round=6 valid_mrr=0.0759 best_round=2
+  local seed=20261401 round=7 valid_mrr=0.0781 best_round=2
+  local seed=20261401 round=8 valid_mrr=0.0803 best_round=2
+  local seed=20261401 round=9 valid_mrr=0.0871 best_round=2
+  local seed=20261401 round=10 valid_mrr=0.0886 best_round=2
+  local seed=20261401 round=11 valid_mrr=0.0882 best_round=2
+  local seed=20261401 round=12 valid_mrr=0.0854 best_round=2
+  local seed=20261401 round=13 valid_mrr=0.0778 best_round=2
+  local seed=20261401 round=14 valid_mrr=0.0872 best_round=2
+  local seed=20261401 round=15 valid_mrr=0.0888 best_round=2
+  local seed=20261401 round=16 valid_mrr=0.0928 best_round=2
+  local seed=20261401 round=17 valid_mrr=0.0929 best_round=2
+  local seed=20261401 round=18 valid_mrr=0.0923 best_round=2
+  local seed=20261401 round=19 valid_mrr=0.0827 best_round=2
+  local seed=20261401 round=20 valid_mrr=0.0859 best_round=2
+local seed=20261401 start_valid=0.0786 selected_round=2 valid=0.0953 test=skipped (214.8s) -> /Users/anishnagula/code/ultra-v2/experiments/real_transfer/results/pilot/local_f0.25.json
+  local seed=20261402 round=1 valid_mrr=0.0787 best_round=1
+  local seed=20261402 round=2 valid_mrr=0.0862 best_round=2
+  local seed=20261402 round=3 valid_mrr=0.0883 best_round=3
+  local seed=20261402 round=4 valid_mrr=0.0883 best_round=3
+  local seed=20261402 round=5 valid_mrr=0.0896 best_round=5
+  local seed=20261402 round=6 valid_mrr=0.0878 best_round=5
+  local seed=20261402 round=7 valid_mrr=0.0869 best_round=5
+  local seed=20261402 round=8 valid_mrr=0.0819 best_round=5
+  local seed=20261402 round=9 valid_mrr=0.0847 best_round=5
+  local seed=20261402 round=10 valid_mrr=0.0820 best_round=5
+  local seed=20261402 round=11 valid_mrr=0.0827 best_round=5
+  local seed=20261402 round=12 valid_mrr=0.0859 best_round=5
+  local seed=20261402 round=13 valid_mrr=0.0810 best_round=5
+  local seed=20261402 round=14 valid_mrr=0.0797 best_round=5
+  local seed=20261402 round=15 valid_mrr=0.0779 best_round=5
+  local seed=20261402 round=16 valid_mrr=0.0774 best_round=5
+  local seed=20261402 round=17 valid_mrr=0.0875 best_round=5
+  local seed=20261402 round=18 valid_mrr=0.0886 best_round=5
+  local seed=20261402 round=19 valid_mrr=0.0893 best_round=5
+  local seed=20261402 round=20 valid_mrr=0.0879 best_round=5
+local seed=20261402 start_valid=0.0786 selected_round=5 valid=0.0896 test=skipped (195.2s) -> /Users/anishnagula/code/ultra-v2/experiments/real_transfer/results/pilot/local_f0.25.json
+  local seed=20261403 round=1 valid_mrr=0.0882 best_round=1
+  local seed=20261403 round=2 valid_mrr=0.0908 best_round=2
+  local seed=20261403 round=3 valid_mrr=0.0864 best_round=2
+  local seed=20261403 round=4 valid_mrr=0.0886 best_round=2
+  local seed=20261403 round=5 valid_mrr=0.0929 best_round=5
+  local seed=20261403 round=6 valid_mrr=0.0927 best_round=5
+  local seed=20261403 round=7 valid_mrr=0.0923 best_round=5
+  local seed=20261403 round=8 valid_mrr=0.0892 best_round=5
+  local seed=20261403 round=9 valid_mrr=0.0819 best_round=5
+  local seed=20261403 round=10 valid_mrr=0.0816 best_round=5
+  local seed=20261403 round=11 valid_mrr=0.0869 best_round=5
+  local seed=20261403 round=12 valid_mrr=0.0791 best_round=5
+  local seed=20261403 round=13 valid_mrr=0.0877 best_round=5
+  local seed=20261403 round=14 valid_mrr=0.0931 best_round=14
+  local seed=20261403 round=15 valid_mrr=0.0916 best_round=14
+  local seed=20261403 round=16 valid_mrr=0.0870 best_round=14
+  local seed=20261403 round=17 valid_mrr=0.0813 best_round=14
+  local seed=20261403 round=18 valid_mrr=0.0811 best_round=14
+  local seed=20261403 round=19 valid_mrr=0.0740 best_round=14
+  local seed=20261403 round=20 valid_mrr=0.0773 best_round=14
+local seed=20261403 start_valid=0.0786 selected_round=14 valid=0.0931 test=skipped (179.7s) -> /Users/anishnagula/code/ultra-v2/experiments/real_transfer/results/pilot/local_f0.25.json

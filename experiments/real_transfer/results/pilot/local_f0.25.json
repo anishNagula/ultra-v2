@@ -1,0 +1,130 @@
+{
+ "protocol": "real-transfer v1",
+ "arm": "local",
+ "target": "/Users/anishnagula/code/ultra-v2/experiments/enterprise_split/data/v1/C-time/target_f0.25",
+ "config": {
+  "rounds": 20,
+  "local_steps": 10,
+  "batch_size": 8,
+  "num_negative": 64,
+  "eval_limit": 0,
+  "lr": 0.0005,
+  "weight_decay": 0.0,
+  "skip_test": true,
+  "threads": 2
+ },
+ "checkpoint": "ckpts/ultra_4g.pth",
+ "checkpoint_sha256": "48a046e708adf5632d87c30eacae01f5f51466b2301effdc2cb42358d22854e0",
+ "target_sha256": {
+  "hidden.txt": "3e5b7f4af5087483f193aaafa3479a54db936e15ce7de36d5e6019117b53579a",
+  "test.txt": "448487a431e4db53902bc47729a2f5b7e2d980d81506e7115ed31d812f51d01a",
+  "train.txt": "31be6acb9e89116aea78fe7bf7cfb358a82767d40ac29e8f1bbe1ad913e395cd",
+  "valid.txt": "1147c4a54cf07b975c0168ae165df062f6fb255012e880b1859db2a32fc71be6"
+ },
+ "source_sha256": null,
+ "shared_between_clients": null,
+ "selection": "best target round (0 = starting weights) by target validation MRR",
+ "source_selection": null,
+ "diagnostic_only": false,
+ "results": [
+  {
+   "seed": 20261401,
+   "starting_weights": {
+    "stage": "pretrained checkpoint"
+   },
+   "selected_round": 2,
+   "validation_mrr_history": [
+    0.07862231135368347,
+    0.08481400460004807,
+    0.09525074809789658,
+    0.08985400944948196,
+    0.09104972332715988,
+    0.07988867908716202,
+    0.07594171911478043,
+    0.07813747972249985,
+    0.08033457398414612,
+    0.08712455630302429,
+    0.0885666012763977,
+    0.08816773444414139,
+    0.0853637307882309,
+    0.07777703553438187,
+    0.08718926459550858,
+    0.08880370855331421,
+    0.09284894168376923,
+    0.09286582469940186,
+    0.09234057366847992,
+    0.08267775177955627,
+    0.0859125480055809
+   ],
+   "selected_validation_mrr": 0.09525074809789658,
+   "zero_shot_validation_mrr": 0.07862231135368347,
+   "seconds": 214.8
+  },
+  {
+   "seed": 20261402,
+   "starting_weights": {
+    "stage": "pretrained checkpoint"
+   },
+   "selected_round": 5,
+   "validation_mrr_history": [
+    0.07862231135368347,
+    0.07865976542234421,
+    0.08620470017194748,
+    0.08832190930843353,
+    0.08827663213014603,
+    0.08962855488061905,
+    0.08775868266820908,
+    0.08693263679742813,
+    0.08188381791114807,
+    0.0846971645951271,
+    0.08200617134571075,
+    0.08271138370037079,
+    0.08594531565904617,
+    0.08095966279506683,
+    0.07972075790166855,
+    0.07786984741687775,
+    0.07743357121944427,
+    0.08749505132436752,
+    0.0885944738984108,
+    0.08934450149536133,
+    0.08786091953516006
+   ],
+   "selected_validation_mrr": 0.08962855488061905,
+   "zero_shot_validation_mrr": 0.07862231135368347,
+   "seconds": 195.2
+  },
+  {
+   "seed": 20261403,
+   "starting_weights": {
+    "stage": "pretrained checkpoint"
+   },
+   "selected_round": 14,
+   "validation_mrr_history": [
+    0.07862231135368347,
+    0.08823415637016296,
+    0.09075900912284851,
+    0.08638866990804672,
+    0.08857808262109756,
+    0.09285666793584824,
+    0.09270232170820236,
+    0.09234211593866348,
+    0.0891806110739708,
+    0.08191834390163422,
+    0.08156666159629822,
+    0.08690532296895981,
+    0.07905738800764084,
+    0.08766251802444458,
+    0.09306809306144714,
+    0.09155546873807907,
+    0.0869966596364975,
+    0.0813189372420311,
+    0.08105923980474472,
+    0.07399425655603409,
+    0.0773431807756424
+   ],
+   "selected_validation_mrr": 0.09306809306144714,
+   "zero_shot_validation_mrr": 0.07862231135368347,
+   "seconds": 179.7
+  }
+ ]
+}

@@ -1,0 +1,39 @@
+{
+ "diagnostic": "fedavg_replay",
+ "config": {
+  "diagnostic": "fedavg_replay",
+  "seeds": "20261211",
+  "rounds": 3,
+  "steps": 10,
+  "lr": 0.0005,
+  "fraction": "0.10",
+  "threads": 2,
+  "output": "/Users/anishnagula/code/ultra-v2/experiments/real_transfer/results/diagnostics/fedavg_replay.json"
+ },
+ "note": "validation only; test is never scored",
+ "results": [
+  {
+   "seed": 20261211,
+   "curves": {
+    "target_f0.10_valid": [
+     0.040742021054029465,
+     0.05127363279461861,
+     0.05159827694296837,
+     0.05999452620744705
+    ]
+   },
+   "losses": [
+    0.6827027499675751,
+    0.625129371881485,
+    0.574027156829834
+   ],
+   "best": {
+    "target_f0.10_valid": 0.05999452620744705
+   },
+   "best_round": {
+    "target_f0.10_valid": 3
+   },
+   "seconds": 48.4
+  }
+ ]
+}

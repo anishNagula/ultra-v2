@@ -1,0 +1,7 @@
+/Users/anishnagula/code/ultra-v2/ultra/tasks.py:181: UserWarning: Sparse CSR tensor support is in beta state. If you miss a functionality in the sparse tensor support, please submit a feature request to https://github.com/pytorch/pytorch/issues. (Triggered internally at /Users/runner/work/pytorch/pytorch/pytorch/aten/src/ATen/SparseCsrTensorImpl.cpp:55.)
+  Ahh = torch.sparse.mm(EhT, Eh).coalesce()
+Load rspmm extension. This may take a while...
+  fedavg_replay seed=20261211 round=1 source_loss=0.6827 valid=0.0513
+  fedavg_replay seed=20261211 round=2 source_loss=0.6251 valid=0.0516
+  fedavg_replay seed=20261211 round=3 source_loss=0.5740 valid=0.0600
+fedavg_replay seed=20261211 best={'target_f0.10_valid': 0.05999452620744705} at {'target_f0.10_valid': 3} (48.4s)

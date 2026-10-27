@@ -1,0 +1,10 @@
+done sparse_source f0.10
+done sparse_source f0.25
+done local f0.10
+done local f0.25
+done dense_source f0.10
+done local f1.00
+done dense_source f0.25
+done dense_source f1.00
+pilot finished
+run_pilot.sh: line 23: syntax error near unexpected token `)'

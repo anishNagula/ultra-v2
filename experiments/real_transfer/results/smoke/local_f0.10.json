@@ -1,0 +1,64 @@
+{
+ "protocol": "real-transfer v1",
+ "arm": "local",
+ "target": "/Users/anishnagula/code/ultra-v2/experiments/enterprise_split/data/v1/C-time/target_f0.10",
+ "config": {
+  "rounds": 20,
+  "local_steps": 10,
+  "batch_size": 8,
+  "num_negative": 64,
+  "eval_limit": 0,
+  "lr": 0.0005,
+  "weight_decay": 0.0,
+  "skip_test": true,
+  "threads": 2
+ },
+ "checkpoint": "ckpts/ultra_4g.pth",
+ "checkpoint_sha256": "48a046e708adf5632d87c30eacae01f5f51466b2301effdc2cb42358d22854e0",
+ "target_sha256": {
+  "hidden.txt": "84e5c55a023125922853176c2fee3e77cd6d2baa9eb1258f88d6f9cd97f149fc",
+  "test.txt": "448487a431e4db53902bc47729a2f5b7e2d980d81506e7115ed31d812f51d01a",
+  "train.txt": "266cebf6f0aee1da84deacfeb8ec16296e5a7cfc70afcd98baadd2671d7b6f57",
+  "valid.txt": "1147c4a54cf07b975c0168ae165df062f6fb255012e880b1859db2a32fc71be6"
+ },
+ "source_sha256": null,
+ "shared_between_clients": null,
+ "selection": "best target round (0 = starting weights) by target validation MRR",
+ "source_selection": null,
+ "diagnostic_only": false,
+ "results": [
+  {
+   "seed": 20261211,
+   "starting_weights": {
+    "stage": "pretrained checkpoint"
+   },
+   "selected_round": 3,
+   "validation_mrr_history": [
+    0.040742021054029465,
+    0.04693376272916794,
+    0.0708683505654335,
+    0.07754825800657272,
+    0.0761960968375206,
+    0.07671373337507248,
+    0.07103250920772552,
+    0.043153081089258194,
+    0.06418469548225403,
+    0.06967565417289734,
+    0.07461219280958176,
+    0.0666966363787651,
+    0.058585695922374725,
+    0.060574520379304886,
+    0.05360841378569603,
+    0.061225343495607376,
+    0.061935119330883026,
+    0.06392714381217957,
+    0.07384311407804489,
+    0.07639634609222412,
+    0.07564844936132431
+   ],
+   "selected_validation_mrr": 0.07754825800657272,
+   "zero_shot_validation_mrr": 0.040742021054029465,
+   "seconds": 159.6
+  }
+ ]
+}

@@ -1,0 +1,6 @@
+/Users/anishnagula/code/ultra-v2/ultra/tasks.py:181: UserWarning: Sparse CSR tensor support is in beta state. If you miss a functionality in the sparse tensor support, please submit a feature request to https://github.com/pytorch/pytorch/issues. (Triggered internally at /Users/runner/work/pytorch/pytorch/pytorch/aten/src/ATen/SparseCsrTensorImpl.cpp:55.)
+  Ahh = torch.sparse.mm(EhT, Eh).coalesce()
+Load rspmm extension. This may take a while...
+  local seed=20261309 round=1 valid_mrr=0.0476 best_round=0
+  local seed=20261309 round=2 valid_mrr=0.0792 best_round=2
+sparse_source seed=20261309 start_valid=0.0726 selected_round=2 valid=0.0792 test=skipped (59.2s) -> /Users/anishnagula/code/ultra-v2/experiments/real_transfer/results/smoke/sparse_source_f0.10.json

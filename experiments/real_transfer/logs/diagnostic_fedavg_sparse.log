@@ -1,0 +1,66 @@
+/Users/anishnagula/code/ultra-v2/ultra/tasks.py:181: UserWarning: Sparse CSR tensor support is in beta state. If you miss a functionality in the sparse tensor support, please submit a feature request to https://github.com/pytorch/pytorch/issues. (Triggered internally at /Users/runner/work/pytorch/pytorch/pytorch/aten/src/ATen/SparseCsrTensorImpl.cpp:55.)
+  Ahh = torch.sparse.mm(EhT, Eh).coalesce()
+Load rspmm extension. This may take a while...
+  fedavg_sparse seed=20261211 round=1 source_loss=0.6551 valid=0.0590
+  fedavg_sparse seed=20261211 round=2 source_loss=0.6314 valid=0.0749
+  fedavg_sparse seed=20261211 round=3 source_loss=0.6317 valid=0.0773
+  fedavg_sparse seed=20261211 round=4 source_loss=0.6558 valid=0.0772
+  fedavg_sparse seed=20261211 round=5 source_loss=0.6932 valid=0.0747
+  fedavg_sparse seed=20261211 round=6 source_loss=0.7013 valid=0.0735
+  fedavg_sparse seed=20261211 round=7 source_loss=0.6428 valid=0.0760
+  fedavg_sparse seed=20261211 round=8 source_loss=0.6501 valid=0.0823
+  fedavg_sparse seed=20261211 round=9 source_loss=0.6891 valid=0.0800
+  fedavg_sparse seed=20261211 round=10 source_loss=0.6344 valid=0.0757
+  fedavg_sparse seed=20261211 round=11 source_loss=0.6932 valid=0.0767
+  fedavg_sparse seed=20261211 round=12 source_loss=0.5906 valid=0.0751
+  fedavg_sparse seed=20261211 round=13 source_loss=0.6331 valid=0.0758
+  fedavg_sparse seed=20261211 round=14 source_loss=0.6545 valid=0.0756
+  fedavg_sparse seed=20261211 round=15 source_loss=0.6184 valid=0.0782
+  fedavg_sparse seed=20261211 round=16 source_loss=0.6387 valid=0.0680
+  fedavg_sparse seed=20261211 round=17 source_loss=0.6368 valid=0.0739
+  fedavg_sparse seed=20261211 round=18 source_loss=0.6437 valid=0.0768
+  fedavg_sparse seed=20261211 round=19 source_loss=0.6984 valid=0.0785
+  fedavg_sparse seed=20261211 round=20 source_loss=0.6635 valid=0.0781
+fedavg_sparse seed=20261211 best={'target_f0.10_valid': 0.08227107673883438} at {'target_f0.10_valid': 8} (216.1s)
+  fedavg_sparse seed=20261212 round=1 source_loss=0.6842 valid=0.0658
+  fedavg_sparse seed=20261212 round=2 source_loss=0.6635 valid=0.0665
+  fedavg_sparse seed=20261212 round=3 source_loss=0.6234 valid=0.0701
+  fedavg_sparse seed=20261212 round=4 source_loss=0.6524 valid=0.0707
+  fedavg_sparse seed=20261212 round=5 source_loss=0.6414 valid=0.0768
+  fedavg_sparse seed=20261212 round=6 source_loss=0.6463 valid=0.0764
+  fedavg_sparse seed=20261212 round=7 source_loss=0.6437 valid=0.0757
+  fedavg_sparse seed=20261212 round=8 source_loss=0.6100 valid=0.0777
+  fedavg_sparse seed=20261212 round=9 source_loss=0.6953 valid=0.0768
+  fedavg_sparse seed=20261212 round=10 source_loss=0.6606 valid=0.0743
+  fedavg_sparse seed=20261212 round=11 source_loss=0.6308 valid=0.0747
+  fedavg_sparse seed=20261212 round=12 source_loss=0.6201 valid=0.0755
+  fedavg_sparse seed=20261212 round=13 source_loss=0.6447 valid=0.0732
+  fedavg_sparse seed=20261212 round=14 source_loss=0.6339 valid=0.0750
+  fedavg_sparse seed=20261212 round=15 source_loss=0.6549 valid=0.0723
+  fedavg_sparse seed=20261212 round=16 source_loss=0.6664 valid=0.0755
+  fedavg_sparse seed=20261212 round=17 source_loss=0.6797 valid=0.0775
+  fedavg_sparse seed=20261212 round=18 source_loss=0.6757 valid=0.0784
+  fedavg_sparse seed=20261212 round=19 source_loss=0.6167 valid=0.0756
+  fedavg_sparse seed=20261212 round=20 source_loss=0.6282 valid=0.0765
+fedavg_sparse seed=20261212 best={'target_f0.10_valid': 0.07838238030672073} at {'target_f0.10_valid': 18} (179.9s)
+  fedavg_sparse seed=20261213 round=1 source_loss=0.6859 valid=0.0678
+  fedavg_sparse seed=20261213 round=2 source_loss=0.6702 valid=0.0671
+  fedavg_sparse seed=20261213 round=3 source_loss=0.6365 valid=0.0717
+  fedavg_sparse seed=20261213 round=4 source_loss=0.6105 valid=0.0679
+  fedavg_sparse seed=20261213 round=5 source_loss=0.7113 valid=0.0702
+  fedavg_sparse seed=20261213 round=6 source_loss=0.6467 valid=0.0733
+  fedavg_sparse seed=20261213 round=7 source_loss=0.6454 valid=0.0733
+  fedavg_sparse seed=20261213 round=8 source_loss=0.6281 valid=0.0719
+  fedavg_sparse seed=20261213 round=9 source_loss=0.6332 valid=0.0749
+  fedavg_sparse seed=20261213 round=10 source_loss=0.6560 valid=0.0718
+  fedavg_sparse seed=20261213 round=11 source_loss=0.6302 valid=0.0745
+  fedavg_sparse seed=20261213 round=12 source_loss=0.6670 valid=0.0705
+  fedavg_sparse seed=20261213 round=13 source_loss=0.6556 valid=0.0729
+  fedavg_sparse seed=20261213 round=14 source_loss=0.6488 valid=0.0730
+  fedavg_sparse seed=20261213 round=15 source_loss=0.6365 valid=0.0734
+  fedavg_sparse seed=20261213 round=16 source_loss=0.6570 valid=0.0704
+  fedavg_sparse seed=20261213 round=17 source_loss=0.6010 valid=0.0765
+  fedavg_sparse seed=20261213 round=18 source_loss=0.6127 valid=0.0740
+  fedavg_sparse seed=20261213 round=19 source_loss=0.6756 valid=0.0748
+  fedavg_sparse seed=20261213 round=20 source_loss=0.6680 valid=0.0794
+fedavg_sparse seed=20261213 best={'target_f0.10_valid': 0.07941707968711853} at {'target_f0.10_valid': 20} (206.8s)

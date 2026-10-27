@@ -1,0 +1,46 @@
+dense_weights          20261401:target_f0.10_valid      r0 0.0407  best 0.0437@4   last10 0.0185  after-r1 [0.0072, 0.0437]
+dense_weights          20261401:target_f1.00_valid      r0 0.1457  best 0.1533@11  last10 0.1469  after-r1 [0.1416, 0.1533]
+dense_weights          20261402:target_f0.10_valid      r0 0.0407  best 0.0407@0   last10 0.0243  after-r1 [0.0120, 0.0404]
+dense_weights          20261402:target_f1.00_valid      r0 0.1457  best 0.1555@12  last10 0.1502  after-r1 [0.1321, 0.1555]
+fedavg_replay          20261211:target_f0.10_valid      r0 0.0407  best 0.0600@3   last10 0.0204  after-r1 [0.0513, 0.0600]
+fedavg_sparse          20261211:target_f0.10_valid      r0 0.0407  best 0.0823@8   last10 0.0757  after-r1 [0.0590, 0.0823]
+fedavg_sparse          20261212:target_f0.10_valid      r0 0.0407  best 0.0784@18  last10 0.0754  after-r1 [0.0658, 0.0784]
+fedavg_sparse          20261213:target_f0.10_valid      r0 0.0407  best 0.0794@20  last10 0.0740  after-r1 [0.0671, 0.0794]
+oracle_labels          20261401:target_f0.10_valid      r0 0.0407  best 0.0830@25  last10 0.0769  after-r1 [0.0729, 0.0830]
+oracle_labels          20261402:target_f0.10_valid      r0 0.0407  best 0.0807@31  last10 0.0769  after-r1 [0.0716, 0.0807]
+oracle_labels_f0.25    20261401:target_f0.25_valid      r0 0.0786  best 0.0945@32  last10 0.0908  after-r1 [0.0825, 0.0945]
+oracle_labels_f0.25    20261402:target_f0.25_valid      r0 0.0786  best 0.0954@17  last10 0.0906  after-r1 [0.0863, 0.0954]
+source_dense           20261401:target_f0.10_valid      r0 0.0407  best 0.0407@0   last10 0.0271  after-r1 [0.0193, 0.0346]
+source_dense           20261402:target_f0.10_valid      r0 0.0407  best 0.0407@0   last10 0.0239  after-r1 [0.0113, 0.0365]
+source_select_f0.10    20261401:target_f0.10_valid      r0 0.0407  best 0.0834@23  last10 0.0814  after-r1 [0.0733, 0.0834]
+source_select_f0.10    20261401:source_valid            r0 0.0732  best 0.1237@1   last10 0.1102  after-r1 [0.1040, 0.1237]
+source_select_f0.10    20261402:target_f0.10_valid      r0 0.0407  best 0.0859@21  last10 0.0824  after-r1 [0.0740, 0.0859]
+source_select_f0.10    20261402:source_valid            r0 0.0732  best 0.1235@7   last10 0.1080  after-r1 [0.1050, 0.1235]
+source_select_f0.10    20261403:target_f0.10_valid      r0 0.0407  best 0.0848@24  last10 0.0835  after-r1 [0.0748, 0.0848]
+source_select_f0.10    20261403:source_valid            r0 0.0732  best 0.1217@7   last10 0.1113  after-r1 [0.1064, 0.1217]
+source_select_f0.25    20261401:target_f0.25_valid      r0 0.0786  best 0.0971@24  last10 0.0944  after-r1 [0.0888, 0.0971]
+source_select_f0.25    20261401:source_valid            r0 0.0974  best 0.1365@29  last10 0.1282  after-r1 [0.1085, 0.1365]
+source_select_f0.25    20261402:target_f0.25_valid      r0 0.0786  best 0.0991@27  last10 0.0950  after-r1 [0.0877, 0.0991]
+source_select_f0.25    20261402:source_valid            r0 0.0974  best 0.1310@23  last10 0.1218  after-r1 [0.1141, 0.1310]
+source_select_f0.25    20261403:target_f0.25_valid      r0 0.0786  best 0.0981@29  last10 0.0960  after-r1 [0.0863, 0.0981]
+source_select_f0.25    20261403:source_valid            r0 0.0974  best 0.1331@24  last10 0.1219  after-r1 [0.1145, 0.1331]
+source_sparse          20261401:target_f0.10_valid      r0 0.0407  best 0.0841@9   last10 0.0778  after-r1 [0.0724, 0.0841]
+source_sparse          20261402:target_f0.10_valid      r0 0.0407  best 0.0836@12  last10 0.0813  after-r1 [0.0741, 0.0836]
+source_sparse_f0.25    20261401:target_f0.25_valid      r0 0.0786  best 0.0986@29  last10 0.0952  after-r1 [0.0907, 0.0986]
+source_sparse_f0.25    20261402:target_f0.25_valid      r0 0.0786  best 0.0963@21  last10 0.0949  after-r1 [0.0897, 0.0963]
+registered local_f0.10  mean best 0.0773 [0.0740, 0.0831] mean selected round 6.7
+registered fedavg_f0.10 mean best 0.0727 [0.0702, 0.0765] mean selected round 13.2
+registered local_f0.25  mean best 0.0944 [0.0899, 0.0983] mean selected round 8.6
+registered fedavg_f0.25 mean best 0.0917 [0.0891, 0.0942] mean selected round 10.3
+registered local_f1.00  mean best 0.1539 [0.1491, 0.1586] mean selected round 6.7
+registered fedavg_f1.00 mean best 0.1564 [0.1533, 0.1597] mean selected round 11.4
+fedavg_sparse vs registered (f0.10, paired): {'local_best': 0.0767, 'fedavg_best': 0.0731, 'fedavg_sparse_best': 0.08, 'local_mean_rounds_1_20': 0.0643, 'fedavg_mean_rounds_1_20': 0.0585, 'fedavg_sparse_mean_rounds_1_20': 0.074}
+fedavg_replay matches registered: True
+source checkpoint f0.10 seed 20261401: source_valid_argmax r1 0.0733  final_round r30 0.0792  target_valid_argmax r23 0.0834  spearman -0.39
+source checkpoint f0.10 seed 20261402: source_valid_argmax r7 0.0740  final_round r30 0.0811  target_valid_argmax r21 0.0859  spearman -0.80
+source checkpoint f0.10 seed 20261403: source_valid_argmax r7 0.0748  final_round r30 0.0829  target_valid_argmax r24 0.0848  spearman -0.57
+source checkpoint f0.10 mean: source_valid_argmax 0.0740  final_round 0.0811  target_valid_argmax 0.0847  mean spearman -0.59
+source checkpoint f0.25 seed 20261401: source_valid_argmax r29 0.0961  final_round r30 0.0963  target_valid_argmax r24 0.0971  spearman +0.58
+source checkpoint f0.25 seed 20261402: source_valid_argmax r23 0.0963  final_round r30 0.0900  target_valid_argmax r27 0.0991  spearman +0.47
+source checkpoint f0.25 seed 20261403: source_valid_argmax r24 0.0950  final_round r30 0.0961  target_valid_argmax r29 0.0981  spearman +0.26
+source checkpoint f0.25 mean: source_valid_argmax 0.0958  final_round 0.0941  target_valid_argmax 0.0981  mean spearman +0.43

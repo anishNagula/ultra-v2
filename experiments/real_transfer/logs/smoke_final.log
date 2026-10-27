@@ -1,0 +1,16 @@
+/Users/anishnagula/code/ultra-v2/ultra/tasks.py:181: UserWarning: Sparse CSR tensor support is in beta state. If you miss a functionality in the sparse tensor support, please submit a feature request to https://github.com/pytorch/pytorch/issues. (Triggered internally at /Users/runner/work/pytorch/pytorch/pytorch/aten/src/ATen/SparseCsrTensorImpl.cpp:55.)
+  Ahh = torch.sparse.mm(EhT, Eh).coalesce()
+Load rspmm extension. This may take a while...
+  local seed=20261309 round=1 valid_mrr=0.0719 best_round=0
+  local seed=20261309 round=2 valid_mrr=0.0794 best_round=2
+sparse_source seed=20261309 start_valid=0.0749 selected_round=2 valid=0.0794 test=skipped (23.9s) -> /Users/anishnagula/code/ultra-v2/experiments/real_transfer/results/smoke_final/sparse_source_f0.10.json
+/Users/anishnagula/code/ultra-v2/ultra/tasks.py:181: UserWarning: Sparse CSR tensor support is in beta state. If you miss a functionality in the sparse tensor support, please submit a feature request to https://github.com/pytorch/pytorch/issues. (Triggered internally at /Users/runner/work/pytorch/pytorch/pytorch/aten/src/ATen/SparseCsrTensorImpl.cpp:55.)
+  Ahh = torch.sparse.mm(EhT, Eh).coalesce()
+Load rspmm extension. This may take a while...
+dense_source seed=20261309 source stage cached: source round 3 (41.5s)
+/Users/anishnagula/code/ultra-v2/ultra/tasks.py:181: UserWarning: Sparse CSR tensor support is in beta state. If you miss a functionality in the sparse tensor support, please submit a feature request to https://github.com/pytorch/pytorch/issues. (Triggered internally at /Users/runner/work/pytorch/pytorch/pytorch/aten/src/ATen/SparseCsrTensorImpl.cpp:55.)
+  Ahh = torch.sparse.mm(EhT, Eh).coalesce()
+Load rspmm extension. This may take a while...
+  local seed=20261309 round=1 valid_mrr=0.0428 best_round=0
+  local seed=20261309 round=2 valid_mrr=0.0689 best_round=2
+dense_source seed=20261309 start_valid=0.0531 selected_round=2 valid=0.0689 test=skipped (8.5s) -> /Users/anishnagula/code/ultra-v2/experiments/real_transfer/results/smoke_final/dense_source_f0.10.json

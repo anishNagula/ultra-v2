@@ -33,3 +33,11 @@ only to rebuild those datasets from scratch.
 
 Not committed for other reasons: `.venv/` (local virtual environment, 431 MB; recreate from
 `requirements.txt` and `INSTALL_AND_RUN.txt`), `__pycache__/` and `.DS_Store` files.
+
+## Regenerable model weights
+
+| Path | Size | Integrity | What it is | How to recover |
+|---|---|---|---|---|
+| `experiments/real_transfer/results/*/source_cache/source_*.pt` | about 0.7 MB each | each run file records its SHA-256 as `starting_weights.state_sha256` | Weights produced by the real-transfer source stage, cached so several target fractions can reuse them | Rerun the stage: `python experiments/real_transfer/src/run_method.py --arm <arm> --seeds <seeds> --source-only --source-cache <dir> ...` (see `experiments/real_transfer/README.md`). The stage is deterministic (`test_method.py` checks this), so a rerun reproduces the recorded hash. The runner refuses a cached file whose weights do not match its own recorded hash. |
+
+These are binary, about 28 MB in total, and fully determined by committed code, data and seeds.

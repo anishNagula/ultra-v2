@@ -1,0 +1,15 @@
+f0.10: pretrained 0.0407 popularity 0.0722
+   1-2 hops                   share 0.006  pretrained 0.6607  popularity 0.3353
+   3-3 hops                   share 0.121  pretrained 0.1364  popularity 0.1531
+   4-6 hops                   share 0.430  pretrained 0.0205  popularity 0.0883
+   >6 hops or disconnected    share 0.443  pretrained 0.0253  popularity 0.0306
+f0.25: pretrained 0.0786 popularity 0.0791
+   1-2 hops                   share 0.035  pretrained 0.4449  popularity 0.1100
+   3-3 hops                   share 0.618  pretrained 0.0904  popularity 0.1073
+   4-6 hops                   share 0.283  pretrained 0.0074  popularity 0.0231
+   >6 hops or disconnected    share 0.064  pretrained 0.0793  popularity 0.0370
+f1.00: pretrained 0.1457 popularity 0.0849
+   1-2 hops                   share 0.296  pretrained 0.2230  popularity 0.1584
+   3-3 hops                   share 0.697  pretrained 0.1142  popularity 0.0543
+   4-6 hops                   share 0.006  pretrained 0.0052  popularity 0.0087
+   >6 hops or disconnected    share 0.000  pretrained 0.0000  popularity 0.0000
