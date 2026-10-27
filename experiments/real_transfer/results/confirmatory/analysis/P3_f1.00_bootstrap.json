@@ -1,0 +1,37 @@
+{
+  "source_results": "/Users/anishnagula/code/ultra-v2/experiments/real_transfer/results/confirmatory/analysis/P3_f1.00_comparison.json",
+  "bootstrap_samples": 20000,
+  "random_seed": 20261026,
+  "num_training_seeds": 10,
+  "target_test_triples": 314,
+  "per_seed_mean_delta_mrr": [
+    0.007541599482517381,
+    0.01464284509998764,
+    0.008803923465281867,
+    0.02905470486745167,
+    0.02066712533301751,
+    0.0068870909507594,
+    0.008609388358030871,
+    0.012758385791194145,
+    0.01217385572173698,
+    0.011579863710779768
+  ],
+  "mean_delta_mrr": 0.013271878278075725,
+  "seed_level_95pct_t_ci": [
+    0.008354655729604397,
+    0.018189110530542698
+  ],
+  "hierarchical_paired_bootstrap_95pct_ci": [
+    0.0036276187099850807,
+    0.023433849658812598
+  ],
+  "acceptance_criteria": {
+    "minimum_mean_delta_mrr": 0.03,
+    "mean_gain_meets_threshold": false,
+    "seed_level_ci_entirely_above_zero": true,
+    "hierarchical_bootstrap_ci_entirely_above_zero": true,
+    "not_diagnostic_only": true,
+    "meets_full_success_criterion": false
+  },
+  "interpretation_limit": "The interval resamples training seeds and paired triples from the fixed target test sample; it does not quantify uncertainty across alternate graph snapshots, sampling rules, or domains."
+}

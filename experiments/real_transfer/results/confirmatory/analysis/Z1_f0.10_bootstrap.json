@@ -1,0 +1,37 @@
+{
+  "source_results": "/Users/anishnagula/code/ultra-v2/experiments/real_transfer/results/confirmatory/analysis/Z1_f0.10_comparison.json",
+  "bootstrap_samples": 20000,
+  "random_seed": 20261026,
+  "num_training_seeds": 10,
+  "target_test_triples": 314,
+  "per_seed_mean_delta_mrr": [
+    0.05460895768627762,
+    0.05210350839284717,
+    0.05168333860517592,
+    0.054151893585214425,
+    0.05309213991840459,
+    0.058088174398252916,
+    0.058576187652767085,
+    0.0535202531120295,
+    0.05553719554923973,
+    0.05380712235628206
+  ],
+  "mean_delta_mrr": 0.05451687712564911,
+  "seed_level_95pct_t_ci": [
+    0.05286847792547223,
+    0.056165279522724175
+  ],
+  "hierarchical_paired_bootstrap_95pct_ci": [
+    0.03731735050383692,
+    0.07302473464805356
+  ],
+  "acceptance_criteria": {
+    "minimum_mean_delta_mrr": 0.03,
+    "mean_gain_meets_threshold": true,
+    "seed_level_ci_entirely_above_zero": true,
+    "hierarchical_bootstrap_ci_entirely_above_zero": true,
+    "not_diagnostic_only": true,
+    "meets_full_success_criterion": true
+  },
+  "interpretation_limit": "The interval resamples training seeds and paired triples from the fixed target test sample; it does not quantify uncertainty across alternate graph snapshots, sampling rules, or domains."
+}

@@ -36,9 +36,30 @@ The only test numbers used are the registered C-time results, published before t
 4. **Source-stage weights are not committed** (`../.gitignore`, `../../../EXCLUDED_DATA.md`). They are
    deterministic and each run file records their SHA-256.
 
-## Registration
+## Registration and confirmatory run
 
-- **10:05.** `PREREGISTRATION.md` was finalised. `preregistration_hashes.txt` holds 46 SHA-256 hashes
-  (shasum format, paths from the repository root), and all 46 verify. Before the confirmatory grid
-  started, these were committed on branch `final/real-transfer`, together with the code, diagnostics,
-  pilot and smoke results. At that point no target test metric existed.
+| Time | What | Output |
+|---|---|---|
+| 10:02 | `PREREGISTRATION.md` finalised. `preregistration_hashes.txt` written: 46 SHA-256 hashes, shasum format, paths from the repository root. All 46 verify. | `preregistration_hashes.txt` |
+| 10:03 | Commit `f317866` on branch `final/real-transfer`: the registered files, plus the code, diagnostics, pilot and smoke results. No target test metric existed. | |
+| 10:05 | `run_confirmatory.sh` started | `../logs/run_confirmatory.out`, `../logs/confirmatory_*.log` |
+| 11:21 | Stage 2 started. Stage 1's 6 jobs all reported `done`. | |
+| 12:08 | Grid finished. All 10 jobs reported `done`, and no log has a `Traceback`, `Error` or `Killed` line. | `confirmatory/*.json` |
+| 12:48 | `report/report_confirmatory.py --check` passed. It reads no metric value; it checks structure and hashes only. | |
+| 12:49 | `run_analysis.sh` ran once: 46 hashes re-verified, 12 comparisons | `../logs/analysis.log`, `confirmatory/analysis/` |
+| 12:50 | `report/report_confirmatory.py` wrote the tables | `confirmatory/report.md` |
+
+### Disclosures after registration
+
+5. **`report/report_confirmatory.py` was added after registration, before the analysis ran.** It is
+   not a registered file and lives outside `src/`, so the registered set is unchanged. Its `--check`
+   mode reads only structure, configuration and hashes. Its report mode formats the registered
+   analysis outputs and computes descriptive means from the run files. It selects nothing and
+   computes no new test statistic. Its "registered directional predictions" table encodes the
+   predictions as written in `PREREGISTRATION.md`.
+6. **The stopping rule was followed.** After the analysis, no further method was evaluated on the
+   test set. P1 failed, so the study ends with that negative primary result.
+
+The version of this file committed in `f317866` gave 10:05 as the finalisation time. That was an
+estimate written before the commit. The times above come from the file modification times and the
+commit time.
