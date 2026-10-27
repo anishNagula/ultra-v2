@@ -1,0 +1,164 @@
+{
+  "generator_seed": 20261101,
+  "p_main": 0.6,
+  "scarcity_fractions": [
+    0.03125,
+    0.1,
+    0.3333333333333333,
+    1.0
+  ],
+  "target_size": {
+    "n_groups": 80,
+    "n_software": 200,
+    "n_parents": 90,
+    "n_mitigations": 40,
+    "n_assets": 12
+  },
+  "source_size": {
+    "n_groups": 150,
+    "n_software": 375,
+    "n_parents": 170,
+    "n_mitigations": 75,
+    "n_assets": 12
+  },
+  "synthetic": true,
+  "clients": {
+    "target": {
+      "grammar": "toolkit",
+      "entities": {
+        "group": 80,
+        "software": 200,
+        "technique": 272,
+        "campaign": 160,
+        "mitigation": 40,
+        "asset": 12
+      },
+      "background_relation_counts": {
+        "attributed-to": 160,
+        "campaign-uses": 1276,
+        "employs": 220,
+        "implements": 1146,
+        "mitigates": 275,
+        "runs-on": 302,
+        "subtechnique-of": 182,
+        "targets": 437
+      },
+      "uses_facts": 816,
+      "mean_toolkit_reach_per_group": 15.225,
+      "mean_campaign_reach_per_group": 15.5875,
+      "toolkit_campaign_reach_jaccard": 0.024096385542168676,
+      "uses_explained_by_toolkit_path": 0.9154411764705882,
+      "uses_explained_by_campaign_path": 0.04534313725490196,
+      "split": {
+        "valid": 136,
+        "test": 272,
+        "uses_training_pool": 408
+      }
+    },
+    "target_n13": {
+      "observed_uses_train": 13,
+      "hidden_uses": 395,
+      "train_triples": 4011,
+      "sha256": {
+        "hidden.txt": "69b73adf694fc320dea470bc44fcd98e94d3851504008cb139e49b9b23f5c7e2",
+        "test.txt": "fa8b0f07e0b183dd525c38040e3596a4af57ab7c684ce7a03532ac85b2184805",
+        "train.txt": "5f5d92cc85f5e0d5bbab43f4dd332cc8aece5f9fe5d91f4bf227986d7dc331f3",
+        "valid.txt": "ce15172899f010da9aee937d8427020f3ffb1baba8340ba0fef9bc2b090014c2"
+      }
+    },
+    "target_n41": {
+      "observed_uses_train": 41,
+      "hidden_uses": 367,
+      "train_triples": 4039,
+      "sha256": {
+        "hidden.txt": "fc8e088096c11e99bca79bb0657cde507aef53d3159e7568668e66b6ee0f50cb",
+        "test.txt": "fa8b0f07e0b183dd525c38040e3596a4af57ab7c684ce7a03532ac85b2184805",
+        "train.txt": "e167cfce38f4f3832bf8cb23e8112c59b850a5441026c6928fb3cfd85ee1a8dd",
+        "valid.txt": "ce15172899f010da9aee937d8427020f3ffb1baba8340ba0fef9bc2b090014c2"
+      }
+    },
+    "target_n136": {
+      "observed_uses_train": 136,
+      "hidden_uses": 272,
+      "train_triples": 4134,
+      "sha256": {
+        "hidden.txt": "f37be0d39f07f81b4186a3efa7fcf5f61d6a604ff3a7c4a6beece9a8dd2f0f10",
+        "test.txt": "fa8b0f07e0b183dd525c38040e3596a4af57ab7c684ce7a03532ac85b2184805",
+        "train.txt": "58b5e85b8c07734db612e7597620779551de5fa5002c253f41544bd6915adac0",
+        "valid.txt": "ce15172899f010da9aee937d8427020f3ffb1baba8340ba0fef9bc2b090014c2"
+      }
+    },
+    "target_n408": {
+      "observed_uses_train": 408,
+      "hidden_uses": 0,
+      "train_triples": 4406,
+      "sha256": {
+        "test.txt": "fa8b0f07e0b183dd525c38040e3596a4af57ab7c684ce7a03532ac85b2184805",
+        "train.txt": "e48b7872b9eb3261d2de6917c07f61f6b3709f63f52336a782462f6f3866d2ef",
+        "valid.txt": "ce15172899f010da9aee937d8427020f3ffb1baba8340ba0fef9bc2b090014c2"
+      }
+    },
+    "source_toolkit": {
+      "grammar": "toolkit",
+      "entities": {
+        "group": 150,
+        "software": 375,
+        "technique": 519,
+        "campaign": 301,
+        "mitigation": 75,
+        "asset": 12
+      },
+      "background_relation_counts": {
+        "attributed-to": 301,
+        "campaign-uses": 2357,
+        "employs": 457,
+        "implements": 2260,
+        "mitigates": 529,
+        "runs-on": 567,
+        "subtechnique-of": 349,
+        "targets": 755
+      },
+      "uses_facts": 1719,
+      "mean_toolkit_reach_per_group": 17.793333333333333,
+      "mean_campaign_reach_per_group": 15.553333333333333,
+      "toolkit_campaign_reach_jaccard": 0.01708011386742578,
+      "uses_explained_by_toolkit_path": 0.9278650378126818,
+      "uses_explained_by_campaign_path": 0.027341477603257707,
+      "train_triples": 9294,
+      "sha256": {
+        "train.txt": "bce33c4fa61d2d1f8b240585f77982fd3f2997d93dc9f6406d20f43e5f02eb91"
+      }
+    },
+    "source_campaign": {
+      "grammar": "campaign",
+      "entities": {
+        "group": 150,
+        "software": 375,
+        "technique": 519,
+        "campaign": 301,
+        "mitigation": 75,
+        "asset": 12
+      },
+      "background_relation_counts": {
+        "attributed-to": 301,
+        "campaign-uses": 2357,
+        "employs": 457,
+        "implements": 2260,
+        "mitigates": 529,
+        "runs-on": 567,
+        "subtechnique-of": 349,
+        "targets": 755
+      },
+      "uses_facts": 1530,
+      "mean_toolkit_reach_per_group": 17.793333333333333,
+      "mean_campaign_reach_per_group": 15.553333333333333,
+      "toolkit_campaign_reach_jaccard": 0.01708011386742578,
+      "uses_explained_by_toolkit_path": 0.03398692810457516,
+      "uses_explained_by_campaign_path": 0.9104575163398693,
+      "train_triples": 9105,
+      "sha256": {
+        "train.txt": "a45f71d1025d0defc0007019fe3f86c368bf0d5b4e7ad362f0595ce917585954"
+      }
+    }
+  }
+}

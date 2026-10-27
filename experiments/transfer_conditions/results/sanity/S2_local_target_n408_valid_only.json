@@ -1,0 +1,56 @@
+{
+ "protocol": "transfer-conditions v1 (pre-registered 2026-10-26)",
+ "arm": "local",
+ "target": "/Users/anishnagula/code/ultra-v2/experiments/transfer_conditions/data/synthetic/target_n408",
+ "source": null,
+ "config": {
+  "rounds": 20,
+  "local_steps": 10,
+  "batch_size": 8,
+  "num_negative": 64,
+  "eval_limit": 0,
+  "lr": 0.0005,
+  "weight_decay": 0.0,
+  "skip_test": true
+ },
+ "client_weights": null,
+ "checkpoint": "/Users/anishnagula/code/ultra-v2/ckpts/ultra_4g.pth",
+ "target_sha256": {
+  "test.txt": "fa8b0f07e0b183dd525c38040e3596a4af57ab7c684ce7a03532ac85b2184805",
+  "train.txt": "e48b7872b9eb3261d2de6917c07f61f6b3709f63f52336a782462f6f3866d2ef",
+  "valid.txt": "ce15172899f010da9aee937d8427020f3ffb1baba8340ba0fef9bc2b090014c2"
+ },
+ "selection": "best round (0 = pretrained) by target validation MRR",
+ "diagnostic_only": false,
+ "results": [
+  {
+   "seed": 20261111,
+   "selected_round": 16,
+   "validation_mrr_history": [
+    0.19946332275867462,
+    0.24936062097549438,
+    0.2895410656929016,
+    0.29277586936950684,
+    0.317008376121521,
+    0.3556464612483978,
+    0.34104466438293457,
+    0.35868948698043823,
+    0.36578261852264404,
+    0.38185548782348633,
+    0.3795797526836395,
+    0.3639146685600281,
+    0.3760926127433777,
+    0.3891581594944,
+    0.3821648955345154,
+    0.3881515562534332,
+    0.39270737767219543,
+    0.38799479603767395,
+    0.3743862807750702,
+    0.38008350133895874,
+    0.3838980495929718
+   ],
+   "selected_validation_mrr": 0.39270737767219543,
+   "seconds": 67.3
+  }
+ ]
+}

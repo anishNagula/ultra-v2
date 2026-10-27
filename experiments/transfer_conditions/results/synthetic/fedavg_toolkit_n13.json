@@ -1,0 +1,11156 @@
+{
+ "protocol": "transfer-conditions v1 (pre-registered 2026-10-26)",
+ "arm": "fedavg",
+ "target": "/Users/anishnagula/code/ultra-v2/experiments/transfer_conditions/data/synthetic/target_n13",
+ "source": "/Users/anishnagula/code/ultra-v2/experiments/transfer_conditions/data/synthetic/source_toolkit",
+ "config": {
+  "rounds": 20,
+  "local_steps": 10,
+  "batch_size": 8,
+  "num_negative": 64,
+  "eval_limit": 0,
+  "lr": 0.0005,
+  "weight_decay": 0.0,
+  "skip_test": false
+ },
+ "client_weights": [
+  1.0,
+  1.0
+ ],
+ "checkpoint": "/Users/anishnagula/code/ultra-v2/ckpts/ultra_4g.pth",
+ "target_sha256": {
+  "hidden.txt": "69b73adf694fc320dea470bc44fcd98e94d3851504008cb139e49b9b23f5c7e2",
+  "test.txt": "fa8b0f07e0b183dd525c38040e3596a4af57ab7c684ce7a03532ac85b2184805",
+  "train.txt": "5f5d92cc85f5e0d5bbab43f4dd332cc8aece5f9fe5d91f4bf227986d7dc331f3",
+  "valid.txt": "ce15172899f010da9aee937d8427020f3ffb1baba8340ba0fef9bc2b090014c2"
+ },
+ "selection": "best round (0 = pretrained) by target validation MRR",
+ "diagnostic_only": false,
+ "results": [
+  {
+   "seed": 20261111,
+   "selected_round": 19,
+   "validation_mrr_history": [
+    0.26053786277770996,
+    0.292362779378891,
+    0.29436254501342773,
+    0.29680460691452026,
+    0.31055188179016113,
+    0.3023504912853241,
+    0.29496076703071594,
+    0.3074018955230713,
+    0.3199540972709656,
+    0.31569796800613403,
+    0.30961379408836365,
+    0.31643033027648926,
+    0.31394845247268677,
+    0.32679781317710876,
+    0.31741708517074585,
+    0.3237527906894684,
+    0.32265588641166687,
+    0.32076671719551086,
+    0.2913792133331299,
+    0.33094388246536255,
+    0.317216157913208
+   ],
+   "selected_validation_mrr": 0.33094388246536255,
+   "test": {
+    "mrr": 0.4053138196468353,
+    "hits@1": 0.22058823704719543,
+    "hits@3": 0.4834558963775635,
+    "hits@10": 0.845588207244873,
+    "triples_evaluated": 272,
+    "ranking_queries": 544
+   },
+   "test_by_relation": {
+    "uses": {
+     "mrr": 0.4053138196468353,
+     "hits@1": 0.22058823704719543,
+     "hits@3": 0.4834558963775635,
+     "hits@10": 0.845588207244873,
+     "triples_evaluated": 272,
+     "ranking_queries": 544
+    }
+   },
+   "per_query_test": [
+    {
+     "triple": [
+      "tgt/group/0",
+      "uses",
+      "tgt/technique/27"
+     ],
+     "mrr": 0.3499999940395355
+    },
+    {
+     "triple": [
+      "tgt/group/0",
+      "uses",
+      "tgt/technique/36"
+     ],
+     "mrr": 0.75
+    },
+    {
+     "triple": [
+      "tgt/group/0",
+      "uses",
+      "tgt/technique/41.0"
+     ],
+     "mrr": 0.3125
+    },
+    {
+     "triple": [
+      "tgt/group/0",
+      "uses",
+      "tgt/technique/58.0"
+     ],
+     "mrr": 0.02684931457042694
+    },
+    {
+     "triple": [
+      "tgt/group/0",
+      "uses",
+      "tgt/technique/66"
+     ],
+     "mrr": 0.53125
+    },
+    {
+     "triple": [
+      "tgt/group/1",
+      "uses",
+      "tgt/technique/13.2"
+     ],
+     "mrr": 0.01954023167490959
+    },
+    {
+     "triple": [
+      "tgt/group/1",
+      "uses",
+      "tgt/technique/40.1"
+     ],
+     "mrr": 0.75
+    },
+    {
+     "triple": [
+      "tgt/group/1",
+      "uses",
+      "tgt/technique/83.1"
+     ],
+     "mrr": 0.5
+    },
+    {
+     "triple": [
+      "tgt/group/10",
+      "uses",
+      "tgt/technique/13.3"
+     ],
+     "mrr": 0.6666666865348816
+    },
+    {
+     "triple": [
+      "tgt/group/10",
+      "uses",
+      "tgt/technique/16"
+     ],
+     "mrr": 0.22499999403953552
+    },
+    {
+     "triple": [
+      "tgt/group/10",
+      "uses",
+      "tgt/technique/64"
+     ],
+     "mrr": 0.2083333432674408
+    },
+    {
+     "triple": [
+      "tgt/group/10",
+      "uses",
+      "tgt/technique/77"
+     ],
+     "mrr": 0.1388888955116272
+    },
+    {
+     "triple": [
+      "tgt/group/11",
+      "uses",
+      "tgt/technique/30"
+     ],
+     "mrr": 0.4166666865348816
+    },
+    {
+     "triple": [
+      "tgt/group/11",
+      "uses",
+      "tgt/technique/48"
+     ],
+     "mrr": 0.3499999940395355
+    },
+    {
+     "triple": [
+      "tgt/group/11",
+      "uses",
+      "tgt/technique/50.1"
+     ],
+     "mrr": 0.5
+    },
+    {
+     "triple": [
+      "tgt/group/11",
+      "uses",
+      "tgt/technique/67.1"
+     ],
+     "mrr": 0.21666666865348816
+    },
+    {
+     "triple": [
+      "tgt/group/11",
+      "uses",
+      "tgt/technique/71"
+     ],
+     "mrr": 0.375
+    },
+    {
+     "triple": [
+      "tgt/group/12",
+      "uses",
+      "tgt/technique/48"
+     ],
+     "mrr": 0.5
+    },
+    {
+     "triple": [
+      "tgt/group/12",
+      "uses",
+      "tgt/technique/60.1"
+     ],
+     "mrr": 0.1666666716337204
+    },
+    {
+     "triple": [
+      "tgt/group/12",
+      "uses",
+      "tgt/technique/78.1"
+     ],
+     "mrr": 0.17499999701976776
+    },
+    {
+     "triple": [
+      "tgt/group/12",
+      "uses",
+      "tgt/technique/81"
+     ],
+     "mrr": 0.625
+    },
+    {
+     "triple": [
+      "tgt/group/13",
+      "uses",
+      "tgt/technique/25.1"
+     ],
+     "mrr": 0.20000000298023224
+    },
+    {
+     "triple": [
+      "tgt/group/13",
+      "uses",
+      "tgt/technique/3.1"
+     ],
+     "mrr": 0.14166666567325592
+    },
+    {
+     "triple": [
+      "tgt/group/13",
+      "uses",
+      "tgt/technique/35.2"
+     ],
+     "mrr": 0.02476689964532852
+    },
+    {
+     "triple": [
+      "tgt/group/13",
+      "uses",
+      "tgt/technique/40"
+     ],
+     "mrr": 0.21212121844291687
+    },
+    {
+     "triple": [
+      "tgt/group/13",
+      "uses",
+      "tgt/technique/5.0"
+     ],
+     "mrr": 0.15441176295280457
+    },
+    {
+     "triple": [
+      "tgt/group/13",
+      "uses",
+      "tgt/technique/86.0"
+     ],
+     "mrr": 0.2666666805744171
+    },
+    {
+     "triple": [
+      "tgt/group/14",
+      "uses",
+      "tgt/technique/29"
+     ],
+     "mrr": 1.0
+    },
+    {
+     "triple": [
+      "tgt/group/15",
+      "uses",
+      "tgt/technique/24.1"
+     ],
+     "mrr": 0.2916666865348816
+    },
+    {
+     "triple": [
+      "tgt/group/15",
+      "uses",
+      "tgt/technique/28"
+     ],
+     "mrr": 0.2291666716337204
+    },
+    {
+     "triple": [
+      "tgt/group/15",
+      "uses",
+      "tgt/technique/42.0"
+     ],
+     "mrr": 0.22499999403953552
+    },
+    {
+     "triple": [
+      "tgt/group/15",
+      "uses",
+      "tgt/technique/56.1"
+     ],
+     "mrr": 0.2083333432674408
+    },
+    {
+     "triple": [
+      "tgt/group/15",
+      "uses",
+      "tgt/technique/68.1"
+     ],
+     "mrr": 0.07500000298023224
+    },
+    {
+     "triple": [
+      "tgt/group/15",
+      "uses",
+      "tgt/technique/70.0"
+     ],
+     "mrr": 0.1964285671710968
+    },
+    {
+     "triple": [
+      "tgt/group/15",
+      "uses",
+      "tgt/technique/80.3"
+     ],
+     "mrr": 0.375
+    },
+    {
+     "triple": [
+      "tgt/group/15",
+      "uses",
+      "tgt/technique/82.2"
+     ],
+     "mrr": 0.17499999701976776
+    },
+    {
+     "triple": [
+      "tgt/group/16",
+      "uses",
+      "tgt/technique/17.0"
+     ],
+     "mrr": 0.1388888955116272
+    },
+    {
+     "triple": [
+      "tgt/group/16",
+      "uses",
+      "tgt/technique/2"
+     ],
+     "mrr": 0.1875
+    },
+    {
+     "triple": [
+      "tgt/group/16",
+      "uses",
+      "tgt/technique/38.1"
+     ],
+     "mrr": 0.1388888955116272
+    },
+    {
+     "triple": [
+      "tgt/group/16",
+      "uses",
+      "tgt/technique/66.1"
+     ],
+     "mrr": 0.2222222238779068
+    },
+    {
+     "triple": [
+      "tgt/group/16",
+      "uses",
+      "tgt/technique/7.3"
+     ],
+     "mrr": 0.16249999403953552
+    },
+    {
+     "triple": [
+      "tgt/group/17",
+      "uses",
+      "tgt/technique/37.0"
+     ],
+     "mrr": 0.5833333134651184
+    },
+    {
+     "triple": [
+      "tgt/group/17",
+      "uses",
+      "tgt/technique/67.0"
+     ],
+     "mrr": 0.4166666865348816
+    },
+    {
+     "triple": [
+      "tgt/group/18",
+      "uses",
+      "tgt/technique/3"
+     ],
+     "mrr": 0.6000000238418579
+    },
+    {
+     "triple": [
+      "tgt/group/18",
+      "uses",
+      "tgt/technique/50.1"
+     ],
+     "mrr": 0.75
+    },
+    {
+     "triple": [
+      "tgt/group/19",
+      "uses",
+      "tgt/technique/42"
+     ],
+     "mrr": 0.550000011920929
+    },
+    {
+     "triple": [
+      "tgt/group/19",
+      "uses",
+      "tgt/technique/47.0"
+     ],
+     "mrr": 1.0
+    },
+    {
+     "triple": [
+      "tgt/group/19",
+      "uses",
+      "tgt/technique/51.1"
+     ],
+     "mrr": 0.034698277711868286
+    },
+    {
+     "triple": [
+      "tgt/group/19",
+      "uses",
+      "tgt/technique/56"
+     ],
+     "mrr": 0.02216450124979019
+    },
+    {
+     "triple": [
+      "tgt/group/2",
+      "uses",
+      "tgt/technique/0"
+     ],
+     "mrr": 0.6000000238418579
+    },
+    {
+     "triple": [
+      "tgt/group/2",
+      "uses",
+      "tgt/technique/25.1"
+     ],
+     "mrr": 0.375
+    },
+    {
+     "triple": [
+      "tgt/group/2",
+      "uses",
+      "tgt/technique/31.0"
+     ],
+     "mrr": 0.22499999403953552
+    },
+    {
+     "triple": [
+      "tgt/group/2",
+      "uses",
+      "tgt/technique/45.2"
+     ],
+     "mrr": 0.375
+    },
+    {
+     "triple": [
+      "tgt/group/2",
+      "uses",
+      "tgt/technique/8"
+     ],
+     "mrr": 0.3333333432674408
+    },
+    {
+     "triple": [
+      "tgt/group/20",
+      "uses",
+      "tgt/technique/27"
+     ],
+     "mrr": 0.2666666805744171
+    },
+    {
+     "triple": [
+      "tgt/group/20",
+      "uses",
+      "tgt/technique/34.1"
+     ],
+     "mrr": 0.16346153616905212
+    },
+    {
+     "triple": [
+      "tgt/group/20",
+      "uses",
+      "tgt/technique/36"
+     ],
+     "mrr": 0.10057471692562103
+    },
+    {
+     "triple": [
+      "tgt/group/20",
+      "uses",
+      "tgt/technique/41.0"
+     ],
+     "mrr": 0.10333333909511566
+    },
+    {
+     "triple": [
+      "tgt/group/20",
+      "uses",
+      "tgt/technique/48"
+     ],
+     "mrr": 0.75
+    },
+    {
+     "triple": [
+      "tgt/group/20",
+      "uses",
+      "tgt/technique/58"
+     ],
+     "mrr": 0.11851851642131805
+    },
+    {
+     "triple": [
+      "tgt/group/20",
+      "uses",
+      "tgt/technique/86"
+     ],
+     "mrr": 0.2222222238779068
+    },
+    {
+     "triple": [
+      "tgt/group/21",
+      "uses",
+      "tgt/technique/24.2"
+     ],
+     "mrr": 0.75
+    },
+    {
+     "triple": [
+      "tgt/group/21",
+      "uses",
+      "tgt/technique/25.1"
+     ],
+     "mrr": 1.0
+    },
+    {
+     "triple": [
+      "tgt/group/21",
+      "uses",
+      "tgt/technique/28.0"
+     ],
+     "mrr": 1.0
+    },
+    {
+     "triple": [
+      "tgt/group/21",
+      "uses",
+      "tgt/technique/34.2"
+     ],
+     "mrr": 0.17142857611179352
+    },
+    {
+     "triple": [
+      "tgt/group/21",
+      "uses",
+      "tgt/technique/40"
+     ],
+     "mrr": 0.5
+    },
+    {
+     "triple": [
+      "tgt/group/21",
+      "uses",
+      "tgt/technique/48"
+     ],
+     "mrr": 0.375
+    },
+    {
+     "triple": [
+      "tgt/group/21",
+      "uses",
+      "tgt/technique/51.1"
+     ],
+     "mrr": 0.75
+    },
+    {
+     "triple": [
+      "tgt/group/21",
+      "uses",
+      "tgt/technique/73.0"
+     ],
+     "mrr": 1.0
+    },
+    {
+     "triple": [
+      "tgt/group/22",
+      "uses",
+      "tgt/technique/27"
+     ],
+     "mrr": 1.0
+    },
+    {
+     "triple": [
+      "tgt/group/22",
+      "uses",
+      "tgt/technique/44.2"
+     ],
+     "mrr": 0.3333333432674408
+    },
+    {
+     "triple": [
+      "tgt/group/22",
+      "uses",
+      "tgt/technique/47.0"
+     ],
+     "mrr": 1.0
+    },
+    {
+     "triple": [
+      "tgt/group/22",
+      "uses",
+      "tgt/technique/57.0"
+     ],
+     "mrr": 0.75
+    },
+    {
+     "triple": [
+      "tgt/group/22",
+      "uses",
+      "tgt/technique/69"
+     ],
+     "mrr": 0.022808987647294998
+    },
+    {
+     "triple": [
+      "tgt/group/23",
+      "uses",
+      "tgt/technique/36.1"
+     ],
+     "mrr": 0.16249999403953552
+    },
+    {
+     "triple": [
+      "tgt/group/23",
+      "uses",
+      "tgt/technique/5.0"
+     ],
+     "mrr": 0.3125
+    },
+    {
+     "triple": [
+      "tgt/group/24",
+      "uses",
+      "tgt/technique/28.1"
+     ],
+     "mrr": 0.625
+    },
+    {
+     "triple": [
+      "tgt/group/24",
+      "uses",
+      "tgt/technique/39.2"
+     ],
+     "mrr": 0.625
+    },
+    {
+     "triple": [
+      "tgt/group/24",
+      "uses",
+      "tgt/technique/5.0"
+     ],
+     "mrr": 0.6666666865348816
+    },
+    {
+     "triple": [
+      "tgt/group/24",
+      "uses",
+      "tgt/technique/79"
+     ],
+     "mrr": 0.3214285671710968
+    },
+    {
+     "triple": [
+      "tgt/group/24",
+      "uses",
+      "tgt/technique/89"
+     ],
+     "mrr": 0.625
+    },
+    {
+     "triple": [
+      "tgt/group/25",
+      "uses",
+      "tgt/technique/3.2"
+     ],
+     "mrr": 0.6666666865348816
+    },
+    {
+     "triple": [
+      "tgt/group/25",
+      "uses",
+      "tgt/technique/5.0"
+     ],
+     "mrr": 1.0
+    },
+    {
+     "triple": [
+      "tgt/group/25",
+      "uses",
+      "tgt/technique/88.0"
+     ],
+     "mrr": 0.75
+    },
+    {
+     "triple": [
+      "tgt/group/26",
+      "uses",
+      "tgt/technique/59.1"
+     ],
+     "mrr": 0.09316770732402802
+    },
+    {
+     "triple": [
+      "tgt/group/26",
+      "uses",
+      "tgt/technique/6.0"
+     ],
+     "mrr": 0.16249999403953552
+    },
+    {
+     "triple": [
+      "tgt/group/26",
+      "uses",
+      "tgt/technique/60"
+     ],
+     "mrr": 0.1428571492433548
+    },
+    {
+     "triple": [
+      "tgt/group/26",
+      "uses",
+      "tgt/technique/64"
+     ],
+     "mrr": 0.18333333730697632
+    },
+    {
+     "triple": [
+      "tgt/group/26",
+      "uses",
+      "tgt/technique/85.2"
+     ],
+     "mrr": 0.14499999582767487
+    },
+    {
+     "triple": [
+      "tgt/group/27",
+      "uses",
+      "tgt/technique/42.1"
+     ],
+     "mrr": 0.75
+    },
+    {
+     "triple": [
+      "tgt/group/27",
+      "uses",
+      "tgt/technique/46"
+     ],
+     "mrr": 0.1666666716337204
+    },
+    {
+     "triple": [
+      "tgt/group/27",
+      "uses",
+      "tgt/technique/85"
+     ],
+     "mrr": 0.5357142686843872
+    },
+    {
+     "triple": [
+      "tgt/group/28",
+      "uses",
+      "tgt/technique/15.2"
+     ],
+     "mrr": 0.4166666865348816
+    },
+    {
+     "triple": [
+      "tgt/group/28",
+      "uses",
+      "tgt/technique/32.3"
+     ],
+     "mrr": 0.3055555522441864
+    },
+    {
+     "triple": [
+      "tgt/group/28",
+      "uses",
+      "tgt/technique/52.2"
+     ],
+     "mrr": 0.25
+    },
+    {
+     "triple": [
+      "tgt/group/28",
+      "uses",
+      "tgt/technique/59.3"
+     ],
+     "mrr": 0.75
+    },
+    {
+     "triple": [
+      "tgt/group/28",
+      "uses",
+      "tgt/technique/83.0"
+     ],
+     "mrr": 0.375
+    },
+    {
+     "triple": [
+      "tgt/group/29",
+      "uses",
+      "tgt/technique/88"
+     ],
+     "mrr": 0.5555555820465088
+    },
+    {
+     "triple": [
+      "tgt/group/30",
+      "uses",
+      "tgt/technique/11"
+     ],
+     "mrr": 0.3333333432674408
+    },
+    {
+     "triple": [
+      "tgt/group/30",
+      "uses",
+      "tgt/technique/12.1"
+     ],
+     "mrr": 0.01810724288225174
+    },
+    {
+     "triple": [
+      "tgt/group/30",
+      "uses",
+      "tgt/technique/42"
+     ],
+     "mrr": 1.0
+    },
+    {
+     "triple": [
+      "tgt/group/30",
+      "uses",
+      "tgt/technique/63.0"
+     ],
+     "mrr": 0.5714285969734192
+    },
+    {
+     "triple": [
+      "tgt/group/30",
+      "uses",
+      "tgt/technique/66.0"
+     ],
+     "mrr": 0.2666666805744171
+    },
+    {
+     "triple": [
+      "tgt/group/30",
+      "uses",
+      "tgt/technique/7"
+     ],
+     "mrr": 0.5714285969734192
+    },
+    {
+     "triple": [
+      "tgt/group/30",
+      "uses",
+      "tgt/technique/72"
+     ],
+     "mrr": 0.15000000596046448
+    },
+    {
+     "triple": [
+      "tgt/group/31",
+      "uses",
+      "tgt/technique/12"
+     ],
+     "mrr": 0.375
+    },
+    {
+     "triple": [
+      "tgt/group/31",
+      "uses",
+      "tgt/technique/14"
+     ],
+     "mrr": 0.1180555522441864
+    },
+    {
+     "triple": [
+      "tgt/group/31",
+      "uses",
+      "tgt/technique/15.1"
+     ],
+     "mrr": 0.12941177189350128
+    },
+    {
+     "triple": [
+      "tgt/group/31",
+      "uses",
+      "tgt/technique/18.1"
+     ],
+     "mrr": 0.1071428582072258
+    },
+    {
+     "triple": [
+      "tgt/group/31",
+      "uses",
+      "tgt/technique/3"
+     ],
+     "mrr": 0.5833333134651184
+    },
+    {
+     "triple": [
+      "tgt/group/32",
+      "uses",
+      "tgt/technique/23.1"
+     ],
+     "mrr": 0.1805555522441864
+    },
+    {
+     "triple": [
+      "tgt/group/32",
+      "uses",
+      "tgt/technique/27"
+     ],
+     "mrr": 0.1458333432674408
+    },
+    {
+     "triple": [
+      "tgt/group/32",
+      "uses",
+      "tgt/technique/47.2"
+     ],
+     "mrr": 0.15000000596046448
+    },
+    {
+     "triple": [
+      "tgt/group/34",
+      "uses",
+      "tgt/technique/18.1"
+     ],
+     "mrr": 1.0
+    },
+    {
+     "triple": [
+      "tgt/group/34",
+      "uses",
+      "tgt/technique/68.1"
+     ],
+     "mrr": 0.375
+    },
+    {
+     "triple": [
+      "tgt/group/35",
+      "uses",
+      "tgt/technique/17.1"
+     ],
+     "mrr": 0.30000001192092896
+    },
+    {
+     "triple": [
+      "tgt/group/35",
+      "uses",
+      "tgt/technique/23.1"
+     ],
+     "mrr": 0.21212121844291687
+    },
+    {
+     "triple": [
+      "tgt/group/35",
+      "uses",
+      "tgt/technique/34.3"
+     ],
+     "mrr": 0.5454545617103577
+    },
+    {
+     "triple": [
+      "tgt/group/35",
+      "uses",
+      "tgt/technique/74.0"
+     ],
+     "mrr": 0.2666666805744171
+    },
+    {
+     "triple": [
+      "tgt/group/37",
+      "uses",
+      "tgt/technique/15.1"
+     ],
+     "mrr": 0.010392719879746437
+    },
+    {
+     "triple": [
+      "tgt/group/37",
+      "uses",
+      "tgt/technique/18.0"
+     ],
+     "mrr": 0.1458333432674408
+    },
+    {
+     "triple": [
+      "tgt/group/37",
+      "uses",
+      "tgt/technique/19"
+     ],
+     "mrr": 0.0694444477558136
+    },
+    {
+     "triple": [
+      "tgt/group/38",
+      "uses",
+      "tgt/technique/0"
+     ],
+     "mrr": 0.25
+    },
+    {
+     "triple": [
+      "tgt/group/38",
+      "uses",
+      "tgt/technique/17.2"
+     ],
+     "mrr": 0.12142857909202576
+    },
+    {
+     "triple": [
+      "tgt/group/38",
+      "uses",
+      "tgt/technique/34.0"
+     ],
+     "mrr": 0.0833333358168602
+    },
+    {
+     "triple": [
+      "tgt/group/38",
+      "uses",
+      "tgt/technique/34.1"
+     ],
+     "mrr": 0.18333333730697632
+    },
+    {
+     "triple": [
+      "tgt/group/38",
+      "uses",
+      "tgt/technique/5.0"
+     ],
+     "mrr": 0.12878787517547607
+    },
+    {
+     "triple": [
+      "tgt/group/38",
+      "uses",
+      "tgt/technique/55"
+     ],
+     "mrr": 0.13333334028720856
+    },
+    {
+     "triple": [
+      "tgt/group/38",
+      "uses",
+      "tgt/technique/60.0"
+     ],
+     "mrr": 0.1428571492433548
+    },
+    {
+     "triple": [
+      "tgt/group/38",
+      "uses",
+      "tgt/technique/74.1"
+     ],
+     "mrr": 0.010252905078232288
+    },
+    {
+     "triple": [
+      "tgt/group/39",
+      "uses",
+      "tgt/technique/18.1"
+     ],
+     "mrr": 0.2857142984867096
+    },
+    {
+     "triple": [
+      "tgt/group/39",
+      "uses",
+      "tgt/technique/34"
+     ],
+     "mrr": 0.01626984216272831
+    },
+    {
+     "triple": [
+      "tgt/group/39",
+      "uses",
+      "tgt/technique/39.0"
+     ],
+     "mrr": 0.2666666805744171
+    },
+    {
+     "triple": [
+      "tgt/group/4",
+      "uses",
+      "tgt/technique/11.1"
+     ],
+     "mrr": 0.5
+    },
+    {
+     "triple": [
+      "tgt/group/41",
+      "uses",
+      "tgt/technique/27"
+     ],
+     "mrr": 0.2222222238779068
+    },
+    {
+     "triple": [
+      "tgt/group/41",
+      "uses",
+      "tgt/technique/36.1"
+     ],
+     "mrr": 0.3333333432674408
+    },
+    {
+     "triple": [
+      "tgt/group/41",
+      "uses",
+      "tgt/technique/38.1"
+     ],
+     "mrr": 0.15555556118488312
+    },
+    {
+     "triple": [
+      "tgt/group/41",
+      "uses",
+      "tgt/technique/82.1"
+     ],
+     "mrr": 0.5833333134651184
+    },
+    {
+     "triple": [
+      "tgt/group/42",
+      "uses",
+      "tgt/technique/51.0"
+     ],
+     "mrr": 0.08664459735155106
+    },
+    {
+     "triple": [
+      "tgt/group/43",
+      "uses",
+      "tgt/technique/15.1"
+     ],
+     "mrr": 0.3333333432674408
+    },
+    {
+     "triple": [
+      "tgt/group/43",
+      "uses",
+      "tgt/technique/25"
+     ],
+     "mrr": 0.3333333432674408
+    },
+    {
+     "triple": [
+      "tgt/group/43",
+      "uses",
+      "tgt/technique/34.1"
+     ],
+     "mrr": 0.25
+    },
+    {
+     "triple": [
+      "tgt/group/43",
+      "uses",
+      "tgt/technique/42"
+     ],
+     "mrr": 0.2291666716337204
+    },
+    {
+     "triple": [
+      "tgt/group/43",
+      "uses",
+      "tgt/technique/77"
+     ],
+     "mrr": 0.25
+    },
+    {
+     "triple": [
+      "tgt/group/44",
+      "uses",
+      "tgt/technique/11.1"
+     ],
+     "mrr": 0.01857379823923111
+    },
+    {
+     "triple": [
+      "tgt/group/44",
+      "uses",
+      "tgt/technique/41.3"
+     ],
+     "mrr": 0.3214285671710968
+    },
+    {
+     "triple": [
+      "tgt/group/46",
+      "uses",
+      "tgt/technique/35.2"
+     ],
+     "mrr": 0.375
+    },
+    {
+     "triple": [
+      "tgt/group/46",
+      "uses",
+      "tgt/technique/85.2"
+     ],
+     "mrr": 0.5454545617103577
+    },
+    {
+     "triple": [
+      "tgt/group/48",
+      "uses",
+      "tgt/technique/44"
+     ],
+     "mrr": 0.1339285671710968
+    },
+    {
+     "triple": [
+      "tgt/group/48",
+      "uses",
+      "tgt/technique/53.0"
+     ],
+     "mrr": 0.1269841343164444
+    },
+    {
+     "triple": [
+      "tgt/group/48",
+      "uses",
+      "tgt/technique/87.2"
+     ],
+     "mrr": 0.1875
+    },
+    {
+     "triple": [
+      "tgt/group/49",
+      "uses",
+      "tgt/technique/21"
+     ],
+     "mrr": 0.6666666865348816
+    },
+    {
+     "triple": [
+      "tgt/group/49",
+      "uses",
+      "tgt/technique/3.3"
+     ],
+     "mrr": 0.6666666865348816
+    },
+    {
+     "triple": [
+      "tgt/group/49",
+      "uses",
+      "tgt/technique/34.3"
+     ],
+     "mrr": 0.5454545617103577
+    },
+    {
+     "triple": [
+      "tgt/group/49",
+      "uses",
+      "tgt/technique/51.0"
+     ],
+     "mrr": 0.6666666865348816
+    },
+    {
+     "triple": [
+      "tgt/group/49",
+      "uses",
+      "tgt/technique/59.3"
+     ],
+     "mrr": 0.3125
+    },
+    {
+     "triple": [
+      "tgt/group/49",
+      "uses",
+      "tgt/technique/67.0"
+     ],
+     "mrr": 0.4166666865348816
+    },
+    {
+     "triple": [
+      "tgt/group/49",
+      "uses",
+      "tgt/technique/81.0"
+     ],
+     "mrr": 0.3333333432674408
+    },
+    {
+     "triple": [
+      "tgt/group/5",
+      "uses",
+      "tgt/technique/1.1"
+     ],
+     "mrr": 1.0
+    },
+    {
+     "triple": [
+      "tgt/group/5",
+      "uses",
+      "tgt/technique/25.1"
+     ],
+     "mrr": 1.0
+    },
+    {
+     "triple": [
+      "tgt/group/5",
+      "uses",
+      "tgt/technique/34.0"
+     ],
+     "mrr": 0.5
+    },
+    {
+     "triple": [
+      "tgt/group/5",
+      "uses",
+      "tgt/technique/39.1"
+     ],
+     "mrr": 0.75
+    },
+    {
+     "triple": [
+      "tgt/group/5",
+      "uses",
+      "tgt/technique/39.2"
+     ],
+     "mrr": 0.75
+    },
+    {
+     "triple": [
+      "tgt/group/5",
+      "uses",
+      "tgt/technique/68.3"
+     ],
+     "mrr": 0.75
+    },
+    {
+     "triple": [
+      "tgt/group/50",
+      "uses",
+      "tgt/technique/15.0"
+     ],
+     "mrr": 0.625
+    },
+    {
+     "triple": [
+      "tgt/group/50",
+      "uses",
+      "tgt/technique/17.3"
+     ],
+     "mrr": 0.6000000238418579
+    },
+    {
+     "triple": [
+      "tgt/group/50",
+      "uses",
+      "tgt/technique/82.0"
+     ],
+     "mrr": 0.375
+    },
+    {
+     "triple": [
+      "tgt/group/51",
+      "uses",
+      "tgt/technique/1.1"
+     ],
+     "mrr": 0.375
+    },
+    {
+     "triple": [
+      "tgt/group/51",
+      "uses",
+      "tgt/technique/2.0"
+     ],
+     "mrr": 0.6000000238418579
+    },
+    {
+     "triple": [
+      "tgt/group/51",
+      "uses",
+      "tgt/technique/39.2"
+     ],
+     "mrr": 0.6000000238418579
+    },
+    {
+     "triple": [
+      "tgt/group/51",
+      "uses",
+      "tgt/technique/44"
+     ],
+     "mrr": 0.2666666805744171
+    },
+    {
+     "triple": [
+      "tgt/group/51",
+      "uses",
+      "tgt/technique/45.1"
+     ],
+     "mrr": 0.3125
+    },
+    {
+     "triple": [
+      "tgt/group/51",
+      "uses",
+      "tgt/technique/85"
+     ],
+     "mrr": 0.5625
+    },
+    {
+     "triple": [
+      "tgt/group/52",
+      "uses",
+      "tgt/technique/31.0"
+     ],
+     "mrr": 0.22499999403953552
+    },
+    {
+     "triple": [
+      "tgt/group/52",
+      "uses",
+      "tgt/technique/59.1"
+     ],
+     "mrr": 0.17045454680919647
+    },
+    {
+     "triple": [
+      "tgt/group/53",
+      "uses",
+      "tgt/technique/45.0"
+     ],
+     "mrr": 1.0
+    },
+    {
+     "triple": [
+      "tgt/group/53",
+      "uses",
+      "tgt/technique/57"
+     ],
+     "mrr": 0.75
+    },
+    {
+     "triple": [
+      "tgt/group/53",
+      "uses",
+      "tgt/technique/87.0"
+     ],
+     "mrr": 1.0
+    },
+    {
+     "triple": [
+      "tgt/group/54",
+      "uses",
+      "tgt/technique/36"
+     ],
+     "mrr": 0.2380952537059784
+    },
+    {
+     "triple": [
+      "tgt/group/54",
+      "uses",
+      "tgt/technique/75"
+     ],
+     "mrr": 0.5833333134651184
+    },
+    {
+     "triple": [
+      "tgt/group/54",
+      "uses",
+      "tgt/technique/77.0"
+     ],
+     "mrr": 0.02014835551381111
+    },
+    {
+     "triple": [
+      "tgt/group/55",
+      "uses",
+      "tgt/technique/51.1"
+     ],
+     "mrr": 0.20512820780277252
+    },
+    {
+     "triple": [
+      "tgt/group/55",
+      "uses",
+      "tgt/technique/84.0"
+     ],
+     "mrr": 0.75
+    },
+    {
+     "triple": [
+      "tgt/group/56",
+      "uses",
+      "tgt/technique/15.0"
+     ],
+     "mrr": 0.2916666865348816
+    },
+    {
+     "triple": [
+      "tgt/group/56",
+      "uses",
+      "tgt/technique/34.1"
+     ],
+     "mrr": 0.3333333432674408
+    },
+    {
+     "triple": [
+      "tgt/group/56",
+      "uses",
+      "tgt/technique/35.0"
+     ],
+     "mrr": 0.019066285341978073
+    },
+    {
+     "triple": [
+      "tgt/group/56",
+      "uses",
+      "tgt/technique/65"
+     ],
+     "mrr": 0.4166666865348816
+    },
+    {
+     "triple": [
+      "tgt/group/56",
+      "uses",
+      "tgt/technique/86"
+     ],
+     "mrr": 0.375
+    },
+    {
+     "triple": [
+      "tgt/group/57",
+      "uses",
+      "tgt/technique/17.3"
+     ],
+     "mrr": 0.1458333432674408
+    },
+    {
+     "triple": [
+      "tgt/group/57",
+      "uses",
+      "tgt/technique/21.0"
+     ],
+     "mrr": 0.009387936443090439
+    },
+    {
+     "triple": [
+      "tgt/group/57",
+      "uses",
+      "tgt/technique/3.0"
+     ],
+     "mrr": 0.22499999403953552
+    },
+    {
+     "triple": [
+      "tgt/group/57",
+      "uses",
+      "tgt/technique/40.0"
+     ],
+     "mrr": 0.08571428805589676
+    },
+    {
+     "triple": [
+      "tgt/group/57",
+      "uses",
+      "tgt/technique/53"
+     ],
+     "mrr": 0.008971291594207287
+    },
+    {
+     "triple": [
+      "tgt/group/57",
+      "uses",
+      "tgt/technique/68.1"
+     ],
+     "mrr": 0.14166666567325592
+    },
+    {
+     "triple": [
+      "tgt/group/57",
+      "uses",
+      "tgt/technique/80.2"
+     ],
+     "mrr": 0.1388888955116272
+    },
+    {
+     "triple": [
+      "tgt/group/58",
+      "uses",
+      "tgt/technique/38.1"
+     ],
+     "mrr": 0.75
+    },
+    {
+     "triple": [
+      "tgt/group/58",
+      "uses",
+      "tgt/technique/75"
+     ],
+     "mrr": 1.0
+    },
+    {
+     "triple": [
+      "tgt/group/58",
+      "uses",
+      "tgt/technique/85.3"
+     ],
+     "mrr": 0.05694444477558136
+    },
+    {
+     "triple": [
+      "tgt/group/59",
+      "uses",
+      "tgt/technique/17"
+     ],
+     "mrr": 0.5454545617103577
+    },
+    {
+     "triple": [
+      "tgt/group/59",
+      "uses",
+      "tgt/technique/84.0"
+     ],
+     "mrr": 0.6666666865348816
+    },
+    {
+     "triple": [
+      "tgt/group/6",
+      "uses",
+      "tgt/technique/19"
+     ],
+     "mrr": 0.06018518656492233
+    },
+    {
+     "triple": [
+      "tgt/group/6",
+      "uses",
+      "tgt/technique/39.1"
+     ],
+     "mrr": 0.1041666716337204
+    },
+    {
+     "triple": [
+      "tgt/group/6",
+      "uses",
+      "tgt/technique/39.2"
+     ],
+     "mrr": 0.1666666716337204
+    },
+    {
+     "triple": [
+      "tgt/group/6",
+      "uses",
+      "tgt/technique/53.0"
+     ],
+     "mrr": 0.2222222238779068
+    },
+    {
+     "triple": [
+      "tgt/group/6",
+      "uses",
+      "tgt/technique/6"
+     ],
+     "mrr": 0.1458333432674408
+    },
+    {
+     "triple": [
+      "tgt/group/6",
+      "uses",
+      "tgt/technique/87.1"
+     ],
+     "mrr": 0.2380952537059784
+    },
+    {
+     "triple": [
+      "tgt/group/60",
+      "uses",
+      "tgt/technique/13.2"
+     ],
+     "mrr": 1.0
+    },
+    {
+     "triple": [
+      "tgt/group/60",
+      "uses",
+      "tgt/technique/2.0"
+     ],
+     "mrr": 0.5714285969734192
+    },
+    {
+     "triple": [
+      "tgt/group/60",
+      "uses",
+      "tgt/technique/32"
+     ],
+     "mrr": 0.3125
+    },
+    {
+     "triple": [
+      "tgt/group/60",
+      "uses",
+      "tgt/technique/60"
+     ],
+     "mrr": 1.0
+    },
+    {
+     "triple": [
+      "tgt/group/60",
+      "uses",
+      "tgt/technique/7.2"
+     ],
+     "mrr": 0.75
+    },
+    {
+     "triple": [
+      "tgt/group/60",
+      "uses",
+      "tgt/technique/77.0"
+     ],
+     "mrr": 0.2666666805744171
+    },
+    {
+     "triple": [
+      "tgt/group/60",
+      "uses",
+      "tgt/technique/79"
+     ],
+     "mrr": 0.6666666865348816
+    },
+    {
+     "triple": [
+      "tgt/group/60",
+      "uses",
+      "tgt/technique/84.0"
+     ],
+     "mrr": 1.0
+    },
+    {
+     "triple": [
+      "tgt/group/60",
+      "uses",
+      "tgt/technique/88.2"
+     ],
+     "mrr": 1.0
+    },
+    {
+     "triple": [
+      "tgt/group/61",
+      "uses",
+      "tgt/technique/34.0"
+     ],
+     "mrr": 0.1180555522441864
+    },
+    {
+     "triple": [
+      "tgt/group/61",
+      "uses",
+      "tgt/technique/60.0"
+     ],
+     "mrr": 0.2916666865348816
+    },
+    {
+     "triple": [
+      "tgt/group/61",
+      "uses",
+      "tgt/technique/82.1"
+     ],
+     "mrr": 0.6666666865348816
+    },
+    {
+     "triple": [
+      "tgt/group/62",
+      "uses",
+      "tgt/technique/32.0"
+     ],
+     "mrr": 0.25
+    },
+    {
+     "triple": [
+      "tgt/group/62",
+      "uses",
+      "tgt/technique/32.1"
+     ],
+     "mrr": 0.00897435937076807
+    },
+    {
+     "triple": [
+      "tgt/group/62",
+      "uses",
+      "tgt/technique/60.0"
+     ],
+     "mrr": 0.1428571492433548
+    },
+    {
+     "triple": [
+      "tgt/group/62",
+      "uses",
+      "tgt/technique/67"
+     ],
+     "mrr": 0.1964285671710968
+    },
+    {
+     "triple": [
+      "tgt/group/63",
+      "uses",
+      "tgt/technique/29"
+     ],
+     "mrr": 0.5
+    },
+    {
+     "triple": [
+      "tgt/group/63",
+      "uses",
+      "tgt/technique/63.3"
+     ],
+     "mrr": 0.22499999403953552
+    },
+    {
+     "triple": [
+      "tgt/group/64",
+      "uses",
+      "tgt/technique/13.3"
+     ],
+     "mrr": 0.75
+    },
+    {
+     "triple": [
+      "tgt/group/64",
+      "uses",
+      "tgt/technique/16"
+     ],
+     "mrr": 0.75
+    },
+    {
+     "triple": [
+      "tgt/group/64",
+      "uses",
+      "tgt/technique/75"
+     ],
+     "mrr": 0.75
+    },
+    {
+     "triple": [
+      "tgt/group/65",
+      "uses",
+      "tgt/technique/1.2"
+     ],
+     "mrr": 0.2916666865348816
+    },
+    {
+     "triple": [
+      "tgt/group/65",
+      "uses",
+      "tgt/technique/14"
+     ],
+     "mrr": 0.22499999403953552
+    },
+    {
+     "triple": [
+      "tgt/group/65",
+      "uses",
+      "tgt/technique/40"
+     ],
+     "mrr": 0.5625
+    },
+    {
+     "triple": [
+      "tgt/group/65",
+      "uses",
+      "tgt/technique/52.0"
+     ],
+     "mrr": 0.3333333432674408
+    },
+    {
+     "triple": [
+      "tgt/group/66",
+      "uses",
+      "tgt/technique/3.1"
+     ],
+     "mrr": 0.5
+    },
+    {
+     "triple": [
+      "tgt/group/66",
+      "uses",
+      "tgt/technique/56.1"
+     ],
+     "mrr": 0.75
+    },
+    {
+     "triple": [
+      "tgt/group/67",
+      "uses",
+      "tgt/technique/26"
+     ],
+     "mrr": 0.625
+    },
+    {
+     "triple": [
+      "tgt/group/67",
+      "uses",
+      "tgt/technique/68"
+     ],
+     "mrr": 0.21212121844291687
+    },
+    {
+     "triple": [
+      "tgt/group/67",
+      "uses",
+      "tgt/technique/75"
+     ],
+     "mrr": 0.25
+    },
+    {
+     "triple": [
+      "tgt/group/68",
+      "uses",
+      "tgt/technique/27"
+     ],
+     "mrr": 0.3333333432674408
+    },
+    {
+     "triple": [
+      "tgt/group/68",
+      "uses",
+      "tgt/technique/29"
+     ],
+     "mrr": 0.3499999940395355
+    },
+    {
+     "triple": [
+      "tgt/group/68",
+      "uses",
+      "tgt/technique/31.0"
+     ],
+     "mrr": 0.22499999403953552
+    },
+    {
+     "triple": [
+      "tgt/group/68",
+      "uses",
+      "tgt/technique/31.1"
+     ],
+     "mrr": 0.21212121844291687
+    },
+    {
+     "triple": [
+      "tgt/group/68",
+      "uses",
+      "tgt/technique/63.0"
+     ],
+     "mrr": 0.5454545617103577
+    },
+    {
+     "triple": [
+      "tgt/group/69",
+      "uses",
+      "tgt/technique/31"
+     ],
+     "mrr": 1.0
+    },
+    {
+     "triple": [
+      "tgt/group/7",
+      "uses",
+      "tgt/technique/13"
+     ],
+     "mrr": 0.21212121844291687
+    },
+    {
+     "triple": [
+      "tgt/group/7",
+      "uses",
+      "tgt/technique/44.2"
+     ],
+     "mrr": 0.6666666865348816
+    },
+    {
+     "triple": [
+      "tgt/group/70",
+      "uses",
+      "tgt/technique/2"
+     ],
+     "mrr": 1.0
+    },
+    {
+     "triple": [
+      "tgt/group/70",
+      "uses",
+      "tgt/technique/42"
+     ],
+     "mrr": 0.19607843458652496
+    },
+    {
+     "triple": [
+      "tgt/group/70",
+      "uses",
+      "tgt/technique/67.1"
+     ],
+     "mrr": 0.5384615659713745
+    },
+    {
+     "triple": [
+      "tgt/group/70",
+      "uses",
+      "tgt/technique/80"
+     ],
+     "mrr": 0.2763157784938812
+    },
+    {
+     "triple": [
+      "tgt/group/70",
+      "uses",
+      "tgt/technique/88.1"
+     ],
+     "mrr": 0.75
+    },
+    {
+     "triple": [
+      "tgt/group/71",
+      "uses",
+      "tgt/technique/63.3"
+     ],
+     "mrr": 1.0
+    },
+    {
+     "triple": [
+      "tgt/group/72",
+      "uses",
+      "tgt/technique/13.0"
+     ],
+     "mrr": 0.3125
+    },
+    {
+     "triple": [
+      "tgt/group/72",
+      "uses",
+      "tgt/technique/58"
+     ],
+     "mrr": 0.5416666865348816
+    },
+    {
+     "triple": [
+      "tgt/group/72",
+      "uses",
+      "tgt/technique/84.0"
+     ],
+     "mrr": 0.5625
+    },
+    {
+     "triple": [
+      "tgt/group/73",
+      "uses",
+      "tgt/technique/68.1"
+     ],
+     "mrr": 0.1190476268529892
+    },
+    {
+     "triple": [
+      "tgt/group/73",
+      "uses",
+      "tgt/technique/74.1"
+     ],
+     "mrr": 0.6666666865348816
+    },
+    {
+     "triple": [
+      "tgt/group/74",
+      "uses",
+      "tgt/technique/85.0"
+     ],
+     "mrr": 1.0
+    },
+    {
+     "triple": [
+      "tgt/group/75",
+      "uses",
+      "tgt/technique/73"
+     ],
+     "mrr": 1.0
+    },
+    {
+     "triple": [
+      "tgt/group/75",
+      "uses",
+      "tgt/technique/86"
+     ],
+     "mrr": 0.4166666865348816
+    },
+    {
+     "triple": [
+      "tgt/group/75",
+      "uses",
+      "tgt/technique/88.3"
+     ],
+     "mrr": 0.3333333432674408
+    },
+    {
+     "triple": [
+      "tgt/group/75",
+      "uses",
+      "tgt/technique/9"
+     ],
+     "mrr": 0.2857142984867096
+    },
+    {
+     "triple": [
+      "tgt/group/76",
+      "uses",
+      "tgt/technique/28.2"
+     ],
+     "mrr": 0.625
+    },
+    {
+     "triple": [
+      "tgt/group/76",
+      "uses",
+      "tgt/technique/45.0"
+     ],
+     "mrr": 0.018039215356111526
+    },
+    {
+     "triple": [
+      "tgt/group/76",
+      "uses",
+      "tgt/technique/46"
+     ],
+     "mrr": 0.3055555522441864
+    },
+    {
+     "triple": [
+      "tgt/group/76",
+      "uses",
+      "tgt/technique/7.1"
+     ],
+     "mrr": 0.6666666865348816
+    },
+    {
+     "triple": [
+      "tgt/group/77",
+      "uses",
+      "tgt/technique/25.0"
+     ],
+     "mrr": 0.75
+    },
+    {
+     "triple": [
+      "tgt/group/77",
+      "uses",
+      "tgt/technique/45.1"
+     ],
+     "mrr": 0.75
+    },
+    {
+     "triple": [
+      "tgt/group/77",
+      "uses",
+      "tgt/technique/61.0"
+     ],
+     "mrr": 1.0
+    },
+    {
+     "triple": [
+      "tgt/group/77",
+      "uses",
+      "tgt/technique/67.1"
+     ],
+     "mrr": 0.6666666865348816
+    },
+    {
+     "triple": [
+      "tgt/group/78",
+      "uses",
+      "tgt/technique/19.1"
+     ],
+     "mrr": 0.2291666716337204
+    },
+    {
+     "triple": [
+      "tgt/group/78",
+      "uses",
+      "tgt/technique/27.0"
+     ],
+     "mrr": 0.22499999403953552
+    },
+    {
+     "triple": [
+      "tgt/group/79",
+      "uses",
+      "tgt/technique/40"
+     ],
+     "mrr": 0.014153159223496914
+    },
+    {
+     "triple": [
+      "tgt/group/9",
+      "uses",
+      "tgt/technique/50.0"
+     ],
+     "mrr": 0.2291666716337204
+    }
+   ],
+   "seconds": 354.5
+  },
+  {
+   "seed": 20261112,
+   "selected_round": 20,
+   "validation_mrr_history": [
+    0.26053786277770996,
+    0.26749932765960693,
+    0.27323752641677856,
+    0.28527402877807617,
+    0.26637402176856995,
+    0.26011696457862854,
+    0.2779846787452698,
+    0.28253236413002014,
+    0.27571797370910645,
+    0.28545457124710083,
+    0.3034297227859497,
+    0.29088661074638367,
+    0.30090442299842834,
+    0.3052317202091217,
+    0.29419684410095215,
+    0.30238354206085205,
+    0.3080771863460541,
+    0.31203851103782654,
+    0.3020560145378113,
+    0.31950926780700684,
+    0.32133743166923523
+   ],
+   "selected_validation_mrr": 0.32133743166923523,
+   "test": {
+    "mrr": 0.3918234705924988,
+    "hits@1": 0.2132352888584137,
+    "hits@3": 0.48161765933036804,
+    "hits@10": 0.7647058963775635,
+    "triples_evaluated": 272,
+    "ranking_queries": 544
+   },
+   "test_by_relation": {
+    "uses": {
+     "mrr": 0.3918234705924988,
+     "hits@1": 0.2132352888584137,
+     "hits@3": 0.48161765933036804,
+     "hits@10": 0.7647058963775635,
+     "triples_evaluated": 272,
+     "ranking_queries": 544
+    }
+   },
+   "per_query_test": [
+    {
+     "triple": [
+      "tgt/group/0",
+      "uses",
+      "tgt/technique/27"
+     ],
+     "mrr": 0.5833333134651184
+    },
+    {
+     "triple": [
+      "tgt/group/0",
+      "uses",
+      "tgt/technique/36"
+     ],
+     "mrr": 1.0
+    },
+    {
+     "triple": [
+      "tgt/group/0",
+      "uses",
+      "tgt/technique/41.0"
+     ],
+     "mrr": 0.3055555522441864
+    },
+    {
+     "triple": [
+      "tgt/group/0",
+      "uses",
+      "tgt/technique/58.0"
+     ],
+     "mrr": 0.030267296358942986
+    },
+    {
+     "triple": [
+      "tgt/group/0",
+      "uses",
+      "tgt/technique/66"
+     ],
+     "mrr": 0.53125
+    },
+    {
+     "triple": [
+      "tgt/group/1",
+      "uses",
+      "tgt/technique/13.2"
+     ],
+     "mrr": 0.012838069349527359
+    },
+    {
+     "triple": [
+      "tgt/group/1",
+      "uses",
+      "tgt/technique/40.1"
+     ],
+     "mrr": 0.75
+    },
+    {
+     "triple": [
+      "tgt/group/1",
+      "uses",
+      "tgt/technique/83.1"
+     ],
+     "mrr": 0.5
+    },
+    {
+     "triple": [
+      "tgt/group/10",
+      "uses",
+      "tgt/technique/13.3"
+     ],
+     "mrr": 0.2083333432674408
+    },
+    {
+     "triple": [
+      "tgt/group/10",
+      "uses",
+      "tgt/technique/16"
+     ],
+     "mrr": 0.10084033757448196
+    },
+    {
+     "triple": [
+      "tgt/group/10",
+      "uses",
+      "tgt/technique/64"
+     ],
+     "mrr": 0.12272727489471436
+    },
+    {
+     "triple": [
+      "tgt/group/10",
+      "uses",
+      "tgt/technique/77"
+     ],
+     "mrr": 0.0525641068816185
+    },
+    {
+     "triple": [
+      "tgt/group/11",
+      "uses",
+      "tgt/technique/30"
+     ],
+     "mrr": 0.2916666865348816
+    },
+    {
+     "triple": [
+      "tgt/group/11",
+      "uses",
+      "tgt/technique/48"
+     ],
+     "mrr": 0.2666666805744171
+    },
+    {
+     "triple": [
+      "tgt/group/11",
+      "uses",
+      "tgt/technique/50.1"
+     ],
+     "mrr": 0.3333333432674408
+    },
+    {
+     "triple": [
+      "tgt/group/11",
+      "uses",
+      "tgt/technique/67.1"
+     ],
+     "mrr": 0.550000011920929
+    },
+    {
+     "triple": [
+      "tgt/group/11",
+      "uses",
+      "tgt/technique/71"
+     ],
+     "mrr": 0.2083333432674408
+    },
+    {
+     "triple": [
+      "tgt/group/12",
+      "uses",
+      "tgt/technique/48"
+     ],
+     "mrr": 0.5
+    },
+    {
+     "triple": [
+      "tgt/group/12",
+      "uses",
+      "tgt/technique/60.1"
+     ],
+     "mrr": 0.17499999701976776
+    },
+    {
+     "triple": [
+      "tgt/group/12",
+      "uses",
+      "tgt/technique/78.1"
+     ],
+     "mrr": 0.16346153616905212
+    },
+    {
+     "triple": [
+      "tgt/group/12",
+      "uses",
+      "tgt/technique/81"
+     ],
+     "mrr": 0.625
+    },
+    {
+     "triple": [
+      "tgt/group/13",
+      "uses",
+      "tgt/technique/25.1"
+     ],
+     "mrr": 0.1964285671710968
+    },
+    {
+     "triple": [
+      "tgt/group/13",
+      "uses",
+      "tgt/technique/3.1"
+     ],
+     "mrr": 0.16249999403953552
+    },
+    {
+     "triple": [
+      "tgt/group/13",
+      "uses",
+      "tgt/technique/35.2"
+     ],
+     "mrr": 0.01739262044429779
+    },
+    {
+     "triple": [
+      "tgt/group/13",
+      "uses",
+      "tgt/technique/40"
+     ],
+     "mrr": 0.21666666865348816
+    },
+    {
+     "triple": [
+      "tgt/group/13",
+      "uses",
+      "tgt/technique/5.0"
+     ],
+     "mrr": 0.2023809552192688
+    },
+    {
+     "triple": [
+      "tgt/group/13",
+      "uses",
+      "tgt/technique/86.0"
+     ],
+     "mrr": 0.25
+    },
+    {
+     "triple": [
+      "tgt/group/14",
+      "uses",
+      "tgt/technique/29"
+     ],
+     "mrr": 1.0
+    },
+    {
+     "triple": [
+      "tgt/group/15",
+      "uses",
+      "tgt/technique/24.1"
+     ],
+     "mrr": 0.06340579688549042
+    },
+    {
+     "triple": [
+      "tgt/group/15",
+      "uses",
+      "tgt/technique/28"
+     ],
+     "mrr": 0.0590277761220932
+    },
+    {
+     "triple": [
+      "tgt/group/15",
+      "uses",
+      "tgt/technique/42.0"
+     ],
+     "mrr": 0.19166667759418488
+    },
+    {
+     "triple": [
+      "tgt/group/15",
+      "uses",
+      "tgt/technique/56.1"
+     ],
+     "mrr": 0.18939393758773804
+    },
+    {
+     "triple": [
+      "tgt/group/15",
+      "uses",
+      "tgt/technique/68.1"
+     ],
+     "mrr": 0.06212121248245239
+    },
+    {
+     "triple": [
+      "tgt/group/15",
+      "uses",
+      "tgt/technique/70.0"
+     ],
+     "mrr": 0.26851850748062134
+    },
+    {
+     "triple": [
+      "tgt/group/15",
+      "uses",
+      "tgt/technique/80.3"
+     ],
+     "mrr": 0.18518519401550293
+    },
+    {
+     "triple": [
+      "tgt/group/15",
+      "uses",
+      "tgt/technique/82.2"
+     ],
+     "mrr": 0.14499999582767487
+    },
+    {
+     "triple": [
+      "tgt/group/16",
+      "uses",
+      "tgt/technique/17.0"
+     ],
+     "mrr": 0.1454545557498932
+    },
+    {
+     "triple": [
+      "tgt/group/16",
+      "uses",
+      "tgt/technique/2"
+     ],
+     "mrr": 0.17499999701976776
+    },
+    {
+     "triple": [
+      "tgt/group/16",
+      "uses",
+      "tgt/technique/38.1"
+     ],
+     "mrr": 0.15555556118488312
+    },
+    {
+     "triple": [
+      "tgt/group/16",
+      "uses",
+      "tgt/technique/66.1"
+     ],
+     "mrr": 0.21212121844291687
+    },
+    {
+     "triple": [
+      "tgt/group/16",
+      "uses",
+      "tgt/technique/7.3"
+     ],
+     "mrr": 0.21666666865348816
+    },
+    {
+     "triple": [
+      "tgt/group/17",
+      "uses",
+      "tgt/technique/37.0"
+     ],
+     "mrr": 0.5714285969734192
+    },
+    {
+     "triple": [
+      "tgt/group/17",
+      "uses",
+      "tgt/technique/67.0"
+     ],
+     "mrr": 0.75
+    },
+    {
+     "triple": [
+      "tgt/group/18",
+      "uses",
+      "tgt/technique/3"
+     ],
+     "mrr": 0.6000000238418579
+    },
+    {
+     "triple": [
+      "tgt/group/18",
+      "uses",
+      "tgt/technique/50.1"
+     ],
+     "mrr": 0.75
+    },
+    {
+     "triple": [
+      "tgt/group/19",
+      "uses",
+      "tgt/technique/42"
+     ],
+     "mrr": 0.5714285969734192
+    },
+    {
+     "triple": [
+      "tgt/group/19",
+      "uses",
+      "tgt/technique/47.0"
+     ],
+     "mrr": 0.75
+    },
+    {
+     "triple": [
+      "tgt/group/19",
+      "uses",
+      "tgt/technique/51.1"
+     ],
+     "mrr": 0.03630952537059784
+    },
+    {
+     "triple": [
+      "tgt/group/19",
+      "uses",
+      "tgt/technique/56"
+     ],
+     "mrr": 0.05000000074505806
+    },
+    {
+     "triple": [
+      "tgt/group/2",
+      "uses",
+      "tgt/technique/0"
+     ],
+     "mrr": 0.6000000238418579
+    },
+    {
+     "triple": [
+      "tgt/group/2",
+      "uses",
+      "tgt/technique/25.1"
+     ],
+     "mrr": 0.25
+    },
+    {
+     "triple": [
+      "tgt/group/2",
+      "uses",
+      "tgt/technique/31.0"
+     ],
+     "mrr": 0.22499999403953552
+    },
+    {
+     "triple": [
+      "tgt/group/2",
+      "uses",
+      "tgt/technique/45.2"
+     ],
+     "mrr": 0.22499999403953552
+    },
+    {
+     "triple": [
+      "tgt/group/2",
+      "uses",
+      "tgt/technique/8"
+     ],
+     "mrr": 0.6666666865348816
+    },
+    {
+     "triple": [
+      "tgt/group/20",
+      "uses",
+      "tgt/technique/27"
+     ],
+     "mrr": 0.2916666865348816
+    },
+    {
+     "triple": [
+      "tgt/group/20",
+      "uses",
+      "tgt/technique/34.1"
+     ],
+     "mrr": 0.16346153616905212
+    },
+    {
+     "triple": [
+      "tgt/group/20",
+      "uses",
+      "tgt/technique/36"
+     ],
+     "mrr": 0.1428571492433548
+    },
+    {
+     "triple": [
+      "tgt/group/20",
+      "uses",
+      "tgt/technique/41.0"
+     ],
+     "mrr": 0.12941177189350128
+    },
+    {
+     "triple": [
+      "tgt/group/20",
+      "uses",
+      "tgt/technique/48"
+     ],
+     "mrr": 0.75
+    },
+    {
+     "triple": [
+      "tgt/group/20",
+      "uses",
+      "tgt/technique/58"
+     ],
+     "mrr": 0.13124999403953552
+    },
+    {
+     "triple": [
+      "tgt/group/20",
+      "uses",
+      "tgt/technique/86"
+     ],
+     "mrr": 0.20000000298023224
+    },
+    {
+     "triple": [
+      "tgt/group/21",
+      "uses",
+      "tgt/technique/24.2"
+     ],
+     "mrr": 0.75
+    },
+    {
+     "triple": [
+      "tgt/group/21",
+      "uses",
+      "tgt/technique/25.1"
+     ],
+     "mrr": 1.0
+    },
+    {
+     "triple": [
+      "tgt/group/21",
+      "uses",
+      "tgt/technique/28.0"
+     ],
+     "mrr": 1.0
+    },
+    {
+     "triple": [
+      "tgt/group/21",
+      "uses",
+      "tgt/technique/34.2"
+     ],
+     "mrr": 0.3499999940395355
+    },
+    {
+     "triple": [
+      "tgt/group/21",
+      "uses",
+      "tgt/technique/40"
+     ],
+     "mrr": 0.5
+    },
+    {
+     "triple": [
+      "tgt/group/21",
+      "uses",
+      "tgt/technique/48"
+     ],
+     "mrr": 0.3499999940395355
+    },
+    {
+     "triple": [
+      "tgt/group/21",
+      "uses",
+      "tgt/technique/51.1"
+     ],
+     "mrr": 0.75
+    },
+    {
+     "triple": [
+      "tgt/group/21",
+      "uses",
+      "tgt/technique/73.0"
+     ],
+     "mrr": 1.0
+    },
+    {
+     "triple": [
+      "tgt/group/22",
+      "uses",
+      "tgt/technique/27"
+     ],
+     "mrr": 1.0
+    },
+    {
+     "triple": [
+      "tgt/group/22",
+      "uses",
+      "tgt/technique/44.2"
+     ],
+     "mrr": 0.375
+    },
+    {
+     "triple": [
+      "tgt/group/22",
+      "uses",
+      "tgt/technique/47.0"
+     ],
+     "mrr": 0.625
+    },
+    {
+     "triple": [
+      "tgt/group/22",
+      "uses",
+      "tgt/technique/57.0"
+     ],
+     "mrr": 0.625
+    },
+    {
+     "triple": [
+      "tgt/group/22",
+      "uses",
+      "tgt/technique/69"
+     ],
+     "mrr": 0.02130545862019062
+    },
+    {
+     "triple": [
+      "tgt/group/23",
+      "uses",
+      "tgt/technique/36.1"
+     ],
+     "mrr": 0.2222222238779068
+    },
+    {
+     "triple": [
+      "tgt/group/23",
+      "uses",
+      "tgt/technique/5.0"
+     ],
+     "mrr": 0.5555555820465088
+    },
+    {
+     "triple": [
+      "tgt/group/24",
+      "uses",
+      "tgt/technique/28.1"
+     ],
+     "mrr": 0.6000000238418579
+    },
+    {
+     "triple": [
+      "tgt/group/24",
+      "uses",
+      "tgt/technique/39.2"
+     ],
+     "mrr": 0.6000000238418579
+    },
+    {
+     "triple": [
+      "tgt/group/24",
+      "uses",
+      "tgt/technique/5.0"
+     ],
+     "mrr": 0.625
+    },
+    {
+     "triple": [
+      "tgt/group/24",
+      "uses",
+      "tgt/technique/79"
+     ],
+     "mrr": 0.3214285671710968
+    },
+    {
+     "triple": [
+      "tgt/group/24",
+      "uses",
+      "tgt/technique/89"
+     ],
+     "mrr": 1.0
+    },
+    {
+     "triple": [
+      "tgt/group/25",
+      "uses",
+      "tgt/technique/3.2"
+     ],
+     "mrr": 0.6666666865348816
+    },
+    {
+     "triple": [
+      "tgt/group/25",
+      "uses",
+      "tgt/technique/5.0"
+     ],
+     "mrr": 0.75
+    },
+    {
+     "triple": [
+      "tgt/group/25",
+      "uses",
+      "tgt/technique/88.0"
+     ],
+     "mrr": 0.6666666865348816
+    },
+    {
+     "triple": [
+      "tgt/group/26",
+      "uses",
+      "tgt/technique/59.1"
+     ],
+     "mrr": 0.12173913419246674
+    },
+    {
+     "triple": [
+      "tgt/group/26",
+      "uses",
+      "tgt/technique/6.0"
+     ],
+     "mrr": 0.15000000596046448
+    },
+    {
+     "triple": [
+      "tgt/group/26",
+      "uses",
+      "tgt/technique/60"
+     ],
+     "mrr": 0.18390804529190063
+    },
+    {
+     "triple": [
+      "tgt/group/26",
+      "uses",
+      "tgt/technique/64"
+     ],
+     "mrr": 0.18333333730697632
+    },
+    {
+     "triple": [
+      "tgt/group/26",
+      "uses",
+      "tgt/technique/85.2"
+     ],
+     "mrr": 0.1964285671710968
+    },
+    {
+     "triple": [
+      "tgt/group/27",
+      "uses",
+      "tgt/technique/42.1"
+     ],
+     "mrr": 0.75
+    },
+    {
+     "triple": [
+      "tgt/group/27",
+      "uses",
+      "tgt/technique/46"
+     ],
+     "mrr": 0.2291666716337204
+    },
+    {
+     "triple": [
+      "tgt/group/27",
+      "uses",
+      "tgt/technique/85"
+     ],
+     "mrr": 0.5357142686843872
+    },
+    {
+     "triple": [
+      "tgt/group/28",
+      "uses",
+      "tgt/technique/15.2"
+     ],
+     "mrr": 0.4166666865348816
+    },
+    {
+     "triple": [
+      "tgt/group/28",
+      "uses",
+      "tgt/technique/32.3"
+     ],
+     "mrr": 0.3055555522441864
+    },
+    {
+     "triple": [
+      "tgt/group/28",
+      "uses",
+      "tgt/technique/52.2"
+     ],
+     "mrr": 0.2222222238779068
+    },
+    {
+     "triple": [
+      "tgt/group/28",
+      "uses",
+      "tgt/technique/59.3"
+     ],
+     "mrr": 0.75
+    },
+    {
+     "triple": [
+      "tgt/group/28",
+      "uses",
+      "tgt/technique/83.0"
+     ],
+     "mrr": 0.3333333432674408
+    },
+    {
+     "triple": [
+      "tgt/group/29",
+      "uses",
+      "tgt/technique/88"
+     ],
+     "mrr": 0.5416666865348816
+    },
+    {
+     "triple": [
+      "tgt/group/30",
+      "uses",
+      "tgt/technique/11"
+     ],
+     "mrr": 0.30000001192092896
+    },
+    {
+     "triple": [
+      "tgt/group/30",
+      "uses",
+      "tgt/technique/12.1"
+     ],
+     "mrr": 0.016031458973884583
+    },
+    {
+     "triple": [
+      "tgt/group/30",
+      "uses",
+      "tgt/technique/42"
+     ],
+     "mrr": 1.0
+    },
+    {
+     "triple": [
+      "tgt/group/30",
+      "uses",
+      "tgt/technique/63.0"
+     ],
+     "mrr": 0.5625
+    },
+    {
+     "triple": [
+      "tgt/group/30",
+      "uses",
+      "tgt/technique/66.0"
+     ],
+     "mrr": 0.2666666805744171
+    },
+    {
+     "triple": [
+      "tgt/group/30",
+      "uses",
+      "tgt/technique/7"
+     ],
+     "mrr": 0.2884615361690521
+    },
+    {
+     "triple": [
+      "tgt/group/30",
+      "uses",
+      "tgt/technique/72"
+     ],
+     "mrr": 0.2083333432674408
+    },
+    {
+     "triple": [
+      "tgt/group/31",
+      "uses",
+      "tgt/technique/12"
+     ],
+     "mrr": 0.3499999940395355
+    },
+    {
+     "triple": [
+      "tgt/group/31",
+      "uses",
+      "tgt/technique/14"
+     ],
+     "mrr": 0.1180555522441864
+    },
+    {
+     "triple": [
+      "tgt/group/31",
+      "uses",
+      "tgt/technique/15.1"
+     ],
+     "mrr": 0.14166666567325592
+    },
+    {
+     "triple": [
+      "tgt/group/31",
+      "uses",
+      "tgt/technique/18.1"
+     ],
+     "mrr": 0.11274509876966476
+    },
+    {
+     "triple": [
+      "tgt/group/31",
+      "uses",
+      "tgt/technique/3"
+     ],
+     "mrr": 0.5833333134651184
+    },
+    {
+     "triple": [
+      "tgt/group/32",
+      "uses",
+      "tgt/technique/23.1"
+     ],
+     "mrr": 0.18390804529190063
+    },
+    {
+     "triple": [
+      "tgt/group/32",
+      "uses",
+      "tgt/technique/27"
+     ],
+     "mrr": 0.05681818351149559
+    },
+    {
+     "triple": [
+      "tgt/group/32",
+      "uses",
+      "tgt/technique/47.2"
+     ],
+     "mrr": 0.1428571492433548
+    },
+    {
+     "triple": [
+      "tgt/group/34",
+      "uses",
+      "tgt/technique/18.1"
+     ],
+     "mrr": 1.0
+    },
+    {
+     "triple": [
+      "tgt/group/34",
+      "uses",
+      "tgt/technique/68.1"
+     ],
+     "mrr": 0.3499999940395355
+    },
+    {
+     "triple": [
+      "tgt/group/35",
+      "uses",
+      "tgt/technique/17.1"
+     ],
+     "mrr": 0.3333333432674408
+    },
+    {
+     "triple": [
+      "tgt/group/35",
+      "uses",
+      "tgt/technique/23.1"
+     ],
+     "mrr": 0.20512820780277252
+    },
+    {
+     "triple": [
+      "tgt/group/35",
+      "uses",
+      "tgt/technique/34.3"
+     ],
+     "mrr": 0.550000011920929
+    },
+    {
+     "triple": [
+      "tgt/group/35",
+      "uses",
+      "tgt/technique/74.0"
+     ],
+     "mrr": 0.2666666805744171
+    },
+    {
+     "triple": [
+      "tgt/group/37",
+      "uses",
+      "tgt/technique/15.1"
+     ],
+     "mrr": 0.013194444589316845
+    },
+    {
+     "triple": [
+      "tgt/group/37",
+      "uses",
+      "tgt/technique/18.0"
+     ],
+     "mrr": 0.0525641068816185
+    },
+    {
+     "triple": [
+      "tgt/group/37",
+      "uses",
+      "tgt/technique/19"
+     ],
+     "mrr": 0.04146730527281761
+    },
+    {
+     "triple": [
+      "tgt/group/38",
+      "uses",
+      "tgt/technique/0"
+     ],
+     "mrr": 0.27941176295280457
+    },
+    {
+     "triple": [
+      "tgt/group/38",
+      "uses",
+      "tgt/technique/17.2"
+     ],
+     "mrr": 0.04615384712815285
+    },
+    {
+     "triple": [
+      "tgt/group/38",
+      "uses",
+      "tgt/technique/34.0"
+     ],
+     "mrr": 0.10057471692562103
+    },
+    {
+     "triple": [
+      "tgt/group/38",
+      "uses",
+      "tgt/technique/34.1"
+     ],
+     "mrr": 0.12083333730697632
+    },
+    {
+     "triple": [
+      "tgt/group/38",
+      "uses",
+      "tgt/technique/5.0"
+     ],
+     "mrr": 0.08423913270235062
+    },
+    {
+     "triple": [
+      "tgt/group/38",
+      "uses",
+      "tgt/technique/55"
+     ],
+     "mrr": 0.057795699685811996
+    },
+    {
+     "triple": [
+      "tgt/group/38",
+      "uses",
+      "tgt/technique/60.0"
+     ],
+     "mrr": 0.09848485141992569
+    },
+    {
+     "triple": [
+      "tgt/group/38",
+      "uses",
+      "tgt/technique/74.1"
+     ],
+     "mrr": 0.014041634276509285
+    },
+    {
+     "triple": [
+      "tgt/group/39",
+      "uses",
+      "tgt/technique/18.1"
+     ],
+     "mrr": 0.2916666567325592
+    },
+    {
+     "triple": [
+      "tgt/group/39",
+      "uses",
+      "tgt/technique/34"
+     ],
+     "mrr": 0.013275614008307457
+    },
+    {
+     "triple": [
+      "tgt/group/39",
+      "uses",
+      "tgt/technique/39.0"
+     ],
+     "mrr": 0.2291666716337204
+    },
+    {
+     "triple": [
+      "tgt/group/4",
+      "uses",
+      "tgt/technique/11.1"
+     ],
+     "mrr": 0.375
+    },
+    {
+     "triple": [
+      "tgt/group/41",
+      "uses",
+      "tgt/technique/27"
+     ],
+     "mrr": 0.21212121844291687
+    },
+    {
+     "triple": [
+      "tgt/group/41",
+      "uses",
+      "tgt/technique/36.1"
+     ],
+     "mrr": 0.3333333432674408
+    },
+    {
+     "triple": [
+      "tgt/group/41",
+      "uses",
+      "tgt/technique/38.1"
+     ],
+     "mrr": 0.16249999403953552
+    },
+    {
+     "triple": [
+      "tgt/group/41",
+      "uses",
+      "tgt/technique/82.1"
+     ],
+     "mrr": 0.5625
+    },
+    {
+     "triple": [
+      "tgt/group/42",
+      "uses",
+      "tgt/technique/51.0"
+     ],
+     "mrr": 0.13061797618865967
+    },
+    {
+     "triple": [
+      "tgt/group/43",
+      "uses",
+      "tgt/technique/15.1"
+     ],
+     "mrr": 0.3214285671710968
+    },
+    {
+     "triple": [
+      "tgt/group/43",
+      "uses",
+      "tgt/technique/25"
+     ],
+     "mrr": 0.3055555522441864
+    },
+    {
+     "triple": [
+      "tgt/group/43",
+      "uses",
+      "tgt/technique/34.1"
+     ],
+     "mrr": 0.25
+    },
+    {
+     "triple": [
+      "tgt/group/43",
+      "uses",
+      "tgt/technique/42"
+     ],
+     "mrr": 0.1964285671710968
+    },
+    {
+     "triple": [
+      "tgt/group/43",
+      "uses",
+      "tgt/technique/77"
+     ],
+     "mrr": 0.1964285671710968
+    },
+    {
+     "triple": [
+      "tgt/group/44",
+      "uses",
+      "tgt/technique/11.1"
+     ],
+     "mrr": 0.010535851120948792
+    },
+    {
+     "triple": [
+      "tgt/group/44",
+      "uses",
+      "tgt/technique/41.3"
+     ],
+     "mrr": 0.3125
+    },
+    {
+     "triple": [
+      "tgt/group/46",
+      "uses",
+      "tgt/technique/35.2"
+     ],
+     "mrr": 0.3499999940395355
+    },
+    {
+     "triple": [
+      "tgt/group/46",
+      "uses",
+      "tgt/technique/85.2"
+     ],
+     "mrr": 0.75
+    },
+    {
+     "triple": [
+      "tgt/group/48",
+      "uses",
+      "tgt/technique/44"
+     ],
+     "mrr": 0.09583333134651184
+    },
+    {
+     "triple": [
+      "tgt/group/48",
+      "uses",
+      "tgt/technique/53.0"
+     ],
+     "mrr": 0.08496732264757156
+    },
+    {
+     "triple": [
+      "tgt/group/48",
+      "uses",
+      "tgt/technique/87.2"
+     ],
+     "mrr": 0.0868055522441864
+    },
+    {
+     "triple": [
+      "tgt/group/49",
+      "uses",
+      "tgt/technique/21"
+     ],
+     "mrr": 0.6666666865348816
+    },
+    {
+     "triple": [
+      "tgt/group/49",
+      "uses",
+      "tgt/technique/3.3"
+     ],
+     "mrr": 0.6666666865348816
+    },
+    {
+     "triple": [
+      "tgt/group/49",
+      "uses",
+      "tgt/technique/34.3"
+     ],
+     "mrr": 0.5454545617103577
+    },
+    {
+     "triple": [
+      "tgt/group/49",
+      "uses",
+      "tgt/technique/51.0"
+     ],
+     "mrr": 0.6666666865348816
+    },
+    {
+     "triple": [
+      "tgt/group/49",
+      "uses",
+      "tgt/technique/59.3"
+     ],
+     "mrr": 0.625
+    },
+    {
+     "triple": [
+      "tgt/group/49",
+      "uses",
+      "tgt/technique/67.0"
+     ],
+     "mrr": 0.4166666865348816
+    },
+    {
+     "triple": [
+      "tgt/group/49",
+      "uses",
+      "tgt/technique/81.0"
+     ],
+     "mrr": 0.3333333432674408
+    },
+    {
+     "triple": [
+      "tgt/group/5",
+      "uses",
+      "tgt/technique/1.1"
+     ],
+     "mrr": 1.0
+    },
+    {
+     "triple": [
+      "tgt/group/5",
+      "uses",
+      "tgt/technique/25.1"
+     ],
+     "mrr": 1.0
+    },
+    {
+     "triple": [
+      "tgt/group/5",
+      "uses",
+      "tgt/technique/34.0"
+     ],
+     "mrr": 0.5
+    },
+    {
+     "triple": [
+      "tgt/group/5",
+      "uses",
+      "tgt/technique/39.1"
+     ],
+     "mrr": 0.75
+    },
+    {
+     "triple": [
+      "tgt/group/5",
+      "uses",
+      "tgt/technique/39.2"
+     ],
+     "mrr": 1.0
+    },
+    {
+     "triple": [
+      "tgt/group/5",
+      "uses",
+      "tgt/technique/68.3"
+     ],
+     "mrr": 0.75
+    },
+    {
+     "triple": [
+      "tgt/group/50",
+      "uses",
+      "tgt/technique/15.0"
+     ],
+     "mrr": 0.6666666865348816
+    },
+    {
+     "triple": [
+      "tgt/group/50",
+      "uses",
+      "tgt/technique/17.3"
+     ],
+     "mrr": 0.625
+    },
+    {
+     "triple": [
+      "tgt/group/50",
+      "uses",
+      "tgt/technique/82.0"
+     ],
+     "mrr": 0.4166666865348816
+    },
+    {
+     "triple": [
+      "tgt/group/51",
+      "uses",
+      "tgt/technique/1.1"
+     ],
+     "mrr": 0.4166666865348816
+    },
+    {
+     "triple": [
+      "tgt/group/51",
+      "uses",
+      "tgt/technique/2.0"
+     ],
+     "mrr": 0.3333333432674408
+    },
+    {
+     "triple": [
+      "tgt/group/51",
+      "uses",
+      "tgt/technique/39.2"
+     ],
+     "mrr": 0.6000000238418579
+    },
+    {
+     "triple": [
+      "tgt/group/51",
+      "uses",
+      "tgt/technique/44"
+     ],
+     "mrr": 0.25
+    },
+    {
+     "triple": [
+      "tgt/group/51",
+      "uses",
+      "tgt/technique/45.1"
+     ],
+     "mrr": 0.3125
+    },
+    {
+     "triple": [
+      "tgt/group/51",
+      "uses",
+      "tgt/technique/85"
+     ],
+     "mrr": 0.5454545617103577
+    },
+    {
+     "triple": [
+      "tgt/group/52",
+      "uses",
+      "tgt/technique/31.0"
+     ],
+     "mrr": 0.1964285671710968
+    },
+    {
+     "triple": [
+      "tgt/group/52",
+      "uses",
+      "tgt/technique/59.1"
+     ],
+     "mrr": 0.1666666716337204
+    },
+    {
+     "triple": [
+      "tgt/group/53",
+      "uses",
+      "tgt/technique/45.0"
+     ],
+     "mrr": 1.0
+    },
+    {
+     "triple": [
+      "tgt/group/53",
+      "uses",
+      "tgt/technique/57"
+     ],
+     "mrr": 1.0
+    },
+    {
+     "triple": [
+      "tgt/group/53",
+      "uses",
+      "tgt/technique/87.0"
+     ],
+     "mrr": 1.0
+    },
+    {
+     "triple": [
+      "tgt/group/54",
+      "uses",
+      "tgt/technique/36"
+     ],
+     "mrr": 0.21666666865348816
+    },
+    {
+     "triple": [
+      "tgt/group/54",
+      "uses",
+      "tgt/technique/75"
+     ],
+     "mrr": 0.6666666865348816
+    },
+    {
+     "triple": [
+      "tgt/group/54",
+      "uses",
+      "tgt/technique/77.0"
+     ],
+     "mrr": 0.01875871792435646
+    },
+    {
+     "triple": [
+      "tgt/group/55",
+      "uses",
+      "tgt/technique/51.1"
+     ],
+     "mrr": 0.21212121844291687
+    },
+    {
+     "triple": [
+      "tgt/group/55",
+      "uses",
+      "tgt/technique/84.0"
+     ],
+     "mrr": 0.75
+    },
+    {
+     "triple": [
+      "tgt/group/56",
+      "uses",
+      "tgt/technique/15.0"
+     ],
+     "mrr": 0.3499999940395355
+    },
+    {
+     "triple": [
+      "tgt/group/56",
+      "uses",
+      "tgt/technique/34.1"
+     ],
+     "mrr": 0.2666666805744171
+    },
+    {
+     "triple": [
+      "tgt/group/56",
+      "uses",
+      "tgt/technique/35.0"
+     ],
+     "mrr": 0.018274854868650436
+    },
+    {
+     "triple": [
+      "tgt/group/56",
+      "uses",
+      "tgt/technique/65"
+     ],
+     "mrr": 0.4166666865348816
+    },
+    {
+     "triple": [
+      "tgt/group/56",
+      "uses",
+      "tgt/technique/86"
+     ],
+     "mrr": 0.3499999940395355
+    },
+    {
+     "triple": [
+      "tgt/group/57",
+      "uses",
+      "tgt/technique/17.3"
+     ],
+     "mrr": 0.04848485067486763
+    },
+    {
+     "triple": [
+      "tgt/group/57",
+      "uses",
+      "tgt/technique/21.0"
+     ],
+     "mrr": 0.013076923787593842
+    },
+    {
+     "triple": [
+      "tgt/group/57",
+      "uses",
+      "tgt/technique/3.0"
+     ],
+     "mrr": 0.1979166716337204
+    },
+    {
+     "triple": [
+      "tgt/group/57",
+      "uses",
+      "tgt/technique/40.0"
+     ],
+     "mrr": 0.04417293518781662
+    },
+    {
+     "triple": [
+      "tgt/group/57",
+      "uses",
+      "tgt/technique/53"
+     ],
+     "mrr": 0.01138664036989212
+    },
+    {
+     "triple": [
+      "tgt/group/57",
+      "uses",
+      "tgt/technique/68.1"
+     ],
+     "mrr": 0.1458333283662796
+    },
+    {
+     "triple": [
+      "tgt/group/57",
+      "uses",
+      "tgt/technique/80.2"
+     ],
+     "mrr": 0.05929487198591232
+    },
+    {
+     "triple": [
+      "tgt/group/58",
+      "uses",
+      "tgt/technique/38.1"
+     ],
+     "mrr": 0.75
+    },
+    {
+     "triple": [
+      "tgt/group/58",
+      "uses",
+      "tgt/technique/75"
+     ],
+     "mrr": 1.0
+    },
+    {
+     "triple": [
+      "tgt/group/58",
+      "uses",
+      "tgt/technique/85.3"
+     ],
+     "mrr": 0.1064935103058815
+    },
+    {
+     "triple": [
+      "tgt/group/59",
+      "uses",
+      "tgt/technique/17"
+     ],
+     "mrr": 0.5555555820465088
+    },
+    {
+     "triple": [
+      "tgt/group/59",
+      "uses",
+      "tgt/technique/84.0"
+     ],
+     "mrr": 0.75
+    },
+    {
+     "triple": [
+      "tgt/group/6",
+      "uses",
+      "tgt/technique/19"
+     ],
+     "mrr": 0.037012986838817596
+    },
+    {
+     "triple": [
+      "tgt/group/6",
+      "uses",
+      "tgt/technique/39.1"
+     ],
+     "mrr": 0.05119048058986664
+    },
+    {
+     "triple": [
+      "tgt/group/6",
+      "uses",
+      "tgt/technique/39.2"
+     ],
+     "mrr": 0.0513392873108387
+    },
+    {
+     "triple": [
+      "tgt/group/6",
+      "uses",
+      "tgt/technique/53.0"
+     ],
+     "mrr": 0.18666666746139526
+    },
+    {
+     "triple": [
+      "tgt/group/6",
+      "uses",
+      "tgt/technique/6"
+     ],
+     "mrr": 0.06818182021379471
+    },
+    {
+     "triple": [
+      "tgt/group/6",
+      "uses",
+      "tgt/technique/87.1"
+     ],
+     "mrr": 0.11666667461395264
+    },
+    {
+     "triple": [
+      "tgt/group/60",
+      "uses",
+      "tgt/technique/13.2"
+     ],
+     "mrr": 1.0
+    },
+    {
+     "triple": [
+      "tgt/group/60",
+      "uses",
+      "tgt/technique/2.0"
+     ],
+     "mrr": 0.5833333134651184
+    },
+    {
+     "triple": [
+      "tgt/group/60",
+      "uses",
+      "tgt/technique/32"
+     ],
+     "mrr": 0.29545456171035767
+    },
+    {
+     "triple": [
+      "tgt/group/60",
+      "uses",
+      "tgt/technique/60"
+     ],
+     "mrr": 1.0
+    },
+    {
+     "triple": [
+      "tgt/group/60",
+      "uses",
+      "tgt/technique/7.2"
+     ],
+     "mrr": 0.75
+    },
+    {
+     "triple": [
+      "tgt/group/60",
+      "uses",
+      "tgt/technique/77.0"
+     ],
+     "mrr": 0.2083333432674408
+    },
+    {
+     "triple": [
+      "tgt/group/60",
+      "uses",
+      "tgt/technique/79"
+     ],
+     "mrr": 0.6666666865348816
+    },
+    {
+     "triple": [
+      "tgt/group/60",
+      "uses",
+      "tgt/technique/84.0"
+     ],
+     "mrr": 1.0
+    },
+    {
+     "triple": [
+      "tgt/group/60",
+      "uses",
+      "tgt/technique/88.2"
+     ],
+     "mrr": 1.0
+    },
+    {
+     "triple": [
+      "tgt/group/61",
+      "uses",
+      "tgt/technique/34.0"
+     ],
+     "mrr": 0.1339285671710968
+    },
+    {
+     "triple": [
+      "tgt/group/61",
+      "uses",
+      "tgt/technique/60.0"
+     ],
+     "mrr": 0.25
+    },
+    {
+     "triple": [
+      "tgt/group/61",
+      "uses",
+      "tgt/technique/82.1"
+     ],
+     "mrr": 0.6000000238418579
+    },
+    {
+     "triple": [
+      "tgt/group/62",
+      "uses",
+      "tgt/technique/32.0"
+     ],
+     "mrr": 0.1269841343164444
+    },
+    {
+     "triple": [
+      "tgt/group/62",
+      "uses",
+      "tgt/technique/32.1"
+     ],
+     "mrr": 0.011522212065756321
+    },
+    {
+     "triple": [
+      "tgt/group/62",
+      "uses",
+      "tgt/technique/60.0"
+     ],
+     "mrr": 0.13846154510974884
+    },
+    {
+     "triple": [
+      "tgt/group/62",
+      "uses",
+      "tgt/technique/67"
+     ],
+     "mrr": 0.11666667461395264
+    },
+    {
+     "triple": [
+      "tgt/group/63",
+      "uses",
+      "tgt/technique/29"
+     ],
+     "mrr": 0.5
+    },
+    {
+     "triple": [
+      "tgt/group/63",
+      "uses",
+      "tgt/technique/63.3"
+     ],
+     "mrr": 0.22499999403953552
+    },
+    {
+     "triple": [
+      "tgt/group/64",
+      "uses",
+      "tgt/technique/13.3"
+     ],
+     "mrr": 0.5
+    },
+    {
+     "triple": [
+      "tgt/group/64",
+      "uses",
+      "tgt/technique/16"
+     ],
+     "mrr": 0.75
+    },
+    {
+     "triple": [
+      "tgt/group/64",
+      "uses",
+      "tgt/technique/75"
+     ],
+     "mrr": 0.75
+    },
+    {
+     "triple": [
+      "tgt/group/65",
+      "uses",
+      "tgt/technique/1.2"
+     ],
+     "mrr": 0.2380952537059784
+    },
+    {
+     "triple": [
+      "tgt/group/65",
+      "uses",
+      "tgt/technique/14"
+     ],
+     "mrr": 0.2916666865348816
+    },
+    {
+     "triple": [
+      "tgt/group/65",
+      "uses",
+      "tgt/technique/40"
+     ],
+     "mrr": 0.3055555522441864
+    },
+    {
+     "triple": [
+      "tgt/group/65",
+      "uses",
+      "tgt/technique/52.0"
+     ],
+     "mrr": 0.25
+    },
+    {
+     "triple": [
+      "tgt/group/66",
+      "uses",
+      "tgt/technique/3.1"
+     ],
+     "mrr": 0.75
+    },
+    {
+     "triple": [
+      "tgt/group/66",
+      "uses",
+      "tgt/technique/56.1"
+     ],
+     "mrr": 0.75
+    },
+    {
+     "triple": [
+      "tgt/group/67",
+      "uses",
+      "tgt/technique/26"
+     ],
+     "mrr": 0.2916666865348816
+    },
+    {
+     "triple": [
+      "tgt/group/67",
+      "uses",
+      "tgt/technique/68"
+     ],
+     "mrr": 0.15625
+    },
+    {
+     "triple": [
+      "tgt/group/67",
+      "uses",
+      "tgt/technique/75"
+     ],
+     "mrr": 0.6000000238418579
+    },
+    {
+     "triple": [
+      "tgt/group/68",
+      "uses",
+      "tgt/technique/27"
+     ],
+     "mrr": 0.5
+    },
+    {
+     "triple": [
+      "tgt/group/68",
+      "uses",
+      "tgt/technique/29"
+     ],
+     "mrr": 0.4166666865348816
+    },
+    {
+     "triple": [
+      "tgt/group/68",
+      "uses",
+      "tgt/technique/31.0"
+     ],
+     "mrr": 0.2083333432674408
+    },
+    {
+     "triple": [
+      "tgt/group/68",
+      "uses",
+      "tgt/technique/31.1"
+     ],
+     "mrr": 0.2083333432674408
+    },
+    {
+     "triple": [
+      "tgt/group/68",
+      "uses",
+      "tgt/technique/63.0"
+     ],
+     "mrr": 0.5454545617103577
+    },
+    {
+     "triple": [
+      "tgt/group/69",
+      "uses",
+      "tgt/technique/31"
+     ],
+     "mrr": 1.0
+    },
+    {
+     "triple": [
+      "tgt/group/7",
+      "uses",
+      "tgt/technique/13"
+     ],
+     "mrr": 0.1607142835855484
+    },
+    {
+     "triple": [
+      "tgt/group/7",
+      "uses",
+      "tgt/technique/44.2"
+     ],
+     "mrr": 0.625
+    },
+    {
+     "triple": [
+      "tgt/group/70",
+      "uses",
+      "tgt/technique/2"
+     ],
+     "mrr": 1.0
+    },
+    {
+     "triple": [
+      "tgt/group/70",
+      "uses",
+      "tgt/technique/42"
+     ],
+     "mrr": 0.25
+    },
+    {
+     "triple": [
+      "tgt/group/70",
+      "uses",
+      "tgt/technique/67.1"
+     ],
+     "mrr": 0.5384615659713745
+    },
+    {
+     "triple": [
+      "tgt/group/70",
+      "uses",
+      "tgt/technique/80"
+     ],
+     "mrr": 0.27272728085517883
+    },
+    {
+     "triple": [
+      "tgt/group/70",
+      "uses",
+      "tgt/technique/88.1"
+     ],
+     "mrr": 0.375
+    },
+    {
+     "triple": [
+      "tgt/group/71",
+      "uses",
+      "tgt/technique/63.3"
+     ],
+     "mrr": 0.75
+    },
+    {
+     "triple": [
+      "tgt/group/72",
+      "uses",
+      "tgt/technique/13.0"
+     ],
+     "mrr": 0.5
+    },
+    {
+     "triple": [
+      "tgt/group/72",
+      "uses",
+      "tgt/technique/58"
+     ],
+     "mrr": 0.5714285969734192
+    },
+    {
+     "triple": [
+      "tgt/group/72",
+      "uses",
+      "tgt/technique/84.0"
+     ],
+     "mrr": 0.625
+    },
+    {
+     "triple": [
+      "tgt/group/73",
+      "uses",
+      "tgt/technique/68.1"
+     ],
+     "mrr": 0.1607142835855484
+    },
+    {
+     "triple": [
+      "tgt/group/73",
+      "uses",
+      "tgt/technique/74.1"
+     ],
+     "mrr": 0.5
+    },
+    {
+     "triple": [
+      "tgt/group/74",
+      "uses",
+      "tgt/technique/85.0"
+     ],
+     "mrr": 1.0
+    },
+    {
+     "triple": [
+      "tgt/group/75",
+      "uses",
+      "tgt/technique/73"
+     ],
+     "mrr": 0.5
+    },
+    {
+     "triple": [
+      "tgt/group/75",
+      "uses",
+      "tgt/technique/86"
+     ],
+     "mrr": 0.4166666865348816
+    },
+    {
+     "triple": [
+      "tgt/group/75",
+      "uses",
+      "tgt/technique/88.3"
+     ],
+     "mrr": 0.3333333432674408
+    },
+    {
+     "triple": [
+      "tgt/group/75",
+      "uses",
+      "tgt/technique/9"
+     ],
+     "mrr": 0.27941176295280457
+    },
+    {
+     "triple": [
+      "tgt/group/76",
+      "uses",
+      "tgt/technique/28.2"
+     ],
+     "mrr": 0.625
+    },
+    {
+     "triple": [
+      "tgt/group/76",
+      "uses",
+      "tgt/technique/45.0"
+     ],
+     "mrr": 0.0215773805975914
+    },
+    {
+     "triple": [
+      "tgt/group/76",
+      "uses",
+      "tgt/technique/46"
+     ],
+     "mrr": 0.2291666716337204
+    },
+    {
+     "triple": [
+      "tgt/group/76",
+      "uses",
+      "tgt/technique/7.1"
+     ],
+     "mrr": 0.6666666865348816
+    },
+    {
+     "triple": [
+      "tgt/group/77",
+      "uses",
+      "tgt/technique/25.0"
+     ],
+     "mrr": 0.5
+    },
+    {
+     "triple": [
+      "tgt/group/77",
+      "uses",
+      "tgt/technique/45.1"
+     ],
+     "mrr": 0.5
+    },
+    {
+     "triple": [
+      "tgt/group/77",
+      "uses",
+      "tgt/technique/61.0"
+     ],
+     "mrr": 1.0
+    },
+    {
+     "triple": [
+      "tgt/group/77",
+      "uses",
+      "tgt/technique/67.1"
+     ],
+     "mrr": 0.6666666865348816
+    },
+    {
+     "triple": [
+      "tgt/group/78",
+      "uses",
+      "tgt/technique/19.1"
+     ],
+     "mrr": 0.2222222238779068
+    },
+    {
+     "triple": [
+      "tgt/group/78",
+      "uses",
+      "tgt/technique/27.0"
+     ],
+     "mrr": 0.18333333730697632
+    },
+    {
+     "triple": [
+      "tgt/group/79",
+      "uses",
+      "tgt/technique/40"
+     ],
+     "mrr": 0.014270925894379616
+    },
+    {
+     "triple": [
+      "tgt/group/9",
+      "uses",
+      "tgt/technique/50.0"
+     ],
+     "mrr": 0.2916666567325592
+    }
+   ],
+   "seconds": 398.4
+  },
+  {
+   "seed": 20261113,
+   "selected_round": 18,
+   "validation_mrr_history": [
+    0.26053786277770996,
+    0.2758650779724121,
+    0.2656182050704956,
+    0.28485697507858276,
+    0.2892757058143616,
+    0.2886296510696411,
+    0.3027562201023102,
+    0.2926805019378662,
+    0.2972327172756195,
+    0.3179705739021301,
+    0.2892948091030121,
+    0.31470412015914917,
+    0.3228890001773834,
+    0.3319561779499054,
+    0.3056451976299286,
+    0.3091467022895813,
+    0.3296990990638733,
+    0.3239118456840515,
+    0.34725937247276306,
+    0.33402711153030396,
+    0.3291865587234497
+   ],
+   "selected_validation_mrr": 0.34725937247276306,
+   "test": {
+    "mrr": 0.3967653512954712,
+    "hits@1": 0.21875,
+    "hits@3": 0.4797794222831726,
+    "hits@10": 0.8014705777168274,
+    "triples_evaluated": 272,
+    "ranking_queries": 544
+   },
+   "test_by_relation": {
+    "uses": {
+     "mrr": 0.3967653214931488,
+     "hits@1": 0.21875,
+     "hits@3": 0.4797794222831726,
+     "hits@10": 0.8014705777168274,
+     "triples_evaluated": 272,
+     "ranking_queries": 544
+    }
+   },
+   "per_query_test": [
+    {
+     "triple": [
+      "tgt/group/0",
+      "uses",
+      "tgt/technique/27"
+     ],
+     "mrr": 0.3333333432674408
+    },
+    {
+     "triple": [
+      "tgt/group/0",
+      "uses",
+      "tgt/technique/36"
+     ],
+     "mrr": 1.0
+    },
+    {
+     "triple": [
+      "tgt/group/0",
+      "uses",
+      "tgt/technique/41.0"
+     ],
+     "mrr": 0.30000001192092896
+    },
+    {
+     "triple": [
+      "tgt/group/0",
+      "uses",
+      "tgt/technique/58.0"
+     ],
+     "mrr": 0.016896648332476616
+    },
+    {
+     "triple": [
+      "tgt/group/0",
+      "uses",
+      "tgt/technique/66"
+     ],
+     "mrr": 0.5384615659713745
+    },
+    {
+     "triple": [
+      "tgt/group/1",
+      "uses",
+      "tgt/technique/13.2"
+     ],
+     "mrr": 0.010575416497886181
+    },
+    {
+     "triple": [
+      "tgt/group/1",
+      "uses",
+      "tgt/technique/40.1"
+     ],
+     "mrr": 1.0
+    },
+    {
+     "triple": [
+      "tgt/group/1",
+      "uses",
+      "tgt/technique/83.1"
+     ],
+     "mrr": 1.0
+    },
+    {
+     "triple": [
+      "tgt/group/10",
+      "uses",
+      "tgt/technique/13.3"
+     ],
+     "mrr": 0.75
+    },
+    {
+     "triple": [
+      "tgt/group/10",
+      "uses",
+      "tgt/technique/16"
+     ],
+     "mrr": 0.21666666865348816
+    },
+    {
+     "triple": [
+      "tgt/group/10",
+      "uses",
+      "tgt/technique/64"
+     ],
+     "mrr": 0.2083333432674408
+    },
+    {
+     "triple": [
+      "tgt/group/10",
+      "uses",
+      "tgt/technique/77"
+     ],
+     "mrr": 0.11274509876966476
+    },
+    {
+     "triple": [
+      "tgt/group/11",
+      "uses",
+      "tgt/technique/30"
+     ],
+     "mrr": 0.4166666865348816
+    },
+    {
+     "triple": [
+      "tgt/group/11",
+      "uses",
+      "tgt/technique/48"
+     ],
+     "mrr": 0.25
+    },
+    {
+     "triple": [
+      "tgt/group/11",
+      "uses",
+      "tgt/technique/50.1"
+     ],
+     "mrr": 0.6000000238418579
+    },
+    {
+     "triple": [
+      "tgt/group/11",
+      "uses",
+      "tgt/technique/67.1"
+     ],
+     "mrr": 0.16346153616905212
+    },
+    {
+     "triple": [
+      "tgt/group/11",
+      "uses",
+      "tgt/technique/71"
+     ],
+     "mrr": 0.2380952537059784
+    },
+    {
+     "triple": [
+      "tgt/group/12",
+      "uses",
+      "tgt/technique/48"
+     ],
+     "mrr": 0.4166666865348816
+    },
+    {
+     "triple": [
+      "tgt/group/12",
+      "uses",
+      "tgt/technique/60.1"
+     ],
+     "mrr": 0.1607142835855484
+    },
+    {
+     "triple": [
+      "tgt/group/12",
+      "uses",
+      "tgt/technique/78.1"
+     ],
+     "mrr": 0.11274509876966476
+    },
+    {
+     "triple": [
+      "tgt/group/12",
+      "uses",
+      "tgt/technique/81"
+     ],
+     "mrr": 0.625
+    },
+    {
+     "triple": [
+      "tgt/group/13",
+      "uses",
+      "tgt/technique/25.1"
+     ],
+     "mrr": 0.1964285671710968
+    },
+    {
+     "triple": [
+      "tgt/group/13",
+      "uses",
+      "tgt/technique/3.1"
+     ],
+     "mrr": 0.2380952537059784
+    },
+    {
+     "triple": [
+      "tgt/group/13",
+      "uses",
+      "tgt/technique/35.2"
+     ],
+     "mrr": 0.021778583526611328
+    },
+    {
+     "triple": [
+      "tgt/group/13",
+      "uses",
+      "tgt/technique/40"
+     ],
+     "mrr": 0.2380952537059784
+    },
+    {
+     "triple": [
+      "tgt/group/13",
+      "uses",
+      "tgt/technique/5.0"
+     ],
+     "mrr": 0.2884615361690521
+    },
+    {
+     "triple": [
+      "tgt/group/13",
+      "uses",
+      "tgt/technique/86.0"
+     ],
+     "mrr": 0.5714285969734192
+    },
+    {
+     "triple": [
+      "tgt/group/14",
+      "uses",
+      "tgt/technique/29"
+     ],
+     "mrr": 1.0
+    },
+    {
+     "triple": [
+      "tgt/group/15",
+      "uses",
+      "tgt/technique/24.1"
+     ],
+     "mrr": 0.25
+    },
+    {
+     "triple": [
+      "tgt/group/15",
+      "uses",
+      "tgt/technique/28"
+     ],
+     "mrr": 0.3214285671710968
+    },
+    {
+     "triple": [
+      "tgt/group/15",
+      "uses",
+      "tgt/technique/42.0"
+     ],
+     "mrr": 0.18333333730697632
+    },
+    {
+     "triple": [
+      "tgt/group/15",
+      "uses",
+      "tgt/technique/56.1"
+     ],
+     "mrr": 0.22499999403953552
+    },
+    {
+     "triple": [
+      "tgt/group/15",
+      "uses",
+      "tgt/technique/68.1"
+     ],
+     "mrr": 0.07500000298023224
+    },
+    {
+     "triple": [
+      "tgt/group/15",
+      "uses",
+      "tgt/technique/70.0"
+     ],
+     "mrr": 0.3214285671710968
+    },
+    {
+     "triple": [
+      "tgt/group/15",
+      "uses",
+      "tgt/technique/80.3"
+     ],
+     "mrr": 0.22499999403953552
+    },
+    {
+     "triple": [
+      "tgt/group/15",
+      "uses",
+      "tgt/technique/82.2"
+     ],
+     "mrr": 0.0833333358168602
+    },
+    {
+     "triple": [
+      "tgt/group/16",
+      "uses",
+      "tgt/technique/17.0"
+     ],
+     "mrr": 0.16346153616905212
+    },
+    {
+     "triple": [
+      "tgt/group/16",
+      "uses",
+      "tgt/technique/2"
+     ],
+     "mrr": 0.5555555820465088
+    },
+    {
+     "triple": [
+      "tgt/group/16",
+      "uses",
+      "tgt/technique/38.1"
+     ],
+     "mrr": 0.15555556118488312
+    },
+    {
+     "triple": [
+      "tgt/group/16",
+      "uses",
+      "tgt/technique/66.1"
+     ],
+     "mrr": 0.20512820780277252
+    },
+    {
+     "triple": [
+      "tgt/group/16",
+      "uses",
+      "tgt/technique/7.3"
+     ],
+     "mrr": 0.29545456171035767
+    },
+    {
+     "triple": [
+      "tgt/group/17",
+      "uses",
+      "tgt/technique/37.0"
+     ],
+     "mrr": 0.75
+    },
+    {
+     "triple": [
+      "tgt/group/17",
+      "uses",
+      "tgt/technique/67.0"
+     ],
+     "mrr": 0.5
+    },
+    {
+     "triple": [
+      "tgt/group/18",
+      "uses",
+      "tgt/technique/3"
+     ],
+     "mrr": 0.6666666865348816
+    },
+    {
+     "triple": [
+      "tgt/group/18",
+      "uses",
+      "tgt/technique/50.1"
+     ],
+     "mrr": 0.75
+    },
+    {
+     "triple": [
+      "tgt/group/19",
+      "uses",
+      "tgt/technique/42"
+     ],
+     "mrr": 0.3055555522441864
+    },
+    {
+     "triple": [
+      "tgt/group/19",
+      "uses",
+      "tgt/technique/47.0"
+     ],
+     "mrr": 1.0
+    },
+    {
+     "triple": [
+      "tgt/group/19",
+      "uses",
+      "tgt/technique/51.1"
+     ],
+     "mrr": 0.03620689734816551
+    },
+    {
+     "triple": [
+      "tgt/group/19",
+      "uses",
+      "tgt/technique/56"
+     ],
+     "mrr": 0.05162738636136055
+    },
+    {
+     "triple": [
+      "tgt/group/2",
+      "uses",
+      "tgt/technique/0"
+     ],
+     "mrr": 0.375
+    },
+    {
+     "triple": [
+      "tgt/group/2",
+      "uses",
+      "tgt/technique/25.1"
+     ],
+     "mrr": 0.375
+    },
+    {
+     "triple": [
+      "tgt/group/2",
+      "uses",
+      "tgt/technique/31.0"
+     ],
+     "mrr": 0.22499999403953552
+    },
+    {
+     "triple": [
+      "tgt/group/2",
+      "uses",
+      "tgt/technique/45.2"
+     ],
+     "mrr": 0.3499999940395355
+    },
+    {
+     "triple": [
+      "tgt/group/2",
+      "uses",
+      "tgt/technique/8"
+     ],
+     "mrr": 0.22499999403953552
+    },
+    {
+     "triple": [
+      "tgt/group/20",
+      "uses",
+      "tgt/technique/27"
+     ],
+     "mrr": 0.2916666865348816
+    },
+    {
+     "triple": [
+      "tgt/group/20",
+      "uses",
+      "tgt/technique/34.1"
+     ],
+     "mrr": 0.1979166716337204
+    },
+    {
+     "triple": [
+      "tgt/group/20",
+      "uses",
+      "tgt/technique/36"
+     ],
+     "mrr": 0.14423076808452606
+    },
+    {
+     "triple": [
+      "tgt/group/20",
+      "uses",
+      "tgt/technique/41.0"
+     ],
+     "mrr": 0.12941177189350128
+    },
+    {
+     "triple": [
+      "tgt/group/20",
+      "uses",
+      "tgt/technique/48"
+     ],
+     "mrr": 0.75
+    },
+    {
+     "triple": [
+      "tgt/group/20",
+      "uses",
+      "tgt/technique/58"
+     ],
+     "mrr": 0.2023809552192688
+    },
+    {
+     "triple": [
+      "tgt/group/20",
+      "uses",
+      "tgt/technique/86"
+     ],
+     "mrr": 0.2222222238779068
+    },
+    {
+     "triple": [
+      "tgt/group/21",
+      "uses",
+      "tgt/technique/24.2"
+     ],
+     "mrr": 1.0
+    },
+    {
+     "triple": [
+      "tgt/group/21",
+      "uses",
+      "tgt/technique/25.1"
+     ],
+     "mrr": 1.0
+    },
+    {
+     "triple": [
+      "tgt/group/21",
+      "uses",
+      "tgt/technique/28.0"
+     ],
+     "mrr": 1.0
+    },
+    {
+     "triple": [
+      "tgt/group/21",
+      "uses",
+      "tgt/technique/34.2"
+     ],
+     "mrr": 0.22499999403953552
+    },
+    {
+     "triple": [
+      "tgt/group/21",
+      "uses",
+      "tgt/technique/40"
+     ],
+     "mrr": 0.625
+    },
+    {
+     "triple": [
+      "tgt/group/21",
+      "uses",
+      "tgt/technique/48"
+     ],
+     "mrr": 0.375
+    },
+    {
+     "triple": [
+      "tgt/group/21",
+      "uses",
+      "tgt/technique/51.1"
+     ],
+     "mrr": 1.0
+    },
+    {
+     "triple": [
+      "tgt/group/21",
+      "uses",
+      "tgt/technique/73.0"
+     ],
+     "mrr": 1.0
+    },
+    {
+     "triple": [
+      "tgt/group/22",
+      "uses",
+      "tgt/technique/27"
+     ],
+     "mrr": 0.75
+    },
+    {
+     "triple": [
+      "tgt/group/22",
+      "uses",
+      "tgt/technique/44.2"
+     ],
+     "mrr": 0.3333333432674408
+    },
+    {
+     "triple": [
+      "tgt/group/22",
+      "uses",
+      "tgt/technique/47.0"
+     ],
+     "mrr": 0.6666666865348816
+    },
+    {
+     "triple": [
+      "tgt/group/22",
+      "uses",
+      "tgt/technique/57.0"
+     ],
+     "mrr": 0.625
+    },
+    {
+     "triple": [
+      "tgt/group/22",
+      "uses",
+      "tgt/technique/69"
+     ],
+     "mrr": 0.019779451191425323
+    },
+    {
+     "triple": [
+      "tgt/group/23",
+      "uses",
+      "tgt/technique/36.1"
+     ],
+     "mrr": 0.1805555522441864
+    },
+    {
+     "triple": [
+      "tgt/group/23",
+      "uses",
+      "tgt/technique/5.0"
+     ],
+     "mrr": 0.5555555820465088
+    },
+    {
+     "triple": [
+      "tgt/group/24",
+      "uses",
+      "tgt/technique/28.1"
+     ],
+     "mrr": 0.3333333432674408
+    },
+    {
+     "triple": [
+      "tgt/group/24",
+      "uses",
+      "tgt/technique/39.2"
+     ],
+     "mrr": 0.6000000238418579
+    },
+    {
+     "triple": [
+      "tgt/group/24",
+      "uses",
+      "tgt/technique/5.0"
+     ],
+     "mrr": 0.625
+    },
+    {
+     "triple": [
+      "tgt/group/24",
+      "uses",
+      "tgt/technique/79"
+     ],
+     "mrr": 0.3125
+    },
+    {
+     "triple": [
+      "tgt/group/24",
+      "uses",
+      "tgt/technique/89"
+     ],
+     "mrr": 0.75
+    },
+    {
+     "triple": [
+      "tgt/group/25",
+      "uses",
+      "tgt/technique/3.2"
+     ],
+     "mrr": 0.75
+    },
+    {
+     "triple": [
+      "tgt/group/25",
+      "uses",
+      "tgt/technique/5.0"
+     ],
+     "mrr": 0.75
+    },
+    {
+     "triple": [
+      "tgt/group/25",
+      "uses",
+      "tgt/technique/88.0"
+     ],
+     "mrr": 0.75
+    },
+    {
+     "triple": [
+      "tgt/group/26",
+      "uses",
+      "tgt/technique/59.1"
+     ],
+     "mrr": 0.08866995573043823
+    },
+    {
+     "triple": [
+      "tgt/group/26",
+      "uses",
+      "tgt/technique/6.0"
+     ],
+     "mrr": 0.2666666805744171
+    },
+    {
+     "triple": [
+      "tgt/group/26",
+      "uses",
+      "tgt/technique/60"
+     ],
+     "mrr": 0.1845238208770752
+    },
+    {
+     "triple": [
+      "tgt/group/26",
+      "uses",
+      "tgt/technique/64"
+     ],
+     "mrr": 0.2916666865348816
+    },
+    {
+     "triple": [
+      "tgt/group/26",
+      "uses",
+      "tgt/technique/85.2"
+     ],
+     "mrr": 0.3333333432674408
+    },
+    {
+     "triple": [
+      "tgt/group/27",
+      "uses",
+      "tgt/technique/42.1"
+     ],
+     "mrr": 0.75
+    },
+    {
+     "triple": [
+      "tgt/group/27",
+      "uses",
+      "tgt/technique/46"
+     ],
+     "mrr": 0.15833333134651184
+    },
+    {
+     "triple": [
+      "tgt/group/27",
+      "uses",
+      "tgt/technique/85"
+     ],
+     "mrr": 0.20000000298023224
+    },
+    {
+     "triple": [
+      "tgt/group/28",
+      "uses",
+      "tgt/technique/15.2"
+     ],
+     "mrr": 0.3214285671710968
+    },
+    {
+     "triple": [
+      "tgt/group/28",
+      "uses",
+      "tgt/technique/32.3"
+     ],
+     "mrr": 0.3125
+    },
+    {
+     "triple": [
+      "tgt/group/28",
+      "uses",
+      "tgt/technique/52.2"
+     ],
+     "mrr": 0.20000000298023224
+    },
+    {
+     "triple": [
+      "tgt/group/28",
+      "uses",
+      "tgt/technique/59.3"
+     ],
+     "mrr": 0.75
+    },
+    {
+     "triple": [
+      "tgt/group/28",
+      "uses",
+      "tgt/technique/83.0"
+     ],
+     "mrr": 0.3499999940395355
+    },
+    {
+     "triple": [
+      "tgt/group/29",
+      "uses",
+      "tgt/technique/88"
+     ],
+     "mrr": 0.5555555820465088
+    },
+    {
+     "triple": [
+      "tgt/group/30",
+      "uses",
+      "tgt/technique/11"
+     ],
+     "mrr": 0.2916666567325592
+    },
+    {
+     "triple": [
+      "tgt/group/30",
+      "uses",
+      "tgt/technique/12.1"
+     ],
+     "mrr": 0.01687638834118843
+    },
+    {
+     "triple": [
+      "tgt/group/30",
+      "uses",
+      "tgt/technique/42"
+     ],
+     "mrr": 1.0
+    },
+    {
+     "triple": [
+      "tgt/group/30",
+      "uses",
+      "tgt/technique/63.0"
+     ],
+     "mrr": 0.5714285969734192
+    },
+    {
+     "triple": [
+      "tgt/group/30",
+      "uses",
+      "tgt/technique/66.0"
+     ],
+     "mrr": 0.625
+    },
+    {
+     "triple": [
+      "tgt/group/30",
+      "uses",
+      "tgt/technique/7"
+     ],
+     "mrr": 0.550000011920929
+    },
+    {
+     "triple": [
+      "tgt/group/30",
+      "uses",
+      "tgt/technique/72"
+     ],
+     "mrr": 0.13571429252624512
+    },
+    {
+     "triple": [
+      "tgt/group/31",
+      "uses",
+      "tgt/technique/12"
+     ],
+     "mrr": 0.375
+    },
+    {
+     "triple": [
+      "tgt/group/31",
+      "uses",
+      "tgt/technique/14"
+     ],
+     "mrr": 0.09375
+    },
+    {
+     "triple": [
+      "tgt/group/31",
+      "uses",
+      "tgt/technique/15.1"
+     ],
+     "mrr": 0.12631578743457794
+    },
+    {
+     "triple": [
+      "tgt/group/31",
+      "uses",
+      "tgt/technique/18.1"
+     ],
+     "mrr": 0.10333333909511566
+    },
+    {
+     "triple": [
+      "tgt/group/31",
+      "uses",
+      "tgt/technique/3"
+     ],
+     "mrr": 0.3499999940395355
+    },
+    {
+     "triple": [
+      "tgt/group/32",
+      "uses",
+      "tgt/technique/23.1"
+     ],
+     "mrr": 0.1428571492433548
+    },
+    {
+     "triple": [
+      "tgt/group/32",
+      "uses",
+      "tgt/technique/27"
+     ],
+     "mrr": 0.12142857909202576
+    },
+    {
+     "triple": [
+      "tgt/group/32",
+      "uses",
+      "tgt/technique/47.2"
+     ],
+     "mrr": 0.11249999701976776
+    },
+    {
+     "triple": [
+      "tgt/group/34",
+      "uses",
+      "tgt/technique/18.1"
+     ],
+     "mrr": 1.0
+    },
+    {
+     "triple": [
+      "tgt/group/34",
+      "uses",
+      "tgt/technique/68.1"
+     ],
+     "mrr": 0.5625
+    },
+    {
+     "triple": [
+      "tgt/group/35",
+      "uses",
+      "tgt/technique/17.1"
+     ],
+     "mrr": 0.2916666567325592
+    },
+    {
+     "triple": [
+      "tgt/group/35",
+      "uses",
+      "tgt/technique/23.1"
+     ],
+     "mrr": 0.1979166716337204
+    },
+    {
+     "triple": [
+      "tgt/group/35",
+      "uses",
+      "tgt/technique/34.3"
+     ],
+     "mrr": 0.5263158082962036
+    },
+    {
+     "triple": [
+      "tgt/group/35",
+      "uses",
+      "tgt/technique/74.0"
+     ],
+     "mrr": 0.25
+    },
+    {
+     "triple": [
+      "tgt/group/37",
+      "uses",
+      "tgt/technique/15.1"
+     ],
+     "mrr": 0.012477036565542221
+    },
+    {
+     "triple": [
+      "tgt/group/37",
+      "uses",
+      "tgt/technique/18.0"
+     ],
+     "mrr": 0.12179487943649292
+    },
+    {
+     "triple": [
+      "tgt/group/37",
+      "uses",
+      "tgt/technique/19"
+     ],
+     "mrr": 0.05833333730697632
+    },
+    {
+     "triple": [
+      "tgt/group/38",
+      "uses",
+      "tgt/technique/0"
+     ],
+     "mrr": 0.6000000238418579
+    },
+    {
+     "triple": [
+      "tgt/group/38",
+      "uses",
+      "tgt/technique/17.2"
+     ],
+     "mrr": 0.09642857313156128
+    },
+    {
+     "triple": [
+      "tgt/group/38",
+      "uses",
+      "tgt/technique/34.0"
+     ],
+     "mrr": 0.07417582720518112
+    },
+    {
+     "triple": [
+      "tgt/group/38",
+      "uses",
+      "tgt/technique/34.1"
+     ],
+     "mrr": 0.1458333432674408
+    },
+    {
+     "triple": [
+      "tgt/group/38",
+      "uses",
+      "tgt/technique/5.0"
+     ],
+     "mrr": 0.1388888955116272
+    },
+    {
+     "triple": [
+      "tgt/group/38",
+      "uses",
+      "tgt/technique/55"
+     ],
+     "mrr": 0.10833333432674408
+    },
+    {
+     "triple": [
+      "tgt/group/38",
+      "uses",
+      "tgt/technique/60.0"
+     ],
+     "mrr": 0.10989011824131012
+    },
+    {
+     "triple": [
+      "tgt/group/38",
+      "uses",
+      "tgt/technique/74.1"
+     ],
+     "mrr": 0.01296854019165039
+    },
+    {
+     "triple": [
+      "tgt/group/39",
+      "uses",
+      "tgt/technique/18.1"
+     ],
+     "mrr": 0.27272728085517883
+    },
+    {
+     "triple": [
+      "tgt/group/39",
+      "uses",
+      "tgt/technique/34"
+     ],
+     "mrr": 0.009874492883682251
+    },
+    {
+     "triple": [
+      "tgt/group/39",
+      "uses",
+      "tgt/technique/39.0"
+     ],
+     "mrr": 0.2666666805744171
+    },
+    {
+     "triple": [
+      "tgt/group/4",
+      "uses",
+      "tgt/technique/11.1"
+     ],
+     "mrr": 0.5
+    },
+    {
+     "triple": [
+      "tgt/group/41",
+      "uses",
+      "tgt/technique/27"
+     ],
+     "mrr": 0.2222222238779068
+    },
+    {
+     "triple": [
+      "tgt/group/41",
+      "uses",
+      "tgt/technique/36.1"
+     ],
+     "mrr": 0.2916666865348816
+    },
+    {
+     "triple": [
+      "tgt/group/41",
+      "uses",
+      "tgt/technique/38.1"
+     ],
+     "mrr": 0.17045454680919647
+    },
+    {
+     "triple": [
+      "tgt/group/41",
+      "uses",
+      "tgt/technique/82.1"
+     ],
+     "mrr": 0.5625
+    },
+    {
+     "triple": [
+      "tgt/group/42",
+      "uses",
+      "tgt/technique/51.0"
+     ],
+     "mrr": 0.08908046036958694
+    },
+    {
+     "triple": [
+      "tgt/group/43",
+      "uses",
+      "tgt/technique/15.1"
+     ],
+     "mrr": 0.20512820780277252
+    },
+    {
+     "triple": [
+      "tgt/group/43",
+      "uses",
+      "tgt/technique/25"
+     ],
+     "mrr": 0.3333333432674408
+    },
+    {
+     "triple": [
+      "tgt/group/43",
+      "uses",
+      "tgt/technique/34.1"
+     ],
+     "mrr": 0.21666666865348816
+    },
+    {
+     "triple": [
+      "tgt/group/43",
+      "uses",
+      "tgt/technique/42"
+     ],
+     "mrr": 0.2023809552192688
+    },
+    {
+     "triple": [
+      "tgt/group/43",
+      "uses",
+      "tgt/technique/77"
+     ],
+     "mrr": 0.2916666865348816
+    },
+    {
+     "triple": [
+      "tgt/group/44",
+      "uses",
+      "tgt/technique/11.1"
+     ],
+     "mrr": 0.01084931567311287
+    },
+    {
+     "triple": [
+      "tgt/group/44",
+      "uses",
+      "tgt/technique/41.3"
+     ],
+     "mrr": 0.4166666865348816
+    },
+    {
+     "triple": [
+      "tgt/group/46",
+      "uses",
+      "tgt/technique/35.2"
+     ],
+     "mrr": 0.30000001192092896
+    },
+    {
+     "triple": [
+      "tgt/group/46",
+      "uses",
+      "tgt/technique/85.2"
+     ],
+     "mrr": 0.6666666865348816
+    },
+    {
+     "triple": [
+      "tgt/group/48",
+      "uses",
+      "tgt/technique/44"
+     ],
+     "mrr": 0.12878787517547607
+    },
+    {
+     "triple": [
+      "tgt/group/48",
+      "uses",
+      "tgt/technique/53.0"
+     ],
+     "mrr": 0.10795454680919647
+    },
+    {
+     "triple": [
+      "tgt/group/48",
+      "uses",
+      "tgt/technique/87.2"
+     ],
+     "mrr": 0.16346153616905212
+    },
+    {
+     "triple": [
+      "tgt/group/49",
+      "uses",
+      "tgt/technique/21"
+     ],
+     "mrr": 0.75
+    },
+    {
+     "triple": [
+      "tgt/group/49",
+      "uses",
+      "tgt/technique/3.3"
+     ],
+     "mrr": 0.6000000238418579
+    },
+    {
+     "triple": [
+      "tgt/group/49",
+      "uses",
+      "tgt/technique/34.3"
+     ],
+     "mrr": 0.2884615361690521
+    },
+    {
+     "triple": [
+      "tgt/group/49",
+      "uses",
+      "tgt/technique/51.0"
+     ],
+     "mrr": 0.6666666865348816
+    },
+    {
+     "triple": [
+      "tgt/group/49",
+      "uses",
+      "tgt/technique/59.3"
+     ],
+     "mrr": 0.3214285671710968
+    },
+    {
+     "triple": [
+      "tgt/group/49",
+      "uses",
+      "tgt/technique/67.0"
+     ],
+     "mrr": 0.3499999940395355
+    },
+    {
+     "triple": [
+      "tgt/group/49",
+      "uses",
+      "tgt/technique/81.0"
+     ],
+     "mrr": 0.2916666865348816
+    },
+    {
+     "triple": [
+      "tgt/group/5",
+      "uses",
+      "tgt/technique/1.1"
+     ],
+     "mrr": 0.6666666865348816
+    },
+    {
+     "triple": [
+      "tgt/group/5",
+      "uses",
+      "tgt/technique/25.1"
+     ],
+     "mrr": 0.75
+    },
+    {
+     "triple": [
+      "tgt/group/5",
+      "uses",
+      "tgt/technique/34.0"
+     ],
+     "mrr": 0.2083333432674408
+    },
+    {
+     "triple": [
+      "tgt/group/5",
+      "uses",
+      "tgt/technique/39.1"
+     ],
+     "mrr": 0.6000000238418579
+    },
+    {
+     "triple": [
+      "tgt/group/5",
+      "uses",
+      "tgt/technique/39.2"
+     ],
+     "mrr": 1.0
+    },
+    {
+     "triple": [
+      "tgt/group/5",
+      "uses",
+      "tgt/technique/68.3"
+     ],
+     "mrr": 0.6666666865348816
+    },
+    {
+     "triple": [
+      "tgt/group/50",
+      "uses",
+      "tgt/technique/15.0"
+     ],
+     "mrr": 0.5714285969734192
+    },
+    {
+     "triple": [
+      "tgt/group/50",
+      "uses",
+      "tgt/technique/17.3"
+     ],
+     "mrr": 0.5555555820465088
+    },
+    {
+     "triple": [
+      "tgt/group/50",
+      "uses",
+      "tgt/technique/82.0"
+     ],
+     "mrr": 0.3055555522441864
+    },
+    {
+     "triple": [
+      "tgt/group/51",
+      "uses",
+      "tgt/technique/1.1"
+     ],
+     "mrr": 0.2666666805744171
+    },
+    {
+     "triple": [
+      "tgt/group/51",
+      "uses",
+      "tgt/technique/2.0"
+     ],
+     "mrr": 0.5833333134651184
+    },
+    {
+     "triple": [
+      "tgt/group/51",
+      "uses",
+      "tgt/technique/39.2"
+     ],
+     "mrr": 0.6000000238418579
+    },
+    {
+     "triple": [
+      "tgt/group/51",
+      "uses",
+      "tgt/technique/44"
+     ],
+     "mrr": 0.2666666805744171
+    },
+    {
+     "triple": [
+      "tgt/group/51",
+      "uses",
+      "tgt/technique/45.1"
+     ],
+     "mrr": 0.2857142984867096
+    },
+    {
+     "triple": [
+      "tgt/group/51",
+      "uses",
+      "tgt/technique/85"
+     ],
+     "mrr": 0.5249999761581421
+    },
+    {
+     "triple": [
+      "tgt/group/52",
+      "uses",
+      "tgt/technique/31.0"
+     ],
+     "mrr": 0.20000000298023224
+    },
+    {
+     "triple": [
+      "tgt/group/52",
+      "uses",
+      "tgt/technique/59.1"
+     ],
+     "mrr": 0.1527777761220932
+    },
+    {
+     "triple": [
+      "tgt/group/53",
+      "uses",
+      "tgt/technique/45.0"
+     ],
+     "mrr": 0.75
+    },
+    {
+     "triple": [
+      "tgt/group/53",
+      "uses",
+      "tgt/technique/57"
+     ],
+     "mrr": 1.0
+    },
+    {
+     "triple": [
+      "tgt/group/53",
+      "uses",
+      "tgt/technique/87.0"
+     ],
+     "mrr": 1.0
+    },
+    {
+     "triple": [
+      "tgt/group/54",
+      "uses",
+      "tgt/technique/36"
+     ],
+     "mrr": 0.21212121844291687
+    },
+    {
+     "triple": [
+      "tgt/group/54",
+      "uses",
+      "tgt/technique/75"
+     ],
+     "mrr": 0.375
+    },
+    {
+     "triple": [
+      "tgt/group/54",
+      "uses",
+      "tgt/technique/77.0"
+     ],
+     "mrr": 0.01473214291036129
+    },
+    {
+     "triple": [
+      "tgt/group/55",
+      "uses",
+      "tgt/technique/51.1"
+     ],
+     "mrr": 0.1607142835855484
+    },
+    {
+     "triple": [
+      "tgt/group/55",
+      "uses",
+      "tgt/technique/84.0"
+     ],
+     "mrr": 0.75
+    },
+    {
+     "triple": [
+      "tgt/group/56",
+      "uses",
+      "tgt/technique/15.0"
+     ],
+     "mrr": 0.1805555522441864
+    },
+    {
+     "triple": [
+      "tgt/group/56",
+      "uses",
+      "tgt/technique/34.1"
+     ],
+     "mrr": 0.2222222238779068
+    },
+    {
+     "triple": [
+      "tgt/group/56",
+      "uses",
+      "tgt/technique/35.0"
+     ],
+     "mrr": 0.015499195083975792
+    },
+    {
+     "triple": [
+      "tgt/group/56",
+      "uses",
+      "tgt/technique/65"
+     ],
+     "mrr": 0.4166666865348816
+    },
+    {
+     "triple": [
+      "tgt/group/56",
+      "uses",
+      "tgt/technique/86"
+     ],
+     "mrr": 0.375
+    },
+    {
+     "triple": [
+      "tgt/group/57",
+      "uses",
+      "tgt/technique/17.3"
+     ],
+     "mrr": 0.09774436056613922
+    },
+    {
+     "triple": [
+      "tgt/group/57",
+      "uses",
+      "tgt/technique/21.0"
+     ],
+     "mrr": 0.012918884865939617
+    },
+    {
+     "triple": [
+      "tgt/group/57",
+      "uses",
+      "tgt/technique/3.0"
+     ],
+     "mrr": 0.18333333730697632
+    },
+    {
+     "triple": [
+      "tgt/group/57",
+      "uses",
+      "tgt/technique/40.0"
+     ],
+     "mrr": 0.07500000298023224
+    },
+    {
+     "triple": [
+      "tgt/group/57",
+      "uses",
+      "tgt/technique/53"
+     ],
+     "mrr": 0.009753086604177952
+    },
+    {
+     "triple": [
+      "tgt/group/57",
+      "uses",
+      "tgt/technique/68.1"
+     ],
+     "mrr": 0.08712121844291687
+    },
+    {
+     "triple": [
+      "tgt/group/57",
+      "uses",
+      "tgt/technique/80.2"
+     ],
+     "mrr": 0.1071428656578064
+    },
+    {
+     "triple": [
+      "tgt/group/58",
+      "uses",
+      "tgt/technique/38.1"
+     ],
+     "mrr": 1.0
+    },
+    {
+     "triple": [
+      "tgt/group/58",
+      "uses",
+      "tgt/technique/75"
+     ],
+     "mrr": 0.75
+    },
+    {
+     "triple": [
+      "tgt/group/58",
+      "uses",
+      "tgt/technique/85.3"
+     ],
+     "mrr": 0.09313725680112839
+    },
+    {
+     "triple": [
+      "tgt/group/59",
+      "uses",
+      "tgt/technique/17"
+     ],
+     "mrr": 0.5625
+    },
+    {
+     "triple": [
+      "tgt/group/59",
+      "uses",
+      "tgt/technique/84.0"
+     ],
+     "mrr": 1.0
+    },
+    {
+     "triple": [
+      "tgt/group/6",
+      "uses",
+      "tgt/technique/19"
+     ],
+     "mrr": 0.04298245906829834
+    },
+    {
+     "triple": [
+      "tgt/group/6",
+      "uses",
+      "tgt/technique/39.1"
+     ],
+     "mrr": 0.0972222238779068
+    },
+    {
+     "triple": [
+      "tgt/group/6",
+      "uses",
+      "tgt/technique/39.2"
+     ],
+     "mrr": 0.17142857611179352
+    },
+    {
+     "triple": [
+      "tgt/group/6",
+      "uses",
+      "tgt/technique/53.0"
+     ],
+     "mrr": 0.15555556118488312
+    },
+    {
+     "triple": [
+      "tgt/group/6",
+      "uses",
+      "tgt/technique/6"
+     ],
+     "mrr": 0.1339285671710968
+    },
+    {
+     "triple": [
+      "tgt/group/6",
+      "uses",
+      "tgt/technique/87.1"
+     ],
+     "mrr": 0.2380952537059784
+    },
+    {
+     "triple": [
+      "tgt/group/60",
+      "uses",
+      "tgt/technique/13.2"
+     ],
+     "mrr": 0.75
+    },
+    {
+     "triple": [
+      "tgt/group/60",
+      "uses",
+      "tgt/technique/2.0"
+     ],
+     "mrr": 0.1875
+    },
+    {
+     "triple": [
+      "tgt/group/60",
+      "uses",
+      "tgt/technique/32"
+     ],
+     "mrr": 0.2380952537059784
+    },
+    {
+     "triple": [
+      "tgt/group/60",
+      "uses",
+      "tgt/technique/60"
+     ],
+     "mrr": 1.0
+    },
+    {
+     "triple": [
+      "tgt/group/60",
+      "uses",
+      "tgt/technique/7.2"
+     ],
+     "mrr": 1.0
+    },
+    {
+     "triple": [
+      "tgt/group/60",
+      "uses",
+      "tgt/technique/77.0"
+     ],
+     "mrr": 0.17142857611179352
+    },
+    {
+     "triple": [
+      "tgt/group/60",
+      "uses",
+      "tgt/technique/79"
+     ],
+     "mrr": 0.6666666865348816
+    },
+    {
+     "triple": [
+      "tgt/group/60",
+      "uses",
+      "tgt/technique/84.0"
+     ],
+     "mrr": 0.75
+    },
+    {
+     "triple": [
+      "tgt/group/60",
+      "uses",
+      "tgt/technique/88.2"
+     ],
+     "mrr": 1.0
+    },
+    {
+     "triple": [
+      "tgt/group/61",
+      "uses",
+      "tgt/technique/34.0"
+     ],
+     "mrr": 0.08496732264757156
+    },
+    {
+     "triple": [
+      "tgt/group/61",
+      "uses",
+      "tgt/technique/60.0"
+     ],
+     "mrr": 0.2916666865348816
+    },
+    {
+     "triple": [
+      "tgt/group/61",
+      "uses",
+      "tgt/technique/82.1"
+     ],
+     "mrr": 0.5833333134651184
+    },
+    {
+     "triple": [
+      "tgt/group/62",
+      "uses",
+      "tgt/technique/32.0"
+     ],
+     "mrr": 0.1875
+    },
+    {
+     "triple": [
+      "tgt/group/62",
+      "uses",
+      "tgt/technique/32.1"
+     ],
+     "mrr": 0.012312312610447407
+    },
+    {
+     "triple": [
+      "tgt/group/62",
+      "uses",
+      "tgt/technique/60.0"
+     ],
+     "mrr": 0.2916666865348816
+    },
+    {
+     "triple": [
+      "tgt/group/62",
+      "uses",
+      "tgt/technique/67"
+     ],
+     "mrr": 0.3125
+    },
+    {
+     "triple": [
+      "tgt/group/63",
+      "uses",
+      "tgt/technique/29"
+     ],
+     "mrr": 0.4166666865348816
+    },
+    {
+     "triple": [
+      "tgt/group/63",
+      "uses",
+      "tgt/technique/63.3"
+     ],
+     "mrr": 0.1964285671710968
+    },
+    {
+     "triple": [
+      "tgt/group/64",
+      "uses",
+      "tgt/technique/13.3"
+     ],
+     "mrr": 0.5
+    },
+    {
+     "triple": [
+      "tgt/group/64",
+      "uses",
+      "tgt/technique/16"
+     ],
+     "mrr": 0.75
+    },
+    {
+     "triple": [
+      "tgt/group/64",
+      "uses",
+      "tgt/technique/75"
+     ],
+     "mrr": 0.4166666865348816
+    },
+    {
+     "triple": [
+      "tgt/group/65",
+      "uses",
+      "tgt/technique/1.2"
+     ],
+     "mrr": 0.2291666716337204
+    },
+    {
+     "triple": [
+      "tgt/group/65",
+      "uses",
+      "tgt/technique/14"
+     ],
+     "mrr": 0.2666666805744171
+    },
+    {
+     "triple": [
+      "tgt/group/65",
+      "uses",
+      "tgt/technique/40"
+     ],
+     "mrr": 0.5625
+    },
+    {
+     "triple": [
+      "tgt/group/65",
+      "uses",
+      "tgt/technique/52.0"
+     ],
+     "mrr": 0.3333333432674408
+    },
+    {
+     "triple": [
+      "tgt/group/66",
+      "uses",
+      "tgt/technique/3.1"
+     ],
+     "mrr": 0.75
+    },
+    {
+     "triple": [
+      "tgt/group/66",
+      "uses",
+      "tgt/technique/56.1"
+     ],
+     "mrr": 0.75
+    },
+    {
+     "triple": [
+      "tgt/group/67",
+      "uses",
+      "tgt/technique/26"
+     ],
+     "mrr": 0.4166666865348816
+    },
+    {
+     "triple": [
+      "tgt/group/67",
+      "uses",
+      "tgt/technique/68"
+     ],
+     "mrr": 0.1845238208770752
+    },
+    {
+     "triple": [
+      "tgt/group/67",
+      "uses",
+      "tgt/technique/75"
+     ],
+     "mrr": 0.3214285671710968
+    },
+    {
+     "triple": [
+      "tgt/group/68",
+      "uses",
+      "tgt/technique/27"
+     ],
+     "mrr": 0.5
+    },
+    {
+     "triple": [
+      "tgt/group/68",
+      "uses",
+      "tgt/technique/29"
+     ],
+     "mrr": 0.5833333134651184
+    },
+    {
+     "triple": [
+      "tgt/group/68",
+      "uses",
+      "tgt/technique/31.0"
+     ],
+     "mrr": 0.2380952537059784
+    },
+    {
+     "triple": [
+      "tgt/group/68",
+      "uses",
+      "tgt/technique/31.1"
+     ],
+     "mrr": 0.28333333134651184
+    },
+    {
+     "triple": [
+      "tgt/group/68",
+      "uses",
+      "tgt/technique/63.0"
+     ],
+     "mrr": 0.3055555522441864
+    },
+    {
+     "triple": [
+      "tgt/group/69",
+      "uses",
+      "tgt/technique/31"
+     ],
+     "mrr": 1.0
+    },
+    {
+     "triple": [
+      "tgt/group/7",
+      "uses",
+      "tgt/technique/13"
+     ],
+     "mrr": 0.15833333134651184
+    },
+    {
+     "triple": [
+      "tgt/group/7",
+      "uses",
+      "tgt/technique/44.2"
+     ],
+     "mrr": 0.6666666865348816
+    },
+    {
+     "triple": [
+      "tgt/group/70",
+      "uses",
+      "tgt/technique/2"
+     ],
+     "mrr": 1.0
+    },
+    {
+     "triple": [
+      "tgt/group/70",
+      "uses",
+      "tgt/technique/42"
+     ],
+     "mrr": 0.21666666865348816
+    },
+    {
+     "triple": [
+      "tgt/group/70",
+      "uses",
+      "tgt/technique/67.1"
+     ],
+     "mrr": 0.2777777910232544
+    },
+    {
+     "triple": [
+      "tgt/group/70",
+      "uses",
+      "tgt/technique/80"
+     ],
+     "mrr": 0.5277777910232544
+    },
+    {
+     "triple": [
+      "tgt/group/70",
+      "uses",
+      "tgt/technique/88.1"
+     ],
+     "mrr": 0.625
+    },
+    {
+     "triple": [
+      "tgt/group/71",
+      "uses",
+      "tgt/technique/63.3"
+     ],
+     "mrr": 1.0
+    },
+    {
+     "triple": [
+      "tgt/group/72",
+      "uses",
+      "tgt/technique/13.0"
+     ],
+     "mrr": 0.4166666865348816
+    },
+    {
+     "triple": [
+      "tgt/group/72",
+      "uses",
+      "tgt/technique/58"
+     ],
+     "mrr": 0.5454545617103577
+    },
+    {
+     "triple": [
+      "tgt/group/72",
+      "uses",
+      "tgt/technique/84.0"
+     ],
+     "mrr": 0.5625
+    },
+    {
+     "triple": [
+      "tgt/group/73",
+      "uses",
+      "tgt/technique/68.1"
+     ],
+     "mrr": 0.125
+    },
+    {
+     "triple": [
+      "tgt/group/73",
+      "uses",
+      "tgt/technique/74.1"
+     ],
+     "mrr": 0.6666666865348816
+    },
+    {
+     "triple": [
+      "tgt/group/74",
+      "uses",
+      "tgt/technique/85.0"
+     ],
+     "mrr": 1.0
+    },
+    {
+     "triple": [
+      "tgt/group/75",
+      "uses",
+      "tgt/technique/73"
+     ],
+     "mrr": 0.75
+    },
+    {
+     "triple": [
+      "tgt/group/75",
+      "uses",
+      "tgt/technique/86"
+     ],
+     "mrr": 0.4166666865348816
+    },
+    {
+     "triple": [
+      "tgt/group/75",
+      "uses",
+      "tgt/technique/88.3"
+     ],
+     "mrr": 0.3125
+    },
+    {
+     "triple": [
+      "tgt/group/75",
+      "uses",
+      "tgt/technique/9"
+     ],
+     "mrr": 0.2763157784938812
+    },
+    {
+     "triple": [
+      "tgt/group/76",
+      "uses",
+      "tgt/technique/28.2"
+     ],
+     "mrr": 0.625
+    },
+    {
+     "triple": [
+      "tgt/group/76",
+      "uses",
+      "tgt/technique/45.0"
+     ],
+     "mrr": 0.02666666731238365
+    },
+    {
+     "triple": [
+      "tgt/group/76",
+      "uses",
+      "tgt/technique/46"
+     ],
+     "mrr": 0.27941176295280457
+    },
+    {
+     "triple": [
+      "tgt/group/76",
+      "uses",
+      "tgt/technique/7.1"
+     ],
+     "mrr": 0.6666666865348816
+    },
+    {
+     "triple": [
+      "tgt/group/77",
+      "uses",
+      "tgt/technique/25.0"
+     ],
+     "mrr": 0.75
+    },
+    {
+     "triple": [
+      "tgt/group/77",
+      "uses",
+      "tgt/technique/45.1"
+     ],
+     "mrr": 0.6666666865348816
+    },
+    {
+     "triple": [
+      "tgt/group/77",
+      "uses",
+      "tgt/technique/61.0"
+     ],
+     "mrr": 1.0
+    },
+    {
+     "triple": [
+      "tgt/group/77",
+      "uses",
+      "tgt/technique/67.1"
+     ],
+     "mrr": 0.5454545617103577
+    },
+    {
+     "triple": [
+      "tgt/group/78",
+      "uses",
+      "tgt/technique/19.1"
+     ],
+     "mrr": 0.20512820780277252
+    },
+    {
+     "triple": [
+      "tgt/group/78",
+      "uses",
+      "tgt/technique/27.0"
+     ],
+     "mrr": 0.18333333730697632
+    },
+    {
+     "triple": [
+      "tgt/group/79",
+      "uses",
+      "tgt/technique/40"
+     ],
+     "mrr": 0.013290501199662685
+    },
+    {
+     "triple": [
+      "tgt/group/9",
+      "uses",
+      "tgt/technique/50.0"
+     ],
+     "mrr": 0.1458333432674408
+    }
+   ],
+   "seconds": 411.7
+  },
+  {
+   "seed": 20261114,
+   "selected_round": 20,
+   "validation_mrr_history": [
+    0.26053786277770996,
+    0.2888907492160797,
+    0.2769409716129303,
+    0.2820702791213989,
+    0.2808549106121063,
+    0.30262643098831177,
+    0.3086313307285309,
+    0.31612256169319153,
+    0.2930077910423279,
+    0.26302826404571533,
+    0.32267820835113525,
+    0.3209165334701538,
+    0.28506654500961304,
+    0.2922821342945099,
+    0.29033800959587097,
+    0.2888607382774353,
+    0.27731743454933167,
+    0.31999003887176514,
+    0.3128771185874939,
+    0.30551430583000183,
+    0.32589125633239746
+   ],
+   "selected_validation_mrr": 0.32589125633239746,
+   "test": {
+    "mrr": 0.3924283981323242,
+    "hits@1": 0.19117647409439087,
+    "hits@3": 0.4889705777168274,
+    "hits@10": 0.8529411554336548,
+    "triples_evaluated": 272,
+    "ranking_queries": 544
+   },
+   "test_by_relation": {
+    "uses": {
+     "mrr": 0.3924283981323242,
+     "hits@1": 0.19117647409439087,
+     "hits@3": 0.4889705777168274,
+     "hits@10": 0.8529411554336548,
+     "triples_evaluated": 272,
+     "ranking_queries": 544
+    }
+   },
+   "per_query_test": [
+    {
+     "triple": [
+      "tgt/group/0",
+      "uses",
+      "tgt/technique/27"
+     ],
+     "mrr": 0.3055555522441864
+    },
+    {
+     "triple": [
+      "tgt/group/0",
+      "uses",
+      "tgt/technique/36"
+     ],
+     "mrr": 1.0
+    },
+    {
+     "triple": [
+      "tgt/group/0",
+      "uses",
+      "tgt/technique/41.0"
+     ],
+     "mrr": 0.30000001192092896
+    },
+    {
+     "triple": [
+      "tgt/group/0",
+      "uses",
+      "tgt/technique/58.0"
+     ],
+     "mrr": 0.01409107819199562
+    },
+    {
+     "triple": [
+      "tgt/group/0",
+      "uses",
+      "tgt/technique/66"
+     ],
+     "mrr": 0.550000011920929
+    },
+    {
+     "triple": [
+      "tgt/group/1",
+      "uses",
+      "tgt/technique/13.2"
+     ],
+     "mrr": 0.009774436242878437
+    },
+    {
+     "triple": [
+      "tgt/group/1",
+      "uses",
+      "tgt/technique/40.1"
+     ],
+     "mrr": 0.4166666865348816
+    },
+    {
+     "triple": [
+      "tgt/group/1",
+      "uses",
+      "tgt/technique/83.1"
+     ],
+     "mrr": 0.4166666865348816
+    },
+    {
+     "triple": [
+      "tgt/group/10",
+      "uses",
+      "tgt/technique/13.3"
+     ],
+     "mrr": 0.75
+    },
+    {
+     "triple": [
+      "tgt/group/10",
+      "uses",
+      "tgt/technique/16"
+     ],
+     "mrr": 0.2380952537059784
+    },
+    {
+     "triple": [
+      "tgt/group/10",
+      "uses",
+      "tgt/technique/64"
+     ],
+     "mrr": 0.2916666865348816
+    },
+    {
+     "triple": [
+      "tgt/group/10",
+      "uses",
+      "tgt/technique/77"
+     ],
+     "mrr": 0.2083333432674408
+    },
+    {
+     "triple": [
+      "tgt/group/11",
+      "uses",
+      "tgt/technique/30"
+     ],
+     "mrr": 0.75
+    },
+    {
+     "triple": [
+      "tgt/group/11",
+      "uses",
+      "tgt/technique/48"
+     ],
+     "mrr": 0.2083333432674408
+    },
+    {
+     "triple": [
+      "tgt/group/11",
+      "uses",
+      "tgt/technique/50.1"
+     ],
+     "mrr": 0.75
+    },
+    {
+     "triple": [
+      "tgt/group/11",
+      "uses",
+      "tgt/technique/67.1"
+     ],
+     "mrr": 0.2884615361690521
+    },
+    {
+     "triple": [
+      "tgt/group/11",
+      "uses",
+      "tgt/technique/71"
+     ],
+     "mrr": 0.3333333432674408
+    },
+    {
+     "triple": [
+      "tgt/group/12",
+      "uses",
+      "tgt/technique/48"
+     ],
+     "mrr": 0.5
+    },
+    {
+     "triple": [
+      "tgt/group/12",
+      "uses",
+      "tgt/technique/60.1"
+     ],
+     "mrr": 0.14166666567325592
+    },
+    {
+     "triple": [
+      "tgt/group/12",
+      "uses",
+      "tgt/technique/78.1"
+     ],
+     "mrr": 0.1130952388048172
+    },
+    {
+     "triple": [
+      "tgt/group/12",
+      "uses",
+      "tgt/technique/81"
+     ],
+     "mrr": 0.6666666865348816
+    },
+    {
+     "triple": [
+      "tgt/group/13",
+      "uses",
+      "tgt/technique/25.1"
+     ],
+     "mrr": 0.2222222238779068
+    },
+    {
+     "triple": [
+      "tgt/group/13",
+      "uses",
+      "tgt/technique/3.1"
+     ],
+     "mrr": 0.21212121844291687
+    },
+    {
+     "triple": [
+      "tgt/group/13",
+      "uses",
+      "tgt/technique/35.2"
+     ],
+     "mrr": 0.032608695328235626
+    },
+    {
+     "triple": [
+      "tgt/group/13",
+      "uses",
+      "tgt/technique/40"
+     ],
+     "mrr": 0.5555555820465088
+    },
+    {
+     "triple": [
+      "tgt/group/13",
+      "uses",
+      "tgt/technique/5.0"
+     ],
+     "mrr": 0.19607843458652496
+    },
+    {
+     "triple": [
+      "tgt/group/13",
+      "uses",
+      "tgt/technique/86.0"
+     ],
+     "mrr": 0.30000001192092896
+    },
+    {
+     "triple": [
+      "tgt/group/14",
+      "uses",
+      "tgt/technique/29"
+     ],
+     "mrr": 1.0
+    },
+    {
+     "triple": [
+      "tgt/group/15",
+      "uses",
+      "tgt/technique/24.1"
+     ],
+     "mrr": 0.20000000298023224
+    },
+    {
+     "triple": [
+      "tgt/group/15",
+      "uses",
+      "tgt/technique/28"
+     ],
+     "mrr": 0.375
+    },
+    {
+     "triple": [
+      "tgt/group/15",
+      "uses",
+      "tgt/technique/42.0"
+     ],
+     "mrr": 0.2083333432674408
+    },
+    {
+     "triple": [
+      "tgt/group/15",
+      "uses",
+      "tgt/technique/56.1"
+     ],
+     "mrr": 0.25
+    },
+    {
+     "triple": [
+      "tgt/group/15",
+      "uses",
+      "tgt/technique/68.1"
+     ],
+     "mrr": 0.12142857909202576
+    },
+    {
+     "triple": [
+      "tgt/group/15",
+      "uses",
+      "tgt/technique/70.0"
+     ],
+     "mrr": 0.3499999940395355
+    },
+    {
+     "triple": [
+      "tgt/group/15",
+      "uses",
+      "tgt/technique/80.3"
+     ],
+     "mrr": 0.2916666865348816
+    },
+    {
+     "triple": [
+      "tgt/group/15",
+      "uses",
+      "tgt/technique/82.2"
+     ],
+     "mrr": 0.2083333432674408
+    },
+    {
+     "triple": [
+      "tgt/group/16",
+      "uses",
+      "tgt/technique/17.0"
+     ],
+     "mrr": 0.2083333432674408
+    },
+    {
+     "triple": [
+      "tgt/group/16",
+      "uses",
+      "tgt/technique/2"
+     ],
+     "mrr": 0.5555555820465088
+    },
+    {
+     "triple": [
+      "tgt/group/16",
+      "uses",
+      "tgt/technique/38.1"
+     ],
+     "mrr": 0.1454545557498932
+    },
+    {
+     "triple": [
+      "tgt/group/16",
+      "uses",
+      "tgt/technique/66.1"
+     ],
+     "mrr": 0.2916666567325592
+    },
+    {
+     "triple": [
+      "tgt/group/16",
+      "uses",
+      "tgt/technique/7.3"
+     ],
+     "mrr": 0.3055555522441864
+    },
+    {
+     "triple": [
+      "tgt/group/17",
+      "uses",
+      "tgt/technique/37.0"
+     ],
+     "mrr": 0.3499999940395355
+    },
+    {
+     "triple": [
+      "tgt/group/17",
+      "uses",
+      "tgt/technique/67.0"
+     ],
+     "mrr": 0.4166666865348816
+    },
+    {
+     "triple": [
+      "tgt/group/18",
+      "uses",
+      "tgt/technique/3"
+     ],
+     "mrr": 0.5
+    },
+    {
+     "triple": [
+      "tgt/group/18",
+      "uses",
+      "tgt/technique/50.1"
+     ],
+     "mrr": 0.6666666865348816
+    },
+    {
+     "triple": [
+      "tgt/group/19",
+      "uses",
+      "tgt/technique/42"
+     ],
+     "mrr": 0.2380952537059784
+    },
+    {
+     "triple": [
+      "tgt/group/19",
+      "uses",
+      "tgt/technique/47.0"
+     ],
+     "mrr": 1.0
+    },
+    {
+     "triple": [
+      "tgt/group/19",
+      "uses",
+      "tgt/technique/51.1"
+     ],
+     "mrr": 0.03606557473540306
+    },
+    {
+     "triple": [
+      "tgt/group/19",
+      "uses",
+      "tgt/technique/56"
+     ],
+     "mrr": 0.01285068690776825
+    },
+    {
+     "triple": [
+      "tgt/group/2",
+      "uses",
+      "tgt/technique/0"
+     ],
+     "mrr": 0.25
+    },
+    {
+     "triple": [
+      "tgt/group/2",
+      "uses",
+      "tgt/technique/25.1"
+     ],
+     "mrr": 0.3499999940395355
+    },
+    {
+     "triple": [
+      "tgt/group/2",
+      "uses",
+      "tgt/technique/31.0"
+     ],
+     "mrr": 0.25
+    },
+    {
+     "triple": [
+      "tgt/group/2",
+      "uses",
+      "tgt/technique/45.2"
+     ],
+     "mrr": 0.3499999940395355
+    },
+    {
+     "triple": [
+      "tgt/group/2",
+      "uses",
+      "tgt/technique/8"
+     ],
+     "mrr": 0.1547619104385376
+    },
+    {
+     "triple": [
+      "tgt/group/20",
+      "uses",
+      "tgt/technique/27"
+     ],
+     "mrr": 0.375
+    },
+    {
+     "triple": [
+      "tgt/group/20",
+      "uses",
+      "tgt/technique/34.1"
+     ],
+     "mrr": 0.13124999403953552
+    },
+    {
+     "triple": [
+      "tgt/group/20",
+      "uses",
+      "tgt/technique/36"
+     ],
+     "mrr": 0.1190476268529892
+    },
+    {
+     "triple": [
+      "tgt/group/20",
+      "uses",
+      "tgt/technique/41.0"
+     ],
+     "mrr": 0.09774436056613922
+    },
+    {
+     "triple": [
+      "tgt/group/20",
+      "uses",
+      "tgt/technique/48"
+     ],
+     "mrr": 0.5
+    },
+    {
+     "triple": [
+      "tgt/group/20",
+      "uses",
+      "tgt/technique/58"
+     ],
+     "mrr": 0.1071428582072258
+    },
+    {
+     "triple": [
+      "tgt/group/20",
+      "uses",
+      "tgt/technique/86"
+     ],
+     "mrr": 0.2291666716337204
+    },
+    {
+     "triple": [
+      "tgt/group/21",
+      "uses",
+      "tgt/technique/24.2"
+     ],
+     "mrr": 1.0
+    },
+    {
+     "triple": [
+      "tgt/group/21",
+      "uses",
+      "tgt/technique/25.1"
+     ],
+     "mrr": 1.0
+    },
+    {
+     "triple": [
+      "tgt/group/21",
+      "uses",
+      "tgt/technique/28.0"
+     ],
+     "mrr": 1.0
+    },
+    {
+     "triple": [
+      "tgt/group/21",
+      "uses",
+      "tgt/technique/34.2"
+     ],
+     "mrr": 0.3125
+    },
+    {
+     "triple": [
+      "tgt/group/21",
+      "uses",
+      "tgt/technique/40"
+     ],
+     "mrr": 0.75
+    },
+    {
+     "triple": [
+      "tgt/group/21",
+      "uses",
+      "tgt/technique/48"
+     ],
+     "mrr": 0.375
+    },
+    {
+     "triple": [
+      "tgt/group/21",
+      "uses",
+      "tgt/technique/51.1"
+     ],
+     "mrr": 0.625
+    },
+    {
+     "triple": [
+      "tgt/group/21",
+      "uses",
+      "tgt/technique/73.0"
+     ],
+     "mrr": 1.0
+    },
+    {
+     "triple": [
+      "tgt/group/22",
+      "uses",
+      "tgt/technique/27"
+     ],
+     "mrr": 0.6666666865348816
+    },
+    {
+     "triple": [
+      "tgt/group/22",
+      "uses",
+      "tgt/technique/44.2"
+     ],
+     "mrr": 0.2916666865348816
+    },
+    {
+     "triple": [
+      "tgt/group/22",
+      "uses",
+      "tgt/technique/47.0"
+     ],
+     "mrr": 0.6666666865348816
+    },
+    {
+     "triple": [
+      "tgt/group/22",
+      "uses",
+      "tgt/technique/57.0"
+     ],
+     "mrr": 0.6000000238418579
+    },
+    {
+     "triple": [
+      "tgt/group/22",
+      "uses",
+      "tgt/technique/69"
+     ],
+     "mrr": 0.02119927480816841
+    },
+    {
+     "triple": [
+      "tgt/group/23",
+      "uses",
+      "tgt/technique/36.1"
+     ],
+     "mrr": 0.16249999403953552
+    },
+    {
+     "triple": [
+      "tgt/group/23",
+      "uses",
+      "tgt/technique/5.0"
+     ],
+     "mrr": 0.5714285969734192
+    },
+    {
+     "triple": [
+      "tgt/group/24",
+      "uses",
+      "tgt/technique/28.1"
+     ],
+     "mrr": 0.2916666865348816
+    },
+    {
+     "triple": [
+      "tgt/group/24",
+      "uses",
+      "tgt/technique/39.2"
+     ],
+     "mrr": 0.6666666865348816
+    },
+    {
+     "triple": [
+      "tgt/group/24",
+      "uses",
+      "tgt/technique/5.0"
+     ],
+     "mrr": 0.625
+    },
+    {
+     "triple": [
+      "tgt/group/24",
+      "uses",
+      "tgt/technique/79"
+     ],
+     "mrr": 0.375
+    },
+    {
+     "triple": [
+      "tgt/group/24",
+      "uses",
+      "tgt/technique/89"
+     ],
+     "mrr": 1.0
+    },
+    {
+     "triple": [
+      "tgt/group/25",
+      "uses",
+      "tgt/technique/3.2"
+     ],
+     "mrr": 0.6666666865348816
+    },
+    {
+     "triple": [
+      "tgt/group/25",
+      "uses",
+      "tgt/technique/5.0"
+     ],
+     "mrr": 0.75
+    },
+    {
+     "triple": [
+      "tgt/group/25",
+      "uses",
+      "tgt/technique/88.0"
+     ],
+     "mrr": 0.75
+    },
+    {
+     "triple": [
+      "tgt/group/26",
+      "uses",
+      "tgt/technique/59.1"
+     ],
+     "mrr": 0.12777778506278992
+    },
+    {
+     "triple": [
+      "tgt/group/26",
+      "uses",
+      "tgt/technique/6.0"
+     ],
+     "mrr": 0.2083333432674408
+    },
+    {
+     "triple": [
+      "tgt/group/26",
+      "uses",
+      "tgt/technique/60"
+     ],
+     "mrr": 0.5333333611488342
+    },
+    {
+     "triple": [
+      "tgt/group/26",
+      "uses",
+      "tgt/technique/64"
+     ],
+     "mrr": 0.375
+    },
+    {
+     "triple": [
+      "tgt/group/26",
+      "uses",
+      "tgt/technique/85.2"
+     ],
+     "mrr": 0.3333333432674408
+    },
+    {
+     "triple": [
+      "tgt/group/27",
+      "uses",
+      "tgt/technique/42.1"
+     ],
+     "mrr": 0.6666666865348816
+    },
+    {
+     "triple": [
+      "tgt/group/27",
+      "uses",
+      "tgt/technique/46"
+     ],
+     "mrr": 0.17045454680919647
+    },
+    {
+     "triple": [
+      "tgt/group/27",
+      "uses",
+      "tgt/technique/85"
+     ],
+     "mrr": 0.1875
+    },
+    {
+     "triple": [
+      "tgt/group/28",
+      "uses",
+      "tgt/technique/15.2"
+     ],
+     "mrr": 0.3333333432674408
+    },
+    {
+     "triple": [
+      "tgt/group/28",
+      "uses",
+      "tgt/technique/32.3"
+     ],
+     "mrr": 0.5714285969734192
+    },
+    {
+     "triple": [
+      "tgt/group/28",
+      "uses",
+      "tgt/technique/52.2"
+     ],
+     "mrr": 0.5833333134651184
+    },
+    {
+     "triple": [
+      "tgt/group/28",
+      "uses",
+      "tgt/technique/59.3"
+     ],
+     "mrr": 0.625
+    },
+    {
+     "triple": [
+      "tgt/group/28",
+      "uses",
+      "tgt/technique/83.0"
+     ],
+     "mrr": 0.5833333134651184
+    },
+    {
+     "triple": [
+      "tgt/group/29",
+      "uses",
+      "tgt/technique/88"
+     ],
+     "mrr": 0.625
+    },
+    {
+     "triple": [
+      "tgt/group/30",
+      "uses",
+      "tgt/technique/11"
+     ],
+     "mrr": 0.3125
+    },
+    {
+     "triple": [
+      "tgt/group/30",
+      "uses",
+      "tgt/technique/12.1"
+     ],
+     "mrr": 0.016013871878385544
+    },
+    {
+     "triple": [
+      "tgt/group/30",
+      "uses",
+      "tgt/technique/42"
+     ],
+     "mrr": 1.0
+    },
+    {
+     "triple": [
+      "tgt/group/30",
+      "uses",
+      "tgt/technique/63.0"
+     ],
+     "mrr": 0.5625
+    },
+    {
+     "triple": [
+      "tgt/group/30",
+      "uses",
+      "tgt/technique/66.0"
+     ],
+     "mrr": 0.2916666865348816
+    },
+    {
+     "triple": [
+      "tgt/group/30",
+      "uses",
+      "tgt/technique/7"
+     ],
+     "mrr": 1.0
+    },
+    {
+     "triple": [
+      "tgt/group/30",
+      "uses",
+      "tgt/technique/72"
+     ],
+     "mrr": 0.30000001192092896
+    },
+    {
+     "triple": [
+      "tgt/group/31",
+      "uses",
+      "tgt/technique/12"
+     ],
+     "mrr": 0.3333333432674408
+    },
+    {
+     "triple": [
+      "tgt/group/31",
+      "uses",
+      "tgt/technique/14"
+     ],
+     "mrr": 0.0912698432803154
+    },
+    {
+     "triple": [
+      "tgt/group/31",
+      "uses",
+      "tgt/technique/15.1"
+     ],
+     "mrr": 0.09583333134651184
+    },
+    {
+     "triple": [
+      "tgt/group/31",
+      "uses",
+      "tgt/technique/18.1"
+     ],
+     "mrr": 0.0634920671582222
+    },
+    {
+     "triple": [
+      "tgt/group/31",
+      "uses",
+      "tgt/technique/3"
+     ],
+     "mrr": 0.75
+    },
+    {
+     "triple": [
+      "tgt/group/32",
+      "uses",
+      "tgt/technique/23.1"
+     ],
+     "mrr": 0.1964285671710968
+    },
+    {
+     "triple": [
+      "tgt/group/32",
+      "uses",
+      "tgt/technique/27"
+     ],
+     "mrr": 0.13333334028720856
+    },
+    {
+     "triple": [
+      "tgt/group/32",
+      "uses",
+      "tgt/technique/47.2"
+     ],
+     "mrr": 0.1547619104385376
+    },
+    {
+     "triple": [
+      "tgt/group/34",
+      "uses",
+      "tgt/technique/18.1"
+     ],
+     "mrr": 0.75
+    },
+    {
+     "triple": [
+      "tgt/group/34",
+      "uses",
+      "tgt/technique/68.1"
+     ],
+     "mrr": 0.2916666865348816
+    },
+    {
+     "triple": [
+      "tgt/group/35",
+      "uses",
+      "tgt/technique/17.1"
+     ],
+     "mrr": 0.30000001192092896
+    },
+    {
+     "triple": [
+      "tgt/group/35",
+      "uses",
+      "tgt/technique/23.1"
+     ],
+     "mrr": 0.29545456171035767
+    },
+    {
+     "triple": [
+      "tgt/group/35",
+      "uses",
+      "tgt/technique/34.3"
+     ],
+     "mrr": 0.5416666865348816
+    },
+    {
+     "triple": [
+      "tgt/group/35",
+      "uses",
+      "tgt/technique/74.0"
+     ],
+     "mrr": 0.375
+    },
+    {
+     "triple": [
+      "tgt/group/37",
+      "uses",
+      "tgt/technique/15.1"
+     ],
+     "mrr": 0.02194317616522312
+    },
+    {
+     "triple": [
+      "tgt/group/37",
+      "uses",
+      "tgt/technique/18.0"
+     ],
+     "mrr": 0.1026785746216774
+    },
+    {
+     "triple": [
+      "tgt/group/37",
+      "uses",
+      "tgt/technique/19"
+     ],
+     "mrr": 0.13124999403953552
+    },
+    {
+     "triple": [
+      "tgt/group/38",
+      "uses",
+      "tgt/technique/0"
+     ],
+     "mrr": 0.2666666805744171
+    },
+    {
+     "triple": [
+      "tgt/group/38",
+      "uses",
+      "tgt/technique/17.2"
+     ],
+     "mrr": 0.1666666716337204
+    },
+    {
+     "triple": [
+      "tgt/group/38",
+      "uses",
+      "tgt/technique/34.0"
+     ],
+     "mrr": 0.15000000596046448
+    },
+    {
+     "triple": [
+      "tgt/group/38",
+      "uses",
+      "tgt/technique/34.1"
+     ],
+     "mrr": 0.3333333432674408
+    },
+    {
+     "triple": [
+      "tgt/group/38",
+      "uses",
+      "tgt/technique/5.0"
+     ],
+     "mrr": 0.17045454680919647
+    },
+    {
+     "triple": [
+      "tgt/group/38",
+      "uses",
+      "tgt/technique/55"
+     ],
+     "mrr": 0.12941177189350128
+    },
+    {
+     "triple": [
+      "tgt/group/38",
+      "uses",
+      "tgt/technique/60.0"
+     ],
+     "mrr": 0.12878787517547607
+    },
+    {
+     "triple": [
+      "tgt/group/38",
+      "uses",
+      "tgt/technique/74.1"
+     ],
+     "mrr": 0.015176151879131794
+    },
+    {
+     "triple": [
+      "tgt/group/39",
+      "uses",
+      "tgt/technique/18.1"
+     ],
+     "mrr": 0.08712121844291687
+    },
+    {
+     "triple": [
+      "tgt/group/39",
+      "uses",
+      "tgt/technique/34"
+     ],
+     "mrr": 0.009772256948053837
+    },
+    {
+     "triple": [
+      "tgt/group/39",
+      "uses",
+      "tgt/technique/39.0"
+     ],
+     "mrr": 0.22499999403953552
+    },
+    {
+     "triple": [
+      "tgt/group/4",
+      "uses",
+      "tgt/technique/11.1"
+     ],
+     "mrr": 0.6666666865348816
+    },
+    {
+     "triple": [
+      "tgt/group/41",
+      "uses",
+      "tgt/technique/27"
+     ],
+     "mrr": 0.3125
+    },
+    {
+     "triple": [
+      "tgt/group/41",
+      "uses",
+      "tgt/technique/36.1"
+     ],
+     "mrr": 0.6666666865348816
+    },
+    {
+     "triple": [
+      "tgt/group/41",
+      "uses",
+      "tgt/technique/38.1"
+     ],
+     "mrr": 0.15555556118488312
+    },
+    {
+     "triple": [
+      "tgt/group/41",
+      "uses",
+      "tgt/technique/82.1"
+     ],
+     "mrr": 0.6666666865348816
+    },
+    {
+     "triple": [
+      "tgt/group/42",
+      "uses",
+      "tgt/technique/51.0"
+     ],
+     "mrr": 0.01806158758699894
+    },
+    {
+     "triple": [
+      "tgt/group/43",
+      "uses",
+      "tgt/technique/15.1"
+     ],
+     "mrr": 0.2291666716337204
+    },
+    {
+     "triple": [
+      "tgt/group/43",
+      "uses",
+      "tgt/technique/25"
+     ],
+     "mrr": 0.5
+    },
+    {
+     "triple": [
+      "tgt/group/43",
+      "uses",
+      "tgt/technique/34.1"
+     ],
+     "mrr": 0.16249999403953552
+    },
+    {
+     "triple": [
+      "tgt/group/43",
+      "uses",
+      "tgt/technique/42"
+     ],
+     "mrr": 0.125
+    },
+    {
+     "triple": [
+      "tgt/group/43",
+      "uses",
+      "tgt/technique/77"
+     ],
+     "mrr": 0.2916666865348816
+    },
+    {
+     "triple": [
+      "tgt/group/44",
+      "uses",
+      "tgt/technique/11.1"
+     ],
+     "mrr": 0.015761690214276314
+    },
+    {
+     "triple": [
+      "tgt/group/44",
+      "uses",
+      "tgt/technique/41.3"
+     ],
+     "mrr": 0.375
+    },
+    {
+     "triple": [
+      "tgt/group/46",
+      "uses",
+      "tgt/technique/35.2"
+     ],
+     "mrr": 0.4166666865348816
+    },
+    {
+     "triple": [
+      "tgt/group/46",
+      "uses",
+      "tgt/technique/85.2"
+     ],
+     "mrr": 0.6666666865348816
+    },
+    {
+     "triple": [
+      "tgt/group/48",
+      "uses",
+      "tgt/technique/44"
+     ],
+     "mrr": 0.2083333432674408
+    },
+    {
+     "triple": [
+      "tgt/group/48",
+      "uses",
+      "tgt/technique/53.0"
+     ],
+     "mrr": 0.1339285671710968
+    },
+    {
+     "triple": [
+      "tgt/group/48",
+      "uses",
+      "tgt/technique/87.2"
+     ],
+     "mrr": 0.2291666716337204
+    },
+    {
+     "triple": [
+      "tgt/group/49",
+      "uses",
+      "tgt/technique/21"
+     ],
+     "mrr": 0.6666666865348816
+    },
+    {
+     "triple": [
+      "tgt/group/49",
+      "uses",
+      "tgt/technique/3.3"
+     ],
+     "mrr": 0.625
+    },
+    {
+     "triple": [
+      "tgt/group/49",
+      "uses",
+      "tgt/technique/34.3"
+     ],
+     "mrr": 0.3055555522441864
+    },
+    {
+     "triple": [
+      "tgt/group/49",
+      "uses",
+      "tgt/technique/51.0"
+     ],
+     "mrr": 0.6666666865348816
+    },
+    {
+     "triple": [
+      "tgt/group/49",
+      "uses",
+      "tgt/technique/59.3"
+     ],
+     "mrr": 0.3125
+    },
+    {
+     "triple": [
+      "tgt/group/49",
+      "uses",
+      "tgt/technique/67.0"
+     ],
+     "mrr": 0.375
+    },
+    {
+     "triple": [
+      "tgt/group/49",
+      "uses",
+      "tgt/technique/81.0"
+     ],
+     "mrr": 0.3333333432674408
+    },
+    {
+     "triple": [
+      "tgt/group/5",
+      "uses",
+      "tgt/technique/1.1"
+     ],
+     "mrr": 0.4166666865348816
+    },
+    {
+     "triple": [
+      "tgt/group/5",
+      "uses",
+      "tgt/technique/25.1"
+     ],
+     "mrr": 0.5
+    },
+    {
+     "triple": [
+      "tgt/group/5",
+      "uses",
+      "tgt/technique/34.0"
+     ],
+     "mrr": 0.2916666865348816
+    },
+    {
+     "triple": [
+      "tgt/group/5",
+      "uses",
+      "tgt/technique/39.1"
+     ],
+     "mrr": 0.625
+    },
+    {
+     "triple": [
+      "tgt/group/5",
+      "uses",
+      "tgt/technique/39.2"
+     ],
+     "mrr": 0.6666666865348816
+    },
+    {
+     "triple": [
+      "tgt/group/5",
+      "uses",
+      "tgt/technique/68.3"
+     ],
+     "mrr": 0.4166666865348816
+    },
+    {
+     "triple": [
+      "tgt/group/50",
+      "uses",
+      "tgt/technique/15.0"
+     ],
+     "mrr": 0.3499999940395355
+    },
+    {
+     "triple": [
+      "tgt/group/50",
+      "uses",
+      "tgt/technique/17.3"
+     ],
+     "mrr": 0.3333333432674408
+    },
+    {
+     "triple": [
+      "tgt/group/50",
+      "uses",
+      "tgt/technique/82.0"
+     ],
+     "mrr": 0.375
+    },
+    {
+     "triple": [
+      "tgt/group/51",
+      "uses",
+      "tgt/technique/1.1"
+     ],
+     "mrr": 0.3333333432674408
+    },
+    {
+     "triple": [
+      "tgt/group/51",
+      "uses",
+      "tgt/technique/2.0"
+     ],
+     "mrr": 0.2222222238779068
+    },
+    {
+     "triple": [
+      "tgt/group/51",
+      "uses",
+      "tgt/technique/39.2"
+     ],
+     "mrr": 0.5625
+    },
+    {
+     "triple": [
+      "tgt/group/51",
+      "uses",
+      "tgt/technique/44"
+     ],
+     "mrr": 0.75
+    },
+    {
+     "triple": [
+      "tgt/group/51",
+      "uses",
+      "tgt/technique/45.1"
+     ],
+     "mrr": 0.21666666865348816
+    },
+    {
+     "triple": [
+      "tgt/group/51",
+      "uses",
+      "tgt/technique/85"
+     ],
+     "mrr": 0.5625
+    },
+    {
+     "triple": [
+      "tgt/group/52",
+      "uses",
+      "tgt/technique/31.0"
+     ],
+     "mrr": 0.25
+    },
+    {
+     "triple": [
+      "tgt/group/52",
+      "uses",
+      "tgt/technique/59.1"
+     ],
+     "mrr": 0.2222222238779068
+    },
+    {
+     "triple": [
+      "tgt/group/53",
+      "uses",
+      "tgt/technique/45.0"
+     ],
+     "mrr": 0.5
+    },
+    {
+     "triple": [
+      "tgt/group/53",
+      "uses",
+      "tgt/technique/57"
+     ],
+     "mrr": 1.0
+    },
+    {
+     "triple": [
+      "tgt/group/53",
+      "uses",
+      "tgt/technique/87.0"
+     ],
+     "mrr": 1.0
+    },
+    {
+     "triple": [
+      "tgt/group/54",
+      "uses",
+      "tgt/technique/36"
+     ],
+     "mrr": 0.2380952537059784
+    },
+    {
+     "triple": [
+      "tgt/group/54",
+      "uses",
+      "tgt/technique/75"
+     ],
+     "mrr": 0.17142857611179352
+    },
+    {
+     "triple": [
+      "tgt/group/54",
+      "uses",
+      "tgt/technique/77.0"
+     ],
+     "mrr": 0.02182539738714695
+    },
+    {
+     "triple": [
+      "tgt/group/55",
+      "uses",
+      "tgt/technique/51.1"
+     ],
+     "mrr": 0.125
+    },
+    {
+     "triple": [
+      "tgt/group/55",
+      "uses",
+      "tgt/technique/84.0"
+     ],
+     "mrr": 0.75
+    },
+    {
+     "triple": [
+      "tgt/group/56",
+      "uses",
+      "tgt/technique/15.0"
+     ],
+     "mrr": 0.17142857611179352
+    },
+    {
+     "triple": [
+      "tgt/group/56",
+      "uses",
+      "tgt/technique/34.1"
+     ],
+     "mrr": 0.3499999940395355
+    },
+    {
+     "triple": [
+      "tgt/group/56",
+      "uses",
+      "tgt/technique/35.0"
+     ],
+     "mrr": 0.011169735342264175
+    },
+    {
+     "triple": [
+      "tgt/group/56",
+      "uses",
+      "tgt/technique/65"
+     ],
+     "mrr": 0.4166666865348816
+    },
+    {
+     "triple": [
+      "tgt/group/56",
+      "uses",
+      "tgt/technique/86"
+     ],
+     "mrr": 0.17142857611179352
+    },
+    {
+     "triple": [
+      "tgt/group/57",
+      "uses",
+      "tgt/technique/17.3"
+     ],
+     "mrr": 0.14166666567325592
+    },
+    {
+     "triple": [
+      "tgt/group/57",
+      "uses",
+      "tgt/technique/21.0"
+     ],
+     "mrr": 0.014504939317703247
+    },
+    {
+     "triple": [
+      "tgt/group/57",
+      "uses",
+      "tgt/technique/3.0"
+     ],
+     "mrr": 0.22499999403953552
+    },
+    {
+     "triple": [
+      "tgt/group/57",
+      "uses",
+      "tgt/technique/40.0"
+     ],
+     "mrr": 0.07631579041481018
+    },
+    {
+     "triple": [
+      "tgt/group/57",
+      "uses",
+      "tgt/technique/53"
+     ],
+     "mrr": 0.01601601578295231
+    },
+    {
+     "triple": [
+      "tgt/group/57",
+      "uses",
+      "tgt/technique/68.1"
+     ],
+     "mrr": 0.1964285671710968
+    },
+    {
+     "triple": [
+      "tgt/group/57",
+      "uses",
+      "tgt/technique/80.2"
+     ],
+     "mrr": 0.12142857909202576
+    },
+    {
+     "triple": [
+      "tgt/group/58",
+      "uses",
+      "tgt/technique/38.1"
+     ],
+     "mrr": 1.0
+    },
+    {
+     "triple": [
+      "tgt/group/58",
+      "uses",
+      "tgt/technique/75"
+     ],
+     "mrr": 1.0
+    },
+    {
+     "triple": [
+      "tgt/group/58",
+      "uses",
+      "tgt/technique/85.3"
+     ],
+     "mrr": 0.07500000298023224
+    },
+    {
+     "triple": [
+      "tgt/group/59",
+      "uses",
+      "tgt/technique/17"
+     ],
+     "mrr": 0.625
+    },
+    {
+     "triple": [
+      "tgt/group/59",
+      "uses",
+      "tgt/technique/84.0"
+     ],
+     "mrr": 0.6666666865348816
+    },
+    {
+     "triple": [
+      "tgt/group/6",
+      "uses",
+      "tgt/technique/19"
+     ],
+     "mrr": 0.0912698432803154
+    },
+    {
+     "triple": [
+      "tgt/group/6",
+      "uses",
+      "tgt/technique/39.1"
+     ],
+     "mrr": 0.11274509876966476
+    },
+    {
+     "triple": [
+      "tgt/group/6",
+      "uses",
+      "tgt/technique/39.2"
+     ],
+     "mrr": 0.17045454680919647
+    },
+    {
+     "triple": [
+      "tgt/group/6",
+      "uses",
+      "tgt/technique/53.0"
+     ],
+     "mrr": 0.1458333432674408
+    },
+    {
+     "triple": [
+      "tgt/group/6",
+      "uses",
+      "tgt/technique/6"
+     ],
+     "mrr": 0.10476191341876984
+    },
+    {
+     "triple": [
+      "tgt/group/6",
+      "uses",
+      "tgt/technique/87.1"
+     ],
+     "mrr": 0.2916666865348816
+    },
+    {
+     "triple": [
+      "tgt/group/60",
+      "uses",
+      "tgt/technique/13.2"
+     ],
+     "mrr": 0.75
+    },
+    {
+     "triple": [
+      "tgt/group/60",
+      "uses",
+      "tgt/technique/2.0"
+     ],
+     "mrr": 0.6000000238418579
+    },
+    {
+     "triple": [
+      "tgt/group/60",
+      "uses",
+      "tgt/technique/32"
+     ],
+     "mrr": 0.75
+    },
+    {
+     "triple": [
+      "tgt/group/60",
+      "uses",
+      "tgt/technique/60"
+     ],
+     "mrr": 1.0
+    },
+    {
+     "triple": [
+      "tgt/group/60",
+      "uses",
+      "tgt/technique/7.2"
+     ],
+     "mrr": 1.0
+    },
+    {
+     "triple": [
+      "tgt/group/60",
+      "uses",
+      "tgt/technique/77.0"
+     ],
+     "mrr": 0.2916666865348816
+    },
+    {
+     "triple": [
+      "tgt/group/60",
+      "uses",
+      "tgt/technique/79"
+     ],
+     "mrr": 0.75
+    },
+    {
+     "triple": [
+      "tgt/group/60",
+      "uses",
+      "tgt/technique/84.0"
+     ],
+     "mrr": 1.0
+    },
+    {
+     "triple": [
+      "tgt/group/60",
+      "uses",
+      "tgt/technique/88.2"
+     ],
+     "mrr": 1.0
+    },
+    {
+     "triple": [
+      "tgt/group/61",
+      "uses",
+      "tgt/technique/34.0"
+     ],
+     "mrr": 0.09545454382896423
+    },
+    {
+     "triple": [
+      "tgt/group/61",
+      "uses",
+      "tgt/technique/60.0"
+     ],
+     "mrr": 0.4166666865348816
+    },
+    {
+     "triple": [
+      "tgt/group/61",
+      "uses",
+      "tgt/technique/82.1"
+     ],
+     "mrr": 0.75
+    },
+    {
+     "triple": [
+      "tgt/group/62",
+      "uses",
+      "tgt/technique/32.0"
+     ],
+     "mrr": 0.2222222238779068
+    },
+    {
+     "triple": [
+      "tgt/group/62",
+      "uses",
+      "tgt/technique/32.1"
+     ],
+     "mrr": 0.013682909309864044
+    },
+    {
+     "triple": [
+      "tgt/group/62",
+      "uses",
+      "tgt/technique/60.0"
+     ],
+     "mrr": 0.4166666865348816
+    },
+    {
+     "triple": [
+      "tgt/group/62",
+      "uses",
+      "tgt/technique/67"
+     ],
+     "mrr": 0.2916666865348816
+    },
+    {
+     "triple": [
+      "tgt/group/63",
+      "uses",
+      "tgt/technique/29"
+     ],
+     "mrr": 0.22499999403953552
+    },
+    {
+     "triple": [
+      "tgt/group/63",
+      "uses",
+      "tgt/technique/63.3"
+     ],
+     "mrr": 0.25
+    },
+    {
+     "triple": [
+      "tgt/group/64",
+      "uses",
+      "tgt/technique/13.3"
+     ],
+     "mrr": 0.5
+    },
+    {
+     "triple": [
+      "tgt/group/64",
+      "uses",
+      "tgt/technique/16"
+     ],
+     "mrr": 0.75
+    },
+    {
+     "triple": [
+      "tgt/group/64",
+      "uses",
+      "tgt/technique/75"
+     ],
+     "mrr": 0.375
+    },
+    {
+     "triple": [
+      "tgt/group/65",
+      "uses",
+      "tgt/technique/1.2"
+     ],
+     "mrr": 0.5714285969734192
+    },
+    {
+     "triple": [
+      "tgt/group/65",
+      "uses",
+      "tgt/technique/14"
+     ],
+     "mrr": 0.3214285671710968
+    },
+    {
+     "triple": [
+      "tgt/group/65",
+      "uses",
+      "tgt/technique/40"
+     ],
+     "mrr": 0.5833333134651184
+    },
+    {
+     "triple": [
+      "tgt/group/65",
+      "uses",
+      "tgt/technique/52.0"
+     ],
+     "mrr": 0.3333333432674408
+    },
+    {
+     "triple": [
+      "tgt/group/66",
+      "uses",
+      "tgt/technique/3.1"
+     ],
+     "mrr": 0.5714285969734192
+    },
+    {
+     "triple": [
+      "tgt/group/66",
+      "uses",
+      "tgt/technique/56.1"
+     ],
+     "mrr": 0.375
+    },
+    {
+     "triple": [
+      "tgt/group/67",
+      "uses",
+      "tgt/technique/26"
+     ],
+     "mrr": 0.22499999403953552
+    },
+    {
+     "triple": [
+      "tgt/group/67",
+      "uses",
+      "tgt/technique/68"
+     ],
+     "mrr": 0.22499999403953552
+    },
+    {
+     "triple": [
+      "tgt/group/67",
+      "uses",
+      "tgt/technique/75"
+     ],
+     "mrr": 0.1964285671710968
+    },
+    {
+     "triple": [
+      "tgt/group/68",
+      "uses",
+      "tgt/technique/27"
+     ],
+     "mrr": 0.375
+    },
+    {
+     "triple": [
+      "tgt/group/68",
+      "uses",
+      "tgt/technique/29"
+     ],
+     "mrr": 0.5833333134651184
+    },
+    {
+     "triple": [
+      "tgt/group/68",
+      "uses",
+      "tgt/technique/31.0"
+     ],
+     "mrr": 0.18333333730697632
+    },
+    {
+     "triple": [
+      "tgt/group/68",
+      "uses",
+      "tgt/technique/31.1"
+     ],
+     "mrr": 0.29545456171035767
+    },
+    {
+     "triple": [
+      "tgt/group/68",
+      "uses",
+      "tgt/technique/63.0"
+     ],
+     "mrr": 0.1805555522441864
+    },
+    {
+     "triple": [
+      "tgt/group/69",
+      "uses",
+      "tgt/technique/31"
+     ],
+     "mrr": 1.0
+    },
+    {
+     "triple": [
+      "tgt/group/7",
+      "uses",
+      "tgt/technique/13"
+     ],
+     "mrr": 0.2666666805744171
+    },
+    {
+     "triple": [
+      "tgt/group/7",
+      "uses",
+      "tgt/technique/44.2"
+     ],
+     "mrr": 0.625
+    },
+    {
+     "triple": [
+      "tgt/group/70",
+      "uses",
+      "tgt/technique/2"
+     ],
+     "mrr": 0.75
+    },
+    {
+     "triple": [
+      "tgt/group/70",
+      "uses",
+      "tgt/technique/42"
+     ],
+     "mrr": 0.18333333730697632
+    },
+    {
+     "triple": [
+      "tgt/group/70",
+      "uses",
+      "tgt/technique/67.1"
+     ],
+     "mrr": 0.29545456171035767
+    },
+    {
+     "triple": [
+      "tgt/group/70",
+      "uses",
+      "tgt/technique/80"
+     ],
+     "mrr": 0.375
+    },
+    {
+     "triple": [
+      "tgt/group/70",
+      "uses",
+      "tgt/technique/88.1"
+     ],
+     "mrr": 0.625
+    },
+    {
+     "triple": [
+      "tgt/group/71",
+      "uses",
+      "tgt/technique/63.3"
+     ],
+     "mrr": 1.0
+    },
+    {
+     "triple": [
+      "tgt/group/72",
+      "uses",
+      "tgt/technique/13.0"
+     ],
+     "mrr": 0.375
+    },
+    {
+     "triple": [
+      "tgt/group/72",
+      "uses",
+      "tgt/technique/58"
+     ],
+     "mrr": 0.5
+    },
+    {
+     "triple": [
+      "tgt/group/72",
+      "uses",
+      "tgt/technique/84.0"
+     ],
+     "mrr": 0.5
+    },
+    {
+     "triple": [
+      "tgt/group/73",
+      "uses",
+      "tgt/technique/68.1"
+     ],
+     "mrr": 0.2884615361690521
+    },
+    {
+     "triple": [
+      "tgt/group/73",
+      "uses",
+      "tgt/technique/74.1"
+     ],
+     "mrr": 0.625
+    },
+    {
+     "triple": [
+      "tgt/group/74",
+      "uses",
+      "tgt/technique/85.0"
+     ],
+     "mrr": 1.0
+    },
+    {
+     "triple": [
+      "tgt/group/75",
+      "uses",
+      "tgt/technique/73"
+     ],
+     "mrr": 0.5
+    },
+    {
+     "triple": [
+      "tgt/group/75",
+      "uses",
+      "tgt/technique/86"
+     ],
+     "mrr": 0.5
+    },
+    {
+     "triple": [
+      "tgt/group/75",
+      "uses",
+      "tgt/technique/88.3"
+     ],
+     "mrr": 0.2916666865348816
+    },
+    {
+     "triple": [
+      "tgt/group/75",
+      "uses",
+      "tgt/technique/9"
+     ],
+     "mrr": 0.2916666865348816
+    },
+    {
+     "triple": [
+      "tgt/group/76",
+      "uses",
+      "tgt/technique/28.2"
+     ],
+     "mrr": 0.1964285671710968
+    },
+    {
+     "triple": [
+      "tgt/group/76",
+      "uses",
+      "tgt/technique/45.0"
+     ],
+     "mrr": 0.009101567789912224
+    },
+    {
+     "triple": [
+      "tgt/group/76",
+      "uses",
+      "tgt/technique/46"
+     ],
+     "mrr": 0.10795454680919647
+    },
+    {
+     "triple": [
+      "tgt/group/76",
+      "uses",
+      "tgt/technique/7.1"
+     ],
+     "mrr": 0.3333333432674408
+    },
+    {
+     "triple": [
+      "tgt/group/77",
+      "uses",
+      "tgt/technique/25.0"
+     ],
+     "mrr": 0.75
+    },
+    {
+     "triple": [
+      "tgt/group/77",
+      "uses",
+      "tgt/technique/45.1"
+     ],
+     "mrr": 0.2916666865348816
+    },
+    {
+     "triple": [
+      "tgt/group/77",
+      "uses",
+      "tgt/technique/61.0"
+     ],
+     "mrr": 1.0
+    },
+    {
+     "triple": [
+      "tgt/group/77",
+      "uses",
+      "tgt/technique/67.1"
+     ],
+     "mrr": 0.2916666865348816
+    },
+    {
+     "triple": [
+      "tgt/group/78",
+      "uses",
+      "tgt/technique/19.1"
+     ],
+     "mrr": 0.2666666805744171
+    },
+    {
+     "triple": [
+      "tgt/group/78",
+      "uses",
+      "tgt/technique/27.0"
+     ],
+     "mrr": 0.2083333432674408
+    },
+    {
+     "triple": [
+      "tgt/group/79",
+      "uses",
+      "tgt/technique/40"
+     ],
+     "mrr": 0.011008786037564278
+    },
+    {
+     "triple": [
+      "tgt/group/9",
+      "uses",
+      "tgt/technique/50.0"
+     ],
+     "mrr": 0.2916666865348816
+    }
+   ],
+   "seconds": 418.3
+  },
+  {
+   "seed": 20261115,
+   "selected_round": 19,
+   "validation_mrr_history": [
+    0.26053786277770996,
+    0.29448068141937256,
+    0.2941102385520935,
+    0.31013306975364685,
+    0.31035321950912476,
+    0.29333293437957764,
+    0.29996049404144287,
+    0.2941456735134125,
+    0.30784937739372253,
+    0.29621145129203796,
+    0.31503161787986755,
+    0.30352112650871277,
+    0.3020707964897156,
+    0.2994350492954254,
+    0.32110849022865295,
+    0.3180931806564331,
+    0.3297853469848633,
+    0.31836238503456116,
+    0.3271550238132477,
+    0.3589232563972473,
+    0.3571338951587677
+   ],
+   "selected_validation_mrr": 0.3589232563972473,
+   "test": {
+    "mrr": 0.45397210121154785,
+    "hits@1": 0.2757352888584137,
+    "hits@3": 0.5569853186607361,
+    "hits@10": 0.8363970518112183,
+    "triples_evaluated": 272,
+    "ranking_queries": 544
+   },
+   "test_by_relation": {
+    "uses": {
+     "mrr": 0.45397210121154785,
+     "hits@1": 0.2757352888584137,
+     "hits@3": 0.5569853186607361,
+     "hits@10": 0.8363970518112183,
+     "triples_evaluated": 272,
+     "ranking_queries": 544
+    }
+   },
+   "per_query_test": [
+    {
+     "triple": [
+      "tgt/group/0",
+      "uses",
+      "tgt/technique/27"
+     ],
+     "mrr": 0.5625
+    },
+    {
+     "triple": [
+      "tgt/group/0",
+      "uses",
+      "tgt/technique/36"
+     ],
+     "mrr": 1.0
+    },
+    {
+     "triple": [
+      "tgt/group/0",
+      "uses",
+      "tgt/technique/41.0"
+     ],
+     "mrr": 0.5555555820465088
+    },
+    {
+     "triple": [
+      "tgt/group/0",
+      "uses",
+      "tgt/technique/58.0"
+     ],
+     "mrr": 0.01675824262201786
+    },
+    {
+     "triple": [
+      "tgt/group/0",
+      "uses",
+      "tgt/technique/66"
+     ],
+     "mrr": 0.5416666865348816
+    },
+    {
+     "triple": [
+      "tgt/group/1",
+      "uses",
+      "tgt/technique/13.2"
+     ],
+     "mrr": 0.010166430845856667
+    },
+    {
+     "triple": [
+      "tgt/group/1",
+      "uses",
+      "tgt/technique/40.1"
+     ],
+     "mrr": 1.0
+    },
+    {
+     "triple": [
+      "tgt/group/1",
+      "uses",
+      "tgt/technique/83.1"
+     ],
+     "mrr": 0.75
+    },
+    {
+     "triple": [
+      "tgt/group/10",
+      "uses",
+      "tgt/technique/13.3"
+     ],
+     "mrr": 0.75
+    },
+    {
+     "triple": [
+      "tgt/group/10",
+      "uses",
+      "tgt/technique/16"
+     ],
+     "mrr": 0.625
+    },
+    {
+     "triple": [
+      "tgt/group/10",
+      "uses",
+      "tgt/technique/64"
+     ],
+     "mrr": 0.2666666805744171
+    },
+    {
+     "triple": [
+      "tgt/group/10",
+      "uses",
+      "tgt/technique/77"
+     ],
+     "mrr": 0.15000000596046448
+    },
+    {
+     "triple": [
+      "tgt/group/11",
+      "uses",
+      "tgt/technique/30"
+     ],
+     "mrr": 0.5
+    },
+    {
+     "triple": [
+      "tgt/group/11",
+      "uses",
+      "tgt/technique/48"
+     ],
+     "mrr": 0.3333333432674408
+    },
+    {
+     "triple": [
+      "tgt/group/11",
+      "uses",
+      "tgt/technique/50.1"
+     ],
+     "mrr": 0.75
+    },
+    {
+     "triple": [
+      "tgt/group/11",
+      "uses",
+      "tgt/technique/67.1"
+     ],
+     "mrr": 0.5416666865348816
+    },
+    {
+     "triple": [
+      "tgt/group/11",
+      "uses",
+      "tgt/technique/71"
+     ],
+     "mrr": 0.4166666865348816
+    },
+    {
+     "triple": [
+      "tgt/group/12",
+      "uses",
+      "tgt/technique/48"
+     ],
+     "mrr": 0.5
+    },
+    {
+     "triple": [
+      "tgt/group/12",
+      "uses",
+      "tgt/technique/60.1"
+     ],
+     "mrr": 0.28333333134651184
+    },
+    {
+     "triple": [
+      "tgt/group/12",
+      "uses",
+      "tgt/technique/78.1"
+     ],
+     "mrr": 0.2222222238779068
+    },
+    {
+     "triple": [
+      "tgt/group/12",
+      "uses",
+      "tgt/technique/81"
+     ],
+     "mrr": 0.625
+    },
+    {
+     "triple": [
+      "tgt/group/13",
+      "uses",
+      "tgt/technique/25.1"
+     ],
+     "mrr": 0.22499999403953552
+    },
+    {
+     "triple": [
+      "tgt/group/13",
+      "uses",
+      "tgt/technique/3.1"
+     ],
+     "mrr": 0.2380952537059784
+    },
+    {
+     "triple": [
+      "tgt/group/13",
+      "uses",
+      "tgt/technique/35.2"
+     ],
+     "mrr": 0.021759260445833206
+    },
+    {
+     "triple": [
+      "tgt/group/13",
+      "uses",
+      "tgt/technique/40"
+     ],
+     "mrr": 0.2916666567325592
+    },
+    {
+     "triple": [
+      "tgt/group/13",
+      "uses",
+      "tgt/technique/5.0"
+     ],
+     "mrr": 0.2916666567325592
+    },
+    {
+     "triple": [
+      "tgt/group/13",
+      "uses",
+      "tgt/technique/86.0"
+     ],
+     "mrr": 0.5714285969734192
+    },
+    {
+     "triple": [
+      "tgt/group/14",
+      "uses",
+      "tgt/technique/29"
+     ],
+     "mrr": 1.0
+    },
+    {
+     "triple": [
+      "tgt/group/15",
+      "uses",
+      "tgt/technique/24.1"
+     ],
+     "mrr": 0.5
+    },
+    {
+     "triple": [
+      "tgt/group/15",
+      "uses",
+      "tgt/technique/28"
+     ],
+     "mrr": 0.2916666865348816
+    },
+    {
+     "triple": [
+      "tgt/group/15",
+      "uses",
+      "tgt/technique/42.0"
+     ],
+     "mrr": 0.2916666865348816
+    },
+    {
+     "triple": [
+      "tgt/group/15",
+      "uses",
+      "tgt/technique/56.1"
+     ],
+     "mrr": 0.375
+    },
+    {
+     "triple": [
+      "tgt/group/15",
+      "uses",
+      "tgt/technique/68.1"
+     ],
+     "mrr": 0.10476191341876984
+    },
+    {
+     "triple": [
+      "tgt/group/15",
+      "uses",
+      "tgt/technique/70.0"
+     ],
+     "mrr": 0.22499999403953552
+    },
+    {
+     "triple": [
+      "tgt/group/15",
+      "uses",
+      "tgt/technique/80.3"
+     ],
+     "mrr": 0.4166666865348816
+    },
+    {
+     "triple": [
+      "tgt/group/15",
+      "uses",
+      "tgt/technique/82.2"
+     ],
+     "mrr": 0.2666666805744171
+    },
+    {
+     "triple": [
+      "tgt/group/16",
+      "uses",
+      "tgt/technique/17.0"
+     ],
+     "mrr": 0.21666666865348816
+    },
+    {
+     "triple": [
+      "tgt/group/16",
+      "uses",
+      "tgt/technique/2"
+     ],
+     "mrr": 0.5625
+    },
+    {
+     "triple": [
+      "tgt/group/16",
+      "uses",
+      "tgt/technique/38.1"
+     ],
+     "mrr": 0.15000000596046448
+    },
+    {
+     "triple": [
+      "tgt/group/16",
+      "uses",
+      "tgt/technique/66.1"
+     ],
+     "mrr": 0.21212121844291687
+    },
+    {
+     "triple": [
+      "tgt/group/16",
+      "uses",
+      "tgt/technique/7.3"
+     ],
+     "mrr": 0.3125
+    },
+    {
+     "triple": [
+      "tgt/group/17",
+      "uses",
+      "tgt/technique/37.0"
+     ],
+     "mrr": 0.5714285969734192
+    },
+    {
+     "triple": [
+      "tgt/group/17",
+      "uses",
+      "tgt/technique/67.0"
+     ],
+     "mrr": 0.4166666865348816
+    },
+    {
+     "triple": [
+      "tgt/group/18",
+      "uses",
+      "tgt/technique/3"
+     ],
+     "mrr": 0.6666666865348816
+    },
+    {
+     "triple": [
+      "tgt/group/18",
+      "uses",
+      "tgt/technique/50.1"
+     ],
+     "mrr": 0.75
+    },
+    {
+     "triple": [
+      "tgt/group/19",
+      "uses",
+      "tgt/technique/42"
+     ],
+     "mrr": 0.2291666716337204
+    },
+    {
+     "triple": [
+      "tgt/group/19",
+      "uses",
+      "tgt/technique/47.0"
+     ],
+     "mrr": 1.0
+    },
+    {
+     "triple": [
+      "tgt/group/19",
+      "uses",
+      "tgt/technique/51.1"
+     ],
+     "mrr": 0.044507578015327454
+    },
+    {
+     "triple": [
+      "tgt/group/19",
+      "uses",
+      "tgt/technique/56"
+     ],
+     "mrr": 0.027037618681788445
+    },
+    {
+     "triple": [
+      "tgt/group/2",
+      "uses",
+      "tgt/technique/0"
+     ],
+     "mrr": 0.625
+    },
+    {
+     "triple": [
+      "tgt/group/2",
+      "uses",
+      "tgt/technique/25.1"
+     ],
+     "mrr": 0.625
+    },
+    {
+     "triple": [
+      "tgt/group/2",
+      "uses",
+      "tgt/technique/31.0"
+     ],
+     "mrr": 0.375
+    },
+    {
+     "triple": [
+      "tgt/group/2",
+      "uses",
+      "tgt/technique/45.2"
+     ],
+     "mrr": 0.6666666865348816
+    },
+    {
+     "triple": [
+      "tgt/group/2",
+      "uses",
+      "tgt/technique/8"
+     ],
+     "mrr": 0.4166666865348816
+    },
+    {
+     "triple": [
+      "tgt/group/20",
+      "uses",
+      "tgt/technique/27"
+     ],
+     "mrr": 0.2666666805744171
+    },
+    {
+     "triple": [
+      "tgt/group/20",
+      "uses",
+      "tgt/technique/34.1"
+     ],
+     "mrr": 0.1979166716337204
+    },
+    {
+     "triple": [
+      "tgt/group/20",
+      "uses",
+      "tgt/technique/36"
+     ],
+     "mrr": 0.18840579688549042
+    },
+    {
+     "triple": [
+      "tgt/group/20",
+      "uses",
+      "tgt/technique/41.0"
+     ],
+     "mrr": 0.12777778506278992
+    },
+    {
+     "triple": [
+      "tgt/group/20",
+      "uses",
+      "tgt/technique/48"
+     ],
+     "mrr": 0.75
+    },
+    {
+     "triple": [
+      "tgt/group/20",
+      "uses",
+      "tgt/technique/58"
+     ],
+     "mrr": 0.5357142686843872
+    },
+    {
+     "triple": [
+      "tgt/group/20",
+      "uses",
+      "tgt/technique/86"
+     ],
+     "mrr": 0.3214285671710968
+    },
+    {
+     "triple": [
+      "tgt/group/21",
+      "uses",
+      "tgt/technique/24.2"
+     ],
+     "mrr": 1.0
+    },
+    {
+     "triple": [
+      "tgt/group/21",
+      "uses",
+      "tgt/technique/25.1"
+     ],
+     "mrr": 1.0
+    },
+    {
+     "triple": [
+      "tgt/group/21",
+      "uses",
+      "tgt/technique/28.0"
+     ],
+     "mrr": 1.0
+    },
+    {
+     "triple": [
+      "tgt/group/21",
+      "uses",
+      "tgt/technique/34.2"
+     ],
+     "mrr": 0.15000000596046448
+    },
+    {
+     "triple": [
+      "tgt/group/21",
+      "uses",
+      "tgt/technique/40"
+     ],
+     "mrr": 0.6666666865348816
+    },
+    {
+     "triple": [
+      "tgt/group/21",
+      "uses",
+      "tgt/technique/48"
+     ],
+     "mrr": 0.6666666865348816
+    },
+    {
+     "triple": [
+      "tgt/group/21",
+      "uses",
+      "tgt/technique/51.1"
+     ],
+     "mrr": 1.0
+    },
+    {
+     "triple": [
+      "tgt/group/21",
+      "uses",
+      "tgt/technique/73.0"
+     ],
+     "mrr": 1.0
+    },
+    {
+     "triple": [
+      "tgt/group/22",
+      "uses",
+      "tgt/technique/27"
+     ],
+     "mrr": 1.0
+    },
+    {
+     "triple": [
+      "tgt/group/22",
+      "uses",
+      "tgt/technique/44.2"
+     ],
+     "mrr": 0.625
+    },
+    {
+     "triple": [
+      "tgt/group/22",
+      "uses",
+      "tgt/technique/47.0"
+     ],
+     "mrr": 1.0
+    },
+    {
+     "triple": [
+      "tgt/group/22",
+      "uses",
+      "tgt/technique/57.0"
+     ],
+     "mrr": 1.0
+    },
+    {
+     "triple": [
+      "tgt/group/22",
+      "uses",
+      "tgt/technique/69"
+     ],
+     "mrr": 0.02120705507695675
+    },
+    {
+     "triple": [
+      "tgt/group/23",
+      "uses",
+      "tgt/technique/36.1"
+     ],
+     "mrr": 0.17142857611179352
+    },
+    {
+     "triple": [
+      "tgt/group/23",
+      "uses",
+      "tgt/technique/5.0"
+     ],
+     "mrr": 0.5714285969734192
+    },
+    {
+     "triple": [
+      "tgt/group/24",
+      "uses",
+      "tgt/technique/28.1"
+     ],
+     "mrr": 0.625
+    },
+    {
+     "triple": [
+      "tgt/group/24",
+      "uses",
+      "tgt/technique/39.2"
+     ],
+     "mrr": 0.625
+    },
+    {
+     "triple": [
+      "tgt/group/24",
+      "uses",
+      "tgt/technique/5.0"
+     ],
+     "mrr": 0.625
+    },
+    {
+     "triple": [
+      "tgt/group/24",
+      "uses",
+      "tgt/technique/79"
+     ],
+     "mrr": 0.3499999940395355
+    },
+    {
+     "triple": [
+      "tgt/group/24",
+      "uses",
+      "tgt/technique/89"
+     ],
+     "mrr": 0.625
+    },
+    {
+     "triple": [
+      "tgt/group/25",
+      "uses",
+      "tgt/technique/3.2"
+     ],
+     "mrr": 0.75
+    },
+    {
+     "triple": [
+      "tgt/group/25",
+      "uses",
+      "tgt/technique/5.0"
+     ],
+     "mrr": 1.0
+    },
+    {
+     "triple": [
+      "tgt/group/25",
+      "uses",
+      "tgt/technique/88.0"
+     ],
+     "mrr": 1.0
+    },
+    {
+     "triple": [
+      "tgt/group/26",
+      "uses",
+      "tgt/technique/59.1"
+     ],
+     "mrr": 0.2738095223903656
+    },
+    {
+     "triple": [
+      "tgt/group/26",
+      "uses",
+      "tgt/technique/6.0"
+     ],
+     "mrr": 0.15833333134651184
+    },
+    {
+     "triple": [
+      "tgt/group/26",
+      "uses",
+      "tgt/technique/60"
+     ],
+     "mrr": 0.5199999809265137
+    },
+    {
+     "triple": [
+      "tgt/group/26",
+      "uses",
+      "tgt/technique/64"
+     ],
+     "mrr": 0.2380952537059784
+    },
+    {
+     "triple": [
+      "tgt/group/26",
+      "uses",
+      "tgt/technique/85.2"
+     ],
+     "mrr": 0.2738095223903656
+    },
+    {
+     "triple": [
+      "tgt/group/27",
+      "uses",
+      "tgt/technique/42.1"
+     ],
+     "mrr": 0.75
+    },
+    {
+     "triple": [
+      "tgt/group/27",
+      "uses",
+      "tgt/technique/46"
+     ],
+     "mrr": 0.16346153616905212
+    },
+    {
+     "triple": [
+      "tgt/group/27",
+      "uses",
+      "tgt/technique/85"
+     ],
+     "mrr": 0.28333333134651184
+    },
+    {
+     "triple": [
+      "tgt/group/28",
+      "uses",
+      "tgt/technique/15.2"
+     ],
+     "mrr": 0.375
+    },
+    {
+     "triple": [
+      "tgt/group/28",
+      "uses",
+      "tgt/technique/32.3"
+     ],
+     "mrr": 0.6000000238418579
+    },
+    {
+     "triple": [
+      "tgt/group/28",
+      "uses",
+      "tgt/technique/52.2"
+     ],
+     "mrr": 0.375
+    },
+    {
+     "triple": [
+      "tgt/group/28",
+      "uses",
+      "tgt/technique/59.3"
+     ],
+     "mrr": 0.5
+    },
+    {
+     "triple": [
+      "tgt/group/28",
+      "uses",
+      "tgt/technique/83.0"
+     ],
+     "mrr": 0.6000000238418579
+    },
+    {
+     "triple": [
+      "tgt/group/29",
+      "uses",
+      "tgt/technique/88"
+     ],
+     "mrr": 0.5625
+    },
+    {
+     "triple": [
+      "tgt/group/30",
+      "uses",
+      "tgt/technique/11"
+     ],
+     "mrr": 0.5833333134651184
+    },
+    {
+     "triple": [
+      "tgt/group/30",
+      "uses",
+      "tgt/technique/12.1"
+     ],
+     "mrr": 0.018910914659500122
+    },
+    {
+     "triple": [
+      "tgt/group/30",
+      "uses",
+      "tgt/technique/42"
+     ],
+     "mrr": 1.0
+    },
+    {
+     "triple": [
+      "tgt/group/30",
+      "uses",
+      "tgt/technique/63.0"
+     ],
+     "mrr": 0.5833333134651184
+    },
+    {
+     "triple": [
+      "tgt/group/30",
+      "uses",
+      "tgt/technique/66.0"
+     ],
+     "mrr": 0.2916666865348816
+    },
+    {
+     "triple": [
+      "tgt/group/30",
+      "uses",
+      "tgt/technique/7"
+     ],
+     "mrr": 0.5833333134651184
+    },
+    {
+     "triple": [
+      "tgt/group/30",
+      "uses",
+      "tgt/technique/72"
+     ],
+     "mrr": 0.1875
+    },
+    {
+     "triple": [
+      "tgt/group/31",
+      "uses",
+      "tgt/technique/12"
+     ],
+     "mrr": 0.75
+    },
+    {
+     "triple": [
+      "tgt/group/31",
+      "uses",
+      "tgt/technique/14"
+     ],
+     "mrr": 0.13333334028720856
+    },
+    {
+     "triple": [
+      "tgt/group/31",
+      "uses",
+      "tgt/technique/15.1"
+     ],
+     "mrr": 0.19298246502876282
+    },
+    {
+     "triple": [
+      "tgt/group/31",
+      "uses",
+      "tgt/technique/18.1"
+     ],
+     "mrr": 0.14351852238178253
+    },
+    {
+     "triple": [
+      "tgt/group/31",
+      "uses",
+      "tgt/technique/3"
+     ],
+     "mrr": 0.375
+    },
+    {
+     "triple": [
+      "tgt/group/32",
+      "uses",
+      "tgt/technique/23.1"
+     ],
+     "mrr": 0.20000000298023224
+    },
+    {
+     "triple": [
+      "tgt/group/32",
+      "uses",
+      "tgt/technique/27"
+     ],
+     "mrr": 0.2083333432674408
+    },
+    {
+     "triple": [
+      "tgt/group/32",
+      "uses",
+      "tgt/technique/47.2"
+     ],
+     "mrr": 0.16249999403953552
+    },
+    {
+     "triple": [
+      "tgt/group/34",
+      "uses",
+      "tgt/technique/18.1"
+     ],
+     "mrr": 1.0
+    },
+    {
+     "triple": [
+      "tgt/group/34",
+      "uses",
+      "tgt/technique/68.1"
+     ],
+     "mrr": 0.5714285969734192
+    },
+    {
+     "triple": [
+      "tgt/group/35",
+      "uses",
+      "tgt/technique/17.1"
+     ],
+     "mrr": 0.2884615361690521
+    },
+    {
+     "triple": [
+      "tgt/group/35",
+      "uses",
+      "tgt/technique/23.1"
+     ],
+     "mrr": 0.2884615361690521
+    },
+    {
+     "triple": [
+      "tgt/group/35",
+      "uses",
+      "tgt/technique/34.3"
+     ],
+     "mrr": 0.53125
+    },
+    {
+     "triple": [
+      "tgt/group/35",
+      "uses",
+      "tgt/technique/74.0"
+     ],
+     "mrr": 0.25
+    },
+    {
+     "triple": [
+      "tgt/group/37",
+      "uses",
+      "tgt/technique/15.1"
+     ],
+     "mrr": 0.012914540246129036
+    },
+    {
+     "triple": [
+      "tgt/group/37",
+      "uses",
+      "tgt/technique/18.0"
+     ],
+     "mrr": 0.1454545557498932
+    },
+    {
+     "triple": [
+      "tgt/group/37",
+      "uses",
+      "tgt/technique/19"
+     ],
+     "mrr": 0.08055555820465088
+    },
+    {
+     "triple": [
+      "tgt/group/38",
+      "uses",
+      "tgt/technique/0"
+     ],
+     "mrr": 0.25
+    },
+    {
+     "triple": [
+      "tgt/group/38",
+      "uses",
+      "tgt/technique/17.2"
+     ],
+     "mrr": 0.12631578743457794
+    },
+    {
+     "triple": [
+      "tgt/group/38",
+      "uses",
+      "tgt/technique/34.0"
+     ],
+     "mrr": 0.06787330657243729
+    },
+    {
+     "triple": [
+      "tgt/group/38",
+      "uses",
+      "tgt/technique/34.1"
+     ],
+     "mrr": 0.21212121844291687
+    },
+    {
+     "triple": [
+      "tgt/group/38",
+      "uses",
+      "tgt/technique/5.0"
+     ],
+     "mrr": 0.3125
+    },
+    {
+     "triple": [
+      "tgt/group/38",
+      "uses",
+      "tgt/technique/55"
+     ],
+     "mrr": 0.12941177189350128
+    },
+    {
+     "triple": [
+      "tgt/group/38",
+      "uses",
+      "tgt/technique/60.0"
+     ],
+     "mrr": 0.1666666716337204
+    },
+    {
+     "triple": [
+      "tgt/group/38",
+      "uses",
+      "tgt/technique/74.1"
+     ],
+     "mrr": 0.014095691964030266
+    },
+    {
+     "triple": [
+      "tgt/group/39",
+      "uses",
+      "tgt/technique/18.1"
+     ],
+     "mrr": 0.27941176295280457
+    },
+    {
+     "triple": [
+      "tgt/group/39",
+      "uses",
+      "tgt/technique/34"
+     ],
+     "mrr": 0.010574931278824806
+    },
+    {
+     "triple": [
+      "tgt/group/39",
+      "uses",
+      "tgt/technique/39.0"
+     ],
+     "mrr": 0.3333333432674408
+    },
+    {
+     "triple": [
+      "tgt/group/4",
+      "uses",
+      "tgt/technique/11.1"
+     ],
+     "mrr": 0.5
+    },
+    {
+     "triple": [
+      "tgt/group/41",
+      "uses",
+      "tgt/technique/27"
+     ],
+     "mrr": 0.550000011920929
+    },
+    {
+     "triple": [
+      "tgt/group/41",
+      "uses",
+      "tgt/technique/36.1"
+     ],
+     "mrr": 0.3333333432674408
+    },
+    {
+     "triple": [
+      "tgt/group/41",
+      "uses",
+      "tgt/technique/38.1"
+     ],
+     "mrr": 0.17045454680919647
+    },
+    {
+     "triple": [
+      "tgt/group/41",
+      "uses",
+      "tgt/technique/82.1"
+     ],
+     "mrr": 0.75
+    },
+    {
+     "triple": [
+      "tgt/group/42",
+      "uses",
+      "tgt/technique/51.0"
+     ],
+     "mrr": 0.07401924580335617
+    },
+    {
+     "triple": [
+      "tgt/group/43",
+      "uses",
+      "tgt/technique/15.1"
+     ],
+     "mrr": 0.5625
+    },
+    {
+     "triple": [
+      "tgt/group/43",
+      "uses",
+      "tgt/technique/25"
+     ],
+     "mrr": 0.4166666865348816
+    },
+    {
+     "triple": [
+      "tgt/group/43",
+      "uses",
+      "tgt/technique/34.1"
+     ],
+     "mrr": 0.2291666716337204
+    },
+    {
+     "triple": [
+      "tgt/group/43",
+      "uses",
+      "tgt/technique/42"
+     ],
+     "mrr": 0.19607843458652496
+    },
+    {
+     "triple": [
+      "tgt/group/43",
+      "uses",
+      "tgt/technique/77"
+     ],
+     "mrr": 0.2666666805744171
+    },
+    {
+     "triple": [
+      "tgt/group/44",
+      "uses",
+      "tgt/technique/11.1"
+     ],
+     "mrr": 0.01911027543246746
+    },
+    {
+     "triple": [
+      "tgt/group/44",
+      "uses",
+      "tgt/technique/41.3"
+     ],
+     "mrr": 0.4166666865348816
+    },
+    {
+     "triple": [
+      "tgt/group/46",
+      "uses",
+      "tgt/technique/35.2"
+     ],
+     "mrr": 0.5
+    },
+    {
+     "triple": [
+      "tgt/group/46",
+      "uses",
+      "tgt/technique/85.2"
+     ],
+     "mrr": 0.5625
+    },
+    {
+     "triple": [
+      "tgt/group/48",
+      "uses",
+      "tgt/technique/44"
+     ],
+     "mrr": 0.21666666865348816
+    },
+    {
+     "triple": [
+      "tgt/group/48",
+      "uses",
+      "tgt/technique/53.0"
+     ],
+     "mrr": 0.1339285671710968
+    },
+    {
+     "triple": [
+      "tgt/group/48",
+      "uses",
+      "tgt/technique/87.2"
+     ],
+     "mrr": 0.3125
+    },
+    {
+     "triple": [
+      "tgt/group/49",
+      "uses",
+      "tgt/technique/21"
+     ],
+     "mrr": 1.0
+    },
+    {
+     "triple": [
+      "tgt/group/49",
+      "uses",
+      "tgt/technique/3.3"
+     ],
+     "mrr": 0.5714285969734192
+    },
+    {
+     "triple": [
+      "tgt/group/49",
+      "uses",
+      "tgt/technique/34.3"
+     ],
+     "mrr": 0.2916666567325592
+    },
+    {
+     "triple": [
+      "tgt/group/49",
+      "uses",
+      "tgt/technique/51.0"
+     ],
+     "mrr": 1.0
+    },
+    {
+     "triple": [
+      "tgt/group/49",
+      "uses",
+      "tgt/technique/59.3"
+     ],
+     "mrr": 0.3214285671710968
+    },
+    {
+     "triple": [
+      "tgt/group/49",
+      "uses",
+      "tgt/technique/67.0"
+     ],
+     "mrr": 0.3499999940395355
+    },
+    {
+     "triple": [
+      "tgt/group/49",
+      "uses",
+      "tgt/technique/81.0"
+     ],
+     "mrr": 0.3333333432674408
+    },
+    {
+     "triple": [
+      "tgt/group/5",
+      "uses",
+      "tgt/technique/1.1"
+     ],
+     "mrr": 0.6666666865348816
+    },
+    {
+     "triple": [
+      "tgt/group/5",
+      "uses",
+      "tgt/technique/25.1"
+     ],
+     "mrr": 1.0
+    },
+    {
+     "triple": [
+      "tgt/group/5",
+      "uses",
+      "tgt/technique/34.0"
+     ],
+     "mrr": 0.2666666805744171
+    },
+    {
+     "triple": [
+      "tgt/group/5",
+      "uses",
+      "tgt/technique/39.1"
+     ],
+     "mrr": 0.6666666865348816
+    },
+    {
+     "triple": [
+      "tgt/group/5",
+      "uses",
+      "tgt/technique/39.2"
+     ],
+     "mrr": 0.75
+    },
+    {
+     "triple": [
+      "tgt/group/5",
+      "uses",
+      "tgt/technique/68.3"
+     ],
+     "mrr": 0.75
+    },
+    {
+     "triple": [
+      "tgt/group/50",
+      "uses",
+      "tgt/technique/15.0"
+     ],
+     "mrr": 0.5714285969734192
+    },
+    {
+     "triple": [
+      "tgt/group/50",
+      "uses",
+      "tgt/technique/17.3"
+     ],
+     "mrr": 0.5625
+    },
+    {
+     "triple": [
+      "tgt/group/50",
+      "uses",
+      "tgt/technique/82.0"
+     ],
+     "mrr": 0.3125
+    },
+    {
+     "triple": [
+      "tgt/group/51",
+      "uses",
+      "tgt/technique/1.1"
+     ],
+     "mrr": 0.2916666865348816
+    },
+    {
+     "triple": [
+      "tgt/group/51",
+      "uses",
+      "tgt/technique/2.0"
+     ],
+     "mrr": 0.5625
+    },
+    {
+     "triple": [
+      "tgt/group/51",
+      "uses",
+      "tgt/technique/39.2"
+     ],
+     "mrr": 0.5833333134651184
+    },
+    {
+     "triple": [
+      "tgt/group/51",
+      "uses",
+      "tgt/technique/44"
+     ],
+     "mrr": 0.3333333432674408
+    },
+    {
+     "triple": [
+      "tgt/group/51",
+      "uses",
+      "tgt/technique/45.1"
+     ],
+     "mrr": 0.550000011920929
+    },
+    {
+     "triple": [
+      "tgt/group/51",
+      "uses",
+      "tgt/technique/85"
+     ],
+     "mrr": 0.5333333611488342
+    },
+    {
+     "triple": [
+      "tgt/group/52",
+      "uses",
+      "tgt/technique/31.0"
+     ],
+     "mrr": 0.25
+    },
+    {
+     "triple": [
+      "tgt/group/52",
+      "uses",
+      "tgt/technique/59.1"
+     ],
+     "mrr": 0.2916666567325592
+    },
+    {
+     "triple": [
+      "tgt/group/53",
+      "uses",
+      "tgt/technique/45.0"
+     ],
+     "mrr": 1.0
+    },
+    {
+     "triple": [
+      "tgt/group/53",
+      "uses",
+      "tgt/technique/57"
+     ],
+     "mrr": 0.75
+    },
+    {
+     "triple": [
+      "tgt/group/53",
+      "uses",
+      "tgt/technique/87.0"
+     ],
+     "mrr": 1.0
+    },
+    {
+     "triple": [
+      "tgt/group/54",
+      "uses",
+      "tgt/technique/36"
+     ],
+     "mrr": 0.3125
+    },
+    {
+     "triple": [
+      "tgt/group/54",
+      "uses",
+      "tgt/technique/75"
+     ],
+     "mrr": 0.3214285671710968
+    },
+    {
+     "triple": [
+      "tgt/group/54",
+      "uses",
+      "tgt/technique/77.0"
+     ],
+     "mrr": 0.015064102597534657
+    },
+    {
+     "triple": [
+      "tgt/group/55",
+      "uses",
+      "tgt/technique/51.1"
+     ],
+     "mrr": 0.21666666865348816
+    },
+    {
+     "triple": [
+      "tgt/group/55",
+      "uses",
+      "tgt/technique/84.0"
+     ],
+     "mrr": 0.6666666865348816
+    },
+    {
+     "triple": [
+      "tgt/group/56",
+      "uses",
+      "tgt/technique/15.0"
+     ],
+     "mrr": 0.1964285671710968
+    },
+    {
+     "triple": [
+      "tgt/group/56",
+      "uses",
+      "tgt/technique/34.1"
+     ],
+     "mrr": 0.3055555522441864
+    },
+    {
+     "triple": [
+      "tgt/group/56",
+      "uses",
+      "tgt/technique/35.0"
+     ],
+     "mrr": 0.016287077218294144
+    },
+    {
+     "triple": [
+      "tgt/group/56",
+      "uses",
+      "tgt/technique/65"
+     ],
+     "mrr": 0.6666666865348816
+    },
+    {
+     "triple": [
+      "tgt/group/56",
+      "uses",
+      "tgt/technique/86"
+     ],
+     "mrr": 0.4166666865348816
+    },
+    {
+     "triple": [
+      "tgt/group/57",
+      "uses",
+      "tgt/technique/17.3"
+     ],
+     "mrr": 0.28333333134651184
+    },
+    {
+     "triple": [
+      "tgt/group/57",
+      "uses",
+      "tgt/technique/21.0"
+     ],
+     "mrr": 0.01745045930147171
+    },
+    {
+     "triple": [
+      "tgt/group/57",
+      "uses",
+      "tgt/technique/3.0"
+     ],
+     "mrr": 0.1964285671710968
+    },
+    {
+     "triple": [
+      "tgt/group/57",
+      "uses",
+      "tgt/technique/40.0"
+     ],
+     "mrr": 0.1071428656578064
+    },
+    {
+     "triple": [
+      "tgt/group/57",
+      "uses",
+      "tgt/technique/53"
+     ],
+     "mrr": 0.012040043249726295
+    },
+    {
+     "triple": [
+      "tgt/group/57",
+      "uses",
+      "tgt/technique/68.1"
+     ],
+     "mrr": 0.13333334028720856
+    },
+    {
+     "triple": [
+      "tgt/group/57",
+      "uses",
+      "tgt/technique/80.2"
+     ],
+     "mrr": 0.2666666805744171
+    },
+    {
+     "triple": [
+      "tgt/group/58",
+      "uses",
+      "tgt/technique/38.1"
+     ],
+     "mrr": 1.0
+    },
+    {
+     "triple": [
+      "tgt/group/58",
+      "uses",
+      "tgt/technique/75"
+     ],
+     "mrr": 0.75
+    },
+    {
+     "triple": [
+      "tgt/group/58",
+      "uses",
+      "tgt/technique/85.3"
+     ],
+     "mrr": 0.08921568840742111
+    },
+    {
+     "triple": [
+      "tgt/group/59",
+      "uses",
+      "tgt/technique/17"
+     ],
+     "mrr": 0.5833333134651184
+    },
+    {
+     "triple": [
+      "tgt/group/59",
+      "uses",
+      "tgt/technique/84.0"
+     ],
+     "mrr": 0.75
+    },
+    {
+     "triple": [
+      "tgt/group/6",
+      "uses",
+      "tgt/technique/19"
+     ],
+     "mrr": 0.07555555552244186
+    },
+    {
+     "triple": [
+      "tgt/group/6",
+      "uses",
+      "tgt/technique/39.1"
+     ],
+     "mrr": 0.21212121844291687
+    },
+    {
+     "triple": [
+      "tgt/group/6",
+      "uses",
+      "tgt/technique/39.2"
+     ],
+     "mrr": 0.3214285671710968
+    },
+    {
+     "triple": [
+      "tgt/group/6",
+      "uses",
+      "tgt/technique/53.0"
+     ],
+     "mrr": 0.2380952537059784
+    },
+    {
+     "triple": [
+      "tgt/group/6",
+      "uses",
+      "tgt/technique/6"
+     ],
+     "mrr": 0.2666666805744171
+    },
+    {
+     "triple": [
+      "tgt/group/6",
+      "uses",
+      "tgt/technique/87.1"
+     ],
+     "mrr": 0.2666666805744171
+    },
+    {
+     "triple": [
+      "tgt/group/60",
+      "uses",
+      "tgt/technique/13.2"
+     ],
+     "mrr": 0.6666666865348816
+    },
+    {
+     "triple": [
+      "tgt/group/60",
+      "uses",
+      "tgt/technique/2.0"
+     ],
+     "mrr": 0.5625
+    },
+    {
+     "triple": [
+      "tgt/group/60",
+      "uses",
+      "tgt/technique/32"
+     ],
+     "mrr": 0.25
+    },
+    {
+     "triple": [
+      "tgt/group/60",
+      "uses",
+      "tgt/technique/60"
+     ],
+     "mrr": 1.0
+    },
+    {
+     "triple": [
+      "tgt/group/60",
+      "uses",
+      "tgt/technique/7.2"
+     ],
+     "mrr": 1.0
+    },
+    {
+     "triple": [
+      "tgt/group/60",
+      "uses",
+      "tgt/technique/77.0"
+     ],
+     "mrr": 0.2666666805744171
+    },
+    {
+     "triple": [
+      "tgt/group/60",
+      "uses",
+      "tgt/technique/79"
+     ],
+     "mrr": 0.4166666865348816
+    },
+    {
+     "triple": [
+      "tgt/group/60",
+      "uses",
+      "tgt/technique/84.0"
+     ],
+     "mrr": 1.0
+    },
+    {
+     "triple": [
+      "tgt/group/60",
+      "uses",
+      "tgt/technique/88.2"
+     ],
+     "mrr": 1.0
+    },
+    {
+     "triple": [
+      "tgt/group/61",
+      "uses",
+      "tgt/technique/34.0"
+     ],
+     "mrr": 0.08888889104127884
+    },
+    {
+     "triple": [
+      "tgt/group/61",
+      "uses",
+      "tgt/technique/60.0"
+     ],
+     "mrr": 0.25
+    },
+    {
+     "triple": [
+      "tgt/group/61",
+      "uses",
+      "tgt/technique/82.1"
+     ],
+     "mrr": 0.75
+    },
+    {
+     "triple": [
+      "tgt/group/62",
+      "uses",
+      "tgt/technique/32.0"
+     ],
+     "mrr": 0.6666666865348816
+    },
+    {
+     "triple": [
+      "tgt/group/62",
+      "uses",
+      "tgt/technique/32.1"
+     ],
+     "mrr": 0.010792476125061512
+    },
+    {
+     "triple": [
+      "tgt/group/62",
+      "uses",
+      "tgt/technique/60.0"
+     ],
+     "mrr": 0.1875
+    },
+    {
+     "triple": [
+      "tgt/group/62",
+      "uses",
+      "tgt/technique/67"
+     ],
+     "mrr": 0.22499999403953552
+    },
+    {
+     "triple": [
+      "tgt/group/63",
+      "uses",
+      "tgt/technique/29"
+     ],
+     "mrr": 0.5
+    },
+    {
+     "triple": [
+      "tgt/group/63",
+      "uses",
+      "tgt/technique/63.3"
+     ],
+     "mrr": 0.25
+    },
+    {
+     "triple": [
+      "tgt/group/64",
+      "uses",
+      "tgt/technique/13.3"
+     ],
+     "mrr": 0.5
+    },
+    {
+     "triple": [
+      "tgt/group/64",
+      "uses",
+      "tgt/technique/16"
+     ],
+     "mrr": 0.75
+    },
+    {
+     "triple": [
+      "tgt/group/64",
+      "uses",
+      "tgt/technique/75"
+     ],
+     "mrr": 0.5
+    },
+    {
+     "triple": [
+      "tgt/group/65",
+      "uses",
+      "tgt/technique/1.2"
+     ],
+     "mrr": 0.5625
+    },
+    {
+     "triple": [
+      "tgt/group/65",
+      "uses",
+      "tgt/technique/14"
+     ],
+     "mrr": 0.2666666805744171
+    },
+    {
+     "triple": [
+      "tgt/group/65",
+      "uses",
+      "tgt/technique/40"
+     ],
+     "mrr": 0.5625
+    },
+    {
+     "triple": [
+      "tgt/group/65",
+      "uses",
+      "tgt/technique/52.0"
+     ],
+     "mrr": 0.3333333432674408
+    },
+    {
+     "triple": [
+      "tgt/group/66",
+      "uses",
+      "tgt/technique/3.1"
+     ],
+     "mrr": 1.0
+    },
+    {
+     "triple": [
+      "tgt/group/66",
+      "uses",
+      "tgt/technique/56.1"
+     ],
+     "mrr": 0.6666666865348816
+    },
+    {
+     "triple": [
+      "tgt/group/67",
+      "uses",
+      "tgt/technique/26"
+     ],
+     "mrr": 0.3333333432674408
+    },
+    {
+     "triple": [
+      "tgt/group/67",
+      "uses",
+      "tgt/technique/68"
+     ],
+     "mrr": 0.2777777910232544
+    },
+    {
+     "triple": [
+      "tgt/group/67",
+      "uses",
+      "tgt/technique/75"
+     ],
+     "mrr": 0.2291666716337204
+    },
+    {
+     "triple": [
+      "tgt/group/68",
+      "uses",
+      "tgt/technique/27"
+     ],
+     "mrr": 0.6666666865348816
+    },
+    {
+     "triple": [
+      "tgt/group/68",
+      "uses",
+      "tgt/technique/29"
+     ],
+     "mrr": 0.6000000238418579
+    },
+    {
+     "triple": [
+      "tgt/group/68",
+      "uses",
+      "tgt/technique/31.0"
+     ],
+     "mrr": 0.25
+    },
+    {
+     "triple": [
+      "tgt/group/68",
+      "uses",
+      "tgt/technique/31.1"
+     ],
+     "mrr": 0.2884615361690521
+    },
+    {
+     "triple": [
+      "tgt/group/68",
+      "uses",
+      "tgt/technique/63.0"
+     ],
+     "mrr": 0.550000011920929
+    },
+    {
+     "triple": [
+      "tgt/group/69",
+      "uses",
+      "tgt/technique/31"
+     ],
+     "mrr": 1.0
+    },
+    {
+     "triple": [
+      "tgt/group/7",
+      "uses",
+      "tgt/technique/13"
+     ],
+     "mrr": 0.2083333432674408
+    },
+    {
+     "triple": [
+      "tgt/group/7",
+      "uses",
+      "tgt/technique/44.2"
+     ],
+     "mrr": 0.6666666865348816
+    },
+    {
+     "triple": [
+      "tgt/group/70",
+      "uses",
+      "tgt/technique/2"
+     ],
+     "mrr": 1.0
+    },
+    {
+     "triple": [
+      "tgt/group/70",
+      "uses",
+      "tgt/technique/42"
+     ],
+     "mrr": 0.1979166716337204
+    },
+    {
+     "triple": [
+      "tgt/group/70",
+      "uses",
+      "tgt/technique/67.1"
+     ],
+     "mrr": 0.5333333611488342
+    },
+    {
+     "triple": [
+      "tgt/group/70",
+      "uses",
+      "tgt/technique/80"
+     ],
+     "mrr": 0.5277777910232544
+    },
+    {
+     "triple": [
+      "tgt/group/70",
+      "uses",
+      "tgt/technique/88.1"
+     ],
+     "mrr": 0.6666666865348816
+    },
+    {
+     "triple": [
+      "tgt/group/71",
+      "uses",
+      "tgt/technique/63.3"
+     ],
+     "mrr": 1.0
+    },
+    {
+     "triple": [
+      "tgt/group/72",
+      "uses",
+      "tgt/technique/13.0"
+     ],
+     "mrr": 0.5
+    },
+    {
+     "triple": [
+      "tgt/group/72",
+      "uses",
+      "tgt/technique/58"
+     ],
+     "mrr": 0.5714285969734192
+    },
+    {
+     "triple": [
+      "tgt/group/72",
+      "uses",
+      "tgt/technique/84.0"
+     ],
+     "mrr": 0.75
+    },
+    {
+     "triple": [
+      "tgt/group/73",
+      "uses",
+      "tgt/technique/68.1"
+     ],
+     "mrr": 0.1454545557498932
+    },
+    {
+     "triple": [
+      "tgt/group/73",
+      "uses",
+      "tgt/technique/74.1"
+     ],
+     "mrr": 0.625
+    },
+    {
+     "triple": [
+      "tgt/group/74",
+      "uses",
+      "tgt/technique/85.0"
+     ],
+     "mrr": 1.0
+    },
+    {
+     "triple": [
+      "tgt/group/75",
+      "uses",
+      "tgt/technique/73"
+     ],
+     "mrr": 1.0
+    },
+    {
+     "triple": [
+      "tgt/group/75",
+      "uses",
+      "tgt/technique/86"
+     ],
+     "mrr": 0.5
+    },
+    {
+     "triple": [
+      "tgt/group/75",
+      "uses",
+      "tgt/technique/88.3"
+     ],
+     "mrr": 0.625
+    },
+    {
+     "triple": [
+      "tgt/group/75",
+      "uses",
+      "tgt/technique/9"
+     ],
+     "mrr": 0.28333333134651184
+    },
+    {
+     "triple": [
+      "tgt/group/76",
+      "uses",
+      "tgt/technique/28.2"
+     ],
+     "mrr": 0.3333333432674408
+    },
+    {
+     "triple": [
+      "tgt/group/76",
+      "uses",
+      "tgt/technique/45.0"
+     ],
+     "mrr": 0.014590046368539333
+    },
+    {
+     "triple": [
+      "tgt/group/76",
+      "uses",
+      "tgt/technique/46"
+     ],
+     "mrr": 0.1666666716337204
+    },
+    {
+     "triple": [
+      "tgt/group/76",
+      "uses",
+      "tgt/technique/7.1"
+     ],
+     "mrr": 0.6666666865348816
+    },
+    {
+     "triple": [
+      "tgt/group/77",
+      "uses",
+      "tgt/technique/25.0"
+     ],
+     "mrr": 0.75
+    },
+    {
+     "triple": [
+      "tgt/group/77",
+      "uses",
+      "tgt/technique/45.1"
+     ],
+     "mrr": 0.75
+    },
+    {
+     "triple": [
+      "tgt/group/77",
+      "uses",
+      "tgt/technique/61.0"
+     ],
+     "mrr": 1.0
+    },
+    {
+     "triple": [
+      "tgt/group/77",
+      "uses",
+      "tgt/technique/67.1"
+     ],
+     "mrr": 0.6000000238418579
+    },
+    {
+     "triple": [
+      "tgt/group/78",
+      "uses",
+      "tgt/technique/19.1"
+     ],
+     "mrr": 0.5833333134651184
+    },
+    {
+     "triple": [
+      "tgt/group/78",
+      "uses",
+      "tgt/technique/27.0"
+     ],
+     "mrr": 0.2916666865348816
+    },
+    {
+     "triple": [
+      "tgt/group/79",
+      "uses",
+      "tgt/technique/40"
+     ],
+     "mrr": 0.015300644561648369
+    },
+    {
+     "triple": [
+      "tgt/group/9",
+      "uses",
+      "tgt/technique/50.0"
+     ],
+     "mrr": 0.2083333432674408
+    }
+   ],
+   "seconds": 426.8
+  }
+ ]
+}

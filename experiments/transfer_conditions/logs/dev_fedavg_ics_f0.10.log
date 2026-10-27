@@ -1,0 +1,66 @@
+/Users/anishnagula/code/ultra-v2/ultra/tasks.py:181: UserWarning: Sparse CSR tensor support is in beta state. If you miss a functionality in the sparse tensor support, please submit a feature request to https://github.com/pytorch/pytorch/issues. (Triggered internally at /Users/runner/work/pytorch/pytorch/pytorch/aten/src/ATen/SparseCsrTensorImpl.cpp:55.)
+  Ahh = torch.sparse.mm(EhT, Eh).coalesce()
+Load rspmm extension. This may take a while...
+  fedavg seed=20261141 round=1 valid_mrr=0.2354 best_round=1
+  fedavg seed=20261141 round=2 valid_mrr=0.2339 best_round=1
+  fedavg seed=20261141 round=3 valid_mrr=0.2417 best_round=3
+  fedavg seed=20261141 round=4 valid_mrr=0.2058 best_round=3
+  fedavg seed=20261141 round=5 valid_mrr=0.2427 best_round=5
+  fedavg seed=20261141 round=6 valid_mrr=0.2343 best_round=5
+  fedavg seed=20261141 round=7 valid_mrr=0.2553 best_round=7
+  fedavg seed=20261141 round=8 valid_mrr=0.2596 best_round=8
+  fedavg seed=20261141 round=9 valid_mrr=0.2528 best_round=8
+  fedavg seed=20261141 round=10 valid_mrr=0.2673 best_round=10
+  fedavg seed=20261141 round=11 valid_mrr=0.2583 best_round=10
+  fedavg seed=20261141 round=12 valid_mrr=0.2478 best_round=10
+  fedavg seed=20261141 round=13 valid_mrr=0.2408 best_round=10
+  fedavg seed=20261141 round=14 valid_mrr=0.2670 best_round=10
+  fedavg seed=20261141 round=15 valid_mrr=0.2550 best_round=10
+  fedavg seed=20261141 round=16 valid_mrr=0.2356 best_round=10
+  fedavg seed=20261141 round=17 valid_mrr=0.2310 best_round=10
+  fedavg seed=20261141 round=18 valid_mrr=0.2513 best_round=10
+  fedavg seed=20261141 round=19 valid_mrr=0.2320 best_round=10
+  fedavg seed=20261141 round=20 valid_mrr=0.2657 best_round=10
+fedavg seed=20261141 selected_round=10 valid=0.2673 (537.9s) -> /Users/anishnagula/code/ultra-v2/experiments/transfer_conditions/results/real/dev_fedavg_ics_f0.10.json
+  fedavg seed=20261142 round=1 valid_mrr=0.2537 best_round=1
+  fedavg seed=20261142 round=2 valid_mrr=0.2156 best_round=1
+  fedavg seed=20261142 round=3 valid_mrr=0.2437 best_round=1
+  fedavg seed=20261142 round=4 valid_mrr=0.2814 best_round=4
+  fedavg seed=20261142 round=5 valid_mrr=0.2564 best_round=4
+  fedavg seed=20261142 round=6 valid_mrr=0.2343 best_round=4
+  fedavg seed=20261142 round=7 valid_mrr=0.2701 best_round=4
+  fedavg seed=20261142 round=8 valid_mrr=0.2434 best_round=4
+  fedavg seed=20261142 round=9 valid_mrr=0.2684 best_round=4
+  fedavg seed=20261142 round=10 valid_mrr=0.2594 best_round=4
+  fedavg seed=20261142 round=11 valid_mrr=0.2676 best_round=4
+  fedavg seed=20261142 round=12 valid_mrr=0.2541 best_round=4
+  fedavg seed=20261142 round=13 valid_mrr=0.2444 best_round=4
+  fedavg seed=20261142 round=14 valid_mrr=0.2673 best_round=4
+  fedavg seed=20261142 round=15 valid_mrr=0.2534 best_round=4
+  fedavg seed=20261142 round=16 valid_mrr=0.2417 best_round=4
+  fedavg seed=20261142 round=17 valid_mrr=0.2513 best_round=4
+  fedavg seed=20261142 round=18 valid_mrr=0.2609 best_round=4
+  fedavg seed=20261142 round=19 valid_mrr=0.2136 best_round=4
+  fedavg seed=20261142 round=20 valid_mrr=0.2294 best_round=4
+fedavg seed=20261142 selected_round=4 valid=0.2814 (505.2s) -> /Users/anishnagula/code/ultra-v2/experiments/transfer_conditions/results/real/dev_fedavg_ics_f0.10.json
+  fedavg seed=20261143 round=1 valid_mrr=0.2351 best_round=1
+  fedavg seed=20261143 round=2 valid_mrr=0.2549 best_round=2
+  fedavg seed=20261143 round=3 valid_mrr=0.2607 best_round=3
+  fedavg seed=20261143 round=4 valid_mrr=0.2682 best_round=4
+  fedavg seed=20261143 round=5 valid_mrr=0.2146 best_round=4
+  fedavg seed=20261143 round=6 valid_mrr=0.2178 best_round=4
+  fedavg seed=20261143 round=7 valid_mrr=0.1975 best_round=4
+  fedavg seed=20261143 round=8 valid_mrr=0.2738 best_round=8
+  fedavg seed=20261143 round=9 valid_mrr=0.2671 best_round=8
+  fedavg seed=20261143 round=10 valid_mrr=0.2234 best_round=8
+  fedavg seed=20261143 round=11 valid_mrr=0.2111 best_round=8
+  fedavg seed=20261143 round=12 valid_mrr=0.2383 best_round=8
+  fedavg seed=20261143 round=13 valid_mrr=0.2432 best_round=8
+  fedavg seed=20261143 round=14 valid_mrr=0.2519 best_round=8
+  fedavg seed=20261143 round=15 valid_mrr=0.2235 best_round=8
+  fedavg seed=20261143 round=16 valid_mrr=0.2574 best_round=8
+  fedavg seed=20261143 round=17 valid_mrr=0.2573 best_round=8
+  fedavg seed=20261143 round=18 valid_mrr=0.2613 best_round=8
+  fedavg seed=20261143 round=19 valid_mrr=0.2633 best_round=8
+  fedavg seed=20261143 round=20 valid_mrr=0.2444 best_round=8
+fedavg seed=20261143 selected_round=8 valid=0.2738 (506.8s) -> /Users/anishnagula/code/ultra-v2/experiments/transfer_conditions/results/real/dev_fedavg_ics_f0.10.json

@@ -1,0 +1,32 @@
+{
+  "source_results": "/Users/anishnagula/code/ultra-v2/experiments/transfer_conditions/results/synthetic/toolkit_n136_comparison.json",
+  "bootstrap_samples": 20000,
+  "random_seed": 20261026,
+  "num_training_seeds": 5,
+  "target_test_triples": 272,
+  "per_seed_mean_delta_mrr": [
+    -0.0009717581047238234,
+    -0.005776022153440863,
+    0.04223920704166898,
+    0.04847803043872666,
+    0.036606280054376626
+  ],
+  "mean_delta_mrr": 0.024115147455321517,
+  "seed_level_95pct_t_ci": [
+    -0.007541584098441523,
+    0.05577188643227331
+  ],
+  "hierarchical_paired_bootstrap_95pct_ci": [
+    0.0004980791714521783,
+    0.047358127057805705
+  ],
+  "acceptance_criteria": {
+    "minimum_mean_delta_mrr": 0.03,
+    "mean_gain_meets_threshold": false,
+    "seed_level_ci_entirely_above_zero": false,
+    "hierarchical_bootstrap_ci_entirely_above_zero": true,
+    "not_diagnostic_only": true,
+    "meets_full_success_criterion": false
+  },
+  "interpretation_limit": "The interval resamples training seeds and paired triples from the fixed target test sample; it does not quantify uncertainty across alternate graph snapshots, sampling rules, or domains."
+}

@@ -1,0 +1,13 @@
+added edges: enterprise=2718, ics=116, ics_f0.25=116, mobile=355, mobile_f0.25=355
+
+[as built] rule statistics in 34s
+   target=ics           validation rule MRR: own=0.3159 source(enterprise)=0.1014 pooled=0.3140  pooled-own=-0.0019
+   target=ics_f0.25     validation rule MRR: own=0.2488 source(enterprise)=0.0842 pooled=0.2612  pooled-own=+0.0124
+   target=mobile        validation rule MRR: own=0.1408 source(enterprise)=0.1024 pooled=0.1024  pooled-own=-0.0385
+   target=mobile_f0.25  validation rule MRR: own=0.0848 source(enterprise)=0.0859 pooled=0.0859  pooled-own=+0.0010
+
+[with tactics+platforms] rule statistics in 82s
+   target=ics           validation rule MRR: own=0.3297 source(enterprise)=0.1160 pooled=0.3277  pooled-own=-0.0020
+   target=ics_f0.25     validation rule MRR: own=0.2638 source(enterprise)=0.0833 pooled=0.2580  pooled-own=-0.0058
+   target=mobile        validation rule MRR: own=0.1651 source(enterprise)=0.1236 pooled=0.1236  pooled-own=-0.0415
+   target=mobile_f0.25  validation rule MRR: own=0.1258 source(enterprise)=0.1199 pooled=0.1199  pooled-own=-0.0059

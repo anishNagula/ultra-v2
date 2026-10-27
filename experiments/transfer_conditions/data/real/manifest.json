@@ -1,0 +1,145 @@
+{
+  "subsample_seed": 20261102,
+  "fractions": [
+    0.1,
+    0.25,
+    1.0
+  ],
+  "mobile_source": {
+    "path": "/Users/anishnagula/code/ultra-v2/datasets/cybersecurity/mitre/mobile/v19.2/mobile-attack-19.2.json",
+    "sha256": "acfa5ca2d93484476f79bf38590e2b55bb675fc0ce85e76bffa0af2c82dada64",
+    "rejected": {
+      "unsupported_relation": 54
+    },
+    "identical_enterprise_triples_removed": 4,
+    "split_seed": 20261023
+  },
+  "ics_source": {
+    "split_dir": "/Users/anishnagula/code/ultra-v2/experiments/fedultra_fresh/data_processed/ics",
+    "sha256": {
+      "train.txt": "ac5aee3a1f847384c6065e9b8e66062a4b57f2295067637eb5e965be9a46d808",
+      "valid.txt": "3228447bff9e7035c52428690e417497eb4d0de5f801cbefb00ff26d63f4b4be",
+      "test.txt": "38663719303ed2a4a2aa3b004a01789f61067a18a280abbb6aa71f1e19b2d4de"
+    }
+  },
+  "clients": {
+    "mobile_f0.10": {
+      "train": 149,
+      "hidden": 1346,
+      "valid": 170,
+      "test": 166,
+      "train_relation_counts": {
+        "detects": 12,
+        "mitigates": 13,
+        "subtechnique-of": 4,
+        "uses": 120
+      },
+      "entities_with_train_edges": 157,
+      "sha256": {
+        "hidden.txt": "63f198fda963f7db88613939b994ed863b8591e9408d00fb42385ff0c0dde1b7",
+        "test.txt": "ae2448d81d96e98e1bfbc28f57f1bc2bedf99e53568c986a5a92515ed8144c22",
+        "train.txt": "46ce42e4743d92be2a9760a9acdbcbbc7f6eed86de190b518de4829303d33b20",
+        "valid.txt": "a7de583d9361afb17cef37086c24738a3b795ed2f7bb68724c31ed376c86eab6"
+      }
+    },
+    "mobile_f0.25": {
+      "train": 374,
+      "hidden": 1121,
+      "valid": 170,
+      "test": 166,
+      "train_relation_counts": {
+        "detects": 31,
+        "mitigates": 34,
+        "subtechnique-of": 9,
+        "uses": 300
+      },
+      "entities_with_train_edges": 246,
+      "sha256": {
+        "hidden.txt": "6813bdef18a16a5bdb66e242e6804975aead2ad5d05632f920bb898aac1c1226",
+        "test.txt": "ae2448d81d96e98e1bfbc28f57f1bc2bedf99e53568c986a5a92515ed8144c22",
+        "train.txt": "21531d232706872b134ae695c9918e7b2fc09e19e5f57b2692fb320e6007ae61",
+        "valid.txt": "a7de583d9361afb17cef37086c24738a3b795ed2f7bb68724c31ed376c86eab6"
+      }
+    },
+    "mobile_f1.00": {
+      "train": 1495,
+      "hidden": 0,
+      "valid": 170,
+      "test": 166,
+      "train_relation_counts": {
+        "detects": 124,
+        "mitigates": 134,
+        "subtechnique-of": 37,
+        "uses": 1200
+      },
+      "entities_with_train_edges": 406,
+      "sha256": {
+        "test.txt": "ae2448d81d96e98e1bfbc28f57f1bc2bedf99e53568c986a5a92515ed8144c22",
+        "train.txt": "953268be7c3af9ce3a4dbda3c7b1ba66f9e1c5146120e6fc2f50f39ec4538142",
+        "valid.txt": "a7de583d9361afb17cef37086c24738a3b795ed2f7bb68724c31ed376c86eab6"
+      }
+    },
+    "ics_f0.10": {
+      "train": 134,
+      "hidden": 1199,
+      "valid": 150,
+      "test": 151,
+      "train_relation_counts": {
+        "attributed-to": 1,
+        "detects": 10,
+        "mitigates": 33,
+        "subtechnique-of": 1,
+        "targets": 67,
+        "uses": 22
+      },
+      "entities_with_train_edges": 138,
+      "sha256": {
+        "hidden.txt": "aec3e9ef3fafd201e6a284cf0eff4f5d4655ca8dfaa7c6afeedf7d30807b5028",
+        "test.txt": "38663719303ed2a4a2aa3b004a01789f61067a18a280abbb6aa71f1e19b2d4de",
+        "train.txt": "23eae758f235293d18f40820aaf5d810546fc30c63c7a4ac70a736bb6bd8dd1d",
+        "valid.txt": "3228447bff9e7035c52428690e417497eb4d0de5f801cbefb00ff26d63f4b4be"
+      }
+    },
+    "ics_f0.25": {
+      "train": 334,
+      "hidden": 999,
+      "valid": 150,
+      "test": 151,
+      "train_relation_counts": {
+        "attributed-to": 1,
+        "detects": 24,
+        "mitigates": 82,
+        "subtechnique-of": 4,
+        "targets": 168,
+        "uses": 55
+      },
+      "entities_with_train_edges": 194,
+      "sha256": {
+        "hidden.txt": "b5031069f2d78572174871ed6d3e31f6e21fbb72184adf37a205b2f128aeee05",
+        "test.txt": "38663719303ed2a4a2aa3b004a01789f61067a18a280abbb6aa71f1e19b2d4de",
+        "train.txt": "ec09d5c2d85ebe89b2695e9dde6b013ef5dd125d6f43d22b91949a0c9a1ed9b9",
+        "valid.txt": "3228447bff9e7035c52428690e417497eb4d0de5f801cbefb00ff26d63f4b4be"
+      }
+    },
+    "ics_f1.00": {
+      "train": 1333,
+      "hidden": 0,
+      "valid": 150,
+      "test": 151,
+      "train_relation_counts": {
+        "attributed-to": 1,
+        "detects": 97,
+        "mitigates": 327,
+        "subtechnique-of": 14,
+        "targets": 674,
+        "uses": 220
+      },
+      "entities_with_train_edges": 302,
+      "sha256": {
+        "test.txt": "38663719303ed2a4a2aa3b004a01789f61067a18a280abbb6aa71f1e19b2d4de",
+        "train.txt": "ac5aee3a1f847384c6065e9b8e66062a4b57f2295067637eb5e965be9a46d808",
+        "valid.txt": "3228447bff9e7035c52428690e417497eb4d0de5f801cbefb00ff26d63f4b4be"
+      }
+    }
+  }
+}

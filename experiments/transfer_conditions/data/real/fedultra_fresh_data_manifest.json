@@ -1,0 +1,63 @@
+{
+  "split_seed": 20261023,
+  "sources": {
+    "enterprise": {
+      "path": "/Users/anishnagula/code/ULTRA/datasets/cybersecurity/mitre/enterprise/v19.2/enterprise-attack-19.2.json",
+      "sha256": "dc1639caa5501d720e280cf1cbd8fbe009884a0c9b3e6e9ed9d0c25166c3d8f4",
+      "active_selected_entities": 4374,
+      "unique_extracted_triples": 21103,
+      "rejected": {
+        "unsupported_relation": 157,
+        "excluded_endpoint": 2
+      }
+    },
+    "ics": {
+      "path": "/Users/anishnagula/code/ULTRA/datasets/cybersecurity/mitre/ics/v19.2/ics-attack-19.2.json",
+      "sha256": "08b83d2cea6b6d6752468ef0e62e2ab2a53c9443ef72c439ecccb07ab9e89da9",
+      "active_selected_entities": 454,
+      "unique_extracted_triples": 1656,
+      "rejected": {
+        "unsupported_relation": 11
+      }
+    }
+  },
+  "clients": {
+    "enterprise": {
+      "triples": 21103,
+      "entities": 2495,
+      "relations": [
+        "attributed-to",
+        "detects",
+        "mitigates",
+        "subtechnique-of",
+        "uses"
+      ],
+      "split_counts": {
+        "train": 17025,
+        "valid": 2039,
+        "test": 2039
+      }
+    },
+    "ics": {
+      "triples": 1634,
+      "entities": 302,
+      "relations": [
+        "attributed-to",
+        "detects",
+        "mitigates",
+        "subtechnique-of",
+        "targets",
+        "uses"
+      ],
+      "split_counts": {
+        "train": 1333,
+        "valid": 150,
+        "test": 151
+      }
+    }
+  },
+  "cross_domain": {
+    "shared_entity_ids": 66,
+    "shared_triples_removed_from_ics": 22
+  }
+}

@@ -1,0 +1,27 @@
+
+== study_S (target test MRR, FedAvg - local) ==
+  shared_n13     local 0.3085 | FedAvg 0.4081 | Δ +0.0996 | t-CI [+0.0801, +0.1190] | boot [+0.0780, +0.1218] | PASS
+  shared_n41     local 0.2922 | FedAvg 0.4105 | Δ +0.1184 | t-CI [+0.0701, +0.1667] | boot [+0.0843, +0.1588] | PASS
+  shared_n136    local 0.3945 | FedAvg 0.4186 | Δ +0.0241 | t-CI [-0.0075, +0.0558] | boot [+0.0005, +0.0474] | fail
+  shared_n408    local 0.4741 | FedAvg 0.4823 | Δ +0.0082 | t-CI [-0.0174, +0.0338] | boot [-0.0138, +0.0290] | fail
+  disjoint_n13   local 0.3085 | FedAvg 0.3042 | Δ -0.0043 | t-CI [-0.0117, +0.0032] | boot [-0.0146, +0.0061] | fail
+  disjoint_n41   local 0.2922 | FedAvg 0.2955 | Δ +0.0033 | t-CI [-0.0118, +0.0185] | boot [-0.0142, +0.0206] | fail
+  disjoint_n136  local 0.3945 | FedAvg 0.3124 | Δ -0.0821 | t-CI [-0.1516, -0.0126] | boot [-0.1321, -0.0392] | fail
+  disjoint_n408  local 0.4741 | FedAvg 0.3805 | Δ -0.0936 | t-CI [-0.1230, -0.0642] | boot [-0.1201, -0.0673] | fail
+
+== study_R_mobile (target test MRR, FedAvg - local) ==
+  f0.10          local 0.1664 | FedAvg 0.1677 | Δ +0.0013 | t-CI [-0.0035, +0.0062] | boot [-0.0102, +0.0133] | fail
+  f0.25          local 0.2102 | FedAvg 0.2156 | Δ +0.0054 | t-CI [-0.0024, +0.0132] | boot [-0.0071, +0.0192] | fail
+  f1.00          local 0.3035 | FedAvg 0.3044 | Δ +0.0009 | t-CI [-0.0078, +0.0095] | boot [-0.0092, +0.0112] | fail
+
+== registered contrasts ==
+  H2_shared_delta_n13_minus_n408       +0.0914  t-CI [+0.0625, +0.1203]  boot [+0.0631, +0.1233]
+  H3_delta_shared_minus_disjoint_n13   +0.1039  t-CI [+0.0784, +0.1293]  boot [+0.0817, +0.1260]
+  H3_delta_shared_minus_disjoint_n41   +0.1150  t-CI [+0.0664, +0.1637]  boot [+0.0831, +0.1516]
+  H3_delta_shared_minus_disjoint_n136  +0.1062  t-CI [+0.0575, +0.1549]  boot [+0.0745, +0.1430]
+  H3_delta_shared_minus_disjoint_n408  +0.1018  t-CI [+0.0677, +0.1359]  boot [+0.0758, +0.1293]
+
+== ICS development (validation only, descriptive) ==
+  f0.10: zero-shot 0.2345 local 0.2785 FedAvg 0.2742 Δ -0.0043
+  f0.25: zero-shot 0.3567 local 0.3567 FedAvg 0.3696 Δ +0.0129
+  f1.00: zero-shot 0.4592 local 0.4983 FedAvg 0.4870 Δ -0.0113
