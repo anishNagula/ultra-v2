@@ -1,0 +1,8 @@
+c56527f3d64b7164fcdae73c1a7545ee6e83b1150546c07a93339b1543a3041d  data/raw/capec/capec_latest.zip
+3976f599e5e5200219a3108bb896d06e2a88fbb293369e1883cb423a5e9d7d50  data/raw/cwe/cwec_latest.xml.zip
+06aa88201ffacda9a3765ae593b28a063ce03ff91636516ec4080f5eb604ae28  data/raw/nvd/nvdcve-2.0-2020.json.gz
+2835ea89e8dbdf2f87577645450637bf57076460951b7f98b91455d69550d499  data/raw/nvd/nvdcve-2.0-2021.json.gz
+291d669822caef889651150f3e79bc30548c02a552f111bcd48bd2cd60f9a004  data/raw/nvd/nvdcve-2.0-2022.json.gz
+64fde3e58a02ddb8efc9732898240c4c16ecaf8fdacf72f91e92a0746b08922e  data/raw/nvd/nvdcve-2.0-2023.json.gz
+56326e26c39b906b45adc9a2883868fa4b77b2b636a4e6c84c5db8caf27fc177  data/raw/nvd/nvdcve-2.0-2024.json.gz
+66f07249dc30d603c5feb9d145b17981abd48fc2e286dc1f3632b8bf381aaccc  data/raw/nvd/nvdcve-2.0-2025.json.gz

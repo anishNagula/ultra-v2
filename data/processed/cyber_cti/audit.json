@@ -1,0 +1,75 @@
+{
+  "sources": {
+    "capec_file": "data/raw/capec/capec_latest.zip",
+    "cwe_file": "data/raw/cwe/cwec_latest.xml.zip",
+    "nvd_files": [
+      "data/raw/nvd/nvdcve-2.0-2020.json.gz",
+      "data/raw/nvd/nvdcve-2.0-2021.json.gz",
+      "data/raw/nvd/nvdcve-2.0-2022.json.gz",
+      "data/raw/nvd/nvdcve-2.0-2023.json.gz",
+      "data/raw/nvd/nvdcve-2.0-2024.json.gz",
+      "data/raw/nvd/nvdcve-2.0-2025.json.gz"
+    ],
+    "nvd_years": [
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "nvd_cve_records_per_year": {
+      "2020.json": 21086,
+      "2021.json": 23481,
+      "2022.json": 27563,
+      "2023.json": 31473,
+      "2024.json": 39358,
+      "2025.json": 45427
+    },
+    "capec_attack_pattern_records_seen": 615,
+    "cwe_weakness_records_seen": 969,
+    "max_cpes_per_cve": 10
+  },
+  "graph": {
+    "unique_triples": 624899,
+    "entities_by_source_or_type": {
+      "CAPEC": 615,
+      "CPE": 79104,
+      "CVE": 188388,
+      "CWE": 1000
+    },
+    "relation_counts": {
+      "affects_product_configuration": 434649,
+      "capec_canalsobe": 3,
+      "capec_canfollow": 10,
+      "capec_canprecede": 162,
+      "capec_childof": 533,
+      "capec_peerof": 19,
+      "cwe_canalsobe": 27,
+      "cwe_canprecede": 143,
+      "cwe_childof": 1160,
+      "cwe_peerof": 98,
+      "cwe_requires": 13,
+      "cwe_startswith": 3,
+      "exploits_or_relates_to_weakness": 1212,
+      "has_weakness": 185655,
+      "related_attack_pattern": 1212
+    },
+    "connected_components": 1714,
+    "largest_component_nodes": 254947,
+    "largest_component_fraction": 0.9800753469419137,
+    "mean_degree": 4.804513128051359,
+    "median_degree": 2,
+    "entities_with_degree_1": 76140,
+    "entities_in_edges": 260130
+  },
+  "notes": [
+    "CVE-to-CWE edges are based on NVD weakness descriptions where the value is a CWE identifier.",
+    "CVE-to-CPE edges are based on NVD CPE criteria; at most max_cpes_per_cve sorted criteria are retained per CVE.",
+    "CAPEC/CWE catalog links are emitted only when explicit source relationships are present.",
+    "ATTACK IDs emitted from CAPEC references are external identifier nodes; merge with Enterprise ATT&CK only after verifying exact ID conventions.",
+    "This is a feasibility extraction. Audit relation semantics, source versions, missing mappings, and leakage before model training.",
+    "NVD feeds are split by CVE ID year; this gives a reproducible bounded snapshot, not every CVE published during those calendar years if the feeds later change."
+  ],
+  "output_triples_tsv": "data/processed/cyber_cti/triples.tsv"
+}
